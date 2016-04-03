@@ -162,3 +162,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+internal let HubService = "http://commhub.org/HubService.svc"
+internal var MyDID = "dzhur-Mac" //= UIDevice.currentDevice().identifierForVendor!.UUIDString
+internal var MySessionID : String {
+    get {
+        return OwnerHubData().getLogInfo().1
+    }
+}
+internal var MyOwnerHubID : Int {
+    get {
+        return OwnerHubData().getLogInfo().0
+    }
+}
+
+extension String {
+    func replace(string:String, replacement:String) -> String {
+        return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
+    }
+    
+    func removePunctMarks() -> String {
+        var text = self
+        text = text.replace("+", replacement: "")
+        text = text.replace("-", replacement: "")
+        text = text.replace(" ", replacement: "")
+        text = text.replace(")", replacement: "")
+        text = text.replace("(", replacement: "")
+        
+        return text
+    }
+}
+
+
