@@ -76,7 +76,7 @@ class OwnerHubData {
     }
 */
 
-    func getLogInfo() -> (Int, String) {
+    func getLogInfo() -> (myOwnerHubID: Int, mySessionID: String) {
 
         var myOwnerHubID: Int = 0
         var mySessionID: String = ""

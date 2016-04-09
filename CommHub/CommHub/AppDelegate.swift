@@ -7,12 +7,18 @@
 //
 
 import Cocoa
+import CoreData
+import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-
+    
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
+    }
+    
+    func applicationWillBecomeActive(notification: NSNotification) {
+        
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
@@ -162,16 +168,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
-internal let HubService = "http://commhub.org/HubService.svc"
-internal var MyDID = "dzhur-Mac" //= UIDevice.currentDevice().identifierForVendor!.UUIDString
+internal let HubService = "http://commhub.org/CommHubService.svc"
+internal var MyDID = NSUUID().UUIDString
 internal var MySessionID : String {
     get {
-        return OwnerHubData().getLogInfo().1
+        return OwnerHubData().getLogInfo().mySessionID
     }
 }
 internal var MyOwnerHubID : Int {
     get {
-        return OwnerHubData().getLogInfo().0
+        return OwnerHubData().getLogInfo().myOwnerHubID
     }
 }
 

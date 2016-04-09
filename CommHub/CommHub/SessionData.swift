@@ -20,7 +20,7 @@ class SessionData {
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionary
-                    let regRes = SessionReqRes(id: json!["ID"]!.int!, code: json!["Code"]!.string!, ownerHubID: json!["ownerHubID"]!.int!)
+                    let regRes = SessionReqRes(id: json!["id"]!.int!, code: json!["code"]!.string!, ownerHubID: json!["ownerHubID"]!.int!)
                     
                     completion(reqres: regRes, successful: true)
                     
@@ -41,7 +41,7 @@ class SessionData {
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionary
-                    let own = OwnerHubEntryFields(id: json!["MemberID"]!.int!, sessionId: json!["SessionID"]!.string!)
+                    let own = OwnerHubEntryFields(id: json!["ownerHubID"]!.int!, sessionId: json!["SessionID"]!.string!)
                     let isNewMember = json!["IsNewMember"]!.bool!
                     completion(own: own, isNew: isNewMember, successful: true)
                 case .Failure(let error):

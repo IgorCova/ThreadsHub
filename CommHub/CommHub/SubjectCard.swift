@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class SubjectCardVC: NSViewController {
+class SubjectCardViewController: NSViewController {
 
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var customView: NSView!
@@ -32,6 +32,7 @@ class SubjectCardVC: NSViewController {
     
     @IBAction func saveButton(sender: AnyObject) {
         self.dismissController(self)
+        
     }
 
     @IBAction func cancelButton(sender: AnyObject) {

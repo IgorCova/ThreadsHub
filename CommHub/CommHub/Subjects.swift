@@ -38,7 +38,7 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     @IBAction func addNewSubject(sender: AnyObject) {
-        let subview =  SubjectCardVC(nibName: "SubjectCardVC", bundle: nil)!
+        let subview =  SubjectCardViewController(nibName: "SubjectCard", bundle: nil)!
         subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
         subview.setCard(nil, title: "Add a new subject", deleteButtonHide: true)
         
@@ -56,7 +56,7 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow > -1 {
-            let subview = SubjectCardVC(nibName: "SubjectCardVC", bundle: nil)
+            let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
             subview?.setCard(subjects[index], title: "Edit the subject", deleteButtonHide: false)
             

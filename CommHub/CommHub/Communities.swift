@@ -51,7 +51,7 @@ class CommunitiesViewController: NSViewController, NSTableViewDelegate, NSTableV
     }
     
     @IBAction func addNewCommunity(sender: AnyObject) {
-        let subview = CommunityCardVC(nibName: "CommunityCardVC", bundle: nil)!
+        let subview = CommunityCardViewController(nibName: "CommunityCard", bundle: nil)!
         subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
         subview.setCard(nil, title: "Add a new community", deleteButtonHide: true)
         
@@ -69,7 +69,7 @@ class CommunitiesViewController: NSViewController, NSTableViewDelegate, NSTableV
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow > -1 {
-            let subview = CommunityCardVC(nibName: "CommunityCardVC", bundle: nil)
+            let subview = CommunityCardViewController(nibName: "CommunityCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
             subview?.setCard(communities[index], title: "Edit the community", deleteButtonHide: false)
             

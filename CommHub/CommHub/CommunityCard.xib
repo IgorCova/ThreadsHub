@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="CommunityCardVC" customModule="CommHub" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="CommunityCardViewController" customModule="CommHub" customModuleProvider="target">
             <connections>
                 <outlet property="adminsPopUpButton" destination="LeD-VC-XKT" id="do0-em-RvA"/>
                 <outlet property="commuyityNameTextField" destination="h12-sZ-Gir" id="Wej-qa-4Le"/>

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class AdminCardVC: NSViewController {
+class AdminCardViewController: NSViewController {
     
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var contactView: NSView!

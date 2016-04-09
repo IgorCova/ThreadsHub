@@ -10,7 +10,7 @@ import Foundation
 
 class CommunityData {
     func getCommunity() -> [Community] {
-        var adminArr = [Community]()
+        let adminArr = [Community]()
         
         
         return adminArr

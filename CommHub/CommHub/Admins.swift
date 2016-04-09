@@ -40,7 +40,7 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
     }
     
     @IBAction func addNewAdmin(sender: AnyObject) {
-        let subview = AdminCardVC(nibName: "AdminCardVC", bundle: nil)!
+        let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)!
         subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
         subview.setCard(nil, title: "Add the administrator", deleteButtonHide: true)
         
@@ -59,7 +59,7 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow > -1 {
-            let subview = AdminCardVC(nibName: "AdminCardVC", bundle: nil)
+            let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
             subview?.setCard(admins[index], title: "Edit the administrator", deleteButtonHide: false)
             

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="SubjectCardVC" customModule="CommHub" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="SubjectCardViewController" customModule="CommHub" customModuleProvider="target">
             <connections>
                 <outlet property="customView" destination="Loh-y2-CEA" id="VwZ-E5-3gJ"/>
                 <outlet property="delete" destination="GPH-fF-Fwe" id="lod-2D-48E"/>
@@ -78,6 +78,7 @@ Gw
                     </subviews>
                 </customView>
             </subviews>
+            <point key="canvasLocation" x="441.5" y="285"/>
         </customView>
     </objects>
 </document>

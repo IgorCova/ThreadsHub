@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1ACD47AAB67387A3C4C1BF26 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F696759C0ACC1A003AAEA508 /* Pods.framework */; };
-		2710CD561CAD43DE00F46F7E /* AdminsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD551CAD43DE00F46F7E /* AdminsViewController.swift */; };
+		2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702C8261CB9675D0095EE74 /* ConfirmCode.swift */; };
+		2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702C82D1CB9ADB60095EE74 /* MainWindowController.swift */; };
+		2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD551CAD43DE00F46F7E /* Admins.swift */; };
 		2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2710CD571CAD46E600F46F7E /* Icon.xcassets */; };
 		2710CD611CAD58B400F46F7E /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD601CAD58B400F46F7E /* Admin.swift */; };
 		271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719D71CAD3C3900123816 /* AppDelegate.swift */; };
@@ -17,24 +19,26 @@
 		271719E21CAD3C3900123816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271719E01CAD3C3900123816 /* Main.storyboard */; };
 		271719ED1CAD3C3900123816 /* CommHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719EC1CAD3C3900123816 /* CommHubTests.swift */; };
 		271719F81CAD3C3900123816 /* CommHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719F71CAD3C3900123816 /* CommHubUITests.swift */; };
-		271BF6EE1CAFEF55005144D6 /* SubjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6ED1CAFEF55005144D6 /* SubjectsViewController.swift */; };
-		271BF6F11CB003AD005144D6 /* SubjectCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCardVC.swift */; };
-		271BF6F21CB003AD005144D6 /* SubjectCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271BF6F01CB003AD005144D6 /* SubjectCardVC.xib */; };
+		271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6ED1CAFEF55005144D6 /* Subjects.swift */; };
+		271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCard.swift */; };
+		271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271BF6F01CB003AD005144D6 /* SubjectCard.xib */; };
 		271BF6F51CB01808005144D6 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* Subject.swift */; };
 		271BF6F71CB0198C005144D6 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F61CB0198C005144D6 /* Community.swift */; };
 		273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */; };
-		273B0B5B1CAF3CE400454E94 /* AdminCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCardVC.swift */; };
-		273B0B5C1CAF3CE400454E94 /* AdminCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCardVC.xib */; };
-		274E7E361CB171BB0003DA19 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* RegistrationViewController.swift */; };
+		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
+		273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCard.xib */; };
+		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
+		275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558A1CB9366B003A60FD /* RegistrationSegue.swift */; };
+		275E558D1CB93C90003A60FD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558C1CB93C90003A60FD /* Container.swift */; };
 		27ADFA531CB181AF00B4C308 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA521CB181AF00B4C308 /* SessionData.swift */; };
 		27ADFA551CB1824400B4C308 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA541CB1824400B4C308 /* Session.swift */; };
 		27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA561CB1834400B4C308 /* OwnerHubData.swift */; };
 		27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */; };
 		27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */; };
 		27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5B1CB1940500B4C308 /* Log.swift */; };
-		27B43FE11CB039A7000D9E98 /* CommunityCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FDF1CB039A7000D9E98 /* CommunityCardVC.swift */; };
-		27B43FE21CB039A7000D9E98 /* CommunityCardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B43FE01CB039A7000D9E98 /* CommunityCardVC.xib */; };
-		27B43FE41CB0567F000D9E98 /* CommunitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE31CB0567F000D9E98 /* CommunitiesViewController.swift */; };
+		27B43FE11CB039A7000D9E98 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */; };
+		27B43FE21CB039A7000D9E98 /* CommunityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B43FE01CB039A7000D9E98 /* CommunityCard.xib */; };
+		27B43FE41CB0567F000D9E98 /* Communities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE31CB0567F000D9E98 /* Communities.swift */; };
 		27B43FE61CB06251000D9E98 /* CommutityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE51CB06251000D9E98 /* CommutityCellView.swift */; };
 		27B43FE81CB080F8000D9E98 /* SubjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectData.swift */; };
 		27B43FEA1CB086C8000D9E98 /* AdminData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminData.swift */; };
@@ -59,7 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2710CD551CAD43DE00F46F7E /* AdminsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminsViewController.swift; sourceTree = "<group>"; };
+		2702C8261CB9675D0095EE74 /* ConfirmCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmCode.swift; sourceTree = "<group>"; };
+		2702C82D1CB9ADB60095EE74 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		2710CD551CAD43DE00F46F7E /* Admins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admins.swift; sourceTree = "<group>"; };
 		2710CD571CAD46E600F46F7E /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		2710CD601CAD58B400F46F7E /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
 		271719D41CAD3C3900123816 /* CommHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,24 +80,26 @@
 		271719F31CAD3C3900123816 /* CommHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271719F71CAD3C3900123816 /* CommHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommHubUITests.swift; sourceTree = "<group>"; };
 		271719F91CAD3C3900123816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		271BF6ED1CAFEF55005144D6 /* SubjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectsViewController.swift; sourceTree = "<group>"; };
-		271BF6EF1CB003AD005144D6 /* SubjectCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCardVC.swift; sourceTree = "<group>"; };
-		271BF6F01CB003AD005144D6 /* SubjectCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectCardVC.xib; sourceTree = "<group>"; };
+		271BF6ED1CAFEF55005144D6 /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
+		271BF6EF1CB003AD005144D6 /* SubjectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCard.swift; sourceTree = "<group>"; };
+		271BF6F01CB003AD005144D6 /* SubjectCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectCard.xib; sourceTree = "<group>"; };
 		271BF6F41CB01808005144D6 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
 		271BF6F61CB0198C005144D6 /* Community.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
 		273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCellView.swift; sourceTree = "<group>"; };
-		273B0B591CAF3CE400454E94 /* AdminCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCardVC.swift; sourceTree = "<group>"; };
-		273B0B5A1CAF3CE400454E94 /* AdminCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCardVC.xib; sourceTree = "<group>"; };
-		274E7E351CB171BB0003DA19 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
+		273B0B5A1CAF3CE400454E94 /* AdminCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCard.xib; sourceTree = "<group>"; };
+		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		275E558A1CB9366B003A60FD /* RegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSegue.swift; sourceTree = "<group>"; };
+		275E558C1CB93C90003A60FD /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		27ADFA521CB181AF00B4C308 /* SessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
 		27ADFA541CB1824400B4C308 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		27ADFA561CB1834400B4C308 /* OwnerHubData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerHubData.swift; sourceTree = "<group>"; };
 		27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerHub.swift; sourceTree = "<group>"; };
 		27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		27ADFA5B1CB1940500B4C308 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		27B43FDF1CB039A7000D9E98 /* CommunityCardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityCardVC.swift; sourceTree = "<group>"; };
-		27B43FE01CB039A7000D9E98 /* CommunityCardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityCardVC.xib; sourceTree = "<group>"; };
-		27B43FE31CB0567F000D9E98 /* CommunitiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunitiesViewController.swift; sourceTree = "<group>"; };
+		27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityCard.swift; sourceTree = "<group>"; };
+		27B43FE01CB039A7000D9E98 /* CommunityCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityCard.xib; sourceTree = "<group>"; };
+		27B43FE31CB0567F000D9E98 /* Communities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communities.swift; sourceTree = "<group>"; };
 		27B43FE51CB06251000D9E98 /* CommutityCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommutityCellView.swift; sourceTree = "<group>"; };
 		27B43FE71CB080F8000D9E98 /* SubjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectData.swift; sourceTree = "<group>"; };
 		27B43FE91CB086C8000D9E98 /* AdminData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminData.swift; sourceTree = "<group>"; };
@@ -127,6 +135,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2702C82A1CB96A6D0095EE74 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				275E558C1CB93C90003A60FD /* Container.swift */,
+				273B0B4C1CAE6FB500454E94 /* Admins */,
+				271BF6EC1CAFEEEB005144D6 /* Subjects */,
+				271BF6F31CB0135F005144D6 /* Communities */,
+				274E7E371CB179010003DA19 /* Registration */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2702C82B1CB96B400095EE74 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				27ADFA541CB1824400B4C308 /* Session.swift */,
+				27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */,
+				2710CD601CAD58B400F46F7E /* Admin.swift */,
+				271BF6F41CB01808005144D6 /* Subject.swift */,
+				271BF6F61CB0198C005144D6 /* Community.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		2702C82C1CB96BFD0095EE74 /* CellView */ = {
+			isa = PBXGroup;
+			children = (
+				273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */,
+				27B43FE51CB06251000D9E98 /* CommutityCellView.swift */,
+			);
+			name = CellView;
+			sourceTree = "<group>";
+		};
 		271719CB1CAD3C3900123816 = {
 			isa = PBXGroup;
 			children = (
@@ -154,17 +195,13 @@
 			children = (
 				271719E01CAD3C3900123816 /* Main.storyboard */,
 				271719D71CAD3C3900123816 /* AppDelegate.swift */,
-				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
-				27ADFA541CB1824400B4C308 /* Session.swift */,
-				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
-				27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */,
-				274E7E371CB179010003DA19 /* RegistrationViewController */,
-				273B0B4C1CAE6FB500454E94 /* AdminsViewController */,
-				271BF6EC1CAFEEEB005144D6 /* SubjectsViewController */,
-				271BF6F31CB0135F005144D6 /* CommunitiesViewController */,
-				27171A061CAD3C7800123816 /* SupportingFiles */,
+				2702C82D1CB9ADB60095EE74 /* MainWindowController.swift */,
+				2702C82A1CB96A6D0095EE74 /* ViewControllers */,
+				2702C82C1CB96BFD0095EE74 /* CellView */,
+				2702C82B1CB96B400095EE74 /* Classes */,
 				27171A051CAD3C5300123816 /* CoreData */,
 				274E7E341CB165950003DA19 /* Data */,
+				27171A061CAD3C7800123816 /* SupportingFiles */,
 			);
 			path = CommHub;
 			sourceTree = "<group>";
@@ -207,44 +244,41 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		271BF6EC1CAFEEEB005144D6 /* SubjectsViewController */ = {
+		271BF6EC1CAFEEEB005144D6 /* Subjects */ = {
 			isa = PBXGroup;
 			children = (
-				271BF6F41CB01808005144D6 /* Subject.swift */,
-				271BF6ED1CAFEF55005144D6 /* SubjectsViewController.swift */,
-				271BF6EF1CB003AD005144D6 /* SubjectCardVC.swift */,
-				271BF6F01CB003AD005144D6 /* SubjectCardVC.xib */,
+				271BF6ED1CAFEF55005144D6 /* Subjects.swift */,
+				271BF6EF1CB003AD005144D6 /* SubjectCard.swift */,
+				271BF6F01CB003AD005144D6 /* SubjectCard.xib */,
 			);
-			name = SubjectsViewController;
+			name = Subjects;
 			sourceTree = "<group>";
 		};
-		271BF6F31CB0135F005144D6 /* CommunitiesViewController */ = {
+		271BF6F31CB0135F005144D6 /* Communities */ = {
 			isa = PBXGroup;
 			children = (
-				271BF6F61CB0198C005144D6 /* Community.swift */,
-				27B43FE31CB0567F000D9E98 /* CommunitiesViewController.swift */,
-				27B43FE51CB06251000D9E98 /* CommutityCellView.swift */,
-				27B43FDF1CB039A7000D9E98 /* CommunityCardVC.swift */,
-				27B43FE01CB039A7000D9E98 /* CommunityCardVC.xib */,
+				27B43FE31CB0567F000D9E98 /* Communities.swift */,
+				27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */,
+				27B43FE01CB039A7000D9E98 /* CommunityCard.xib */,
 			);
-			name = CommunitiesViewController;
+			name = Communities;
 			sourceTree = "<group>";
 		};
-		273B0B4C1CAE6FB500454E94 /* AdminsViewController */ = {
+		273B0B4C1CAE6FB500454E94 /* Admins */ = {
 			isa = PBXGroup;
 			children = (
-				2710CD601CAD58B400F46F7E /* Admin.swift */,
-				2710CD551CAD43DE00F46F7E /* AdminsViewController.swift */,
-				273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */,
-				273B0B591CAF3CE400454E94 /* AdminCardVC.swift */,
-				273B0B5A1CAF3CE400454E94 /* AdminCardVC.xib */,
+				2710CD551CAD43DE00F46F7E /* Admins.swift */,
+				273B0B591CAF3CE400454E94 /* AdminCard.swift */,
+				273B0B5A1CAF3CE400454E94 /* AdminCard.xib */,
 			);
-			name = AdminsViewController;
+			name = Admins;
 			sourceTree = "<group>";
 		};
 		274E7E341CB165950003DA19 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
+				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
 				27B43FE71CB080F8000D9E98 /* SubjectData.swift */,
 				27B43FE91CB086C8000D9E98 /* AdminData.swift */,
 				27B43FEB1CB08733000D9E98 /* CommunityData.swift */,
@@ -252,12 +286,22 @@
 			name = Data;
 			sourceTree = "<group>";
 		};
-		274E7E371CB179010003DA19 /* RegistrationViewController */ = {
+		274E7E371CB179010003DA19 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
-				274E7E351CB171BB0003DA19 /* RegistrationViewController.swift */,
+				274E7E351CB171BB0003DA19 /* Registration.swift */,
+				2702C8261CB9675D0095EE74 /* ConfirmCode.swift */,
+				275E55891CB935F9003A60FD /* CustomSegue */,
 			);
-			name = RegistrationViewController;
+			name = Registration;
+			sourceTree = "<group>";
+		};
+		275E55891CB935F9003A60FD /* CustomSegue */ = {
+			isa = PBXGroup;
+			children = (
+				275E558A1CB9366B003A60FD /* RegistrationSegue.swift */,
+			);
+			name = CustomSegue;
 			sourceTree = "<group>";
 		};
 		CBFCE4EAA70AD3B8A5F33887 /* Frameworks */ = {
@@ -385,9 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */,
-				271BF6F21CB003AD005144D6 /* SubjectCardVC.xib in Resources */,
-				27B43FE21CB039A7000D9E98 /* CommunityCardVC.xib in Resources */,
-				273B0B5C1CAF3CE400454E94 /* AdminCardVC.xib in Resources */,
+				271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */,
+				27B43FE21CB039A7000D9E98 /* CommunityCard.xib in Resources */,
+				273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */,
 				271719DF1CAD3C3900123816 /* Assets.xcassets in Resources */,
 				271719E21CAD3C3900123816 /* Main.storyboard in Resources */,
 			);
@@ -465,25 +509,29 @@
 				2710CD611CAD58B400F46F7E /* Admin.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
-				2710CD561CAD43DE00F46F7E /* AdminsViewController.swift in Sources */,
+				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
 				271719DD1CAD3C3900123816 /* CommHub.xcdatamodeld in Sources */,
 				273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */,
 				271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */,
+				2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */,
 				271BF6F71CB0198C005144D6 /* Community.swift in Sources */,
 				27B43FE81CB080F8000D9E98 /* SubjectData.swift in Sources */,
-				273B0B5B1CAF3CE400454E94 /* AdminCardVC.swift in Sources */,
-				274E7E361CB171BB0003DA19 /* RegistrationViewController.swift in Sources */,
+				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
+				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
-				271BF6F11CB003AD005144D6 /* SubjectCardVC.swift in Sources */,
+				2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */,
+				271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */,
 				27ADFA531CB181AF00B4C308 /* SessionData.swift in Sources */,
 				27ADFA551CB1824400B4C308 /* Session.swift in Sources */,
 				271BF6F51CB01808005144D6 /* Subject.swift in Sources */,
 				27B43FE61CB06251000D9E98 /* CommutityCellView.swift in Sources */,
-				271BF6EE1CAFEF55005144D6 /* SubjectsViewController.swift in Sources */,
-				27B43FE41CB0567F000D9E98 /* CommunitiesViewController.swift in Sources */,
+				271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */,
+				27B43FE41CB0567F000D9E98 /* Communities.swift in Sources */,
 				27B43FEC1CB08733000D9E98 /* CommunityData.swift in Sources */,
-				27B43FE11CB039A7000D9E98 /* CommunityCardVC.swift in Sources */,
+				27B43FE11CB039A7000D9E98 /* CommunityCard.swift in Sources */,
 				27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */,
+				275E558D1CB93C90003A60FD /* Container.swift in Sources */,
+				275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */,
 				27B43FEA1CB086C8000D9E98 /* AdminData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,6 +669,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CommHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.CommHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -634,6 +683,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CommHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.CommHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

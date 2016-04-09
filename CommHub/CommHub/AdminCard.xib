@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="AdminCardVC" customModule="CommHub" customModuleProvider="target">
+        <customObject id="-2" userLabel="File's Owner" customClass="AdminCardViewController" customModule="CommHub" customModuleProvider="target">
             <connections>
                 <outlet property="contactView" destination="5og-Hb-Scx" id="hQc-pQ-Ykr"/>
                 <outlet property="deleteButton" destination="PUb-wz-Wwl" id="Bkh-HG-6K1"/>
@@ -13,8 +13,7 @@
                 <outlet property="linkTextField" destination="29t-dN-3OF" id="5Gu-2W-zmz"/>
                 <outlet property="phoneNumberTextField" destination="nP3-Rf-bWu" id="5Db-lC-n19"/>
                 <outlet property="secondNameTextField" destination="aSN-iz-mhK" id="giS-Pl-2sb"/>
-                <outlet property="titleLabel" destination="OSS-yK-uOF" id="usf-xk-BHN"/>
-                <outlet property="titleLable" destination="OSS-yK-uOF" id="KZC-Ek-GV0"/>
+                <outlet property="titleLabel" destination="OSS-yK-uOF" id="HP0-Ge-wpY"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -49,14 +48,6 @@
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
-                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSS-yK-uOF">
-                            <rect key="frame" x="31" y="268" width="253" height="17"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add Admin/Redact Admin" id="num-qt-PlK">
-                                <font key="font" size="16" name="Comfortaa"/>
-                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXp-xA-dSY">
@@ -115,10 +106,18 @@ Gw
                                 </connections>
                             </buttonCell>
                         </button>
+                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSS-yK-uOF">
+                            <rect key="frame" x="32" y="268" width="253" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add Admin/Redact Admin" id="num-qt-PlK">
+                                <font key="font" size="16" name="Comfortaa"/>
+                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                        </textField>
                     </subviews>
                 </customView>
             </subviews>
-            <point key="canvasLocation" x="451.5" y="336"/>
+            <point key="canvasLocation" x="451.5" y="321"/>
         </customView>
     </objects>
     <resources>

@@ -9,7 +9,7 @@
 import Cocoa
 import AppKit
 
-class CommunityCardVC: NSViewController {
+class CommunityCardViewController: NSViewController {
 
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var commuyityNameTextField: NSTextField!
