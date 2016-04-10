@@ -542,7 +542,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="confirmCode:" target="6u9-Tx-8Ba" id="3qx-ua-MWC"/>
-                                    <segue destination="oIz-I8-XRH" kind="custom" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="n0z-NT-pcH"/>
+                                    <segue destination="oIz-I8-XRH" kind="custom" identifier="toMainStatistics" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="n0z-NT-pcH"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-ng-4Nv">
@@ -555,7 +555,7 @@ Gw
 </string>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="XfG-lQ-9wD" kind="custom" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="7RQ-Pj-WUQ"/>
+                                    <segue destination="XfG-lQ-9wD" kind="custom" identifier="backToRegistration" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="7RQ-Pj-WUQ"/>
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kae-L4-n1f">
@@ -585,12 +585,12 @@ Gw
             </objects>
             <point key="canvasLocation" x="603.5" y="900"/>
         </scene>
-        <!--View Controller-->
+        <!--Statistics Window-->
         <scene sceneID="N5g-vY-6jC">
             <objects>
-                <viewController storyboardIdentifier="mainWindow" id="oIz-I8-XRH" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainWindow" id="oIz-I8-XRH" customClass="StatisticsWindow" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="BJt-2C-wsA">
-                        <rect key="frame" x="0.0" y="0.0" width="1079" height="589"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1079" height="588"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <scrollView fixedFrame="YES" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZS-h1-lb0">
@@ -652,7 +652,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="IuM-OU-CMO">
-                                                            <rect key="frame" x="162" y="1" width="124.5" height="17"/>
+                                                            <rect key="frame" x="162" y="1" width="125" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CWH-va-FCN">
@@ -684,7 +684,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="Y72-37-IMI">
-                                                            <rect key="frame" x="289.5" y="1" width="96.5" height="17"/>
+                                                            <rect key="frame" x="289.5" y="1" width="97" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-x7-dOq">
@@ -748,7 +748,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="2iz-Ed-VDa">
-                                                            <rect key="frame" x="497" y="1" width="100.5" height="17"/>
+                                                            <rect key="frame" x="497" y="1" width="101" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bl2-nQ-fsV">
@@ -812,7 +812,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="zdP-fX-lGH">
-                                                            <rect key="frame" x="697.5" y="1" width="102.5" height="17"/>
+                                                            <rect key="frame" x="697.5" y="1" width="103" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q9l-Q2-Eaz">
@@ -876,7 +876,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="XpJ-wZ-Uqb">
-                                                            <rect key="frame" x="870" y="1" width="103.5" height="17"/>
+                                                            <rect key="frame" x="870" y="1" width="104" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-yc-NbL">
@@ -908,7 +908,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="GhY-DY-1qb">
-                                                            <rect key="frame" x="976.5" y="1" width="98.5" height="17"/>
+                                                            <rect key="frame" x="976.5" y="1" width="99" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEw-qf-hrs">
@@ -932,7 +932,7 @@ Gw
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="JKK-k4-hSc">
-                                    <rect key="frame" x="1" y="515" width="1077" height="15"/>
+                                    <rect key="frame" x="1" y="8" width="0.0" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="afC-Oz-kWD">
@@ -944,12 +944,22 @@ Gw
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableHeaderView>
                             </scrollView>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-3U-dqF">
+                                <rect key="frame" x="28" y="544" width="104" height="32"/>
+                                <buttonCell key="cell" type="push" title="delete Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="prQ-ia-CGW">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="deleteLog:" target="oIz-I8-XRH" id="udZ-8B-bfV"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                 </viewController>
                 <customObject id="KrO-h1-UET" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="626.5" y="1526.5"/>
+            <point key="canvasLocation" x="555.5" y="1523"/>
         </scene>
         <!--Subjects View Controller-->
         <scene sceneID="oac-dw-OeB">
@@ -1229,7 +1239,7 @@ Gw
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <segue destination="6u9-Tx-8Ba" kind="custom" identifier="SendPhoneNumber" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="zsi-mV-lZd"/>
+                                    <segue destination="6u9-Tx-8Ba" kind="custom" identifier="toConfirmCode" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="zsi-mV-lZd"/>
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u2R-qH-pEP">

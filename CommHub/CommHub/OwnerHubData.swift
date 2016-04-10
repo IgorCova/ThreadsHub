@@ -76,7 +76,7 @@ class OwnerHubData {
     }
 */
 
-    func getLogInfo() -> (myOwnerHubID: Int, mySessionID: String) {
+    func getLogInfo() -> (Int, String) {
 
         var myOwnerHubID: Int = 0
         var mySessionID: String = ""
@@ -85,13 +85,11 @@ class OwnerHubData {
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
         
         let fetchRequest = NSFetchRequest(entityName: "Log")
-        
+
         do {
             let fetchResult = try context.executeFetchRequest(fetchRequest) as! [Log]
-            
-            if fetchResult.isEmpty {
-                
-            } else {
+            print(fetchResult)
+            if !fetchResult.isEmpty {
                 myOwnerHubID = (fetchResult[0].ownerHubID as! Int)
                 mySessionID = (fetchResult[0].sessionID! as String)
             }
@@ -99,7 +97,6 @@ class OwnerHubData {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
- 
         
         return (myOwnerHubID , mySessionID)
     }
@@ -107,13 +104,15 @@ class OwnerHubData {
     func deleteLog() {
         let appDelegate: AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
-        let coord = appDelegate.persistentStoreCoordinator
         
         let fetchRequest = NSFetchRequest(entityName: "Log")
-        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-        
+
         do {
-            try coord.executeRequest(deleteRequest, withContext: context)
+            let fetchResult = try context.executeFetchRequest(fetchRequest) as! [Log]
+            for element in fetchResult {
+                context.deleteObject(element as NSManagedObject)
+            }
+            try context.save()
         } catch let error as NSError {
             debugPrint(error)
         }
@@ -123,15 +122,16 @@ class OwnerHubData {
         let appDelegate: AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext
         let newMember = NSEntityDescription.insertNewObjectForEntityForName("Log", inManagedObjectContext: context) as! Log
-        
-        newMember.ownerHubID = NSNumber(integer: member.id)
+        print("Начало сохранения")
+        newMember.ownerHubID = member.id
         newMember.sessionID = member.sessionId
         
         do {
-            self.deleteLog()
+            //rself.deleteLog()
             try context.save()
+            print("Успешно")
         } catch {
-            
+            print("Неуспешно")
         }
     }
 

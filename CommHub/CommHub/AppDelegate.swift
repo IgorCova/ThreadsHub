@@ -172,12 +172,12 @@ internal let HubService = "http://commhub.org/CommHubService.svc"
 internal var MyDID = NSUUID().UUIDString
 internal var MySessionID : String {
     get {
-        return OwnerHubData().getLogInfo().mySessionID
+        return OwnerHubData().getLogInfo().1
     }
 }
 internal var MyOwnerHubID : Int {
     get {
-        return OwnerHubData().getLogInfo().myOwnerHubID
+        return OwnerHubData().getLogInfo().0
     }
 }
 

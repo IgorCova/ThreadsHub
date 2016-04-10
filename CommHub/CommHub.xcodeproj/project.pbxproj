@@ -10,6 +10,7 @@
 		1ACD47AAB67387A3C4C1BF26 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F696759C0ACC1A003AAEA508 /* Pods.framework */; };
 		2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702C8261CB9675D0095EE74 /* ConfirmCode.swift */; };
 		2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2702C82D1CB9ADB60095EE74 /* MainWindowController.swift */; };
+		270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270884941CBA999800780F07 /* StatisticsWindow.swift */; };
 		2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD551CAD43DE00F46F7E /* Admins.swift */; };
 		2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2710CD571CAD46E600F46F7E /* Icon.xcassets */; };
 		2710CD611CAD58B400F46F7E /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD601CAD58B400F46F7E /* Admin.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		2702C8261CB9675D0095EE74 /* ConfirmCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmCode.swift; sourceTree = "<group>"; };
 		2702C82D1CB9ADB60095EE74 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		270884941CBA999800780F07 /* StatisticsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsWindow.swift; sourceTree = "<group>"; };
 		2710CD551CAD43DE00F46F7E /* Admins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admins.swift; sourceTree = "<group>"; };
 		2710CD571CAD46E600F46F7E /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		2710CD601CAD58B400F46F7E /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				275E558C1CB93C90003A60FD /* Container.swift */,
+				270884941CBA999800780F07 /* StatisticsWindow.swift */,
 				273B0B4C1CAE6FB500454E94 /* Admins */,
 				271BF6EC1CAFEEEB005144D6 /* Subjects */,
 				271BF6F31CB0135F005144D6 /* Communities */,
@@ -506,6 +509,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */,
 				2710CD611CAD58B400F46F7E /* Admin.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,

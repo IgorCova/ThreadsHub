@@ -13,8 +13,6 @@ import Foundation
 import CoreData
 
 extension Log {
-
     @NSManaged var ownerHubID: NSNumber?
     @NSManaged var sessionID: String?
-
 }

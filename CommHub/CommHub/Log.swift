@@ -9,9 +9,7 @@
 import Foundation
 import CoreData
 
-
 class Log: NSManagedObject {
-
 // Insert code here to add functionality to your managed object subclass
 
 }
