@@ -13,7 +13,7 @@
 		270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270884941CBA999800780F07 /* StatisticsWindow.swift */; };
 		2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD551CAD43DE00F46F7E /* Admins.swift */; };
 		2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2710CD571CAD46E600F46F7E /* Icon.xcassets */; };
-		2710CD611CAD58B400F46F7E /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD601CAD58B400F46F7E /* Admin.swift */; };
+		2710CD611CAD58B400F46F7E /* AdminComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2710CD601CAD58B400F46F7E /* AdminComm.swift */; };
 		271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719D71CAD3C3900123816 /* AppDelegate.swift */; };
 		271719DD1CAD3C3900123816 /* CommHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 271719DB1CAD3C3900123816 /* CommHub.xcdatamodeld */; };
 		271719DF1CAD3C3900123816 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 271719DE1CAD3C3900123816 /* Assets.xcassets */; };
@@ -23,8 +23,8 @@
 		271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6ED1CAFEF55005144D6 /* Subjects.swift */; };
 		271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCard.swift */; };
 		271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271BF6F01CB003AD005144D6 /* SubjectCard.xib */; };
-		271BF6F51CB01808005144D6 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* Subject.swift */; };
-		271BF6F71CB0198C005144D6 /* Community.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F61CB0198C005144D6 /* Community.swift */; };
+		271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* SubjectComm.swift */; };
+		271BF6F71CB0198C005144D6 /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F61CB0198C005144D6 /* Comm.swift */; };
 		273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */; };
 		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
 		273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCard.xib */; };
@@ -37,13 +37,13 @@
 		27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */; };
 		27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */; };
 		27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5B1CB1940500B4C308 /* Log.swift */; };
-		27B43FE11CB039A7000D9E98 /* CommunityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */; };
-		27B43FE21CB039A7000D9E98 /* CommunityCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B43FE01CB039A7000D9E98 /* CommunityCard.xib */; };
-		27B43FE41CB0567F000D9E98 /* Communities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE31CB0567F000D9E98 /* Communities.swift */; };
-		27B43FE61CB06251000D9E98 /* CommutityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE51CB06251000D9E98 /* CommutityCellView.swift */; };
-		27B43FE81CB080F8000D9E98 /* SubjectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectData.swift */; };
-		27B43FEA1CB086C8000D9E98 /* AdminData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminData.swift */; };
-		27B43FEC1CB08733000D9E98 /* CommunityData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommunityData.swift */; };
+		27B43FE11CB039A7000D9E98 /* CommCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FDF1CB039A7000D9E98 /* CommCard.swift */; };
+		27B43FE21CB039A7000D9E98 /* CommCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B43FE01CB039A7000D9E98 /* CommCard.xib */; };
+		27B43FE41CB0567F000D9E98 /* CommDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE31CB0567F000D9E98 /* CommDict.swift */; };
+		27B43FE61CB06251000D9E98 /* CommCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE51CB06251000D9E98 /* CommCellView.swift */; };
+		27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */; };
+		27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminCommData.swift */; };
+		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,7 @@
 		270884941CBA999800780F07 /* StatisticsWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticsWindow.swift; sourceTree = "<group>"; };
 		2710CD551CAD43DE00F46F7E /* Admins.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admins.swift; sourceTree = "<group>"; };
 		2710CD571CAD46E600F46F7E /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
-		2710CD601CAD58B400F46F7E /* Admin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		2710CD601CAD58B400F46F7E /* AdminComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminComm.swift; sourceTree = "<group>"; };
 		271719D41CAD3C3900123816 /* CommHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		271719D71CAD3C3900123816 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		271719DC1CAD3C3900123816 /* CommHub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CommHub.xcdatamodel; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 		271BF6ED1CAFEF55005144D6 /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		271BF6EF1CB003AD005144D6 /* SubjectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCard.swift; sourceTree = "<group>"; };
 		271BF6F01CB003AD005144D6 /* SubjectCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectCard.xib; sourceTree = "<group>"; };
-		271BF6F41CB01808005144D6 /* Subject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
-		271BF6F61CB0198C005144D6 /* Community.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Community.swift; sourceTree = "<group>"; };
+		271BF6F41CB01808005144D6 /* SubjectComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectComm.swift; sourceTree = "<group>"; };
+		271BF6F61CB0198C005144D6 /* Comm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
 		273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCellView.swift; sourceTree = "<group>"; };
 		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
 		273B0B5A1CAF3CE400454E94 /* AdminCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCard.xib; sourceTree = "<group>"; };
@@ -99,13 +99,13 @@
 		27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerHub.swift; sourceTree = "<group>"; };
 		27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		27ADFA5B1CB1940500B4C308 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityCard.swift; sourceTree = "<group>"; };
-		27B43FE01CB039A7000D9E98 /* CommunityCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommunityCard.xib; sourceTree = "<group>"; };
-		27B43FE31CB0567F000D9E98 /* Communities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Communities.swift; sourceTree = "<group>"; };
-		27B43FE51CB06251000D9E98 /* CommutityCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommutityCellView.swift; sourceTree = "<group>"; };
-		27B43FE71CB080F8000D9E98 /* SubjectData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectData.swift; sourceTree = "<group>"; };
-		27B43FE91CB086C8000D9E98 /* AdminData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminData.swift; sourceTree = "<group>"; };
-		27B43FEB1CB08733000D9E98 /* CommunityData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityData.swift; sourceTree = "<group>"; };
+		27B43FDF1CB039A7000D9E98 /* CommCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCard.swift; sourceTree = "<group>"; };
+		27B43FE01CB039A7000D9E98 /* CommCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommCard.xib; sourceTree = "<group>"; };
+		27B43FE31CB0567F000D9E98 /* CommDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommDict.swift; sourceTree = "<group>"; };
+		27B43FE51CB06251000D9E98 /* CommCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCellView.swift; sourceTree = "<group>"; };
+		27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCommData.swift; sourceTree = "<group>"; };
+		27B43FE91CB086C8000D9E98 /* AdminCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCommData.swift; sourceTree = "<group>"; };
+		27B43FEB1CB08733000D9E98 /* CommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommData.swift; sourceTree = "<group>"; };
 		430D099C89C707F533D927D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CDEEBEC4F849F7F1ED84E881 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F696759C0ACC1A003AAEA508 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,9 +155,9 @@
 			children = (
 				27ADFA541CB1824400B4C308 /* Session.swift */,
 				27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */,
-				2710CD601CAD58B400F46F7E /* Admin.swift */,
-				271BF6F41CB01808005144D6 /* Subject.swift */,
-				271BF6F61CB0198C005144D6 /* Community.swift */,
+				2710CD601CAD58B400F46F7E /* AdminComm.swift */,
+				271BF6F41CB01808005144D6 /* SubjectComm.swift */,
+				271BF6F61CB0198C005144D6 /* Comm.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */,
-				27B43FE51CB06251000D9E98 /* CommutityCellView.swift */,
+				27B43FE51CB06251000D9E98 /* CommCellView.swift */,
 			);
 			name = CellView;
 			sourceTree = "<group>";
@@ -260,9 +260,9 @@
 		271BF6F31CB0135F005144D6 /* Communities */ = {
 			isa = PBXGroup;
 			children = (
-				27B43FE31CB0567F000D9E98 /* Communities.swift */,
-				27B43FDF1CB039A7000D9E98 /* CommunityCard.swift */,
-				27B43FE01CB039A7000D9E98 /* CommunityCard.xib */,
+				27B43FE31CB0567F000D9E98 /* CommDict.swift */,
+				27B43FDF1CB039A7000D9E98 /* CommCard.swift */,
+				27B43FE01CB039A7000D9E98 /* CommCard.xib */,
 			);
 			name = Communities;
 			sourceTree = "<group>";
@@ -282,9 +282,9 @@
 			children = (
 				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
 				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
-				27B43FE71CB080F8000D9E98 /* SubjectData.swift */,
-				27B43FE91CB086C8000D9E98 /* AdminData.swift */,
-				27B43FEB1CB08733000D9E98 /* CommunityData.swift */,
+				27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */,
+				27B43FE91CB086C8000D9E98 /* AdminCommData.swift */,
+				27B43FEB1CB08733000D9E98 /* CommData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -433,7 +433,7 @@
 			files = (
 				2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */,
 				271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */,
-				27B43FE21CB039A7000D9E98 /* CommunityCard.xib in Resources */,
+				27B43FE21CB039A7000D9E98 /* CommCard.xib in Resources */,
 				273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */,
 				271719DF1CAD3C3900123816 /* Assets.xcassets in Resources */,
 				271719E21CAD3C3900123816 /* Main.storyboard in Resources */,
@@ -510,7 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */,
-				2710CD611CAD58B400F46F7E /* Admin.swift in Sources */,
+				2710CD611CAD58B400F46F7E /* AdminComm.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
 				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
@@ -518,8 +518,8 @@
 				273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */,
 				271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */,
 				2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */,
-				271BF6F71CB0198C005144D6 /* Community.swift in Sources */,
-				27B43FE81CB080F8000D9E98 /* SubjectData.swift in Sources */,
+				271BF6F71CB0198C005144D6 /* Comm.swift in Sources */,
+				27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */,
 				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
 				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
@@ -527,16 +527,16 @@
 				271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */,
 				27ADFA531CB181AF00B4C308 /* SessionData.swift in Sources */,
 				27ADFA551CB1824400B4C308 /* Session.swift in Sources */,
-				271BF6F51CB01808005144D6 /* Subject.swift in Sources */,
-				27B43FE61CB06251000D9E98 /* CommutityCellView.swift in Sources */,
+				271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */,
+				27B43FE61CB06251000D9E98 /* CommCellView.swift in Sources */,
 				271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */,
-				27B43FE41CB0567F000D9E98 /* Communities.swift in Sources */,
-				27B43FEC1CB08733000D9E98 /* CommunityData.swift in Sources */,
-				27B43FE11CB039A7000D9E98 /* CommunityCard.swift in Sources */,
+				27B43FE41CB0567F000D9E98 /* CommDict.swift in Sources */,
+				27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */,
+				27B43FE11CB039A7000D9E98 /* CommCard.swift in Sources */,
 				27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */,
 				275E558D1CB93C90003A60FD /* Container.swift in Sources */,
 				275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */,
-				27B43FEA1CB086C8000D9E98 /* AdminData.swift in Sources */,
+				27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

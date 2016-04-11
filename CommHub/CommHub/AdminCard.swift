@@ -35,15 +35,15 @@ class AdminCardViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
-    func setCard(admin: Admin?, title: String, deleteButtonHide: BooleanLiteralType) {
+    func setCard(adminComm: AdminComm?, title: String, deleteButtonHide: BooleanLiteralType) {
         titleLabel.stringValue = title
         deleteButton.hidden = deleteButtonHide
         
-        if admin != nil {
-            firstNameTextField.stringValue = admin!.firstName!
-            secondNameTextField.stringValue = admin!.secondName!
-            phoneNumberTextField.stringValue = admin!.phoneNumber!
-            linkTextField.stringValue = admin!.link
+        if let admin = adminComm {
+            firstNameTextField.stringValue = admin.firstName
+            secondNameTextField.stringValue = admin.lastName
+            phoneNumberTextField.stringValue = admin.phone
+            linkTextField.stringValue = admin.linkFB!
         }
     }
     

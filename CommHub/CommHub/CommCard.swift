@@ -9,7 +9,7 @@
 import Cocoa
 import AppKit
 
-class CommunityCardViewController: NSViewController {
+class CommCardViewController: NSViewController {
 
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var commuyityNameTextField: NSTextField!
@@ -28,11 +28,12 @@ class CommunityCardViewController: NSViewController {
     }
     
     func fillSubjectsButton() {
-        let subjects = SubjectData().getSubjects()
-        subjectPopUpButton.removeAllItems()
-        for subject in subjects {
-            subjectPopUpButton.menu?.addItemWithTitle(subject.subjectName, action: #selector(self.didSelectItem), keyEquivalent: "")
-            
+        SubjectCommData().wsSubjectComm_ReadDict(MyOwnerHubID) { (dirSubjectComm, successful) in
+            self.subjectPopUpButton.removeAllItems()
+            for subject in dirSubjectComm {
+                self.subjectPopUpButton.menu?.addItemWithTitle(subject.name, action: #selector(self.didSelectItem), keyEquivalent: "")
+                
+            }
         }
     }
     
@@ -41,20 +42,20 @@ class CommunityCardViewController: NSViewController {
     }
     
     func fillAdminsButton() {
-        let admins = AdminData().getAdmins()
-        adminsPopUpButton.removeAllItems()
-        for admin in admins {
-            adminsPopUpButton.addItemWithTitle(admin.firstName! + " " + admin.secondName!)
+        AdminCommData().wsAdminComm_ReadDict(MyOwnerHubID) { (dirAdminsComm, successful) in
+            self.adminsPopUpButton.removeAllItems()
+            for admin in dirAdminsComm {
+                self.adminsPopUpButton.addItemWithTitle(admin.firstName + " " + admin.lastName)
+            }
         }
-        
     }
     
-    func setCard(community: Community?, title: String, deleteButtonHide: Bool) {
+    func setCard(community: Comm?, title: String, deleteButtonHide: Bool) {
         self.titleLabel.stringValue = title
         self.deleteButton.hidden = deleteButtonHide
         
         if community != nil {
-            self.commuyityNameTextField.stringValue = (community?.communityName)!
+            self.commuyityNameTextField.stringValue = (community?.name)!
             self.adminsPopUpButton.itemWithTitle((community?.subjectName)!)
             self.subjectPopUpButton.itemWithTitle((community?.adminName)!)
             self.linkTextField.stringValue = (community?.link)!

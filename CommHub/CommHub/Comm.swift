@@ -9,24 +9,24 @@
 import Foundation
 import AppKit
 
-class Community {
+class Comm {
     var id: Int
-    var communityName: String
-    var communityProfileImage: NSImage?
+    var name: String
+    //var communityProfileImage: NSImage?
     var subjectID: Int
     var subjectName: String
     var adminID: Int
     var adminName: String
     var link = ""
     
-    init(id: Int, communityName: String, subject: Subject, admin: Admin, profileImage: NSImage?, link: String) {
+    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm/*, profileImage: NSImage?*/, link: String) {
         self.id = id
-        self.communityName = communityName
+        self.name = name
         self.subjectID = subject.id
-        self.subjectName = subject.subjectName
+        self.subjectName = subject.name
         self.adminID = admin.id
-        self.adminName = admin.firstName! + " " + admin.secondName!
-        self.communityProfileImage = profileImage
+        self.adminName = admin.firstName + " " + admin.lastName
+        //self.communityProfileImage = profileImage
         self.link = link
     }
     

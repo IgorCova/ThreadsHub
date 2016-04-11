@@ -8,13 +8,13 @@
 
 import Foundation
 
-class Subject {
+class SubjectComm {
     var id: Int
-    var subjectName: String
+    var name: String
     
-    init(id: Int, subjectName: String) {
+    init(id: Int, name: String) {
         self.id = id
-        self.subjectName = subjectName
+        self.name = name
     }
     
 }

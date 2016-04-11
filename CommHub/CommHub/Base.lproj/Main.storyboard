@@ -1056,10 +1056,10 @@ Gw
             </objects>
             <point key="canvasLocation" x="835.5" y="408"/>
         </scene>
-        <!--Communities View Controller-->
+        <!--Comm Dict View Controller-->
         <scene sceneID="5cP-7u-isD">
             <objects>
-                <viewController id="EmH-Ds-DTA" customClass="CommunitiesViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EmH-Ds-DTA" customClass="CommDictViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Sr3-mp-e5C">
                         <rect key="frame" x="0.0" y="0.0" width="588" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1077,7 +1077,7 @@ Gw
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="256.66015625" minWidth="40" maxWidth="1000" id="JNR-Ro-1yw">
+                                                <tableColumn width="256.66015625" minWidth="40" maxWidth="1000" id="JNR-Ro-1yw" userLabel="Comm">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Community">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -1090,7 +1090,7 @@ Gw
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="mainCell" id="jkE-74-uDg" customClass="CommutityCellView" customModule="CommHub" customModuleProvider="target">
+                                                        <tableCellView identifier="commNameCell" id="jkE-74-uDg" customClass="CommCellView" customModule="CommHub" customModuleProvider="target">
                                                             <rect key="frame" x="2" y="17" width="257" height="45"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>

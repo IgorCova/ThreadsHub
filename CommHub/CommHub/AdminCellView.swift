@@ -20,15 +20,15 @@ class AdminCellView: NSTableCellView {
         //self.adminImage.layer?.cornerRadius = self.adminImage.frame.size.width/2
     }
     
-    func setCell(admin:Admin) {
-        self.adminImage.image = admin.profileImage
-        self.adminFullName.stringValue = admin.firstName! + " " + admin.secondName!
-        self.phoneNumber.stringValue = admin.phoneNumber ?? ""
-        self.link = admin.link
+    func setCell(admin: AdminComm) {
+        //self.adminImage.image = admin.profileImage
+        self.adminFullName.stringValue = admin.firstName + " " + admin.lastName
+        self.phoneNumber.stringValue = admin.phone ?? ""
+        self.link = admin.linkFB!
     }
     
     @IBAction func followLink(sender: NSButton) {
-        //let url = NSURL(string: link)
-        //NSWorkspace.sharedWorkspace().openURL(url!)
+        let url = NSURL(string: "https://www.facebook.com/" + link)
+        NSWorkspace.sharedWorkspace().openURL(url!)
     }
 }

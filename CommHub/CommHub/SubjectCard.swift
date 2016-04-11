@@ -22,11 +22,11 @@ class SubjectCardViewController: NSViewController {
         customView.layer?.backgroundColor = NSColor.whiteColor().CGColor
     }
     
-    func setCard(subject: Subject?, title: String, deleteButtonHide: Bool) {
+    func setCard(subject: SubjectComm?, title: String, deleteButtonHide: Bool) {
         self.titleLabel.stringValue = title
         self.delete.hidden = deleteButtonHide
         if subject != nil {
-            self.subjectNameTextField.stringValue = subject!.subjectName
+            self.subjectNameTextField.stringValue = subject!.name
         }
     }
     

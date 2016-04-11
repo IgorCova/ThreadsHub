@@ -11,11 +11,16 @@ import Cocoa
 class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     @IBOutlet var tableView: NSTableView!
-    var subjects: [Subject] = []
+    var dirSubjects: [SubjectComm] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        subjects = SubjectData().getSubjects()
+        SubjectCommData().wsSubjectComm_ReadDict(MyOwnerHubID, completion: { (dirSubjectComm, successful) in
+            if successful {
+                self.dirSubjects = dirSubjectComm
+                self.tableView.reloadData()
+            }
+        })
     }
     
     override func viewWillAppear() {
@@ -24,15 +29,14 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        // Сюда должен прийти массив с базы...
         
-        return subjects.count ?? 0
+        return dirSubjects.count ?? 0
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
             let cellIdentifier = "SubjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: self) as! NSTableCellView
-            cell.textField?.stringValue = subjects[row].subjectName
+            cell.textField?.stringValue = dirSubjects[row].name
             
             return cell
     }
@@ -58,7 +62,7 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
         if myTableViewFromNotification.selectedRow > -1 {
             let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-            subview?.setCard(subjects[index], title: "Edit the subject", deleteButtonHide: false)
+            subview?.setCard(dirSubjects[index], title: "Edit the subject", deleteButtonHide: false)
             
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)

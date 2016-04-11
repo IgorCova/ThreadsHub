@@ -8,41 +8,48 @@
 
 import Cocoa
 
-class CommunitiesViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet var tableView: NSTableView!
-    var communities = [Community]()
+    var comm = [Comm]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        CommData().wsComm_ReadDict(MyOwnerHubID) { (dirComm, successful) in
+            if successful {
+                self.comm = dirComm
+                self.tableView.reloadData()
+                
+            }
+        }
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         // Сюда должен прийти массив с базы...
-        return communities.count ?? 0
+        return comm.count ?? 0
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var cellIdentifier = "mainCell/subjectNameCell/adminNameCell"
+        var cellIdentifier = "commNameCell/subjectNameCell/adminNameCell"
         
-        switch tableView {
+        switch tableColumn! {
         case tableView.tableColumns[0]:
-            cellIdentifier = "mainCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommutityCellView
-            cell.setCell(communities[row])
+            cellIdentifier = "commNameCell"
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
+            cell.setCell(comm[row])
             
             return cell
         case tableView.tableColumns[1]:
             cellIdentifier = "subjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = communities[row].subjectName
+            cell.textField?.stringValue = comm[row].subjectName
+            print("---------------------------------------------------" + comm[row].subjectName)
             
             return cell
         default:
             cellIdentifier = "adminNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = communities[row].adminName
+            cell.textField?.stringValue = comm[row].adminName
             
             return cell
             
@@ -51,7 +58,7 @@ class CommunitiesViewController: NSViewController, NSTableViewDelegate, NSTableV
     }
     
     @IBAction func addNewCommunity(sender: AnyObject) {
-        let subview = CommunityCardViewController(nibName: "CommunityCard", bundle: nil)!
+        let subview = CommCardViewController(nibName: "CommCard", bundle: nil)!
         subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
         subview.setCard(nil, title: "Add a new community", deleteButtonHide: true)
         
@@ -69,9 +76,9 @@ class CommunitiesViewController: NSViewController, NSTableViewDelegate, NSTableV
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow > -1 {
-            let subview = CommunityCardViewController(nibName: "CommunityCard", bundle: nil)
+            let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-            subview?.setCard(communities[index], title: "Edit the community", deleteButtonHide: false)
+            subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
             
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)
