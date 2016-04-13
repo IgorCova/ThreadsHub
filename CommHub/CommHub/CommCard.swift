@@ -15,9 +15,15 @@ class CommCardViewController: NSViewController {
     @IBOutlet var commuyityNameTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
     
+    @IBOutlet var groupIDtextField: NSTextField!
+    
     @IBOutlet var adminsPopUpButton: NSPopUpButton!
     @IBOutlet var subjectPopUpButton: NSPopUpButton!
     @IBOutlet var deleteButton: NSButton!
+    var comm: Comm?
+    var subjectsItem = [(index: Int, subject: SubjectComm)]()
+    var adminsItem = [(index: Int, admin: AdminComm)]()
+
 
     
     override func viewDidLoad() {
@@ -25,32 +31,37 @@ class CommCardViewController: NSViewController {
         fillSubjectsButton()
         fillAdminsButton()
 
+
     }
     
     func fillSubjectsButton() {
-        SubjectCommData().wsSubjectComm_ReadDict(MyOwnerHubID) { (dirSubjectComm, successful) in
+        SubjectCommData().wsSubjectComm_ReadDict {(dirSubjectComm, successful) in
             self.subjectPopUpButton.removeAllItems()
+            var i = 0
             for subject in dirSubjectComm {
-                self.subjectPopUpButton.menu?.addItemWithTitle(subject.name, action: #selector(self.didSelectItem), keyEquivalent: "")
-                
+                self.subjectPopUpButton.addItemWithTitle(subject.name)
+                self.subjectsItem.append((index: i, subject: subject))
+                i += 1
             }
         }
-    }
-    
-    func didSelectItem() {
-        //subjectPopUpButton.setTitle((subjectPopUpButton.selectedItem?.title)!)// Может Быть
     }
     
     func fillAdminsButton() {
-        AdminCommData().wsAdminComm_ReadDict(MyOwnerHubID) { (dirAdminsComm, successful) in
+        AdminCommData().wsAdminComm_ReadDict { (dirAdminsComm, successful) in
             self.adminsPopUpButton.removeAllItems()
+            var i = 0
             for admin in dirAdminsComm {
                 self.adminsPopUpButton.addItemWithTitle(admin.firstName + " " + admin.lastName)
+                self.adminsItem.append((index: i, admin: admin))
+                i += 1
             }
         }
     }
     
+    
     func setCard(community: Comm?, title: String, deleteButtonHide: Bool) {
+        self.comm = community
+        
         self.titleLabel.stringValue = title
         self.deleteButton.hidden = deleteButtonHide
         
@@ -63,15 +74,59 @@ class CommCardViewController: NSViewController {
         
     }
     
+    func saveInfo() {
+        // Add alert about empty name.
+        var subjectItem: SubjectComm?
+        var adminItem: AdminComm?
+        
+        for item in subjectsItem {
+            if item.index == subjectPopUpButton.indexOfSelectedItem {
+                subjectItem = item.subject
+            }
+        }
+        
+        for item in adminsItem {
+            if item.index == adminsPopUpButton.indexOfSelectedItem {
+                adminItem = item.admin
+            }
+        }
+        
+        if comm == nil {
+            comm = Comm(
+                 id: 0
+                ,name: commuyityNameTextField.stringValue
+                ,subject: subjectItem!
+                ,admin: adminItem!
+                ,link: linkTextField.stringValue
+                ,groupID: Int(groupIDtextField.stringValue)!)
+        } else {
+            comm?.name = commuyityNameTextField.stringValue
+        }
+    }
+    
     @IBAction func save(sender: AnyObject) {
-        self.dismissController(self)
+        saveInfo()
+        CommData().wsComm_Save(comm!) { (successful) in
+            self.saveInfo()
+            
+            if successful {
+                NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
+                self.dismissViewController(self)
+            }
+        }
     }
     
     @IBAction func cancel(sender: AnyObject) {
         self.dismissController(self)
     }
     @IBAction func delete(sender: AnyObject) {
-        self.dismissController(self)
+        if let comm = comm {
+            CommData().wsComm_Del(comm.id, completion: { (successful) in
+                if successful {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
+                    self.dismissViewController(self)
+                }
+            })
+        }
     }
-    
 }

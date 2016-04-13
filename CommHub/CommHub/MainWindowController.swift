@@ -12,7 +12,7 @@ class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-        //self.window?.titlebarAppearsTransparent = true
+        self.window?.titlebarAppearsTransparent = true
         //self.window?.backgroundColor = NSColor.brownColor()//NSColor(calibratedRed: 26, green: 61, blue: 109, alpha: 0)
         
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -22,6 +22,10 @@ class MainWindowController: NSWindowController {
             initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
         }
         self.window?.contentViewController = initialViewController as? NSViewController
-    }
+        
+        
+        }
+    
+
 
 }

@@ -12,7 +12,7 @@ import SwiftyJSON
 class SessionData {
 
     func wsSessionReqSave(phone: String, completion : (reqres: SessionReqRes, successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": "MySessionID", "DID": MyDID, "Params": ["Phone": phone]]
+        let prms : [String : AnyObject] = ["did": MyDID, "phone": phone]
            print (prms)
         Alamofire.request(.POST, "\(HubService)/SessionReq_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
@@ -32,8 +32,8 @@ class SessionData {
         }
     }
 
-    func wsSessionSave(sessionReqId: Int, completion : (own: OwnerHubEntryFields, isNew: Bool, successful: Bool) -> Void) {
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["SessionReq_ID": sessionReqId]]
+    func wsSessionSave(sessionReqID: Int, completion : (own: OwnerHubEntryFields, isNew: Bool, successful: Bool) -> Void) {
+        let prms : [String : AnyObject] = ["sessionReqID": sessionReqID, "did": MyDID]
         // print (prms)
         Alamofire.request(.POST, "\(HubService)/Session_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in

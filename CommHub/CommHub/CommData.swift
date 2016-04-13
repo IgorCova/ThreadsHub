@@ -18,10 +18,10 @@ class CommData{
     //    return adminArr
     //}
     
-    func wsComm_ReadDict(ownerHubID: Int, completion: (dirComm: [Comm], successful: Bool) -> Void) {
+    func wsComm_ReadDict(completion: (dirComm: [Comm], successful: Bool) -> Void) {
         // prms -> Parametrs
         
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["ownerHubID": ownerHubID]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID]
         print (prms)
         
         Alamofire.request(.POST, "\(HubService)/Comm_ReadDict", parameters: prms, encoding: .JSON)
@@ -39,7 +39,7 @@ class CommData{
                            ,lastName: co["adminCommID_lastName"].stringValue
                            ,linkFB: co["adminCommID_linkFB"].stringValue)
                         
-                        let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue)
+                        let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue,groupID: co["groupID"].int!)
                         
                         communitiesComm.append(communityComm)
                     }
@@ -48,6 +48,58 @@ class CommData{
                 case .Failure(let error):
                     print("Request failed with error: \(error.localizedDescription)")
                     completion(dirComm: [Comm](), successful: false)
+                }
+        }
+    }
+    
+    func wsComm_Save(commIn: Comm, completion: (successful: Bool) -> Void) {
+        // prms -> Parametrs
+        let commParametrs: [String: AnyObject] = [
+            "id": commIn.id
+            ,"name": commIn.name
+            ,"subjectCommID": commIn.subjectID
+            ,"areaCommID": 1
+            ,"adminCommID": commIn.adminID
+            ,"groupID": commIn.groupID]
+        
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["comm": commParametrs]]
+        
+        print (prms)
+        
+        Alamofire.request(.POST, "\(HubService)/Comm_Save", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                print(response.result.value)
+                
+                switch response.result {
+                case .Success(_):
+                    
+                    completion(successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    
+                    completion(successful: false)
+                }
+        }
+    }
+    
+    func wsComm_Del(commID: Int, completion: (successful: Bool) -> Void) {
+        // prms -> Parametrs
+        
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["id": commID]]
+        
+        print (prms)
+        
+        Alamofire.request(.POST, "\(HubService)/Comm_Del", parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                print(response.result.value)
+                
+                switch response.result {
+                case .Success(_):
+                    completion(successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    
+                    completion(successful: false)
                 }
         }
     }

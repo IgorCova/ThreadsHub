@@ -18,4 +18,13 @@ class StatisticsWindow: NSViewController {
     @IBAction func deleteLog(sender: AnyObject) {
         OwnerHubData().deleteLog()
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        
+    }
 }

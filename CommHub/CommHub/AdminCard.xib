@@ -10,9 +10,9 @@
                 <outlet property="contactView" destination="5og-Hb-Scx" id="hQc-pQ-Ykr"/>
                 <outlet property="deleteButton" destination="PUb-wz-Wwl" id="Bkh-HG-6K1"/>
                 <outlet property="firstNameTextField" destination="7EA-OL-dIF" id="Xdm-oy-lP1"/>
+                <outlet property="lastNameTextField" destination="aSN-iz-mhK" id="P8I-Jv-83m"/>
                 <outlet property="linkTextField" destination="29t-dN-3OF" id="5Gu-2W-zmz"/>
                 <outlet property="phoneNumberTextField" destination="nP3-Rf-bWu" id="5Db-lC-n19"/>
-                <outlet property="secondNameTextField" destination="aSN-iz-mhK" id="giS-Pl-2sb"/>
                 <outlet property="titleLabel" destination="OSS-yK-uOF" id="HP0-Ge-wpY"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -27,7 +27,7 @@
                     <rect key="frame" x="0.0" y="98" width="297" height="305"/>
                     <subviews>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-OL-dIF">
-                            <rect key="frame" x="85" y="218" width="188" height="22"/>
+                            <rect key="frame" x="20" y="218" width="257" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="First Name" drawsBackground="YES" id="C0R-6B-88C">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -35,7 +35,7 @@
                             </textFieldCell>
                         </textField>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-iz-mhK">
-                            <rect key="frame" x="85" y="178" width="188" height="22"/>
+                            <rect key="frame" x="20" y="178" width="257" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Second Name" drawsBackground="YES" id="ckl-4D-cDe">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -43,43 +43,21 @@
                             </textFieldCell>
                         </textField>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29t-dN-3OF">
-                            <rect key="frame" x="85" y="61" width="188" height="22"/>
+                            <rect key="frame" x="20" y="95" width="257" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Link to Facebook" drawsBackground="YES" id="7Tz-JO-w0Y">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXp-xA-dSY">
-                            <rect key="frame" x="199" y="19" width="70" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Save" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tZn-3k-FA6">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="save:" target="-2" id="u0S-AD-96O"/>
-                            </connections>
-                        </button>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-Rf-bWu">
-                            <rect key="frame" x="85" y="117" width="188" height="22"/>
+                            <rect key="frame" x="20" y="136" width="257" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Phone Number" drawsBackground="YES" id="p3a-8i-NlI">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9V7-9y-yxg">
-                            <rect key="frame" x="38" y="111" width="27" height="28"/>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="phone" id="17s-Kb-gsU"/>
-                        </imageView>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w7o-s4-TWf">
-                            <rect key="frame" x="36" y="57" width="30" height="26"/>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="facebook" id="uDF-PB-RlI"/>
-                        </imageView>
-                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AcZ-6m-mLM">
-                            <rect key="frame" x="37" y="210" width="29" height="30"/>
-                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="profile" id="BiW-5y-dAe"/>
-                        </imageView>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iOI-Y8-pVQ">
                             <rect key="frame" x="117" y="19" width="82" height="19"/>
                             <buttonCell key="cell" type="recessed" title="Cancel" bezelStyle="recessed" imagePosition="left" alignment="left" borderStyle="border" inset="2" id="Dg7-RA-Uaf">
@@ -107,22 +85,27 @@ Gw
                             </buttonCell>
                         </button>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSS-yK-uOF">
-                            <rect key="frame" x="32" y="268" width="253" height="17"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add Admin/Redact Admin" id="num-qt-PlK">
-                                <font key="font" size="16" name="Comfortaa"/>
+                            <rect key="frame" x="-2" y="268" width="301" height="17"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Add Admin/Redact Admin" id="num-qt-PlK">
+                                <font key="font" metaFont="system"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AXp-xA-dSY">
+                            <rect key="frame" x="113" y="54" width="70" height="19"/>
+                            <buttonCell key="cell" type="recessed" title="Save" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tZn-3k-FA6">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                <font key="font" metaFont="systemBold" size="12"/>
+                            </buttonCell>
+                            <connections>
+                                <action selector="save:" target="-2" id="u0S-AD-96O"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </customView>
             </subviews>
-            <point key="canvasLocation" x="451.5" y="321"/>
+            <point key="canvasLocation" x="433.5" y="317"/>
         </customView>
     </objects>
-    <resources>
-        <image name="facebook" width="88" height="88"/>
-        <image name="phone" width="512" height="512"/>
-        <image name="profile" width="512" height="512"/>
-    </resources>
 </document>

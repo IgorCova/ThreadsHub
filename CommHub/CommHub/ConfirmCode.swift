@@ -18,6 +18,16 @@ class ConfirmCode: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
     }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        //self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        
+    }
+    
     override var representedObject: AnyObject? {
         didSet {
             // Update the view, if already loaded.

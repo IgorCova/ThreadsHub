@@ -8,15 +8,16 @@
 
 import Cocoa
 
-class AdminCardViewController: NSViewController {
+class AdminCardViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var contactView: NSView!
     @IBOutlet var firstNameTextField: NSTextField!
-    @IBOutlet var secondNameTextField: NSTextField!
+    @IBOutlet var lastNameTextField: NSTextField!
     @IBOutlet var phoneNumberTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
     @IBOutlet var deleteButton: NSButton!
+    var admin: AdminComm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,7 @@ class AdminCardViewController: NSViewController {
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        //self.view.window!.styleMask = NSClosableWindowMask | NSMiniaturizableWindowMask // | NSResizableWindowMask | NSTitledWindowMask
+
     }
     
     override var representedObject: AnyObject? {
@@ -35,13 +36,31 @@ class AdminCardViewController: NSViewController {
             // Update the view, if already loaded.
         }
     }
+    
+    func saveInfo() {
+        // Add alert about empty name.
+        if admin == nil {
+            admin = AdminComm(
+                 id: 0, firstName: firstNameTextField.stringValue
+                ,lastName: lastNameTextField.stringValue
+                ,phone: phoneNumberTextField.stringValue
+                ,linkFB: linkTextField.stringValue)
+        } else {
+            admin?.firstName = firstNameTextField.stringValue
+            admin?.lastName = lastNameTextField.stringValue
+            admin?.phone = phoneNumberTextField.stringValue
+            admin?.linkFB = linkTextField.stringValue
+        }
+    }
+    
     func setCard(adminComm: AdminComm?, title: String, deleteButtonHide: BooleanLiteralType) {
+        self.admin = adminComm
         titleLabel.stringValue = title
         deleteButton.hidden = deleteButtonHide
         
         if let admin = adminComm {
             firstNameTextField.stringValue = admin.firstName
-            secondNameTextField.stringValue = admin.lastName
+            lastNameTextField.stringValue = admin.lastName
             phoneNumberTextField.stringValue = admin.phone
             linkTextField.stringValue = admin.linkFB!
         }
@@ -52,10 +71,23 @@ class AdminCardViewController: NSViewController {
     }
     
     @IBAction func save(sender: NSButton) {
-        self.dismissViewController(self)
+        saveInfo()
+        AdminCommData().wsAdminComm_Save(admin!) { (adminOut, successful) in
+            if successful {
+                NSNotificationCenter.defaultCenter().postNotificationName("reloadAdmins", object: nil)
+                self.dismissViewController(self)
+            }
+        }
     }
     
     @IBAction func delete(sender: AnyObject) {
-        self.dismissViewController(self)
+        if let admin = admin {
+            AdminCommData().wsAdminComm_Del(admin.id) { (successful) in
+                if successful {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadAdmins", object: nil)
+                    self.dismissViewController(self)
+                }
+            }
+        }
     }
 }

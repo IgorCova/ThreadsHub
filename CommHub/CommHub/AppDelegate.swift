@@ -181,6 +181,22 @@ internal var MyOwnerHubID : Int {
     }
 }
 
+extension NSImageView {
+    public func imageFromUrl(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+                if error == nil {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let image = NSImage(data: data!)
+                        self.image = image
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+}
+
 extension String {
     func replace(string:String, replacement:String) -> String {
         return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)

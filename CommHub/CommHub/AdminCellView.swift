@@ -13,7 +13,7 @@ class AdminCellView: NSTableCellView {
     @IBOutlet var adminImage: NSImageView!
     @IBOutlet var adminFullName: NSTextField!
     @IBOutlet var phoneNumber: NSTextField!
-    var link = ""
+    var linkFB = ""
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
@@ -21,14 +21,16 @@ class AdminCellView: NSTableCellView {
     }
     
     func setCell(admin: AdminComm) {
-        //self.adminImage.image = admin.profileImage
+        let urlImage = "https://graph.facebook.com/\( admin.linkFB ?? "0")/picture?type=normal"
+        self.adminImage.imageFromUrl(urlImage)
         self.adminFullName.stringValue = admin.firstName + " " + admin.lastName
         self.phoneNumber.stringValue = admin.phone ?? ""
-        self.link = admin.linkFB!
+        self.linkFB = admin.linkFB!
+        
     }
     
     @IBAction func followLink(sender: NSButton) {
-        let url = NSURL(string: "https://www.facebook.com/" + link)
+        let url = NSURL(string: "https://www.facebook.com/" + linkFB)
         NSWorkspace.sharedWorkspace().openURL(url!)
     }
 }

@@ -18,8 +18,9 @@ class Comm {
     var adminID: Int
     var adminName: String
     var link = ""
+    var groupID: Int
     
-    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm/*, profileImage: NSImage?*/, link: String) {
+    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm/*, profileImage: NSImage?*/, link: String, groupID: Int) {
         self.id = id
         self.name = name
         self.subjectID = subject.id
@@ -28,6 +29,7 @@ class Comm {
         self.adminName = admin.firstName + " " + admin.lastName
         //self.communityProfileImage = profileImage
         self.link = link
+        self.groupID = groupID
     }
     
 }

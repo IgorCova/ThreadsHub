@@ -44,6 +44,7 @@
 		27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */; };
 		27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminCommData.swift */; };
 		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
+		27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4A2711CBE881B00FB120E /* ColoursLayers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCommData.swift; sourceTree = "<group>"; };
 		27B43FE91CB086C8000D9E98 /* AdminCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCommData.swift; sourceTree = "<group>"; };
 		27B43FEB1CB08733000D9E98 /* CommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommData.swift; sourceTree = "<group>"; };
+		27F4A2711CBE881B00FB120E /* ColoursLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursLayers.swift; sourceTree = "<group>"; };
 		430D099C89C707F533D927D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CDEEBEC4F849F7F1ED84E881 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F696759C0ACC1A003AAEA508 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				2710CD601CAD58B400F46F7E /* AdminComm.swift */,
 				271BF6F41CB01808005144D6 /* SubjectComm.swift */,
 				271BF6F61CB0198C005144D6 /* Comm.swift */,
+				27F4A2711CBE881B00FB120E /* ColoursLayers.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -280,11 +283,11 @@
 		274E7E341CB165950003DA19 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
-				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
-				27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */,
 				27B43FE91CB086C8000D9E98 /* AdminCommData.swift */,
 				27B43FEB1CB08733000D9E98 /* CommData.swift */,
+				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
+				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
+				27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 				271BF6F71CB0198C005144D6 /* Comm.swift in Sources */,
 				27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */,
 				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
+				27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */,
 				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
 				2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */,

@@ -12,15 +12,24 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     @IBOutlet var tableView: NSTableView!
     var dirSubjects: [SubjectComm] = []
+    var isLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        SubjectCommData().wsSubjectComm_ReadDict(MyOwnerHubID, completion: { (dirSubjectComm, successful) in
-            if successful {
-                self.dirSubjects = dirSubjectComm
-                self.tableView.reloadData()
-            }
-        })
+        self.tableView.setDelegate(self)
+        self.tableView.setDataSource(self)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SubjectsViewController.refreshData), name:"reloadSubject", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        
     }
     
     override func viewWillAppear() {
@@ -37,8 +46,20 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
             let cellIdentifier = "SubjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: self) as! NSTableCellView
             cell.textField?.stringValue = dirSubjects[row].name
-            
+            self.tableView.deselectRow(row)
+        
             return cell
+    }
+    
+    func refreshData(notification: NSNotification){
+            SubjectCommData().wsSubjectComm_ReadDict({(dirSubjectComm, successful) in
+                if successful {
+                    self.isLoaded = false
+                    self.dirSubjects = dirSubjectComm
+                    self.tableView.reloadData()
+                    self.isLoaded = true
+                }
+            })
     }
     
     @IBAction func addNewSubject(sender: AnyObject) {
@@ -56,20 +77,20 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        let myTableViewFromNotification = notification.object as! NSTableView
-        let index = myTableViewFromNotification.selectedRow
+        if isLoaded {
+            let myTableViewFromNotification = notification.object as! NSTableView
+            let index = myTableViewFromNotification.selectedRow
         
-        if myTableViewFromNotification.selectedRow > -1 {
-            let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
-            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-            subview?.setCard(dirSubjects[index], title: "Edit the subject", deleteButtonHide: false)
+            if myTableViewFromNotification.selectedRow >= 0 {
+                let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
+                subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
+                subview?.setCard(dirSubjects[index], title: "Edit the subject", deleteButtonHide: false)
             
-            self.presentViewControllerAsSheet(subview!)
-            myTableViewFromNotification.deselectRow(index)
-        
+                self.presentViewControllerAsSheet(subview!)
+                myTableViewFromNotification.deselectRow(index)
+            }
         }
     }
-    
 }
     
     

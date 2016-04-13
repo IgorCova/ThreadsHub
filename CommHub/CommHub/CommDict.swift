@@ -12,16 +12,21 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     
     @IBOutlet var tableView: NSTableView!
     var comm = [Comm]()
+    var isLoaded = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CommData().wsComm_ReadDict(MyOwnerHubID) { (dirComm, successful) in
-            if successful {
-                self.comm = dirComm
-                self.tableView.reloadData()
-                
-            }
-        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CommDictViewController.refreshData), name:"reloadComm", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
+    }
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.wantsLayer = true
+        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        self.view.window?.titlebarAppearsTransparent = true
+        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -37,24 +42,37 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
             cellIdentifier = "commNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
             cell.setCell(comm[row])
-            
+            self.tableView.deselectRow(row)
+
             return cell
         case tableView.tableColumns[1]:
             cellIdentifier = "subjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             cell.textField?.stringValue = comm[row].subjectName
-            print("---------------------------------------------------" + comm[row].subjectName)
-            
+            self.tableView.deselectRow(row)
+
             return cell
         default:
             cellIdentifier = "adminNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             cell.textField?.stringValue = comm[row].adminName
+            self.tableView.deselectRow(row)
             
             return cell
             
         }
         
+    }
+    
+    func refreshData(notification: NSNotification){
+        CommData().wsComm_ReadDict { (dirComm, successful) in
+            if successful {
+                self.isLoaded = false
+                self.comm = dirComm
+                self.tableView.reloadData()
+                self.isLoaded = true
+            }
+        }
     }
     
     @IBAction func addNewCommunity(sender: AnyObject) {
@@ -72,17 +90,18 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     }
      
     func tableViewSelectionDidChange(notification: NSNotification) {
-        let myTableViewFromNotification = notification.object as! NSTableView
-        let index = myTableViewFromNotification.selectedRow
+        if isLoaded {
+            let myTableViewFromNotification = notification.object as! NSTableView
+            let index = myTableViewFromNotification.selectedRow
         
-        if myTableViewFromNotification.selectedRow > -1 {
-            let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
-            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-            subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
+            if myTableViewFromNotification.selectedRow >= 0 {
+                let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
+                subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
+                subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
             
-            self.presentViewControllerAsSheet(subview!)
-            myTableViewFromNotification.deselectRow(index)
-            
+                self.presentViewControllerAsSheet(subview!)
+                myTableViewFromNotification.deselectRow(index)
+            }
         }
     }
 }
