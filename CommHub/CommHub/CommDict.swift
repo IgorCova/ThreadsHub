@@ -12,7 +12,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     
     @IBOutlet var tableView: NSTableView!
     var comm = [Comm]()
-    var isLoaded = false
+    var directoryIsAlphabetical = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        
+        self.view.window?.title = "Сообщества "
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -67,17 +67,53 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     func refreshData(notification: NSNotification){
         CommData().wsComm_ReadDict { (dirComm, successful) in
             if successful {
-                self.isLoaded = false
                 self.comm = dirComm
                 self.tableView.reloadData()
-                self.isLoaded = true
             }
         }
+    }
+
+    func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
+        sorting(tableColumn)
+    }
+    
+    func sorting(tableColumn: NSTableColumn) {
+        print("Sorting")
+        switch tableColumn {
+        case tableView.tableColumns[0]:
+            if directoryIsAlphabetical {
+                comm.sortInPlace { $0.name > $1.name }
+                directoryIsAlphabetical = false
+            } else {
+                comm.sortInPlace { $0.name < $1.name }
+                directoryIsAlphabetical = true
+            }
+        case tableView.tableColumns[1]:
+            if directoryIsAlphabetical {
+                comm.sortInPlace { $0.subjectName > $1.subjectName }
+                directoryIsAlphabetical = false
+            } else {
+                comm.sortInPlace { $0.subjectName < $1.subjectName }
+                directoryIsAlphabetical = true
+            }
+        case tableView.tableColumns[2]:
+            if directoryIsAlphabetical {
+                comm.sortInPlace { $0.adminName > $1.adminName }
+                directoryIsAlphabetical = false
+            } else {
+                comm.sortInPlace { $0.adminName < $1.adminName }
+                directoryIsAlphabetical = true
+            }
+        default:
+            break
+        }
+        tableView.reloadData()
+
     }
     
     @IBAction func addNewCommunity(sender: AnyObject) {
         let subview = CommCardViewController(nibName: "CommCard", bundle: nil)!
-        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
+        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
         subview.setCard(nil, title: "Add a new community", deleteButtonHide: true)
         
         self.presentViewControllerAsSheet(subview)
@@ -90,18 +126,16 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     }
      
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if isLoaded {
-            let myTableViewFromNotification = notification.object as! NSTableView
-            let index = myTableViewFromNotification.selectedRow
+        let myTableViewFromNotification = notification.object as! NSTableView
+        let index = myTableViewFromNotification.selectedRow
         
-            if myTableViewFromNotification.selectedRow >= 0 {
-                let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
-                subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-                subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
+        if myTableViewFromNotification.selectedRow >= 0 {
+            let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
+            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
+            subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
             
-                self.presentViewControllerAsSheet(subview!)
-                myTableViewFromNotification.deselectRow(index)
-            }
+            self.presentViewControllerAsSheet(subview!)
+            myTableViewFromNotification.deselectRow(index)
         }
     }
 }

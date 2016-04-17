@@ -12,7 +12,7 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
 
     @IBOutlet var tableView: NSTableView!
     var dirSubjects: [SubjectComm] = []
-    var isLoaded = false
+    var directoryIsAlphabetical = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,7 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
         self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        
+        self.view.window?.title = "Тематики"
     }
     
     override func viewWillAppear() {
@@ -51,20 +51,34 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
             return cell
     }
     
+    func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
+        sorting()
+    }
+    
+    func sorting() {
+        print("Sorting")
+        if directoryIsAlphabetical {
+            dirSubjects.sortInPlace { $0.name > $1.name }
+            self.directoryIsAlphabetical = false
+        } else {
+            dirSubjects.sortInPlace { $0.name < $1.name }
+            self.directoryIsAlphabetical = true
+        }
+        tableView.reloadData()
+    }
+    
     func refreshData(notification: NSNotification){
             SubjectCommData().wsSubjectComm_ReadDict({(dirSubjectComm, successful) in
                 if successful {
-                    self.isLoaded = false
                     self.dirSubjects = dirSubjectComm
                     self.tableView.reloadData()
-                    self.isLoaded = true
                 }
             })
     }
     
     @IBAction func addNewSubject(sender: AnyObject) {
         let subview =  SubjectCardViewController(nibName: "SubjectCard", bundle: nil)!
-        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
+        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
         subview.setCard(nil, title: "Add a new subject", deleteButtonHide: true)
         
         self.presentViewControllerAsSheet(subview)
@@ -77,18 +91,16 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if isLoaded {
-            let myTableViewFromNotification = notification.object as! NSTableView
-            let index = myTableViewFromNotification.selectedRow
+        let myTableViewFromNotification = notification.object as! NSTableView
+        let index = myTableViewFromNotification.selectedRow
         
-            if myTableViewFromNotification.selectedRow >= 0 {
-                let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
-                subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-                subview?.setCard(dirSubjects[index], title: "Edit the subject", deleteButtonHide: false)
+        if myTableViewFromNotification.selectedRow >= 0 {
+            let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
+            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
+            subview?.setCard(dirSubjects[index], title: "Edit the subject", deleteButtonHide: false)
             
-                self.presentViewControllerAsSheet(subview!)
-                myTableViewFromNotification.deselectRow(index)
-            }
+            self.presentViewControllerAsSheet(subview!)
+            myTableViewFromNotification.deselectRow(index)
         }
     }
 }

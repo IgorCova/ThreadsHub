@@ -31,6 +31,7 @@
 		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
 		275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558A1CB9366B003A60FD /* RegistrationSegue.swift */; };
 		275E558D1CB93C90003A60FD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558C1CB93C90003A60FD /* Container.swift */; };
+		27A62CF61CC2F6F500C0A634 /* StaCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A62CF51CC2F6F500C0A634 /* StaCommData.swift */; };
 		27ADFA531CB181AF00B4C308 /* SessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA521CB181AF00B4C308 /* SessionData.swift */; };
 		27ADFA551CB1824400B4C308 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA541CB1824400B4C308 /* Session.swift */; };
 		27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA561CB1834400B4C308 /* OwnerHubData.swift */; };
@@ -44,6 +45,11 @@
 		27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */; };
 		27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminCommData.swift */; };
 		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
+		27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC621CC26F5D0074582C /* CommCell.swift */; };
+		27F0FC651CC26F7B0074582C /* IncreaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC641CC26F7B0074582C /* IncreaseCell.swift */; };
+		27F0FC671CC26FC40074582C /* MetricCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC661CC26FC40074582C /* MetricCell.swift */; };
+		27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC681CC26FEE0074582C /* AdminCell.swift */; };
+		27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC6A1CC286740074582C /* StatiscticRow.swift */; };
 		27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4A2711CBE881B00FB120E /* ColoursLayers.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +100,7 @@
 		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		275E558A1CB9366B003A60FD /* RegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSegue.swift; sourceTree = "<group>"; };
 		275E558C1CB93C90003A60FD /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		27A62CF51CC2F6F500C0A634 /* StaCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaCommData.swift; sourceTree = "<group>"; };
 		27ADFA521CB181AF00B4C308 /* SessionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionData.swift; sourceTree = "<group>"; };
 		27ADFA541CB1824400B4C308 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		27ADFA561CB1834400B4C308 /* OwnerHubData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OwnerHubData.swift; sourceTree = "<group>"; };
@@ -107,6 +114,11 @@
 		27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCommData.swift; sourceTree = "<group>"; };
 		27B43FE91CB086C8000D9E98 /* AdminCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCommData.swift; sourceTree = "<group>"; };
 		27B43FEB1CB08733000D9E98 /* CommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommData.swift; sourceTree = "<group>"; };
+		27F0FC621CC26F5D0074582C /* CommCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCell.swift; sourceTree = "<group>"; };
+		27F0FC641CC26F7B0074582C /* IncreaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseCell.swift; sourceTree = "<group>"; };
+		27F0FC661CC26FC40074582C /* MetricCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricCell.swift; sourceTree = "<group>"; };
+		27F0FC681CC26FEE0074582C /* AdminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCell.swift; sourceTree = "<group>"; };
+		27F0FC6A1CC286740074582C /* StatiscticRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatiscticRow.swift; sourceTree = "<group>"; };
 		27F4A2711CBE881B00FB120E /* ColoursLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursLayers.swift; sourceTree = "<group>"; };
 		430D099C89C707F533D927D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CDEEBEC4F849F7F1ED84E881 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +173,7 @@
 				271BF6F41CB01808005144D6 /* SubjectComm.swift */,
 				271BF6F61CB0198C005144D6 /* Comm.swift */,
 				27F4A2711CBE881B00FB120E /* ColoursLayers.swift */,
+				27F0FC6A1CC286740074582C /* StatiscticRow.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -168,6 +181,7 @@
 		2702C82C1CB96BFD0095EE74 /* CellView */ = {
 			isa = PBXGroup;
 			children = (
+				27F0FC611CC26F110074582C /* Statistics Cell */,
 				273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */,
 				27B43FE51CB06251000D9E98 /* CommCellView.swift */,
 			);
@@ -288,6 +302,7 @@
 				27ADFA561CB1834400B4C308 /* OwnerHubData.swift */,
 				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
 				27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */,
+				27A62CF51CC2F6F500C0A634 /* StaCommData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -308,6 +323,17 @@
 				275E558A1CB9366B003A60FD /* RegistrationSegue.swift */,
 			);
 			name = CustomSegue;
+			sourceTree = "<group>";
+		};
+		27F0FC611CC26F110074582C /* Statistics Cell */ = {
+			isa = PBXGroup;
+			children = (
+				27F0FC621CC26F5D0074582C /* CommCell.swift */,
+				27F0FC641CC26F7B0074582C /* IncreaseCell.swift */,
+				27F0FC661CC26FC40074582C /* MetricCell.swift */,
+				27F0FC681CC26FEE0074582C /* AdminCell.swift */,
+			);
+			name = "Statistics Cell";
 			sourceTree = "<group>";
 		};
 		CBFCE4EAA70AD3B8A5F33887 /* Frameworks */ = {
@@ -516,8 +542,11 @@
 				2710CD611CAD58B400F46F7E /* AdminComm.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
+				27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */,
+				27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */,
 				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
 				271719DD1CAD3C3900123816 /* CommHub.xcdatamodeld in Sources */,
+				27A62CF61CC2F6F500C0A634 /* StaCommData.swift in Sources */,
 				273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */,
 				271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */,
 				2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */,
@@ -525,6 +554,7 @@
 				27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */,
 				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
 				27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */,
+				27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */,
 				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
 				2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */,
@@ -538,9 +568,11 @@
 				27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */,
 				27B43FE11CB039A7000D9E98 /* CommCard.swift in Sources */,
 				27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */,
+				27F0FC671CC26FC40074582C /* MetricCell.swift in Sources */,
 				275E558D1CB93C90003A60FD /* Container.swift in Sources */,
 				275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */,
 				27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */,
+				27F0FC651CC26F7B0074582C /* IncreaseCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

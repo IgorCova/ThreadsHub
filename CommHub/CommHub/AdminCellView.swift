@@ -23,7 +23,7 @@ class AdminCellView: NSTableCellView {
     func setCell(admin: AdminComm) {
         let urlImage = "https://graph.facebook.com/\( admin.linkFB ?? "0")/picture?type=normal"
         self.adminImage.imageFromUrl(urlImage)
-        self.adminFullName.stringValue = admin.firstName + " " + admin.lastName
+        self.adminFullName.stringValue = admin.lastName + " " + admin.firstName
         self.phoneNumber.stringValue = admin.phone ?? ""
         self.linkFB = admin.linkFB!
         

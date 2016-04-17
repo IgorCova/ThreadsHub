@@ -18,16 +18,18 @@ class Comm {
     var adminID: Int
     var adminName: String
     var link = ""
+    var photoLink: String
     var groupID: Int
     
-    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm/*, profileImage: NSImage?*/, link: String, groupID: Int) {
+    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm/*, profileImage: NSImage?*/, link: String, groupID: Int, photoLink: String) {
         self.id = id
         self.name = name
         self.subjectID = subject.id
         self.subjectName = subject.name
         self.adminID = admin.id
-        self.adminName = admin.firstName + " " + admin.lastName
+        self.adminName = admin.lastName + " " + admin.firstName
         //self.communityProfileImage = profileImage
+        self.photoLink = photoLink
         self.link = link
         self.groupID = groupID
     }

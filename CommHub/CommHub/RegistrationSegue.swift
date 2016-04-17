@@ -52,7 +52,7 @@ class RegistrationSegue: NSStoryboardSegue {
             let currentRect = NSRectToCGRect(currentFrame!)
             let horizontalChange = (targetWidth - containerViewController.view.frame.size.width)/2
             let verticalChange = (targetHeight - containerViewController.view.frame.size.height)/2
-            let newWindowRect = NSMakeRect(currentRect.origin.x - horizontalChange, currentRect.origin.y - verticalChange, targetWidth, targetHeight)
+            let newWindowRect = NSMakeRect(currentRect.origin.x - horizontalChange, currentRect.origin.y + 11 - verticalChange, targetWidth, targetHeight)
             containerViewController.view.window?.setFrame(newWindowRect, display: true, animate: true)
             
             // lose the sourceViewController, it's no longer visible

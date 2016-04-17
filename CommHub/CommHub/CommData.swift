@@ -39,7 +39,7 @@ class CommData{
                            ,lastName: co["adminCommID_lastName"].stringValue
                            ,linkFB: co["adminCommID_linkFB"].stringValue)
                         
-                        let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue,groupID: co["groupID"].int!)
+                        let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue, groupID: co["groupID"].int!, photoLink: co["photoLink"].stringValue)
                         
                         communitiesComm.append(communityComm)
                     }
@@ -60,7 +60,8 @@ class CommData{
             ,"subjectCommID": commIn.subjectID
             ,"areaCommID": 1
             ,"adminCommID": commIn.adminID
-            ,"groupID": commIn.groupID]
+            ,"groupID": commIn.groupID
+            ,"link": commIn.link]
         
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["comm": commParametrs]]
         

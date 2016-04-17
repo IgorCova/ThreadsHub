@@ -25,6 +25,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+        return true
+    }
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {
@@ -169,7 +172,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 internal let HubService = "http://commhub.org/CommHubService.svc"
-internal var MyDID = NSUUID().UUIDString
+internal var MyDID = "A99AE303-83CF-4B40-B19F-20B338610C6D" //NSUUID().UUIDString
 internal var MySessionID : String {
     get {
         return OwnerHubData().getLogInfo().1
@@ -187,8 +190,24 @@ extension NSImageView {
             let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
                 if error == nil {
                     dispatch_async(dispatch_get_main_queue()) {
-                        let image = NSImage(data: data!)
-                        self.image = image
+                        self.image = NSImage(data: data!)
+                        
+                    }
+                }
+            }
+            task.resume()
+        }
+    }
+}
+
+extension NSButton {
+    public func imageFromUrl(urlString: String) {
+        if let url = NSURL(string: urlString) {
+            let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) -> Void in
+                if error == nil {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.image = NSImage(data: data!)
+                        
                     }
                 }
             }

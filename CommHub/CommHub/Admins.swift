@@ -12,15 +12,20 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
 
     @IBOutlet var tableView: NSTableView!
     var dirAdmins = [AdminComm]()
-    var isLoaded = false
+    var directoryIsAlphabetical = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
+        
         self.tableView.setDelegate(self)
         self.tableView.setDataSource(self)
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SubjectsViewController.refreshData), name:"reloadAdmins", object: nil)
         NSNotificationCenter.defaultCenter().postNotificationName("reloadAdmins", object: nil)
+        self.dirAdmins.sortInPlace {$0.lastName < $1.lastName}
+        
+
     }
     
     override func viewDidAppear() {
@@ -29,7 +34,7 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        
+        self.view.window?.title = "Администраторы"
     }
     
     override func viewWillAppear() {
@@ -45,10 +50,11 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         let cellIdentifier = "AdminCell"
         let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! AdminCellView
         cell.setCell(dirAdmins[row])
-        self.tableView.deselectRow(row)
         
         return cell
     }
+    
+    
     
     override var representedObject: AnyObject? {
         didSet {
@@ -58,40 +64,52 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
     
     @IBAction func addNewAdmin(sender: AnyObject) {
         let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)!
-        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
+        print(self.view.window?.frame)
+        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
         subview.setCard(nil, title: "Add the administrator", deleteButtonHide: true)
-        
         self.presentViewControllerAsSheet(subview)
+        
+        //self.view.addSubview(subview.view)
+        //Сделать по этому подобию
+        //self.view.window?.backgroundColor = NSColor.init(hexString: "152A48")
+
     }
     
     func refreshData(notification: NSNotification){
         AdminCommData().wsAdminComm_ReadDict { (dirAdminsComm, successful) in
             if successful {
-                self.isLoaded = false
                 self.dirAdmins = dirAdminsComm
                 self.tableView.reloadData()
-                self.isLoaded = true
             }
         }
-
     }
     
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
-        print("Click")
+        sorting()
+    }
+    
+    func sorting() {
+        print("Sorting")
+        if directoryIsAlphabetical {
+            dirAdmins.sortInPlace { $0.lastName > $1.lastName }
+            directoryIsAlphabetical = false
+        } else {
+            dirAdmins.sortInPlace { $0.lastName < $1.lastName }
+            directoryIsAlphabetical = true
+        }
+        tableView.reloadData()
     }
     
     func tableViewSelectionDidChange(notification: NSNotification) {
-        if isLoaded {
-            let myTableViewFromNotification = notification.object as! NSTableView
-            let index = myTableViewFromNotification.selectedRow
-            if index >= 0 {
-                let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)
-                subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 500)
-                subview?.setCard(dirAdmins[index], title: "Edit the administrator", deleteButtonHide: false)
+        let myTableViewFromNotification = notification.object as! NSTableView
+        let index = myTableViewFromNotification.selectedRow
+        if index >= 0 {
+            let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)
+            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
+            subview?.setCard(dirAdmins[index], title: "Edit the administrator", deleteButtonHide: false)
                 
-                self.presentViewControllerAsSheet(subview!)
-                myTableViewFromNotification.deselectRow(index)
-            }
+            self.presentViewControllerAsSheet(subview!)
+            myTableViewFromNotification.deselectRow(index)
         }
     }
     

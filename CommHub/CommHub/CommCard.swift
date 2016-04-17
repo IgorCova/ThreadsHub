@@ -65,11 +65,12 @@ class CommCardViewController: NSViewController {
         self.titleLabel.stringValue = title
         self.deleteButton.hidden = deleteButtonHide
         
-        if community != nil {
-            self.commuyityNameTextField.stringValue = (community?.name)!
-            self.adminsPopUpButton.itemWithTitle((community?.subjectName)!)
-            self.subjectPopUpButton.itemWithTitle((community?.adminName)!)
-            self.linkTextField.stringValue = (community?.link)!
+        if let cm = self.comm {
+            self.commuyityNameTextField.stringValue = (cm.name)
+            self.adminsPopUpButton.itemWithTitle((cm.subjectName))
+            self.subjectPopUpButton.itemWithTitle((cm.adminName))
+            self.linkTextField.stringValue = (cm.link)
+            self.groupIDtextField.stringValue = "\(cm.groupID)"
         }
         
     }
@@ -98,7 +99,8 @@ class CommCardViewController: NSViewController {
                 ,subject: subjectItem!
                 ,admin: adminItem!
                 ,link: linkTextField.stringValue
-                ,groupID: Int(groupIDtextField.stringValue)!)
+                ,groupID: Int(groupIDtextField.stringValue)!
+                ,photoLink: "")
         } else {
             comm?.name = commuyityNameTextField.stringValue
         }
@@ -112,6 +114,7 @@ class CommCardViewController: NSViewController {
             if successful {
                 NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
                 self.dismissViewController(self)
+                NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
             }
         }
     }
@@ -125,6 +128,7 @@ class CommCardViewController: NSViewController {
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
                     self.dismissViewController(self)
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
                 }
             })
         }
