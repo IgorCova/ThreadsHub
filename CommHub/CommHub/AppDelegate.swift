@@ -231,17 +231,6 @@ extension String {
         
         return text
     }
-        
-    subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
-    }
-    
-    subscript(integerRange: Range<Int>) -> String {
-        let start = startIndex.advancedBy(integerRange.startIndex)
-        let end = startIndex.advancedBy(integerRange.endIndex)
-        let range = start..<end
-        return self[range]
-    }
 }
 
 extension Int {
@@ -254,7 +243,7 @@ extension Int {
         var e = 2
         
         while cnt > 3 {
-            diving = "\(rev[b...e]) "
+            diving = "\(diving)\(rev[b...e]) "
             b += 3
             e += 3
             cnt = cnt - 3
@@ -276,6 +265,17 @@ extension String {
         }
         
         return rev
+    }
+    
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+    
+    subscript(integerRange: Range<Int>) -> String {
+        let start = startIndex.advancedBy(integerRange.startIndex)
+        let end = startIndex.advancedBy(integerRange.endIndex)
+        let range = start..<end
+        return self[range]
     }
 }
 
