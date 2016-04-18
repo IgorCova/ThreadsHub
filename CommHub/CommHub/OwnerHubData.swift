@@ -98,7 +98,7 @@ class OwnerHubData {
             print("Could not fetch \(error), \(error.userInfo)")
         }
         */
-        return (3/*myOwnerHubID*/ ,  "10d984b1-0dac-412f-b6ce-8c72be542b56"/*mySessionID*/)
+        return (1/*myOwnerHubID*/ ,  "B2DA600D-0BFE-4384-B91E-47F891B8B7B4"/*mySessionID*/)
     }
 
     func deleteLog() {

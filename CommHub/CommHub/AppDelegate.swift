@@ -216,26 +216,6 @@ extension NSButton {
     }
 }
 
-extension Int {
-    public func divByBits() -> String {
-        let diving = "\(self)"
-        // let curr = diving
-        
-            /*
-        let n: Int = diving.characters.count
-        
-        if n > 3 {
-            diving = "\(curr[0...2]) "
-        }
-        
-        if n > 6 {
-            diving = "\(diving[0...6])_\(diving[n-7...n-1])"
-        }*/
-        
-        return diving
-    }
-}
-
 extension String {
     func replace(string:String, replacement:String) -> String {
         return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -261,6 +241,42 @@ extension String {
         let end = startIndex.advancedBy(integerRange.endIndex)
         let range = start..<end
         return self[range]
-    }}
+    }
+}
+
+extension Int {
+    public func divByBits() -> String {
+        let rev = "\(abs(self))".reverse()
+        var diving = ""
+        var cnt = rev.characters.count
+        
+        var b = 0
+        var e = 2
+        
+        while cnt > 3 {
+            diving = "\(rev[b...e]) "
+            b += 3
+            e += 3
+            cnt = cnt - 3
+        }
+        
+        if (cnt <= 3) {
+            diving = "\(diving) \(rev[rev.characters.count-cnt...rev.characters.count-1]) "
+        }
+        
+        return "\(self < 0 ? "-" : "")\(diving.reverse())"
+    }
+}
+
+extension String {
+    public func reverse() -> String {
+        var rev = ""
+        for w in self.characters {
+            rev = "\(w)\(rev)"
+        }
+        
+        return rev
+    }
+}
 
 

@@ -21,7 +21,7 @@ class MetricCell: NSTableCellView {
     }
     
     func setCell(value: Int, valuePercent: Double) {
-        self.value.stringValue = "\(value)"
+        self.value.stringValue = value.divByBits()
         //---
         if valuePercent < 0 {
             self.dynamicImage.image = NSImage(named: "down")
