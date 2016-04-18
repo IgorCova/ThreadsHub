@@ -216,6 +216,26 @@ extension NSButton {
     }
 }
 
+extension Int {
+    public func divByBits() -> String {
+        let diving = "\(self)"
+        // let curr = diving
+        
+            /*
+        let n: Int = diving.characters.count
+        
+        if n > 3 {
+            diving = "\(curr[0...2]) "
+        }
+        
+        if n > 6 {
+            diving = "\(diving[0...6])_\(diving[n-7...n-1])"
+        }*/
+        
+        return diving
+    }
+}
+
 extension String {
     func replace(string:String, replacement:String) -> String {
         return self.stringByReplacingOccurrencesOfString(string, withString: replacement, options: NSStringCompareOptions.LiteralSearch, range: nil)
@@ -231,6 +251,16 @@ extension String {
         
         return text
     }
-}
+        
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+    
+    subscript(integerRange: Range<Int>) -> String {
+        let start = startIndex.advancedBy(integerRange.startIndex)
+        let end = startIndex.advancedBy(integerRange.endIndex)
+        let range = start..<end
+        return self[range]
+    }}
 
 

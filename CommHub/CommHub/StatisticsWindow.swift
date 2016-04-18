@@ -26,6 +26,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
         
         self.view.window?.title = "CommHub"
+        self.view.window?.miniwindowTitle = "CommHubber"
         
     }
     
@@ -50,18 +51,9 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         self.view.wantsLayer = true
         self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.titleVisibility = .Hidden
         self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
         self.view.window?.title = "CommHub"
         
-        let pstyle = NSMutableParagraphStyle()
-        pstyle.alignment = .Center
-        
-       
-        
-        //self.month.attributedAlternateTitle = NSAttributedString(string: "Month", attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
-        //self.day.attributedTitle = NSAttributedString(string: "Day", attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
-        //self.week.attributedAlternateTitle = NSAttributedString(string: "Week", attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -70,7 +62,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
         if(row % 2 == 1) {
-           // rowView.backgroundColor = NSColor.init(hexString: "BDD5F5")
+           rowView.backgroundColor = NSColor.init(hexString: "BDD5F5")
         }
     }
     
@@ -91,7 +83,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         case column[1]:
             cellIdentifier = "participantsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = String(statistic.members)
+            cell.textField?.stringValue = String(statistic.members.divByBits())
             
             return cell
             

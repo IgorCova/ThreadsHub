@@ -17,7 +17,8 @@ class AdminCell: NSTableCellView {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
-        // Drawing code here.
+        self.imageProfile.layer!.cornerRadius = self.imageProfile.frame.size.height/2
+        self.imageProfile.layer!.masksToBounds = true
     }
     
     func setCell(linkFB: String, adminName: String) {

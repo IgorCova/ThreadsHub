@@ -18,7 +18,8 @@ class CommCell: NSTableCellView {
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
 
-        // Drawing code here.
+        self.commImage.layer!.cornerRadius = 2.0
+        self.commImage.layer!.masksToBounds = true
     }
     
     func setCell(commName: String, categoryName: String, comm_photoLink: String, groupID: Int) {
