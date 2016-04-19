@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="oIz-I8-XRH">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
@@ -372,15 +372,117 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="MainWindowController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="CommHub" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="CommHub" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <rect key="contentRect" x="541" y="318" width="500" height="352"/>
-                        <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="">
-                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
+                        <toolbar key="toolbar" implicitIdentifier="6667E914-6FCF-4912-8DF1-14F9E23EAE53" autosavesConfiguration="NO" showsBaselineSeparator="NO" displayMode="iconOnly" sizeMode="regular" id="EMp-aU-f4L">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="2D2152D7-C45E-4B6D-915E-E22971A0C1AC" label="" paletteLabel="Facebook" image="facebook-1" id="5vu-gj-eZP">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="fag-rY-bay">
+                                        <rect key="frame" x="5" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="facebook-1" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="9DK-tT-lIK">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="82E8C50C-56F5-4272-9F4A-88BEC13BF888" label="" paletteLabel="VKontakte" image="vk" id="iBF-os-mEl">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="d5X-vv-r60">
+                                        <rect key="frame" x="7" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="vk" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="V8R-4g-Bvh">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="F6C93931-3268-4F6D-B315-20CAFD464B47" label="" paletteLabel="Одноклассники" image="ok" id="T8q-D4-f9b">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="rnj-9O-GmX">
+                                        <rect key="frame" x="23" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ok" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="HQF-tm-LWz">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="4F8A65D1-EE85-413A-9F68-AA33945E13E5" label="" paletteLabel="Мой мир" image="web" id="EQv-x9-fiM">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="oo7-Ye-Tb8">
+                                        <rect key="frame" x="4" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="web" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="oBG-rc-J9p">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="A63459AA-4CED-4637-BC09-0D53384EFC02" label="" paletteLabel="Instagram" image="instagram" id="Iuh-BI-UpL">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="ZFj-d9-KEI">
+                                        <rect key="frame" x="6" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="instagram" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="cuj-Sy-Rzz">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="16731CB8-AAEC-4904-8871-AB332C04E7C8" label="" paletteLabel="YouTube" image="youtube-play" id="WmS-0o-DRq">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="40" height="40"/>
+                                    <size key="maxSize" width="48" height="48"/>
+                                    <button key="view" id="20X-Wg-TvI">
+                                        <rect key="frame" x="2" y="14" width="48" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="youtube-play" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="96w-nR-dZN">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                    </button>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="otE-vU-kke"/>
+                                <toolbarItem implicitItemIdentifier="B0091729-5BAA-44B7-9241-946863697C01" label="" paletteLabel="space" tag="-1" id="mDA-W4-qtj">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="0.0" height="40"/>
+                                    <size key="maxSize" width="1" height="40"/>
+                                    <customView key="view" id="0KJ-cx-9Ns">
+                                        <rect key="frame" x="19" y="14" width="1" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                    </customView>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="otE-vU-kke"/>
+                                <toolbarItem reference="5vu-gj-eZP"/>
+                                <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="iBF-os-mEl"/>
+                                <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="T8q-D4-f9b"/>
+                                <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="EQv-x9-fiM"/>
+                                <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="Iuh-BI-UpL"/>
+                                <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="WmS-0o-DRq"/>
+                                <toolbarItem reference="otE-vU-kke"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
                         <segue destination="oXr-f4-yeP" kind="relationship" relationship="window.shadowedContentViewController" id="xwd-Cv-TmL"/>
@@ -610,74 +712,8 @@ Gw
                                     <action selector="deleteLog:" target="oIz-I8-XRH" id="udZ-8B-bfV"/>
                                 </connections>
                             </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="WF0-CF-RXz">
-                                <rect key="frame" x="539" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="6Sx-Jq-w9r"/>
-                                    <constraint firstAttribute="width" constant="40" id="gIf-3I-QHo"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ok" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="P6Q-U9-Bp3">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="dvc-QZ-QBC">
-                                <rect key="frame" x="605" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="BhO-hs-Tbg"/>
-                                    <constraint firstAttribute="height" constant="40" id="MDA-TS-R1O"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="web" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="uY3-oS-rQF">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="0vo-pN-TPM">
-                                <rect key="frame" x="670" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="C1R-hc-smQ"/>
-                                    <constraint firstAttribute="height" constant="40" id="jeS-4b-QGw"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="instagram" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="oNd-vU-SXt">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="MSO-K7-SUV">
-                                <rect key="frame" x="475" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="CLR-nq-BFp"/>
-                                    <constraint firstAttribute="width" constant="40" id="Suj-5N-2Gy"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="vk" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="LPy-kV-g9z">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="MAP-ls-0Gb">
-                                <rect key="frame" x="410" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="3bH-Qp-anR"/>
-                                    <constraint firstAttribute="height" constant="40" id="N7Z-3l-03r"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="facebook-1" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="I0q-OE-58g">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
-                            <button translatesAutoresizingMaskIntoConstraints="NO" id="T9V-a9-loc">
-                                <rect key="frame" x="735" y="540" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="C6t-pB-XNd"/>
-                                    <constraint firstAttribute="width" constant="40" id="CKz-zA-q1Z"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="youtube-play" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ioL-gL-otS">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                            </button>
                             <button translatesAutoresizingMaskIntoConstraints="NO" id="6zb-Cp-0UU">
-                                <rect key="frame" x="1149" y="549" width="25" height="25"/>
+                                <rect key="frame" x="1149" y="567" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="hgZ-I2-YPO"/>
                                     <constraint firstAttribute="height" constant="25" id="mr5-TU-ppH"/>
@@ -703,20 +739,20 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZS-h1-lb0">
-                                <rect key="frame" x="0.0" y="0.0" width="1184" height="531"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1184" height="567"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="p6m-H3-tVD">
-                                    <rect key="frame" x="1" y="0.0" width="1182" height="530"/>
+                                    <rect key="frame" x="1" y="0.0" width="1182" height="566"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView appearanceType="aqua" verticalHuggingPriority="750" allowsExpansionToolTips="YES" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="50" headerView="mpq-n8-VE7" viewBased="YES" id="Jq4-FX-RUt">
-                                            <rect key="frame" x="0.0" y="0.0" width="1182" height="507"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="1182" height="543"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <tableViewGridLines key="gridStyleMask" vertical="YES"/>
                                             <color key="gridColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <tableColumns>
-                                                <tableColumn width="212" minWidth="40" maxWidth="1000" id="CPL-hE-iKG">
+                                                <tableColumn width="211" minWidth="40" maxWidth="1000" id="CPL-hE-iKG">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Сообщества">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -730,11 +766,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="cellComm" id="Md5-0h-H5C" customClass="CommCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="212" height="50"/>
+                                                            <rect key="frame" x="1" y="1" width="211" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-YK-ebj">
-                                                                    <rect key="frame" x="56" y="31" width="154" height="17"/>
+                                                                    <rect key="frame" x="56" y="31" width="153" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="kS1-4W-I9K"/>
                                                                     </constraints>
@@ -773,7 +809,7 @@ Gw
                                                                     </connections>
                                                                 </button>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iyG-nN-4tW">
-                                                                    <rect key="frame" x="84" y="10" width="126" height="17"/>
+                                                                    <rect key="frame" x="84" y="10" width="125" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="nsL-9L-LLG"/>
                                                                     </constraints>
@@ -820,7 +856,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="participantsCell" id="Y72-37-IMI">
-                                                            <rect key="frame" x="216" y="1" width="87" height="50"/>
+                                                            <rect key="frame" x="215" y="1" width="87" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-x7-dOq">
@@ -860,7 +896,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="increaseCell" id="QdX-0R-34W" customClass="IncreaseCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="306" y="1" width="93" height="50"/>
+                                                            <rect key="frame" x="305" y="1" width="93" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-bb-ThM">
@@ -936,7 +972,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="reachCell" id="IuM-OU-CMO" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="402" y="1" width="90" height="50"/>
+                                                            <rect key="frame" x="401" y="1" width="90" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CWH-va-FCN">
@@ -1002,11 +1038,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="visitorsCell" id="G1J-cy-ZIp" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="495" y="1" width="90.5" height="50"/>
+                                                            <rect key="frame" x="494" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="X97-ZE-Sns">
-                                                                    <rect key="frame" x="2" y="27" width="86" height="17"/>
+                                                                    <rect key="frame" x="2" y="27" width="87" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="gmd-7c-JZr"/>
                                                                     </constraints>
@@ -1025,7 +1061,7 @@ Gw
                                                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="down" id="KhC-US-oWI"/>
                                                                 </imageView>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n7n-BX-BCF">
-                                                                    <rect key="frame" x="31" y="6" width="57" height="17"/>
+                                                                    <rect key="frame" x="31" y="6" width="58" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="PWM-ZW-GsT"/>
                                                                     </constraints>
@@ -1068,7 +1104,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="postsCell" id="gmj-tp-t4I" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="588.5" y="1" width="91" height="50"/>
+                                                            <rect key="frame" x="587.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-am-9HL">
@@ -1135,7 +1171,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="likesCell" id="8Xz-Go-FU8" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="682.5" y="1" width="91" height="50"/>
+                                                            <rect key="frame" x="681.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-0n-YZl">
@@ -1202,7 +1238,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="sharesCell" id="fI7-us-NnD" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="776.5" y="1" width="91" height="50"/>
+                                                            <rect key="frame" x="775.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-St-NNG">
@@ -1269,7 +1305,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentsCell" id="4Sq-dN-HCv" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="870.5" y="1" width="91" height="50"/>
+                                                            <rect key="frame" x="869.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-qZ-EZH">
@@ -1336,11 +1372,11 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="adminCell" id="zO8-vr-7Ds" customClass="AdminCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="964.5" y="1" width="215.5" height="50"/>
+                                                            <rect key="frame" x="963.5" y="1" width="216" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="mR7-ze-P7t">
-                                                                    <rect key="frame" x="164" y="3" width="45" height="45"/>
+                                                                    <rect key="frame" x="165" y="3" width="45" height="45"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="45" id="F2p-cp-ihn"/>
                                                                         <constraint firstAttribute="width" constant="45" id="rHo-XH-dRi"/>
@@ -1354,7 +1390,7 @@ Gw
                                                                     </connections>
                                                                 </button>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crc-bp-gHO">
-                                                                    <rect key="frame" x="6" y="17" width="156" height="17"/>
+                                                                    <rect key="frame" x="6" y="17" width="157" height="17"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Name" id="ofL-Pg-4fA">
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -1401,27 +1437,14 @@ Gw
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="MZS-h1-lb0" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="61" id="4y5-AI-y38"/>
+                            <constraint firstItem="MZS-h1-lb0" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="25" id="4y5-AI-y38"/>
                             <constraint firstAttribute="trailing" secondItem="6zb-Cp-0UU" secondAttribute="trailing" constant="10" id="A8Z-OM-sML"/>
                             <constraint firstItem="RPf-ut-AyS" firstAttribute="centerX" secondItem="BJt-2C-wsA" secondAttribute="centerX" id="Bnc-yT-Kpb"/>
-                            <constraint firstItem="MSO-K7-SUV" firstAttribute="leading" secondItem="MAP-ls-0Gb" secondAttribute="trailing" constant="25" id="CWC-iC-lJq"/>
-                            <constraint firstItem="MSO-K7-SUV" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="MHi-5M-j2E"/>
                             <constraint firstAttribute="trailing" secondItem="MZS-h1-lb0" secondAttribute="trailing" id="NzR-Yq-tNR"/>
                             <constraint firstItem="MZS-h1-lb0" firstAttribute="leading" secondItem="BJt-2C-wsA" secondAttribute="leading" id="V9t-kd-xzt"/>
-                            <constraint firstItem="RPf-ut-AyS" firstAttribute="leading" secondItem="WF0-CF-RXz" secondAttribute="trailing" constant="13" id="boC-Ka-38i"/>
-                            <constraint firstItem="MZS-h1-lb0" firstAttribute="top" secondItem="6zb-Cp-0UU" secondAttribute="bottom" constant="18" id="cjP-kT-VZJ"/>
                             <constraint firstItem="RPf-ut-AyS" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="5" id="hBJ-JO-Zca"/>
-                            <constraint firstItem="T9V-a9-loc" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="jBT-eq-ssX"/>
-                            <constraint firstItem="0vo-pN-TPM" firstAttribute="leading" secondItem="dvc-QZ-QBC" secondAttribute="trailing" constant="25" id="jhc-AE-d51"/>
-                            <constraint firstItem="6zb-Cp-0UU" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="18" id="nWL-CF-fzj"/>
-                            <constraint firstItem="WF0-CF-RXz" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="nnb-Za-AEc"/>
-                            <constraint firstItem="dvc-QZ-QBC" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="qiE-sz-ivi"/>
-                            <constraint firstItem="0vo-pN-TPM" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="rhA-oX-9Zk"/>
-                            <constraint firstItem="dvc-QZ-QBC" firstAttribute="leading" secondItem="RPf-ut-AyS" secondAttribute="trailing" constant="13" id="sPa-Da-Nth"/>
-                            <constraint firstItem="WF0-CF-RXz" firstAttribute="leading" secondItem="MSO-K7-SUV" secondAttribute="trailing" constant="24" id="tbJ-kG-c9o"/>
-                            <constraint firstItem="MAP-ls-0Gb" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" constant="12" id="uvr-7R-Yv0"/>
+                            <constraint firstItem="6zb-Cp-0UU" firstAttribute="top" secondItem="BJt-2C-wsA" secondAttribute="top" id="nWL-CF-fzj"/>
                             <constraint firstAttribute="bottom" secondItem="MZS-h1-lb0" secondAttribute="bottom" id="wea-AC-Apl"/>
-                            <constraint firstItem="T9V-a9-loc" firstAttribute="leading" secondItem="0vo-pN-TPM" secondAttribute="trailing" constant="25" id="yCs-KL-iq3"/>
                         </constraints>
                     </view>
                     <connections>

@@ -172,7 +172,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 }
 
 internal let HubService = "http://commhub.org/CommHubService.svc"
-internal var MyDID = "A99AE303-83CF-4B40-B19F-20B338610C6D" //NSUUID().UUIDString
+internal var MyDID = NSUUID().UUIDString
 internal var MySessionID : String {
     get {
         return OwnerHubData().getLogInfo().1

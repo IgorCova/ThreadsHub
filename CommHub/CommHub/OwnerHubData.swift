@@ -78,7 +78,7 @@ class OwnerHubData {
 
     func getLogInfo() -> (Int, String) {
 
-        /*var myOwnerHubID: Int = 0
+        var myOwnerHubID: Int = 0
         var mySessionID: String = ""
         
         let appDelegate: AppDelegate = NSApplication.sharedApplication().delegate as! AppDelegate
@@ -97,8 +97,8 @@ class OwnerHubData {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        */
-        return (1/*myOwnerHubID*/ ,  "B2DA600D-0BFE-4384-B91E-47F891B8B7B4"/*mySessionID*/)
+        
+        return (myOwnerHubID, mySessionID)
     }
 
     func deleteLog() {
