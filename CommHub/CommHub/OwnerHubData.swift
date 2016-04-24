@@ -8,73 +8,60 @@
 import Foundation
 import CoreData
 import Alamofire
+import SwiftyJSON
 
 class OwnerHubData {
-/*
-    func wsGetMemberInstance(id: Int, completion : (memberInstance: Member?, successful: Bool) -> Void) {
-        let prms : [String : AnyObject]  = ["Session": MySessionID,  "DID": MyDID, "Params": ["MemberID": id]]
-        Alamofire.request(.POST, "\(Threads)/Member_ReadInstance", parameters: prms, encoding: .JSON)
+    
+    func wsOwnerHub_Read(completion: (owner : OwnerHub?, successful: Bool) -> Void) {
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID]
+        print (prms)
+        
+        Alamofire.request(.POST, "\(HubService)/OwnerHub_Read", parameters: prms, encoding: .JSON)
             .responseJSON { response in
                 //print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionaryValue
-                    let mem = Member (
-                         id: json["ID"]!.int!
-                        ,name: json["Name"]!.string!
-                        ,surname: json["Surname"]!.string
-                        ,userName: json["UserName"]!.string
-                        ,about: json["About"]!.string
-                        ,phone: json["Phone"]!.string!
-                        ,isMale: json["IsMale"]!.bool!
-                        ,birthdayDateStr: json["BirthdayDate"]!.string
+                    let own = OwnerHub(
+                             id:        json["id"]!.int ?? 0
+                            ,firstName: json["firstName"]!.stringValue
+                            ,lastName:  json["lastName"]!.stringValue
+                            ,phone:     json["phone"]!.stringValue
+                            ,linkFB:    json["linkFB"]!.stringValue
                     )
                     
-                    completion(memberInstance: mem, successful: true)
-                    
+                    completion(owner: own, successful: true)
                 case .Failure(let error):
                     print("Request failed with error: \(error.localizedDescription)")
-                    completion(memberInstance: nil, successful: false)
+                    completion(owner: nil , successful: false)
                 }
         }
     }
     
-    func wsMemberSave(member: Member, completion : ( memberInstance: Member?, successful: Bool) -> Void) {
+    func wsOwnerHub_Save(own: OwnerHub, completion: (successful: Bool) -> Void) {
+        // prms -> Parametrs
+        let ownParametrs: [String: AnyObject] = [
+             "firstName": own.firstName
+            ,"lastName": own.lastName ?? ""
+            ,"phone": own.phone
+            ,"linkFB": own.linkFB ?? ""]
         
-        let surname = member.surname ?? ""
-        let userName = member.userName ?? ""
-        let about = member.about ?? ""
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ownParametrs]
         
-        let jcmem = ["ID": member.id, "Name": member.name, "Surname": surname, "UserName": userName, "About": about, "Phone": member.phone, "IsMale": member.isMale, "BirthdayDate": member.birthdayDateStr ?? ""]
-        //print(jcmem)
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["Member": jcmem]]
-        //print(prms)
-        Alamofire.request(.POST, "\(Threads)/Member_Save", parameters: prms, encoding: .JSON)
+        print (prms)
+        
+        Alamofire.request(.POST, "\(HubService)/OwnerHub_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                //print(response.result.value)
+                print(response.result.value)
                 switch response.result {
-                case .Success(let data):
-                    let json = JSON(data)["Data"].dictionaryValue
-                    let mem = Member (
-                         id: json["ID"]!.int!
-                        ,name: json["Name"]!.string!
-                        ,surname: json["Surname"]!.string!
-                        ,userName: json["UserName"]!.string!
-                        ,about: json["About"]!.string!
-                        ,phone: json["Phone"]!.string!
-                        ,isMale: json["IsMale"]!.bool!
-                        ,birthdayDateStr: json["BirthdayDate"]!.string
-                    )
-                    
-                    completion(memberInstance: mem, successful: true)
-                    
+                case .Success( _):
+                    completion(successful: true)
                 case .Failure(let error):
                     print("Request failed with error: \(error.localizedDescription)")
-                    completion(memberInstance: nil, successful: false)
+                    completion(successful: false)
                 }
         }
     }
-*/
 
     func getLogInfo() -> (Int, String) {
 

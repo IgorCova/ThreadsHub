@@ -22,47 +22,47 @@ class StatisticRow {
     
     var members: Int
     var membersNew: Int
-    var membersNewPercent: Double
+    var membersDifPercent: Double
     
     var subscribed: Int
     var subscribedNew:Int
-    var subscribedNewPercent: Double
+    var subscribedDifPercent: Double
     
     var unsubscribed: Int
     var unsubscribedNew: Int
-    var unsubscribedNewPercent: Double
+    var unsubscribedDifPercent: Double
     
     var visitors: Int
     var visitorsNew: Int
-    var visitorsNewPercent: Double
+    var visitorsDifPercent: Double
     
     var views: Int
     var viewsNew: Int
-    var viewsNewPercent: Double
+    var viewsDifPercent: Double
     
     var reach: Int
     var reachNew: Int
-    var reachNewPercent: Double
+    var reachDifPercent: Double
     
     var reachSubscribers: Int
     var reachSubscribersNew: Int
-    var reachSubscribersNewPercent: Double
+    var reachSubscribersDifPercent: Double
     
     var postCount: Int
     var postCountNew: Int
-    var postCountNewPercent: Double
+    var postCountDifPercent: Double
     
     var likes: Int
     var likesNew: Int
-    var likesNewPercent: Double
+    var likesDifPercent: Double
     
     var comments: Int
     var commentsNew: Int
-    var commentsNewPercent: Double
+    var commentsDifPercent: Double
     
     var reposts: Int
     var repostsNew: Int
-    var repostsNewPercent: Double
+    var repostsDifPercent: Double
     
     init(
         comm_id: Int
@@ -78,47 +78,47 @@ class StatisticRow {
     
        ,members: Int
        ,membersNew: Int
-       ,membersNewPercent: Double
+       ,membersDifPercent: Double
     
        ,subscribed: Int
        ,subscribedNew:Int
-       ,subscribedNewPercent: Double
+       ,subscribedDifPercent: Double
     
        ,unsubscribed: Int
        ,unsubscribedNew: Int
-       ,unsubscribedNewPercent: Double
+       ,unsubscribedDifPercent: Double
     
        ,visitors: Int
        ,visitorsNew: Int
-       ,visitorsNewPercent: Double
+       ,visitorsDifPercent: Double
     
        ,views: Int
        ,viewsNew: Int
-       ,viewsNewPercent: Double
+       ,viewsDifPercent: Double
     
        ,reach: Int
        ,reachNew: Int
-       ,reachNewPercent: Double
+       ,reachDifPercent: Double
     
        ,reachSubscribers: Int
        ,reachSubscribersNew: Int
-       ,reachSubscribersNewPercent: Double
+       ,reachSubscribersDifPercent: Double
     
        ,postCount: Int
        ,postCountNew: Int
-       ,postCountNewPercent: Double
+       ,postCountDifPercent: Double
     
        ,likes: Int
        ,likesNew: Int
-       ,likesNewPercent: Double
+       ,likesDifPercent: Double
     
        ,comments: Int
        ,commentsNew: Int
-       ,commentsNewPercent: Double
+       ,commentsDifPercent: Double
     
        ,reposts: Int
        ,repostsNew: Int
-       ,repostsNewPercent: Double) {
+       ,repostsDifPercent: Double) {
         
         self.comm_id = comm_id
         self.comm_name = comm_name
@@ -133,46 +133,46 @@ class StatisticRow {
         
         self.members = members
         self.membersNew = membersNew
-        self.membersNewPercent = membersNewPercent
+        self.membersDifPercent = membersDifPercent
         
         self.subscribed = subscribed
         self.subscribedNew = subscribedNew
-        self.subscribedNewPercent = subscribedNewPercent
+        self.subscribedDifPercent = subscribedDifPercent
         
         self.unsubscribed = unsubscribed
         self.unsubscribedNew = unsubscribedNew
-        self.unsubscribedNewPercent = unsubscribedNewPercent
+        self.unsubscribedDifPercent = unsubscribedDifPercent
         
         self.visitors = visitors
         self.visitorsNew = visitorsNew
-        self.visitorsNewPercent = visitorsNewPercent
+        self.visitorsDifPercent = visitorsDifPercent
         
         self.views = views
         self.viewsNew = viewsNew
-        self.viewsNewPercent = viewsNewPercent
+        self.viewsDifPercent = viewsDifPercent
         
         self.reach = reach
         self.reachNew = reachNew
-        self.reachNewPercent = reachNewPercent
+        self.reachDifPercent = reachDifPercent
         
         self.reachSubscribers = reachSubscribers
         self.reachSubscribersNew = reachSubscribersNew
-        self.reachSubscribersNewPercent = reachSubscribersNewPercent
+        self.reachSubscribersDifPercent = reachSubscribersDifPercent
         
         self.postCount = postCount
         self.postCountNew = postCountNew
-        self.postCountNewPercent = postCountNewPercent
+        self.postCountDifPercent = postCountDifPercent
         
         self.likes = likes
         self.likesNew = likesNew
-        self.likesNewPercent = likesNewPercent
+        self.likesDifPercent = likesDifPercent
         
         self.comments = comments
         self.commentsNew = commentsNew
-        self.commentsNewPercent = commentsNewPercent
+        self.commentsDifPercent = commentsDifPercent
         
         self.reposts = reposts
         self.repostsNew = repostsNew
-        self.repostsNewPercent = repostsNewPercent
+        self.repostsDifPercent = repostsDifPercent
     }
 }

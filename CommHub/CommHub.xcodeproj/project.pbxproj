@@ -29,6 +29,8 @@
 		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
 		273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCard.xib */; };
 		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
+		27581B8C1CCBA4A60012521F /* ExampleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */; };
+		27581B911CCC09480012521F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27581B901CCC09480012521F /* Profile.swift */; };
 		275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558A1CB9366B003A60FD /* RegistrationSegue.swift */; };
 		275E558D1CB93C90003A60FD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558C1CB93C90003A60FD /* Container.swift */; };
 		27A62CF61CC2F6F500C0A634 /* StaCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A62CF51CC2F6F500C0A634 /* StaCommData.swift */; };
@@ -98,6 +100,8 @@
 		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
 		273B0B5A1CAF3CE400454E94 /* AdminCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCard.xib; sourceTree = "<group>"; };
 		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
+		27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleToolbar.swift; sourceTree = "<group>"; };
+		27581B901CCC09480012521F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		275E558A1CB9366B003A60FD /* RegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSegue.swift; sourceTree = "<group>"; };
 		275E558C1CB93C90003A60FD /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		27A62CF51CC2F6F500C0A634 /* StaCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaCommData.swift; sourceTree = "<group>"; };
@@ -154,8 +158,9 @@
 		2702C82A1CB96A6D0095EE74 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				275E558C1CB93C90003A60FD /* Container.swift */,
 				270884941CBA999800780F07 /* StatisticsWindow.swift */,
+				275E558C1CB93C90003A60FD /* Container.swift */,
+				27581B921CCC3C860012521F /* Profile */,
 				273B0B4C1CAE6FB500454E94 /* Admins */,
 				271BF6EC1CAFEEEB005144D6 /* Subjects */,
 				271BF6F31CB0135F005144D6 /* Communities */,
@@ -222,6 +227,7 @@
 				27171A051CAD3C5300123816 /* CoreData */,
 				274E7E341CB165950003DA19 /* Data */,
 				27171A061CAD3C7800123816 /* SupportingFiles */,
+				27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */,
 			);
 			path = CommHub;
 			sourceTree = "<group>";
@@ -315,6 +321,14 @@
 				275E55891CB935F9003A60FD /* CustomSegue */,
 			);
 			name = Registration;
+			sourceTree = "<group>";
+		};
+		27581B921CCC3C860012521F /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				27581B901CCC09480012521F /* Profile.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		275E55891CB935F9003A60FD /* CustomSegue */ = {
@@ -424,7 +438,7 @@
 				TargetAttributes = {
 					271719D31CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4R2M8FE9U7;
+						DevelopmentTeam = 58JP37J35E;
 					};
 					271719E71CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
@@ -541,6 +555,7 @@
 			files = (
 				270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */,
 				2710CD611CAD58B400F46F7E /* AdminComm.swift in Sources */,
+				27581B8C1CCBA4A60012521F /* ExampleToolbar.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
 				27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */,
@@ -560,6 +575,7 @@
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
 				2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */,
 				271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */,
+				27581B911CCC09480012521F /* Profile.swift in Sources */,
 				27ADFA531CB181AF00B4C308 /* SessionData.swift in Sources */,
 				27ADFA551CB1824400B4C308 /* Session.swift in Sources */,
 				271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */,
@@ -708,12 +724,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CommHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.CommHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -723,12 +741,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = CommHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = Tectonics.CommHub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

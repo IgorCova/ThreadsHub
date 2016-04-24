@@ -23,15 +23,10 @@ class CommCardViewController: NSViewController {
     var comm: Comm?
     var subjectsItem = [(index: Int, subject: SubjectComm)]()
     var adminsItem = [(index: Int, admin: AdminComm)]()
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fillSubjectsButton()
-        fillAdminsButton()
-
-
+        
     }
     
     func fillSubjectsButton() {
@@ -43,6 +38,10 @@ class CommCardViewController: NSViewController {
                 self.subjectsItem.append((index: i, subject: subject))
                 i += 1
             }
+            
+            if self.deleteButton.hidden == false {
+                self.subjectPopUpButton.setTitle(self.comm!.subjectName)
+            }
         }
     }
     
@@ -50,10 +49,18 @@ class CommCardViewController: NSViewController {
         AdminCommData().wsAdminComm_ReadDict { (dirAdminsComm, successful) in
             self.adminsPopUpButton.removeAllItems()
             var i = 0
+            print(dirAdminsComm.count)
             for admin in dirAdminsComm {
-                self.adminsPopUpButton.addItemWithTitle(admin.firstName + " " + admin.lastName)
+                print("**********************")
+                print(admin.lastName)
+                
+                self.adminsPopUpButton.addItemWithTitle(admin.lastName + " " + admin.firstName)
                 self.adminsItem.append((index: i, admin: admin))
                 i += 1
+            }
+            
+            if self.deleteButton.hidden == false {
+                self.adminsPopUpButton.setTitle(self.comm!.adminName)
             }
         }
     }
@@ -61,18 +68,24 @@ class CommCardViewController: NSViewController {
     
     func setCard(community: Comm?, title: String, deleteButtonHide: Bool) {
         self.comm = community
-        
         self.titleLabel.stringValue = title
         self.deleteButton.hidden = deleteButtonHide
         
+        if deleteButtonHide == false {
+            commuyityNameTextField.editable = false
+            linkTextField.editable = false
+            groupIDtextField.editable = false
+            
+        }
+        
         if let cm = self.comm {
             self.commuyityNameTextField.stringValue = (cm.name)
-            self.adminsPopUpButton.itemWithTitle((cm.subjectName))
-            self.subjectPopUpButton.itemWithTitle((cm.adminName))
             self.linkTextField.stringValue = (cm.link)
             self.groupIDtextField.stringValue = "\(cm.groupID)"
         }
         
+        fillSubjectsButton()
+        fillAdminsButton()
     }
     
     func saveInfo() {
@@ -89,8 +102,15 @@ class CommCardViewController: NSViewController {
         for item in adminsItem {
             if item.index == adminsPopUpButton.indexOfSelectedItem {
                 adminItem = item.admin
+                print("-------------------------------------")
+                print(item.index)
+                print(adminsPopUpButton.indexOfSelectedItem)
+                print(adminItem!.id)
+                
             }
         }
+        print("++++++++++++++++++")
+        
         
         if comm == nil {
             comm = Comm(
@@ -102,14 +122,16 @@ class CommCardViewController: NSViewController {
                 ,groupID: Int(groupIDtextField.stringValue)!
                 ,photoLink: "")
         } else {
-            comm?.name = commuyityNameTextField.stringValue
+            //comm!.name = commuyityNameTextField.stringValue
+            comm?.adminID = (adminItem?.id)!
+            comm?.subjectID = (subjectItem?.id)!
         }
+        
     }
     
     @IBAction func save(sender: AnyObject) {
         saveInfo()
         CommData().wsComm_Save(comm!) { (successful) in
-            self.saveInfo()
             
             if successful {
                 NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)

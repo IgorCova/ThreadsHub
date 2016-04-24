@@ -35,8 +35,10 @@ class CommData{
                     for co in json {
                         let subjectComm = SubjectComm(id: co["subjectCommID"].int!, name: co["subjectCommID_name"].stringValue)
                         let adminComm = AdminComm(
-                            firstName: co["adminCommID_firstName"].stringValue
+                            id: co["adminCommID"].int!
+                           ,firstName: co["adminCommID_firstName"].stringValue
                            ,lastName: co["adminCommID_lastName"].stringValue
+                           ,phone: co["adminCommID_phone"].stringValue
                            ,linkFB: co["adminCommID_linkFB"].stringValue)
                         
                         let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue, groupID: co["groupID"].int!, photoLink: co["photoLink"].stringValue)
@@ -77,7 +79,7 @@ class CommData{
                     completion(successful: true)
                 case .Failure(let error):
                     print("Request failed with error: \(error.localizedDescription)")
-                    
+                
                     completion(successful: false)
                 }
         }
