@@ -13,18 +13,34 @@ class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
+        setStyleMask()
+    }
+    
+    override func windowWillLoad() {
+        super.windowWillLoad()
+        
+    }
+    
+    func setStyleMask() {
         self.window?.titlebarAppearsTransparent = true
-        self.window?.backgroundColor = NSColor.brownColor()//NSColor(calibratedRed: 26, green: 61, blue: 109, alpha: 0)
+        //self.window?.title = "CommHub"
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        var initialViewController = storyboard.instantiateControllerWithIdentifier("mainWindow")
         
         if MyOwnerHubID == 0 {
-            initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
+            let initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
+            self.window?.contentViewController = initialViewController
+
+        } else {
+            let initialViewController = storyboard.instantiateControllerWithIdentifier("mainWindow") as! NSViewController
+            self.window?.contentViewController = initialViewController
         }
-        self.window?.contentViewController = initialViewController as? NSViewController
         
-        self.window!.titlebarAppearsTransparent = true // gives it "flat" look
-        self.window!.backgroundColor = NSColor.whiteColor()
+        self.window?.contentView!.wantsLayer = true
+        self.window?.backgroundColor = NSColor.init(hexString: "245082")
     }
 
+    @IBAction func refreshData(sender: AnyObject) {
+        print("Refresh")
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+    }
 }

@@ -11,46 +11,32 @@ import Cocoa
 class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet var tableView: NSTableView!
-    @IBOutlet var deleteLog: NSButton!
     
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //deleteLog.hidden = true
-        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
         NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
-        
-        self.view.window?.title = "CommHub"
-        self.view.window?.miniwindowTitle = "CommHubber"
         
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
-        self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        self.view.window?.title = "CommHub"
         
-    }
-    
-    @IBAction func deleteLog(sender: AnyObject) {
-        OwnerHubData().deleteLog()
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return dirStatistic.count ?? 0
     }
-    
+/*
     func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
         if(row % 2 == 1) {
            rowView.backgroundColor = NSColor.init(hexString: "BDD5F5")
         }
     }
+ */
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
@@ -263,11 +249,4 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         }
     }
 
-    
-    
-    @IBAction func refreshDataButton(sender: AnyObject) {
-        print("Refresh")
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
-    }
-    
 }

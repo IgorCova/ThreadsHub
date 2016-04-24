@@ -488,10 +488,10 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
-                                        <connections>
-                                            <action selector="refreshDataButton:" target="oIz-I8-XRH" id="cN8-z3-oh5"/>
-                                        </connections>
                                     </button>
+                                    <connections>
+                                        <action selector="refreshData:" target="B8D-0N-5wS" id="5zZ-c5-e0h"/>
+                                    </connections>
                                 </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
@@ -531,7 +531,7 @@
                 </viewController>
                 <customObject id="3H2-jE-Fmh" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86.5" y="439"/>
+            <point key="canvasLocation" x="139.5" y="410"/>
         </scene>
         <!--Admins View Controller-->
         <scene sceneID="D1k-e4-utC">
@@ -679,7 +679,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="confirmCode:" target="6u9-Tx-8Ba" id="3qx-ua-MWC"/>
-                                    <segue destination="oIz-I8-XRH" kind="custom" identifier="toMainStatistics" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="n0z-NT-pcH"/>
+                                    <segue destination="oIz-I8-XRH" kind="custom" identifier="toMainStatistics" customClass="RegistrationSegue" customModule="CommHub" customModuleProvider="target" id="oc7-1H-kp3"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eb7-ng-4Nv">
@@ -730,16 +730,6 @@ Gw
                         <rect key="frame" x="0.0" y="0.0" width="1184" height="592"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tJd-3U-dqF">
-                                <rect key="frame" x="73" y="544" width="104" height="32"/>
-                                <buttonCell key="cell" type="push" title="delete Log" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="prQ-ia-CGW">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="deleteLog:" target="oIz-I8-XRH" id="udZ-8B-bfV"/>
-                                </connections>
-                            </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="RPf-ut-AyS">
                                 <rect key="frame" x="590" y="557" width="4" height="30"/>
                                 <constraints>
@@ -870,7 +860,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="membersCell" id="Y72-37-IMI">
-                                                            <rect key="frame" x="214.5" y="1" width="88" height="50"/>
+                                                            <rect key="frame" x="214.44417264444132" y="1" width="88" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-x7-dOq">
@@ -910,7 +900,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="increaseCell" id="QdX-0R-34W" customClass="IncreaseCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="305.5" y="1" width="92" height="50"/>
+                                                            <rect key="frame" x="305.4038152870354" y="1" width="92" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Mv-bb-ThM">
@@ -986,7 +976,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="reachCell" id="IuM-OU-CMO" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="400.5" y="1" width="89" height="50"/>
+                                                            <rect key="frame" x="400.71570011243625" y="1" width="89" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CWH-va-FCN">
@@ -1052,7 +1042,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="visitorsCell" id="G1J-cy-ZIp" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="492.5" y="1" width="90" height="50"/>
+                                                            <rect key="frame" x="492.29709163828841" y="1" width="90" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="X97-ZE-Sns">
@@ -1460,13 +1450,12 @@ Gw
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="deleteLog" destination="tJd-3U-dqF" id="Heg-ZD-CPg"/>
                         <outlet property="tableView" destination="Jq4-FX-RUt" id="bmN-KE-MpP"/>
                     </connections>
                 </viewController>
                 <customObject id="KrO-h1-UET" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="1588"/>
+            <point key="canvasLocation" x="-384" y="1648"/>
         </scene>
         <!--Subjects View Controller-->
         <scene sceneID="oac-dw-OeB">
@@ -1624,6 +1613,9 @@ Gw
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="logOut:" target="2wp-zr-MSw" id="YUQ-zW-RDs"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
@@ -1815,7 +1807,7 @@ Gw
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="lxU-BS-vt9">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.44444444444444442" horizontal="YES" id="lxU-BS-vt9">
                                     <rect key="frame" x="1" y="444" width="586" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1892,18 +1884,6 @@ Gw
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-936.5" y="963.5"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rOu-fH-ayg">
-            <objects>
-                <viewController id="552-UO-dh2" sceneMemberID="viewController">
-                    <view key="view" id="KCQ-UU-5KM">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
-                <customObject id="HpK-tE-r8n" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <resources>

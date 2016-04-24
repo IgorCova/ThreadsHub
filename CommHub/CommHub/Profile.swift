@@ -57,7 +57,11 @@ class Profile: NSViewController {
     
     
     @IBAction func logOut(sender: AnyObject) {
+        OwnerHubData().deleteLog()
         
+        //let storyboard = NSStoryboard(name: "Main", bundle: nil)
+        //let initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
+         //window?.contentViewController = initialViewController
     }
 }
 
