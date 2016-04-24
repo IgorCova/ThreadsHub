@@ -616,7 +616,7 @@
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.44444444444444442" horizontal="YES" id="mxZ-4O-THY">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="mxZ-4O-THY">
                                     <rect key="frame" x="1" y="444" width="295" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -780,7 +780,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="cellComm" id="Md5-0h-H5C" customClass="CommCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="210.5" height="50"/>
+                                                            <rect key="frame" x="1" y="1" width="211" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-YK-ebj">
@@ -1185,7 +1185,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="likesCell" id="8Xz-Go-FU8" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="678.5" y="1" width="90.5" height="50"/>
+                                                            <rect key="frame" x="678.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-0n-YZl">
@@ -1252,7 +1252,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="sharesCell" id="fI7-us-NnD" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="772" y="1" width="90.5" height="50"/>
+                                                            <rect key="frame" x="772" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-St-NNG">
@@ -1319,7 +1319,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentsCell" id="4Sq-dN-HCv" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="865.5" y="1" width="90.5" height="50"/>
+                                                            <rect key="frame" x="865.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-qZ-EZH">
@@ -1545,7 +1545,7 @@ Gw
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.8571428571428571" horizontal="YES" id="8Tz-7e-adm">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="8Tz-7e-adm">
                                     <rect key="frame" x="1" y="444" width="295" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1815,7 +1815,7 @@ Gw
                                     </subviews>
                                     <nil key="backgroundColor"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.22222222222222221" horizontal="YES" id="lxU-BS-vt9">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="lxU-BS-vt9">
                                     <rect key="frame" x="1" y="444" width="586" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>

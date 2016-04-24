@@ -83,42 +83,42 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         case column[3]:
             cellIdentifier = "reachCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.reach, valuePercent: statistic.reachDifPercent)
+            cell.setCell(statistic.reachNew, valuePercent: statistic.reachDifPercent)
             
             return cell
 
         case column[4]:
             cellIdentifier = "visitorsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.visitors, valuePercent: statistic.visitorsDifPercent)
+            cell.setCell(statistic.visitorsNew, valuePercent: statistic.visitorsDifPercent)
             
             return cell
             
         case column[5]:
             cellIdentifier = "postsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.postCount, valuePercent: statistic.postCountDifPercent)
+            cell.setCell(statistic.postCountNew, valuePercent: statistic.postCountDifPercent)
             
             return cell
 
         case column[6]:
             cellIdentifier = "likesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.likes, valuePercent: statistic.likesDifPercent)
+            cell.setCell(statistic.likesNew, valuePercent: statistic.likesDifPercent)
             
             return cell
             
         case column[7]:
             cellIdentifier = "sharesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.reposts, valuePercent: statistic.repostsDifPercent)
+            cell.setCell(statistic.repostsNew, valuePercent: statistic.repostsDifPercent)
             
             return cell
 
         case column[8]:
             cellIdentifier = "commentsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.comments, valuePercent: statistic.commentsDifPercent)
+            cell.setCell(statistic.commentsNew, valuePercent: statistic.commentsDifPercent)
             
             return cell
             
