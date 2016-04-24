@@ -55,13 +55,9 @@ class Profile: NSViewController {
         self.view.window?.titleVisibility = .Hidden
     }
     
-    
     @IBAction func logOut(sender: AnyObject) {
-        OwnerHubData().deleteLog()
-        
-        //let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        //let initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
-         //window?.contentViewController = initialViewController
+        // OwnerHubData().deleteLog()
+        // self.performSegueWithIdentifier("logouted", sender: self)
     }
 }
 

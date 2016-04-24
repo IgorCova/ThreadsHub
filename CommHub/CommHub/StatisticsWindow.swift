@@ -17,26 +17,26 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
         
+        self.refresh()
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        self.refresh()
         
+        self.view.window?.toolbar?.visible = true
+        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask
     }
     
+    func refresh() {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+
+    }
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return dirStatistic.count ?? 0
     }
-/*
-    func tableView(tableView: NSTableView, didAddRowView rowView: NSTableRowView, forRow row: Int) {
-        if(row % 2 == 1) {
-           rowView.backgroundColor = NSColor.init(hexString: "BDD5F5")
-        }
-    }
- */
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
 

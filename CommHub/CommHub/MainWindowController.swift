@@ -8,22 +8,22 @@
 
 import Cocoa
 
-
 class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
+        
+        self.window?.titlebarAppearsTransparent = true
+        //self.window?.title = "CommHub"
         setStyleMask()
     }
     
     override func windowWillLoad() {
         super.windowWillLoad()
-        
     }
     
+    
     func setStyleMask() {
-        self.window?.titlebarAppearsTransparent = true
-        //self.window?.title = "CommHub"
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
         
         if MyOwnerHubID == 0 {
@@ -31,7 +31,7 @@ class MainWindowController: NSWindowController {
             self.window?.contentViewController = initialViewController
 
         } else {
-            let initialViewController = storyboard.instantiateControllerWithIdentifier("mainWindow") as! NSViewController
+            let initialViewController = storyboard.instantiateControllerWithIdentifier("staWindow") as! NSViewController
             self.window?.contentViewController = initialViewController
         }
         

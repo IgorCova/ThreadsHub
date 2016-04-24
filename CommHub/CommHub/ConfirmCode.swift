@@ -10,13 +10,14 @@ import Cocoa
 
 class ConfirmCode: NSViewController {
 
-    @IBOutlet var phoneNumberTextField: NSTextField!
+    @IBOutlet weak var lblPhone: NSTextField!
     @IBOutlet var codeTextField: NSTextField!
-    var requestCode: SessionReqRes?
-
+    var sessionReqRes: SessionReqRes?
+    var phone = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
+        self.lblPhone.stringValue = phone
     }
     
     override func viewDidAppear() {
@@ -25,60 +26,37 @@ class ConfirmCode: NSViewController {
         self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         //self.view.window?.titlebarAppearsTransparent = true
         self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        
+        self.view.window?.toolbar?.visible = false
     }
     
     override var representedObject: AnyObject? {
         didSet {
-            // Update the view, if already loaded.
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
-        if  identifier == "toMainStatistics" {
-            if requestCode?.code == codeTextField.stringValue {
-            if let req = requestCode {
+    @IBAction func btnConfirmClick(sender: AnyObject) {
+        if sessionReqRes?.code == codeTextField.stringValue {
+            if let req = sessionReqRes {
                 SessionData().wsSessionSave(req.id) { (own, isNew, successful) in
                     if successful {
                         if own.id > 0 {
                             let owner = OwnerHubEntryFields(id: own.id, sessionId: own.sessionId)
                             OwnerHubData().saveOwnerHubEntry(owner)
+    
+                            NSApplication.sharedApplication().mainWindow?.close()
+                            self.performSegueWithIdentifier("confirmed", sender: self)
                         }
                     }
                 }
             }
-            return true
-            }
-            return false
-        } else {
-            return true
         }
+
     }
+    
     
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "backToRegistration" {
             (segue as! RegistrationSegue).transitionEffect = .SlideRight
-        } else if segue.identifier == "toMainStatistics" {
-            (segue as! RegistrationSegue).transitionEffect = .Crossfade
-        }
-        
-    }
-    
-/*
-    func getSession() {
-        if requestCode?.code == codeTextField.stringValue {
-            if let req = requestCode {
-                SessionData().wsSessionSave(req.id) { (own, isNew, successful) in
-                    if successful {
-                        if own.id > 0 {
-                            let owner = OwnerHubEntryFields(id: own.id, sessionId: own.sessionId)
-                            OwnerHubData().saveOwnerHubEntry(owner)
-                        }
-                    }
-                }
-            }
         }
     }
- */
-
 }

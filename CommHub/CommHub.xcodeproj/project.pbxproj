@@ -53,6 +53,7 @@
 		27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC681CC26FEE0074582C /* AdminCell.swift */; };
 		27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC6A1CC286740074582C /* StatiscticRow.swift */; };
 		27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4A2711CBE881B00FB120E /* ColoursLayers.swift */; };
+		F33E719B1CCD2F03006B4CA4 /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E719A1CCD2F03006B4CA4 /* Logout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		27F4A2711CBE881B00FB120E /* ColoursLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursLayers.swift; sourceTree = "<group>"; };
 		430D099C89C707F533D927D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CDEEBEC4F849F7F1ED84E881 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		F33E719A1CCD2F03006B4CA4 /* Logout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
 		F696759C0ACC1A003AAEA508 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				271BF6EC1CAFEEEB005144D6 /* Subjects */,
 				271BF6F31CB0135F005144D6 /* Communities */,
 				274E7E371CB179010003DA19 /* Registration */,
+				F33E719A1CCD2F03006B4CA4 /* Logout.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -438,7 +441,7 @@
 				TargetAttributes = {
 					271719D31CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 58JP37J35E;
+						DevelopmentTeam = 4R2M8FE9U7;
 					};
 					271719E71CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
@@ -558,6 +561,7 @@
 				27581B8C1CCBA4A60012521F /* ExampleToolbar.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
+				F33E719B1CCD2F03006B4CA4 /* Logout.swift in Sources */,
 				27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */,
 				27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */,
 				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
