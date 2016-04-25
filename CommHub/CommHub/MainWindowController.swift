@@ -10,18 +10,19 @@ import Cocoa
 
 class MainWindowController: NSWindowController {
 
+    @IBOutlet weak var segPeriod: NSSegmentedControl!
+    @IBOutlet weak var isPast: NSToolbarItem!
     override func windowDidLoad() {
         super.windowDidLoad()
         
         self.window?.titlebarAppearsTransparent = true
-        //self.window?.title = "CommHub"
-        setStyleMask()
+        self.window?.title = "CommHub"
+        self.setStyleMask()
     }
     
     override func windowWillLoad() {
         super.windowWillLoad()
     }
-    
     
     func setStyleMask() {
         let storyboard = NSStoryboard(name: "Main", bundle: nil)
@@ -29,18 +30,21 @@ class MainWindowController: NSWindowController {
         if MyOwnerHubID == 0 {
             let initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
             self.window?.contentViewController = initialViewController
-
         } else {
             let initialViewController = storyboard.instantiateControllerWithIdentifier("staWindow") as! NSViewController
             self.window?.contentViewController = initialViewController
         }
         
         self.window?.contentView!.wantsLayer = true
-        self.window?.backgroundColor = NSColor.init(hexString: "245082")
     }
 
+    @IBAction func refreshPeriodicaly(sender: AnyObject) {
+        refreshData(self)
+    }
+    
     @IBAction func refreshData(sender: AnyObject) {
         print("Refresh")
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+        let isPast: Bool = (self.segPeriod.selectedSegment == 0 ? false : true)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["isPast": isPast])
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10116"/>
     </dependencies>
     <objects>
@@ -24,36 +23,26 @@
                     <rect key="frame" x="0.0" y="139" width="297" height="223"/>
                     <subviews>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SSl-aD-odF">
-                            <rect key="frame" x="89" y="113" width="188" height="22"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Subject's Name" drawsBackground="YES" id="p3x-In-a6g">
+                            <rect key="frame" x="18" y="109" width="260" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Тематика" drawsBackground="YES" id="p3x-In-a6g">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6s6-Gt-PWd">
-                            <rect key="frame" x="31" y="185" width="264" height="18"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add Subject/Redact Subject" id="vJ2-Lj-IuQ">
-                                <font key="font" size="16" name="Comfortaa"/>
+                            <rect key="frame" x="16" y="179" width="264" height="24"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Тематика" id="vJ2-Lj-IuQ">
+                                <font key="font" metaFont="system" size="15"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWq-Ph-QeT">
-                            <rect key="frame" x="207" y="47" width="70" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Save" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mbk-VO-okS">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
-                                <connections>
-                                    <action selector="saveButton:" target="-2" id="Oa3-wm-TrE"/>
-                                </connections>
-                            </buttonCell>
-                        </button>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPb-SP-5zF">
-                            <rect key="frame" x="122" y="47" width="82" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Cancel" bezelStyle="recessed" imagePosition="left" alignment="left" borderStyle="border" inset="2" id="PA6-06-rls">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
+                            <rect key="frame" x="12" y="63" width="140" height="32"/>
+                            <buttonCell key="cell" type="push" title="Отмена" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="PA6-06-rls">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
                                 <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -63,10 +52,10 @@ Gw
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPH-fF-Fwe">
-                            <rect key="frame" x="26" y="47" width="82" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Delete" bezelStyle="recessed" imagePosition="left" alignment="left" borderStyle="border" inset="2" id="8sg-3g-U0v">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
+                            <rect key="frame" x="12" y="30" width="272" height="32"/>
+                            <buttonCell key="cell" type="push" title="Удалить" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="8sg-3g-U0v">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
                                 <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -74,6 +63,16 @@ Gw
                             <connections>
                                 <action selector="deleteButton:" target="-2" id="EVY-mO-n9R"/>
                             </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IWq-Ph-QeT">
+                            <rect key="frame" x="144" y="63" width="140" height="32"/>
+                            <buttonCell key="cell" type="push" title="Сохранить" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mbk-VO-okS">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <connections>
+                                    <action selector="saveButton:" target="-2" id="Oa3-wm-TrE"/>
+                                </connections>
+                            </buttonCell>
                         </button>
                     </subviews>
                 </customView>

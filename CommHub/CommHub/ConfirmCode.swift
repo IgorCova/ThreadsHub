@@ -23,9 +23,9 @@ class ConfirmCode: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        // self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         //self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        // self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
         self.view.window?.toolbar?.visible = false
     }
     

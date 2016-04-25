@@ -14,7 +14,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
-    
+    var isPast = false
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,16 +31,17 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func refresh() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["isPast": false])
 
     }
+    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
         return dirStatistic.count ?? 0
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
-        var cellIdentifier = "cellComm/membersCell/increaseCell/reachCell/visitorsCell/postsCell/likesCell/sharesCell/commentsCell/adminCell"
+        var cellIdentifier = "cellComm/membersCell/increaseCell/reachCell/visitorsCell/viewsCell/postsCell/likesCell/sharesCell/commentsCell/adminCell"
         let column = tableView.tableColumns
         let statistic = dirStatistic[row]
         
@@ -55,14 +56,14 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         case column[1]:
             cellIdentifier = "membersCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = String(statistic.membersNew.divByBits())
+            cell.textField?.stringValue = String(statistic.members.divByBits())
             
             return cell
             
         case column[2]:
             cellIdentifier = "increaseCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! IncreaseCell
-            cell.setCell(statistic.subscribedDifPercent, decrease: statistic.unsubscribedDifPercent)
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
+            cell.setCell(statistic.increaseNew, valuePercent: statistic.increaseDifPercent)
             
             return cell
             
@@ -79,29 +80,36 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             cell.setCell(statistic.visitorsNew, valuePercent: statistic.visitorsDifPercent)
             
             return cell
-            
+        
         case column[5]:
+            cellIdentifier = "viewsCell"
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
+            cell.setCell(statistic.viewsNew, valuePercent: statistic.viewsDifPercent)
+            
+            return cell
+            
+        case column[6]:
             cellIdentifier = "postsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.postCountNew, valuePercent: statistic.postCountDifPercent)
             
             return cell
 
-        case column[6]:
+        case column[7]:
             cellIdentifier = "likesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.likesNew, valuePercent: statistic.likesDifPercent)
             
             return cell
             
-        case column[7]:
+        case column[8]:
             cellIdentifier = "sharesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.repostsNew, valuePercent: statistic.repostsDifPercent)
             
             return cell
 
-        case column[8]:
+        case column[9]:
             cellIdentifier = "commentsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.commentsNew, valuePercent: statistic.commentsDifPercent)
@@ -114,7 +122,6 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             cell.setCell(statistic.adminComm_linkFB, adminName: statistic.adminComm_fullName)
             
             return cell
-            
         }
     }
     
@@ -138,10 +145,10 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         case column[1]:
             print("Sorting")
             if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.membersNew > $1.membersNew }
+                dirStatistic.sortInPlace { $0.members > $1.members }
                 directoryIsAlphabetical = false
             } else {
-                dirStatistic.sortInPlace { $0.membersNew < $1.membersNew }
+                dirStatistic.sortInPlace { $0.members < $1.members }
                 directoryIsAlphabetical = true
             }
             tableView.reloadData()
@@ -179,8 +186,19 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             tableView.reloadData()
-            
+        
         case column[5]:
+            print("Sorting")
+            if directoryIsAlphabetical {
+                dirStatistic.sortInPlace { $0.viewsNew > $1.viewsNew }
+                directoryIsAlphabetical = false
+            } else {
+                dirStatistic.sortInPlace { $0.viewsNew < $1.viewsNew }
+                directoryIsAlphabetical = true
+            }
+            tableView.reloadData()
+            
+        case column[6]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.postCountNew > $1.postCountNew }
@@ -191,7 +209,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             }
             tableView.reloadData()
             
-        case column[6]:
+        case column[7]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.likesNew > $1.likesNew }
@@ -202,7 +220,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             }
             tableView.reloadData()
             
-        case column[7]:
+        case column[8]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.repostsNew > $1.repostsNew }
@@ -213,7 +231,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             }
             tableView.reloadData()
             
-        case column[8]:
+        case column[9]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.commentsNew > $1.commentsNew }
@@ -224,7 +242,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             }
             tableView.reloadData()
             
-        default:
+        case column[10]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.adminComm_fullName > $1.adminComm_fullName }
@@ -234,11 +252,17 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             tableView.reloadData()
+            
+        default:
+            break
         }
     }
     
     func refreshData(notification: NSNotification){
-        StaCommData().wsStaCommVKDaily_Report { (dirSta, successful) in
+        if let us = notification.userInfo {
+            self.isPast = (us["isPast"] ?? false) as! Bool
+        }
+        StaCommData().wsStaCommVKDaily_Report(isPast) { (dirSta, successful) in
             if successful {
                 self.dirStatistic.removeAll()
                 self.tableView.reloadData()

@@ -22,16 +22,17 @@ class Registration: NSViewController {
     
     override func viewDidAppear() {
         super.viewDidAppear()
+        
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        //self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         //self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        // self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
         self.view.window?.toolbar?.visible = false
+        self.setStyleMask()
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-        //self.setStyleMask()
     }
     
     override var representedObject: AnyObject? {
@@ -42,8 +43,8 @@ class Registration: NSViewController {
     func setStyleMask() {
         self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask  // | NSResizableWindowMask
         self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.backgroundColor = NSColor.init(hexString: "2E6597")
-        self.view.window?.titleVisibility = .Hidden
+        // self.view.window?.backgroundColor = NSColor.init(hexString: "2E6597")
+        // self.view.window?.titleVisibility = .Hidden
     }
     
     @IBAction func btnContinueClick(sender: AnyObject) {

@@ -11,9 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 class StaCommData {
-    func wsStaCommVKDaily_Report(completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
+    func wsStaCommVKDaily_Report(isPast: Bool, completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
         
-        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": false]]
+        let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": isPast]]
         print (prms)
         
         Alamofire.request(.POST, "\(HubService)/StaCommVKDaily_Report", parameters: prms, encoding: .JSON)
@@ -26,58 +26,60 @@ class StaCommData {
                     var stats = [StatisticRow]()
                     for st in json {
                         let sta = StatisticRow(
-                            comm_id: st["comm_id"].int!
+                            comm_id: st["comm_id"].int ?? 0
                             ,comm_name: st["comm_name"].stringValue
                             ,comm_photoLink: st["comm_photoLink"].stringValue
-                            ,comm_groupID: st["comm_groupID"].int!
+                            ,comm_groupID: st["comm_groupID"].int ?? 0
                             ,subjectComm_name: st["subjectComm_name"].stringValue
                             ,areaComm_code: st["areaComm_code"].stringValue
                             ,adminComm_fullName: st["adminComm_fullName"].stringValue
                             ,adminComm_linkFB: st["adminComm_linkFB"].stringValue
                             
-                            ,members: st["members"].int!
-                            ,membersNew: st["membersNew"].int!
-                            ,membersDifPercent: st["membersDifercent"].double ?? 0
+                            ,members: st["members"].int ?? 0
+                            ,membersNew: st["membersNew"].int ?? 0
+                            ,membersDifPercent: st["membersDifercent"].int ?? 0
                             
-                            ,subscribed: st["subscribed"].int!
-                            ,subscribedNew: st["subscribedNew"].int!
-                            ,subscribedDifPercent: st["subscribedDifPercent"].double ?? 0
+                            ,increaseNew: st["increaseNew"].int ?? 0
+                            ,increaseDifPercent: st["increaseDifPercent"].int ?? 0
+                            ,subscribed: st["subscribed"].int ?? 0
+                            ,subscribedNew: st["subscribedNew"].int ?? 0
+                            ,subscribedDifPercent: st["subscribedDifPercent"].int ?? 0
                             
-                            ,unsubscribed: st["unsubscribed"].int!
-                            ,unsubscribedNew: st["unsubscribedNew"].int!
-                            ,unsubscribedDifPercent: st["unsubscribedDifPercent"].double ?? 0
+                            ,unsubscribed: st["unsubscribed"].int ?? 0
+                            ,unsubscribedNew: st["unsubscribedNew"].int ?? 0
+                            ,unsubscribedDifPercent: st["unsubscribedDifPercent"].int ?? 0
                             
-                            ,visitors: st["visitors"].int!
-                            ,visitorsNew: st["visitorsNew"].int!
-                            ,visitorsDifPercent: st["visitorsDifPercent"].double ?? 0
+                            ,visitors: st["visitors"].int ?? 0
+                            ,visitorsNew: st["visitorsNew"].int ?? 0
+                            ,visitorsDifPercent: st["visitorsDifPercent"].int ?? 0
                             
-                            ,views: st["views"].int!
-                            ,viewsNew: st["viewsNew"].int!
-                            ,viewsDifPercent: st["viewsDifPercent"].double ?? 0
+                            ,views: st["views"].int ?? 0
+                            ,viewsNew: st["viewsNew"].int ?? 0
+                            ,viewsDifPercent: st["viewsDifPercent"].int ?? 0
                             
-                            ,reach: st["reach"].int!
-                            ,reachNew: st["reachNew"].int!
-                            ,reachDifPercent: st["reachDifPercent"].double ?? 0
+                            ,reach: st["reach"].int ?? 0
+                            ,reachNew: st["reachNew"].int ?? 0
+                            ,reachDifPercent: st["reachDifPercent"].int ?? 0
                             
-                            ,reachSubscribers: st["reachSubscribers"].int!
+                            ,reachSubscribers: st["reachSubscribers"].int ?? 0
                             ,reachSubscribersNew: st["reachSubscribersNew"].int ?? 0
-                            ,reachSubscribersDifPercent: st["reachSubscribersDifPercent"].double ?? 0
+                            ,reachSubscribersDifPercent: st["reachSubscribersDifPercent"].int ?? 0
                             
-                            ,postCount: st["postCount"].int!
-                            ,postCountNew: st["postCountNew"].int!
-                            ,postCountDifPercent: st["postCountDifPercent"].double ?? 0
+                            ,postCount: st["postCount"].int ?? 0
+                            ,postCountNew: st["postCountNew"].int ?? 0
+                            ,postCountDifPercent: st["postCountDifPercent"].int ?? 0
                             
-                            ,likes: st["likes"].int!
-                            ,likesNew: st["likesNew"].int!
-                            ,likesDifPercent: st["likesDifPercent"].double ?? 0
+                            ,likes: st["likes"].int ?? 0
+                            ,likesNew: st["likesNew"].int ?? 0
+                            ,likesDifPercent: st["likesDifPercent"].int ?? 0
                             
-                            ,comments: st["comments"].int!
-                            ,commentsNew: st["commentsNew"].int!
-                            ,commentsDifPercent: st["commentsDifPercent"].double ?? 0
+                            ,comments: st["comments"].int ?? 0
+                            ,commentsNew: st["commentsNew"].int ?? 0
+                            ,commentsDifPercent: st["commentsDifPercent"].int ?? 0
                             
-                            ,reposts: st["reposts"].int!
-                            ,repostsNew: st["repostsNew"].int!
-                            ,repostsDifPercent: st["repostsDifPercent"].double ?? 0)
+                            ,reposts: st["reposts"].int ?? 0
+                            ,repostsNew: st["repostsNew"].int ?? 0
+                            ,repostsDifPercent: st["repostsDifPercent"].int ?? 0)
                         
                         stats.append(sta)
                     }

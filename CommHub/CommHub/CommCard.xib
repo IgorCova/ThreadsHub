@@ -26,44 +26,44 @@
                     <rect key="frame" x="0.0" y="84" width="297" height="333"/>
                     <subviews>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-6k-jsQ">
-                            <rect key="frame" x="64" y="104" width="188" height="22"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Link" drawsBackground="YES" id="liT-jj-lZt">
+                            <rect key="frame" x="23" y="157" width="250" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Ссылка" drawsBackground="YES" id="liT-jj-lZt">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-aR-WWZ">
-                            <rect key="frame" x="31" y="295" width="189" height="18"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Add/Redact Community" id="yrF-uc-xC8">
-                                <font key="font" size="16" name="Comfortaa"/>
+                            <rect key="frame" x="31" y="295" width="234" height="18"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Сообщество" id="yrF-uc-xC8">
+                                <font key="font" metaFont="system" size="15"/>
                                 <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h12-sZ-Gir">
-                            <rect key="frame" x="64" y="246" width="188" height="22"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Community Name" drawsBackground="YES" id="ncl-T7-s1b">
+                            <rect key="frame" x="23" y="248" width="250" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Сообщество" drawsBackground="YES" id="ncl-T7-s1b">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-GU-Svi">
-                            <rect key="frame" x="207" y="25" width="70" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Save" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mm9-WL-hyk">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
+                            <rect key="frame" x="143" y="67" width="136" height="32"/>
+                            <buttonCell key="cell" type="push" title="Сохранить" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mm9-WL-hyk">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
                             </buttonCell>
                             <connections>
                                 <action selector="save:" target="-2" id="Oh1-bK-o76"/>
                             </connections>
                         </button>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKf-eA-DNo">
-                            <rect key="frame" x="120" y="25" width="56" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Cancel" bezelStyle="recessed" imagePosition="left" alignment="left" borderStyle="border" inset="2" id="8Yb-2e-lpX">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
+                            <rect key="frame" x="17" y="67" width="135" height="32"/>
+                            <buttonCell key="cell" type="push" title="Отмена" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="8Yb-2e-lpX">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
                                 <string key="keyEquivalent" base64-UTF8="YES">
 Gw
 </string>
@@ -72,21 +72,8 @@ Gw
                                 <action selector="cancel:" target="-2" id="t9Z-9I-VVE"/>
                             </connections>
                         </button>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSX-2L-Rqk">
-                            <rect key="frame" x="20" y="25" width="54" height="19"/>
-                            <buttonCell key="cell" type="recessed" title="Delete" bezelStyle="recessed" imagePosition="left" alignment="left" borderStyle="border" inset="2" id="yaO-Um-ktC">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                                <font key="font" metaFont="systemBold" size="12"/>
-                                <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                            </buttonCell>
-                            <connections>
-                                <action selector="delete:" target="-2" id="SwJ-Vj-Z5N"/>
-                            </connections>
-                        </button>
                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-VC-XKT">
-                            <rect key="frame" x="62" y="197" width="193" height="26"/>
+                            <rect key="frame" x="21" y="216" width="255" height="26"/>
                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UF2-Pg-gsS" id="CqR-Pc-2rT">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
@@ -100,7 +87,7 @@ Gw
                             </popUpButtonCell>
                         </popUpButton>
                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUO-bi-Ncv">
-                            <rect key="frame" x="62" y="149" width="193" height="26"/>
+                            <rect key="frame" x="21" y="185" width="255" height="26"/>
                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VYw-Fz-ZI1" id="Ycg-A2-z6e">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
@@ -114,13 +101,26 @@ Gw
                             </popUpButtonCell>
                         </popUpButton>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-qx-qgL">
-                            <rect key="frame" x="64" y="59" width="188" height="22"/>
+                            <rect key="frame" x="23" y="125" width="250" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Group ID" drawsBackground="YES" id="vCz-q5-506">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSX-2L-Rqk">
+                            <rect key="frame" x="17" y="34" width="262" height="32"/>
+                            <buttonCell key="cell" type="push" title="Удалить" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="yaO-Um-ktC">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                            </buttonCell>
+                            <connections>
+                                <action selector="delete:" target="-2" id="SwJ-Vj-Z5N"/>
+                            </connections>
+                        </button>
                     </subviews>
                 </customView>
             </subviews>

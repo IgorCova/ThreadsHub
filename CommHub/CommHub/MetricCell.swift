@@ -20,7 +20,7 @@ class MetricCell: NSTableCellView {
         // Drawing code here.
     }
     
-    func setCell(value: Int, valuePercent: Double) {
+    func setCell(value: Int, valuePercent: Int) {
         self.value.stringValue = value.divByBits()
         //---
         if valuePercent < 0 {

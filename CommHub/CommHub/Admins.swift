@@ -31,9 +31,9 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
+        //  self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
-        self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        //self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
         self.view.window?.title = "Администраторы"
     }
     
@@ -106,18 +106,12 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         if index >= 0 {
             let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(dirAdmins[index], title: "Edit the administrator", deleteButtonHide: false)
+            subview?.setCard(dirAdmins[index], title: "Редактирование", deleteButtonHide: false)
                 
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)
         }
     }
-    
-    
-    
-    
-    
-    
     
     func colorWithHexString (hex:String) -> NSColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString

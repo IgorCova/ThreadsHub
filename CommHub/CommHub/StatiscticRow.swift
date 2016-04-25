@@ -22,47 +22,50 @@ class StatisticRow {
     
     var members: Int
     var membersNew: Int
-    var membersDifPercent: Double
+    var membersDifPercent: Int
+    
+    var increaseNew:Int
+    var increaseDifPercent: Int
     
     var subscribed: Int
     var subscribedNew:Int
-    var subscribedDifPercent: Double
+    var subscribedDifPercent: Int
     
     var unsubscribed: Int
     var unsubscribedNew: Int
-    var unsubscribedDifPercent: Double
+    var unsubscribedDifPercent: Int
     
     var visitors: Int
     var visitorsNew: Int
-    var visitorsDifPercent: Double
+    var visitorsDifPercent: Int
     
     var views: Int
     var viewsNew: Int
-    var viewsDifPercent: Double
+    var viewsDifPercent: Int
     
     var reach: Int
     var reachNew: Int
-    var reachDifPercent: Double
+    var reachDifPercent: Int
     
     var reachSubscribers: Int
     var reachSubscribersNew: Int
-    var reachSubscribersDifPercent: Double
+    var reachSubscribersDifPercent: Int
     
     var postCount: Int
     var postCountNew: Int
-    var postCountDifPercent: Double
+    var postCountDifPercent: Int
     
     var likes: Int
     var likesNew: Int
-    var likesDifPercent: Double
+    var likesDifPercent: Int
     
     var comments: Int
     var commentsNew: Int
-    var commentsDifPercent: Double
+    var commentsDifPercent: Int
     
     var reposts: Int
     var repostsNew: Int
-    var repostsDifPercent: Double
+    var repostsDifPercent: Int
     
     init(
         comm_id: Int
@@ -78,47 +81,50 @@ class StatisticRow {
     
        ,members: Int
        ,membersNew: Int
-       ,membersDifPercent: Double
-    
+       ,membersDifPercent: Int
+        
+       ,increaseNew: Int
+       ,increaseDifPercent: Int
+        
        ,subscribed: Int
        ,subscribedNew:Int
-       ,subscribedDifPercent: Double
+       ,subscribedDifPercent: Int
     
        ,unsubscribed: Int
        ,unsubscribedNew: Int
-       ,unsubscribedDifPercent: Double
+       ,unsubscribedDifPercent: Int
     
        ,visitors: Int
        ,visitorsNew: Int
-       ,visitorsDifPercent: Double
+       ,visitorsDifPercent: Int
     
        ,views: Int
        ,viewsNew: Int
-       ,viewsDifPercent: Double
+       ,viewsDifPercent: Int
     
        ,reach: Int
        ,reachNew: Int
-       ,reachDifPercent: Double
+       ,reachDifPercent: Int
     
        ,reachSubscribers: Int
        ,reachSubscribersNew: Int
-       ,reachSubscribersDifPercent: Double
+       ,reachSubscribersDifPercent: Int
     
        ,postCount: Int
        ,postCountNew: Int
-       ,postCountDifPercent: Double
+       ,postCountDifPercent: Int
     
        ,likes: Int
        ,likesNew: Int
-       ,likesDifPercent: Double
+       ,likesDifPercent: Int
     
        ,comments: Int
        ,commentsNew: Int
-       ,commentsDifPercent: Double
+       ,commentsDifPercent: Int
     
        ,reposts: Int
        ,repostsNew: Int
-       ,repostsDifPercent: Double) {
+       ,repostsDifPercent: Int) {
         
         self.comm_id = comm_id
         self.comm_name = comm_name
@@ -134,6 +140,9 @@ class StatisticRow {
         self.members = members
         self.membersNew = membersNew
         self.membersDifPercent = membersDifPercent
+        
+        self.increaseNew = increaseNew
+        self.increaseDifPercent = increaseDifPercent
         
         self.subscribed = subscribed
         self.subscribedNew = subscribedNew
