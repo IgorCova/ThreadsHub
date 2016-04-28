@@ -29,7 +29,6 @@
 		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
 		273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCard.xib */; };
 		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
-		27581B8C1CCBA4A60012521F /* ExampleToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */; };
 		27581B911CCC09480012521F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27581B901CCC09480012521F /* Profile.swift */; };
 		275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558A1CB9366B003A60FD /* RegistrationSegue.swift */; };
 		275E558D1CB93C90003A60FD /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558C1CB93C90003A60FD /* Container.swift */; };
@@ -101,7 +100,6 @@
 		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
 		273B0B5A1CAF3CE400454E94 /* AdminCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCard.xib; sourceTree = "<group>"; };
 		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
-		27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleToolbar.swift; sourceTree = "<group>"; };
 		27581B901CCC09480012521F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		275E558A1CB9366B003A60FD /* RegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSegue.swift; sourceTree = "<group>"; };
 		275E558C1CB93C90003A60FD /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
@@ -230,7 +228,6 @@
 				27171A051CAD3C5300123816 /* CoreData */,
 				274E7E341CB165950003DA19 /* Data */,
 				27171A061CAD3C7800123816 /* SupportingFiles */,
-				27581B8B1CCBA4A60012521F /* ExampleToolbar.swift */,
 			);
 			path = CommHub;
 			sourceTree = "<group>";
@@ -441,7 +438,7 @@
 				TargetAttributes = {
 					271719D31CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4R2M8FE9U7;
+						DevelopmentTeam = 58JP37J35E;
 					};
 					271719E71CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
@@ -558,7 +555,6 @@
 			files = (
 				270884951CBA999800780F07 /* StatisticsWindow.swift in Sources */,
 				2710CD611CAD58B400F46F7E /* AdminComm.swift in Sources */,
-				27581B8C1CCBA4A60012521F /* ExampleToolbar.swift in Sources */,
 				27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */,
 				27ADFA571CB1834400B4C308 /* OwnerHubData.swift in Sources */,
 				F33E719B1CCD2F03006B4CA4 /* Logout.swift in Sources */,

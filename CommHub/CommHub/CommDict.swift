@@ -26,7 +26,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         //   self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         //  self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        self.view.window?.title = "Сообщества"
+        self.view.window?.title = "Communities"
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -132,7 +132,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         if myTableViewFromNotification.selectedRow >= 0 {
             let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(comm[index], title: "Редактирование", deleteButtonHide: false)
+            subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
             
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)

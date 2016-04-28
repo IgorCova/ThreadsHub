@@ -34,7 +34,7 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         //  self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         //self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        self.view.window?.title = "Администраторы"
+        self.view.window?.title = "Administrators"
     }
     
     override func viewWillAppear() {
@@ -106,7 +106,7 @@ class AdminsViewController: NSViewController, NSTableViewDataSource, NSTableView
         if index >= 0 {
             let subview = AdminCardViewController(nibName: "AdminCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(dirAdmins[index], title: "Редактирование", deleteButtonHide: false)
+            subview?.setCard(dirAdmins[index], title: "Edit the administrator", deleteButtonHide: false)
                 
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)
