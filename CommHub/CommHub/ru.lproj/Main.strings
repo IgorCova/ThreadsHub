@@ -1,0 +1,508 @@
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "0Rm-De-yIb"; */
+"0Rm-De-yIb.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Full Name"; ObjectID = "0l6-dZ-pSM"; */
+"0l6-dZ-pSM.title" = "Full Name";
+
+/* Class = "NSMenuItem"; title = "Customize Toolbar…"; ObjectID = "1UK-8n-QPP"; */
+"1UK-8n-QPP.title" = "Настройка Панелей Инструментов…";
+
+/* Class = "NSMenuItem"; title = "CommHub"; ObjectID = "1Xt-HY-uBw"; */
+"1Xt-HY-uBw.title" = "CommHub";
+
+/* Class = "NSTableColumn"; headerCell.title = "Members"; ObjectID = "2h6-2J-Z6z"; */
+"2h6-2J-Z6z.headerCell.title" = "Участники";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "2lx-gt-GWL"; */
+"2lx-gt-GWL.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "2tu-Ln-Kq0"; */
+"2tu-Ln-Kq0.title" = "number";
+
+/* Class = "NSMenuItem"; title = "Quit CommHub"; ObjectID = "4sb-4s-VLi"; */
+"4sb-4s-VLi.title" = "Закрыть CommHub";
+
+/* Class = "NSSegmentedCell"; 573-GS-KuN.ibShadowedLabels[0] = "Today"; ObjectID = "573-GS-KuN"; */
+"573-GS-KuN.ibShadowedLabels[0]" = "Сегодня";
+
+/* Class = "NSSegmentedCell"; 573-GS-KuN.ibShadowedLabels[1] = "Yesterday"; ObjectID = "573-GS-KuN"; */
+"573-GS-KuN.ibShadowedLabels[1]" = "Вчера";
+
+/* Class = "NSMenuItem"; title = "Find"; ObjectID = "59m-IP-fsI"; */
+"59m-IP-fsI.title" = "Найти";
+
+/* Class = "NSTableColumn"; headerCell.title = "Subjects"; ObjectID = "5Mg-KL-U6c"; */
+"5Mg-KL-U6c.headerCell.title" = "Тематики";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "5Na-UX-znZ"; */
+"5Na-UX-znZ.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "CommHub"; ObjectID = "5kV-Vb-QxS"; */
+"5kV-Vb-QxS.title" = "CommHub";
+
+/* Class = "NSToolbarItem"; label = "Facebook"; ObjectID = "5vu-gj-eZP"; */
+"5vu-gj-eZP.label" = "Facebook";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Facebook"; ObjectID = "5vu-gj-eZP"; */
+"5vu-gj-eZP.paletteLabel" = "Facebook";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "6H8-dk-zAd"; */
+"6H8-dk-zAd.title" = "percent";
+
+/* Class = "NSTableColumn"; headerCell.title = "Administrator"; ObjectID = "6kz-7n-ML1"; */
+"6kz-7n-ML1.headerCell.title" = "Администратор";
+
+/* Class = "NSMenuItem"; title = "Smart Quotes"; ObjectID = "7AI-lj-wfl"; */
+"7AI-lj-wfl.title" = "Умные ковычки";
+
+/* Class = "NSMenuItem"; title = "Show Substitutions"; ObjectID = "7Ct-tD-0ph"; */
+"7Ct-tD-0ph.title" = "Замены";
+
+/* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "7c7-NM-d6A"; */
+"7c7-NM-d6A.title" = "Проверка орфографии во время ввода";
+
+/* Class = "NSMenuItem"; title = "Text Replacement"; ObjectID = "8Fb-MG-jDx"; */
+"8Fb-MG-jDx.title" = "Замена текста";
+
+/* Class = "NSMenuItem"; title = "Copy"; ObjectID = "8kC-ld-6an"; */
+"8kC-ld-6an.title" = "Копировать";
+
+/* Class = "NSTableColumn"; headerCell.title = "Visitors"; ObjectID = "9Zp-d6-Rdg"; */
+"9Zp-d6-Rdg.headerCell.title" = "Посетители";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "9g9-DT-clB"; */
+"9g9-DT-clB.title" = "percent";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Name"; ObjectID = "9oS-mX-TSL"; */
+"9oS-mX-TSL.placeholderString" = "Name";
+
+/* Class = "NSMenu"; title = "Main Menu"; ObjectID = "AYu-sK-qS6"; */
+"AYu-sK-qS6.title" = "Main Menu";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "AaO-iS-OmL"; */
+"AaO-iS-OmL.title" = "percent";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "B8r-EQ-mZa"; */
+"B8r-EQ-mZa.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
+"BOF-NM-1cW.title" = "Настройки…";
+
+/* Class = "NSTableColumn"; headerCell.title = "Administrators"; ObjectID = "BUg-Ga-zfZ"; */
+"BUg-Ga-zfZ.headerCell.title" = "Администраторы";
+
+/* Class = "NSTableColumn"; headerCell.title = "Communities"; ObjectID = "CPL-hE-iKG"; */
+"CPL-hE-iKG.headerCell.title" = "Сообщества";
+
+/* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "CTT-Fl-NGx"; */
+"CTT-Fl-NGx.title" = "Умное копирование/вставка";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "CTw-El-3fe"; */
+"CTw-El-3fe.title" = "number";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Cpd-Sh-OGL"; */
+"Cpd-Sh-OGL.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Czt-oS-izM"; */
+"Czt-oS-izM.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "D0T-I9-ays"; */
+"D0T-I9-ays.title" = "Text Cell";
+
+/* Class = "NSMenu"; title = "Substitutions"; ObjectID = "D7q-uv-sfU"; */
+"D7q-uv-sfU.title" = "Замены";
+
+/* Class = "NSMenuItem"; title = "Communities"; ObjectID = "DVo-aG-piG"; */
+"DVo-aG-piG.title" = "Сообщества";
+
+/* Class = "NSMenu"; title = "Spelling"; ObjectID = "Dac-qP-MWa"; */
+"Dac-qP-MWa.title" = "Spelling";
+
+/* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "Dd8-pa-nBT"; */
+"Dd8-pa-nBT.headerCell.title" = "Репосты";
+
+/* Class = "NSMenuItem"; title = "My account"; ObjectID = "EHh-3X-WMU"; */
+"EHh-3X-WMU.title" = "Мой аккаунт";
+
+/* Class = "NSTextFieldCell"; title = "Admin Name"; ObjectID = "EHq-Sc-t68"; */
+"EHq-Sc-t68.title" = "Admin Name";
+
+/* Class = "NSMenuItem"; title = "Speech"; ObjectID = "EMd-Jx-nyK"; */
+"EMd-Jx-nyK.title" = "Речь";
+
+/* Class = "NSToolbarItem"; label = "My World"; ObjectID = "EQv-x9-fiM"; */
+"EQv-x9-fiM.label" = "My World";
+
+/* Class = "NSToolbarItem"; paletteLabel = "My World"; ObjectID = "EQv-x9-fiM"; */
+"EQv-x9-fiM.paletteLabel" = "My World";
+
+/* Class = "NSMenuItem"; title = "Data Detectors"; ObjectID = "EmA-PZ-Xt1"; */
+"EmA-PZ-Xt1.title" = "Детекторы данных";
+
+/* Class = "NSMenu"; title = "Help"; ObjectID = "F2S-fz-NVQ"; */
+"F2S-fz-NVQ.title" = "Помощь";
+
+/* Class = "NSMenuItem"; title = "CommHub Help"; ObjectID = "FKE-Sm-Kum"; */
+"FKE-Sm-Kum.title" = "Помощь по CommHub";
+
+/* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "Fc8-1y-UJF"; */
+"Fc8-1y-UJF.title" = "Умное тире";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Ffs-am-Qhj"; */
+"Ffs-am-Qhj.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "GBW-eh-jnH"; */
+"GBW-eh-jnH.title" = "percent";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Phone Number"; ObjectID = "GCF-8K-Jcg"; */
+"GCF-8K-Jcg.placeholderString" = "Phone Number";
+
+/* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "Giy-ll-WL7"; */
+"Giy-ll-WL7.title" = "Преобразования";
+
+/* Class = "NSMenuItem"; title = "View"; ObjectID = "H8h-7b-M4v"; */
+"H8h-7b-M4v.title" = "Просмотр";
+
+/* Class = "NSMenuItem"; title = "Cut"; ObjectID = "H9V-es-ec1"; */
+"H9V-es-ec1.title" = "Вырезать";
+
+/* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
+"HyV-fh-RgO.title" = "Просмотр";
+
+/* Class = "NSMenuItem"; title = "Subjects"; ObjectID = "IAo-SY-fd9"; */
+"IAo-SY-fd9.title" = "Тематики";
+
+/* Class = "NSMenuItem"; title = "Paste and Match Style"; ObjectID = "Ifo-A0-hvs"; */
+"Ifo-A0-hvs.title" = "Вставить в текущем стиле";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "IuM-Ch-q20"; */
+"IuM-Ch-q20.title" = "Text Cell";
+
+/* Class = "NSToolbarItem"; label = "Instagram"; ObjectID = "Iuh-BI-UpL"; */
+"Iuh-BI-UpL.label" = "Instagram";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Instagram"; ObjectID = "Iuh-BI-UpL"; */
+"Iuh-BI-UpL.paletteLabel" = "Instagram";
+
+/* Class = "NSTableColumn"; headerCell.title = "Administrator"; ObjectID = "J37-IA-nO1"; */
+"J37-IA-nO1.headerCell.title" = "Администратор";
+
+/* Class = "NSTableColumn"; headerCell.title = "Community"; ObjectID = "JNR-Ro-1yw"; */
+"JNR-Ro-1yw.headerCell.title" = "Сообщество";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "JPN-52-SY2"; */
+"JPN-52-SY2.title" = "number";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "JvY-T7-uxh"; */
+"JvY-T7-uxh.title" = "number";
+
+/* Class = "NSMenuItem"; title = "Show All"; ObjectID = "Kd2-mp-pUS"; */
+"Kd2-mp-pUS.title" = "Показать все";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "Khi-Zt-aYq"; */
+"Khi-Zt-aYq.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Select All"; ObjectID = "LCk-KC-JDZ"; */
+"LCk-KC-JDZ.title" = "Выбрать все";
+
+/* Class = "NSMenuItem"; title = "Bring All to Front"; ObjectID = "LE2-aR-0XJ"; */
+"LE2-aR-0XJ.title" = "Все на передний план";
+
+/* Class = "NSMenuItem"; title = "Undo"; ObjectID = "LrL-KE-W6p"; */
+"LrL-KE-W6p.title" = "Отменить";
+
+/* Class = "NSTextFieldCell"; title = "numberLabel"; ObjectID = "MDk-Az-wkH"; */
+"MDk-Az-wkH.title" = "numberLabel";
+
+/* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "MJZ-oa-hj4"; */
+"MJZ-oa-hj4.title" = "Перевести в верхний регистр";
+
+/* Class = "NSButtonCell"; title = "Сontinue"; ObjectID = "MeJ-mC-WWS"; */
+"MeJ-mC-WWS.title" = "Продолжить";
+
+/* Class = "NSToolbarItem"; label = "Период"; ObjectID = "N8o-Dr-Mmw"; */
+"N8o-Dr-Mmw.label" = "Период";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Период"; ObjectID = "N8o-Dr-Mmw"; */
+"N8o-Dr-Mmw.paletteLabel" = "Период";
+
+/* Class = "NSMenuItem"; title = "Use Selection for Find"; ObjectID = "NGh-0g-QLC"; */
+"NGh-0g-QLC.title" = "Найти по выделенному";
+
+/* Class = "NSMenuItem"; title = "Services"; ObjectID = "NMo-om-nkz"; */
+"NMo-om-nkz.title" = "Услуги";
+
+/* Class = "NSMenuItem"; title = "Minimize"; ObjectID = "OY7-WF-poV"; */
+"OY7-WF-poV.title" = "Свернуть";
+
+/* Class = "NSMenuItem"; title = "Hide CommHub"; ObjectID = "Olw-nP-bQN"; */
+"Olw-nP-bQN.title" = "Скрыть CommHub";
+
+/* Class = "NSMenuItem"; title = "Delete"; ObjectID = "Qj8-8g-9Tg"; */
+"Qj8-8g-9Tg.title" = "Удалить";
+
+/* Class = "NSMenuItem"; title = "Zoom"; ObjectID = "R4o-n2-Eq4"; */
+"R4o-n2-Eq4.title" = "Увеличить";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Link"; ObjectID = "RU8-Ua-Xh4"; */
+"RU8-Ua-Xh4.placeholderString" = "Link";
+
+/* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "Skp-hi-JMt"; */
+"Skp-hi-JMt.title" = "Проверить грамматику";
+
+/* Class = "NSToolbarItem"; label = "Odnoklassniki"; ObjectID = "T8q-D4-f9b"; */
+"T8q-D4-f9b.label" = "Odnoklassniki";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Odnoklassniki"; ObjectID = "T8q-D4-f9b"; */
+"T8q-D4-f9b.paletteLabel" = "Odnoklassniki";
+
+/* Class = "NSMenu"; title = "Transformations"; ObjectID = "TTh-le-caJ"; */
+"TTh-le-caJ.title" = "Преобразования";
+
+/* Class = "NSMenu"; title = "Window"; ObjectID = "Td7-aD-5lo"; */
+"Td7-aD-5lo.title" = "Окно";
+
+/* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "U7S-GV-2wD"; */
+"U7S-GV-2wD.title" = "Капитализировать";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "UkC-pt-ujD"; */
+"UkC-pt-ujD.title" = "number";
+
+/* Class = "NSMenu"; title = "Speech"; ObjectID = "Usl-Ru-xSK"; */
+"Usl-Ru-xSK.title" = "Речь";
+
+/* Class = "NSMenuItem"; title = "Hide Other"; ObjectID = "Vdr-fp-XzO"; */
+"Vdr-fp-XzO.title" = "Скрыть остальное";
+
+/* Class = "NSMenuItem"; title = "Jump to Selection"; ObjectID = "WBa-Y3-muF"; */
+"WBa-Y3-muF.title" = "Перейти к выбранному";
+
+/* Class = "NSMenuItem"; title = "Administrators"; ObjectID = "Was-JA-tGl"; */
+"Was-JA-tGl.title" = "Администраторы";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "Wl6-qL-5RE"; */
+"Wl6-qL-5RE.title" = "Отмена";
+
+/* Class = "NSToolbarItem"; label = "YouTube"; ObjectID = "WmS-0o-DRq"; */
+"WmS-0o-DRq.label" = "YouTube";
+
+/* Class = "NSToolbarItem"; paletteLabel = "YouTube"; ObjectID = "WmS-0o-DRq"; */
+"WmS-0o-DRq.paletteLabel" = "YouTube";
+
+/* Class = "NSViewController"; title = "RegistrationViewController"; ObjectID = "XfG-lQ-9wD"; */
+"XfG-lQ-9wD.title" = "RegistrationViewController";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "Y3D-km-kGj"; */
+"Y3D-km-kGj.title" = "number";
+
+/* Class = "NSMenuItem"; title = "Find…"; ObjectID = "YR6-2b-zpk"; */
+"YR6-2b-zpk.title" = "Найти…";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Last Name"; ObjectID = "Z0r-qS-8xy"; */
+"Z0r-qS-8xy.placeholderString" = "Last Name";
+
+/* Class = "NSTableColumn"; headerCell.title = "Likes"; ObjectID = "ZXe-hv-kdq"; */
+"ZXe-hv-kdq.headerCell.title" = "Лайки";
+
+/* Class = "NSTableColumn"; headerCell.title = "Posts"; ObjectID = "a4n-3D-jJq"; */
+"a4n-3D-jJq.headerCell.title" = "Посты";
+
+/* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
+"aUF-d1-5bR.title" = "Окно";
+
+/* Class = "NSTextFieldCell"; title = "Phone number"; ObjectID = "bKh-pH-hlN"; */
+"bKh-pH-hlN.title" = "Phone number";
+
+/* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "bUN-qd-gla"; */
+"bUN-qd-gla.title" = "Найти и заменить…";
+
+/* Class = "NSTableColumn"; headerCell.title = "Reach"; ObjectID = "bWy-XV-7hm"; */
+"bWy-XV-7hm.headerCell.title" = "Охват";
+
+/* Class = "NSMenu"; title = "Control"; ObjectID = "bib-Uj-vzu"; */
+"bib-Uj-vzu.title" = "Управление";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "c1G-cK-8Wi"; */
+"c1G-cK-8Wi.title" = "percent";
+
+/* Class = "NSTextFieldCell"; title = "We have sent a verification code to Your phone number,
+ enter that code here"; ObjectID = "cbv-hQ-bGf"; */
+"cbv-hQ-bGf.title" = "Мы отправили код подтверждения на  Ваш номер телеона,
+ введите этот код здесь";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "dLH-Ry-lq4"; */
+"dLH-Ry-lq4.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Control"; ObjectID = "dMs-cI-mzQ"; */
+"dMs-cI-mzQ.title" = "Управление";
+
+/* Class = "NSMenuItem"; title = "Check Document Now"; ObjectID = "dNX-6M-TMa"; */
+"dNX-6M-TMa.title" = "Проверить документ сейчас";
+
+/* Class = "NSMenuItem"; title = "Show Spelling and Grammar"; ObjectID = "eXT-Xb-gt1"; */
+"eXT-Xb-gt1.title" = "Показать правописание и грамматику";
+
+/* Class = "NSMenuItem"; title = "Substitutions"; ObjectID = "eXu-Hr-qZY"; */
+"eXu-Hr-qZY.title" = "Показать замены";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "ekd-cX-Rx7"; */
+"ekd-cX-Rx7.title" = "percent";
+
+/* Class = "NSTextFieldCell"; title = "Категория"; ObjectID = "esX-4t-a46"; */
+"esX-4t-a46.title" = "Категория";
+
+/* Class = "NSMenuItem"; title = "Correct Spelling Automatically"; ObjectID = "f2d-qq-6A8"; */
+"f2d-qq-6A8.title" = "Исправлять орфографию автоматически";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "gFk-eN-ISt"; */
+"gFk-eN-ISt.title" = "number";
+
+/* Class = "NSMenuItem"; title = "Paste"; ObjectID = "hnB-LD-kIP"; */
+"hnB-LD-kIP.title" = "Вставить";
+
+/* Class = "NSMenu"; title = "Services"; ObjectID = "hz9-B4-Xy5"; */
+"hz9-B4-Xy5.title" = "Услуги";
+
+/* Class = "NSToolbarItem"; label = "VKontakte"; ObjectID = "iBF-os-mEl"; */
+"iBF-os-mEl.label" = "VKontakte";
+
+/* Class = "NSToolbarItem"; paletteLabel = "VKontakte"; ObjectID = "iBF-os-mEl"; */
+"iBF-os-mEl.paletteLabel" = "VKontakte";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "iZX-Im-c5z"; */
+"iZX-Im-c5z.title" = "percent";
+
+/* Class = "NSTextFieldCell"; title = "Community Name"; ObjectID = "jxH-cN-D7u"; */
+"jxH-cN-D7u.title" = "Community Name";
+
+/* Class = "NSButtonCell"; title = "Ok"; ObjectID = "kdV-og-bZ0"; */
+"kdV-og-bZ0.title" = "Ок";
+
+/* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "l7P-V8-RKS"; */
+"l7P-V8-RKS.title" = "Начать говорить";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "lsS-c3-zdV"; */
+"lsS-c3-zdV.title" = "Name";
+
+/* Class = "NSToolbarItem"; paletteLabel = "space"; ObjectID = "mDA-W4-qtj"; */
+"mDA-W4-qtj.paletteLabel" = "space";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Code"; ObjectID = "mEm-ME-x1m"; */
+"mEm-ME-x1m.placeholderString" = "Код";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "mLu-sp-PDf"; */
+"mLu-sp-PDf.title" = "Text Cell";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "miG-6p-0QR"; */
+"miG-6p-0QR.title" = "Save";
+
+/* Class = "NSMenuItem"; title = "Find Previous"; ObjectID = "msQ-C4-AGR"; */
+"msQ-C4-AGR.title" = "Найти предыдущее";
+
+/* Class = "NSTableColumn"; headerCell.title = "Comments"; ObjectID = "nfp-VP-zXw"; */
+"nfp-VP-zXw.headerCell.title" = "Комментарии";
+
+/* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "nsp-Rc-Xvk"; */
+"nsp-Rc-Xvk.title" = "Прекратить говорить";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "oAv-fo-lHJ"; */
+"oAv-fo-lHJ.title" = "Text Cell";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "oEA-9b-Yqf"; */
+"oEA-9b-Yqf.title" = "Text Cell";
+
+/* Class = "NSViewController"; title = "CommHub"; ObjectID = "oIz-I8-XRH"; */
+"oIz-I8-XRH.title" = "CommHub";
+
+/* Class = "NSTextFieldCell"; title = "Subject Name"; ObjectID = "oRb-BN-uIL"; */
+"oRb-BN-uIL.title" = "Subject Name";
+
+/* Class = "NSViewController"; title = "Container View Controller"; ObjectID = "oXr-f4-yeP"; */
+"oXr-f4-yeP.title" = "Container View Controller";
+
+/* Class = "NSToolbarItem"; label = "Обновить"; ObjectID = "oew-ad-B10"; */
+"oew-ad-B10.label" = "Обновить";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Обновить"; ObjectID = "oew-ad-B10"; */
+"oew-ad-B10.paletteLabel" = "Обновить";
+
+/* Class = "NSTextFieldCell"; title = "Name"; ObjectID = "ofL-Pg-4fA"; */
+"ofL-Pg-4fA.title" = "Name";
+
+/* Class = "NSMenuItem"; title = "Spelling and Grammar"; ObjectID = "orx-gS-u8O"; */
+"orx-gS-u8O.title" = "Проверка правописания и грамматики";
+
+/* Class = "NSTableColumn"; headerCell.title = "Subject"; ObjectID = "owE-yJ-64i"; */
+"owE-yJ-64i.headerCell.title" = "Тематика";
+
+/* Class = "NSTextFieldCell"; title = "number"; ObjectID = "pLb-4J-1B6"; */
+"pLb-4J-1B6.title" = "number";
+
+/* Class = "NSTextFieldCell"; title = "NameSubject"; ObjectID = "pNf-Rh-wVo"; */
+"pNf-Rh-wVo.title" = "NameSubject";
+
+/* Class = "NSTextFieldCell"; title = "Enter Your phone number for
+ registration in the CommHub"; ObjectID = "puC-rN-qz1"; */
+"puC-rN-qz1.title" = "Введите Ваш номер телефона  для 
+регистрации в CommHub";
+
+/* Class = "NSTableColumn"; headerCell.title = "Increase"; ObjectID = "pzR-6W-oEG"; */
+"pzR-6W-oEG.headerCell.title" = "Прирост";
+
+/* Class = "NSMenu"; title = "Find"; ObjectID = "qjo-3b-Zwh"; */
+"qjo-3b-Zwh.title" = "Найти";
+
+/* Class = "NSMenuItem"; title = "Edit"; ObjectID = "rfa-XG-osA"; */
+"rfa-XG-osA.title" = "Правка";
+
+/* Class = "NSTextFieldCell"; placeholderString = "+7 (999) 999-99-99"; ObjectID = "rgS-zf-g4U"; */
+"rgS-zf-g4U.placeholderString" = "+7 (999) 999-99-99";
+
+/* Class = "NSMenuItem"; title = "Show Toolbar"; ObjectID = "snW-S8-Cw5"; */
+"snW-S8-Cw5.title" = "Показать Панель Инструментов";
+
+/* Class = "NSMenu"; title = "CommHub"; ObjectID = "uQy-DD-JDr"; */
+"uQy-DD-JDr.title" = "CommHub";
+
+/* Class = "NSTableColumn"; headerCell.title = "Views"; ObjectID = "uT2-du-wKk"; */
+"uT2-du-wKk.headerCell.title" = "Просмотры";
+
+/* Class = "NSTextFieldCell"; title = "Text Cell"; ObjectID = "ueC-F3-9Td"; */
+"ueC-F3-9Td.title" = "Text Cell";
+
+/* Class = "NSMenuItem"; title = "Redo"; ObjectID = "vLM-Kj-24B"; */
+"vLM-Kj-24B.title" = "Повторить";
+
+/* Class = "NSMenuItem"; title = "Make Lower Case"; ObjectID = "vua-gH-4sU"; */
+"vua-gH-4sU.title" = "Перевести в нижний регистр";
+
+/* Class = "NSToolbarItem"; label = "Bigspace"; ObjectID = "wJ8-V2-ZZO"; */
+"wJ8-V2-ZZO.label" = "Bigspace";
+
+/* Class = "NSToolbarItem"; paletteLabel = "Bigspace"; ObjectID = "wJ8-V2-ZZO"; */
+"wJ8-V2-ZZO.paletteLabel" = "Bigspace";
+
+/* Class = "NSMenuItem"; title = "Logout"; ObjectID = "wPu-EB-WlL"; */
+"wPu-EB-WlL.title" = "Выход";
+
+/* Class = "NSViewController"; title = "Logout"; ObjectID = "wem-2T-TXV"; */
+"wem-2T-TXV.title" = "Logout";
+
+/* Class = "NSMenuItem"; title = "Help"; ObjectID = "wpr-3q-Mcd"; */
+"wpr-3q-Mcd.title" = "Помощь";
+
+/* Class = "NSMenuItem"; title = "Smart Links"; ObjectID = "xRk-kb-VtB"; */
+"xRk-kb-VtB.title" = "Умные ссылки";
+
+/* Class = "NSMenu"; title = "Edit"; ObjectID = "xwi-et-C7F"; */
+"xwi-et-C7F.title" = "Правка";
+
+/* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "ySD-qd-qUz"; */
+"ySD-qd-qUz.title" = "Найти следущее";
+
+/* Class = "NSTextFieldCell"; title = "Phone Number"; ObjectID = "zKc-0k-SXB"; */
+"zKc-0k-SXB.title" = "Phone Number";
+
+/* Class = "NSTextFieldCell"; title = "percent"; ObjectID = "zaU-Eg-Pwg"; */
+"zaU-Eg-Pwg.title" = "percent";

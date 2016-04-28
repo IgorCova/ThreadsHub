@@ -20,7 +20,11 @@ class CommCellView: NSTableCellView {
     
     func setCell(community: Comm) {
         self.communityName.stringValue = community.name
-        self.imageProfile.imageFromUrl(community.photoLink)
+        if community.photoLink != "" {
+            self.imageProfile.imageFromUrl(community.photoLink)
+        } else {
+            self.imageProfile.image = NSImage(named: "vk")
+        }
     }
     
 }

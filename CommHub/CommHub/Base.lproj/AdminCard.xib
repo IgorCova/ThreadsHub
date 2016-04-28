@@ -19,13 +19,13 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView wantsLayer="YES" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="303" height="505"/>
+            <rect key="frame" x="0.0" y="0.0" width="300" height="505"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="5og-Hb-Scx">
+                <customView misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5og-Hb-Scx">
                     <rect key="frame" x="0.0" y="100" width="303" height="305"/>
                     <subviews>
-                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-OL-dIF">
+                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7EA-OL-dIF">
                             <rect key="frame" x="20" y="221" width="263" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="ePx-Ej-F4n"/>
@@ -36,7 +36,7 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-iz-mhK">
+                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aSN-iz-mhK">
                             <rect key="frame" x="20" y="194" width="263" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="46n-Lg-q2S"/>
@@ -47,7 +47,7 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="29t-dN-3OF">
+                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29t-dN-3OF">
                             <rect key="frame" x="20" y="140" width="263" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="2I9-sh-7Xv"/>
@@ -58,7 +58,7 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-Rf-bWu">
+                        <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nP3-Rf-bWu">
                             <rect key="frame" x="20" y="167" width="263" height="22"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="22" id="QA6-Ma-d3T"/>

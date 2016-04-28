@@ -1,0 +1,21 @@
+/*
+ Localizable.string.strings
+ CommHub
+ 
+ Created by Andrew Dzhur on 28/04/16.
+ Copyright © 2016 Andrew Dzhur. All rights reserved.
+ */
+
+"Warning" = "Предупреждение";
+"Warning.PhoneNumber" = "Не правильно введен номер телефона";
+"AuthorizationError" = "Ошибка авторизации";
+"UnknownError" = "Произошла неизвестная ошибка";
+"AdministratorsTitleName" = "Администраторы";
+"SubjectsTitleName" = "Тематики";
+"CommunitiesTitleName" = "Сообщества";
+"AddNewCommunity" = "Добавление нового сообщества";
+"EditCommunity" = "Редактирование сообщества";
+"AddNewAdmin" = "Добавление нового администратора";
+"EditAdministrator" = "Редактирование администратора";
+"AddNewSubject" = "Добавление новой тематики";
+"EditSubject" = "Редактирование тематики";

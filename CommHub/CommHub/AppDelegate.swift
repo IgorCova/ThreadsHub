@@ -12,6 +12,7 @@ import AppKit
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    var mainWindow : MainWindowController?
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         // Insert code here to initialize your application
@@ -23,11 +24,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(aNotification: NSNotification) {
         // Insert code here to tear down your application
+        
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
-        return true
+        return false
     }
+    
+    func applicationShouldHandleReopen(sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        self.mainWindow?.window?.makeKeyAndOrderFront(self)
+        
+        return false
+    }
+    
     // MARK: - Core Data stack
 
     lazy var applicationDocumentsDirectory: NSURL = {

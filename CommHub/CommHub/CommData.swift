@@ -58,11 +58,8 @@ class CommData{
         // prms -> Parametrs
         let commParametrs: [String: AnyObject] = [
             "id": commIn.id
-            ,"name": commIn.name
             ,"subjectCommID": commIn.subjectID
-            ,"areaCommID": 1
             ,"adminCommID": commIn.adminID
-            ,"groupID": commIn.groupID
             ,"link": commIn.link]
         
         let prms : [String : AnyObject] = ["Session": MySessionID, "DID": MyDID, "Params": ["comm": commParametrs]]

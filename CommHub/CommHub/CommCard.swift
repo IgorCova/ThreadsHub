@@ -15,7 +15,6 @@ class CommCardViewController: NSViewController {
     @IBOutlet var commuyityNameTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
     
-    @IBOutlet var groupIDtextField: NSTextField!
     
     @IBOutlet var adminsPopUpButton: NSPopUpButton!
     @IBOutlet var subjectPopUpButton: NSPopUpButton!
@@ -70,18 +69,18 @@ class CommCardViewController: NSViewController {
         self.comm = community
         self.titleLabel.stringValue = title
         self.deleteButton.hidden = deleteButtonHide
+
         
         if deleteButtonHide == false {
             commuyityNameTextField.editable = false
             linkTextField.editable = false
-            groupIDtextField.editable = false
-            
+        } else {
+            commuyityNameTextField.hidden = true
         }
         
         if let cm = self.comm {
             self.commuyityNameTextField.stringValue = (cm.name)
             self.linkTextField.stringValue = (cm.link)
-            self.groupIDtextField.stringValue = "\(cm.groupID)"
         }
         
         fillSubjectsButton()
@@ -115,14 +114,13 @@ class CommCardViewController: NSViewController {
         if comm == nil {
             comm = Comm(
                  id: 0
-                ,name: commuyityNameTextField.stringValue
+                ,name: ""
                 ,subject: subjectItem!
                 ,admin: adminItem!
                 ,link: linkTextField.stringValue
-                ,groupID: Int(groupIDtextField.stringValue)!
+                ,groupID: 0
                 ,photoLink: "")
         } else {
-            //comm!.name = commuyityNameTextField.stringValue
             comm?.adminID = (adminItem?.id)!
             comm?.subjectID = (subjectItem?.id)!
         }

@@ -22,6 +22,9 @@ class MainWindowController: NSWindowController {
     
     override func windowWillLoad() {
         super.windowWillLoad()
+        
+        let appDelegate = NSApp.delegate as! AppDelegate
+        appDelegate.mainWindow = self
     }
     
     func setStyleMask() {

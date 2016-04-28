@@ -52,8 +52,8 @@ class Registration: NSViewController {
         
         if (phone.characters.count != 11) {
             let alert:NSAlert = NSAlert();
-            alert.messageText = "Предупреждение"
-            alert.informativeText = "Не правильно введен номер телефона"
+            alert.messageText = NSLocalizedString("Warning", comment: "") //"Предупреждение"
+            alert.informativeText = NSLocalizedString("Warning.PhoneNumber", comment: "") //"Не правильно введен номер телефона"
             alert.runModal()
             
             return
@@ -64,8 +64,8 @@ class Registration: NSViewController {
                     self.performSegueWithIdentifier("toConfirmCode", sender: self)
                 } else {
                     let alert:NSAlert = NSAlert();
-                    alert.messageText = "Ошибка авторизации"
-                    alert.informativeText = "Произошла не ведомая ошибка"
+                    alert.messageText = NSLocalizedString("AuthorizationError", comment: "") //"Ошибка авторизации"
+                    alert.informativeText = NSLocalizedString("UnknownError", comment: "")//"Произошла неизвестная ошибка"
                     alert.runModal()
                 }
             }

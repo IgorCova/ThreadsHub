@@ -184,7 +184,7 @@
                                         </menuItem>
                                         <menuItem title="Spelling and Grammar" id="orx-gS-u8O">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Spelling" id="Dac-qP-MWa">
+                                            <menu key="submenu" title="Spelling and Grammar" id="Dac-qP-MWa">
                                                 <items>
                                                     <menuItem title="Show Spelling and Grammar" keyEquivalent=":" id="eXT-Xb-gt1">
                                                         <connections>
@@ -601,10 +601,10 @@
             <objects>
                 <viewController id="796-3O-ACT" customClass="AdminsViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="XWA-nd-TqX">
-                        <rect key="frame" x="0.0" y="0.0" width="304" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-zB-mfC">
+                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="50" horizontalPageScroll="10" verticalLineScroll="50" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bs6-zB-mfC">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="461"/>
                                 <clipView key="contentView" focusRingType="none" drawsBackground="NO" id="j7c-aq-JE6">
                                     <rect key="frame" x="1" y="0.0" width="302" height="460"/>
@@ -879,7 +879,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="cellComm" id="Md5-0h-H5C" customClass="CommCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="194.5" height="50"/>
+                                                            <rect key="frame" x="1" y="1" width="195" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-YK-ebj">
@@ -969,7 +969,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="membersCell" id="Y72-37-IMI">
-                                                            <rect key="frame" x="198.5" y="1" width="89" height="50"/>
+                                                            <rect key="frame" x="198.79663498803575" y="1" width="89" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-x7-dOq">
@@ -1009,7 +1009,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="increaseCell" misplaced="YES" id="QdX-0R-34W" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="290.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="290.5932699760715" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-pl-Idm">
@@ -1089,7 +1089,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="reachCell" misplaced="YES" id="IuM-OU-CMO" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="383.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="383.38990496410725" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Exh-SH-hCC">
@@ -1170,7 +1170,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="visitorsCell" misplaced="YES" id="G1J-cy-ZIp" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="476.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="476.18653995214299" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VDf-m7-QeG">
@@ -1251,7 +1251,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="viewsCell" misplaced="YES" id="UJE-V8-H0D" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="569.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="568.98317494017874" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GEv-O0-ZY8">
@@ -1332,7 +1332,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="postsCell" misplaced="YES" id="gmj-tp-t4I" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="662.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="661.77980992821449" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Q7S-am-9HL">
@@ -1414,7 +1414,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="likesCell" misplaced="YES" id="8Xz-Go-FU8" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="755.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="754.57644491625024" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-0n-YZl">
@@ -1496,7 +1496,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="sharesCell" misplaced="YES" id="fI7-us-NnD" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="848.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="847.37307990428599" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-St-NNG">
@@ -1578,7 +1578,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentsCell" misplaced="YES" id="4Sq-dN-HCv" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="941.5" y="1" width="90" height="53"/>
+                                                            <rect key="frame" x="940.16971489232174" y="1" width="90" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-qZ-EZH">
@@ -1647,7 +1647,7 @@ Gw
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                                 <tableColumn identifier="" width="205" minWidth="10" maxWidth="3.4028234663852886e+38" id="6kz-7n-ML1">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="Administrator">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center" title="ммм">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1660,7 +1660,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="adminCell" id="zO8-vr-7Ds" customClass="AdminCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1034.5" y="1" width="205" height="50"/>
+                                                            <rect key="frame" x="1032.9663498803575" y="1" width="205" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <button translatesAutoresizingMaskIntoConstraints="NO" id="mR7-ze-P7t">
@@ -1710,7 +1710,7 @@ Gw
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
-                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="JKK-k4-hSc">
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" doubleValue="0.0049854619837924564" horizontal="YES" id="JKK-k4-hSc">
                                     <rect key="frame" x="1" y="575" width="1182" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -1744,10 +1744,10 @@ Gw
             <objects>
                 <viewController id="MUF-t4-5g8" customClass="SubjectsViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="uXM-8X-fDl">
-                        <rect key="frame" x="0.0" y="0.0" width="304" height="500"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-Qg-Csv">
+                            <scrollView misplaced="YES" autohidesScrollers="YES" horizontalLineScroll="30" horizontalPageScroll="10" verticalLineScroll="30" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sDL-Qg-Csv">
                                 <rect key="frame" x="0.0" y="0.0" width="304" height="461"/>
                                 <clipView key="contentView" drawsBackground="NO" id="Xmt-LY-HD1">
                                     <rect key="frame" x="1" y="0.0" width="302" height="460"/>
@@ -1958,7 +1958,7 @@ Gw
                 </viewController>
                 <customObject id="4g6-wH-mGf" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="33" y="371"/>
+            <point key="canvasLocation" x="-182" y="317"/>
         </scene>
         <!--Comm Dict View Controller-->
         <scene sceneID="5cP-7u-isD">

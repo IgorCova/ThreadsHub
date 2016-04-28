@@ -1,0 +1,15 @@
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "8sg-3g-U0v"; */
+"8sg-3g-U0v.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "Mbk-VO-okS"; */
+"Mbk-VO-okS.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Cancel"; ObjectID = "PA6-06-rls"; */
+"PA6-06-rls.title" = "Отмена";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Subject"; ObjectID = "p3x-In-a6g"; */
+"p3x-In-a6g.placeholderString" = "Тематика";
+
+/* Class = "NSTextFieldCell"; title = "Subject"; ObjectID = "vJ2-Lj-IuQ"; */
+"vJ2-Lj-IuQ.title" = "Тематика";

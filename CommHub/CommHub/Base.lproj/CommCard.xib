@@ -7,9 +7,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="CommCardViewController" customModule="CommHub" customModuleProvider="target">
             <connections>
                 <outlet property="adminsPopUpButton" destination="LeD-VC-XKT" id="do0-em-RvA"/>
-                <outlet property="commuyityNameTextField" destination="h12-sZ-Gir" id="Wej-qa-4Le"/>
+                <outlet property="commuyityNameTextField" destination="h12-sZ-Gir" id="UPd-d6-Npj"/>
                 <outlet property="deleteButton" destination="wSX-2L-Rqk" id="mVd-Uw-Da3"/>
-                <outlet property="groupIDtextField" destination="a4z-qx-qgL" id="OgP-n3-pux"/>
                 <outlet property="linkTextField" destination="sdd-6k-jsQ" id="yxy-9C-I0w"/>
                 <outlet property="subjectPopUpButton" destination="mUO-bi-Ncv" id="jfL-Pm-eke"/>
                 <outlet property="titleLabel" destination="Yeg-aR-WWZ" id="rfp-kP-x2C"/>
@@ -26,7 +25,7 @@
                     <rect key="frame" x="0.0" y="84" width="297" height="333"/>
                     <subviews>
                         <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdd-6k-jsQ">
-                            <rect key="frame" x="23" y="157" width="250" height="22"/>
+                            <rect key="frame" x="23" y="216" width="250" height="22"/>
                             <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Link" drawsBackground="YES" id="liT-jj-lZt">
                                 <font key="font" metaFont="system"/>
                                 <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -49,31 +48,8 @@
                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             </textFieldCell>
                         </textField>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-GU-Svi">
-                            <rect key="frame" x="143" y="67" width="136" height="32"/>
-                            <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mm9-WL-hyk">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                            </buttonCell>
-                            <connections>
-                                <action selector="save:" target="-2" id="Oh1-bK-o76"/>
-                            </connections>
-                        </button>
-                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKf-eA-DNo">
-                            <rect key="frame" x="17" y="67" width="135" height="32"/>
-                            <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="8Yb-2e-lpX">
-                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                <font key="font" metaFont="system"/>
-                                <string key="keyEquivalent" base64-UTF8="YES">
-Gw
-</string>
-                            </buttonCell>
-                            <connections>
-                                <action selector="cancel:" target="-2" id="t9Z-9I-VVE"/>
-                            </connections>
-                        </button>
                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LeD-VC-XKT">
-                            <rect key="frame" x="21" y="216" width="255" height="26"/>
+                            <rect key="frame" x="21" y="178" width="255" height="26"/>
                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="UF2-Pg-gsS" id="CqR-Pc-2rT">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
@@ -87,7 +63,7 @@ Gw
                             </popUpButtonCell>
                         </popUpButton>
                         <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mUO-bi-Ncv">
-                            <rect key="frame" x="21" y="185" width="255" height="26"/>
+                            <rect key="frame" x="21" y="147" width="255" height="26"/>
                             <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="VYw-Fz-ZI1" id="Ycg-A2-z6e">
                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="menu"/>
@@ -100,16 +76,31 @@ Gw
                                 </menu>
                             </popUpButtonCell>
                         </popUpButton>
-                        <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4z-qx-qgL">
-                            <rect key="frame" x="23" y="125" width="250" height="22"/>
-                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Group ID" drawsBackground="YES" id="vCz-q5-506">
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rsL-GU-Svi">
+                            <rect key="frame" x="143" y="83" width="136" height="32"/>
+                            <buttonCell key="cell" type="push" title="Save" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mm9-WL-hyk">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
-                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            </textFieldCell>
-                        </textField>
+                            </buttonCell>
+                            <connections>
+                                <action selector="save:" target="-2" id="Oh1-bK-o76"/>
+                            </connections>
+                        </button>
+                        <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XKf-eA-DNo">
+                            <rect key="frame" x="17" y="83" width="135" height="32"/>
+                            <buttonCell key="cell" type="push" title="Cancel" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="8Yb-2e-lpX">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                                <string key="keyEquivalent" base64-UTF8="YES">
+Gw
+</string>
+                            </buttonCell>
+                            <connections>
+                                <action selector="cancel:" target="-2" id="t9Z-9I-VVE"/>
+                            </connections>
+                        </button>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wSX-2L-Rqk">
-                            <rect key="frame" x="17" y="34" width="262" height="32"/>
+                            <rect key="frame" x="17" y="50" width="262" height="32"/>
                             <buttonCell key="cell" type="push" title="Delete" bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="yaO-Um-ktC">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>

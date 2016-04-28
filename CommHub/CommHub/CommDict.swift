@@ -26,7 +26,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         //   self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
         self.view.window?.titlebarAppearsTransparent = true
         //  self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
-        self.view.window?.title = "Communities"
+        self.view.window?.title = NSLocalizedString("CommunitiesTitleName", comment: "")
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -114,7 +114,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     @IBAction func addNewCommunity(sender: AnyObject) {
         let subview = CommCardViewController(nibName: "CommCard", bundle: nil)!
         subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-        subview.setCard(nil, title: "Add a new community", deleteButtonHide: true)
+        subview.setCard(nil, title: NSLocalizedString("AddNewCommunity", comment: ""), deleteButtonHide: true)
         
         self.presentViewControllerAsSheet(subview)
     }
@@ -132,7 +132,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         if myTableViewFromNotification.selectedRow >= 0 {
             let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
             subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(comm[index], title: "Edit the community", deleteButtonHide: false)
+            subview?.setCard(comm[index], title: NSLocalizedString("EditCommunity", comment: ""), deleteButtonHide: false)
             
             self.presentViewControllerAsSheet(subview!)
             myTableViewFromNotification.deselectRow(index)

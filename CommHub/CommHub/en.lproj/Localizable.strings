@@ -1,0 +1,22 @@
+/*
+ Localizable(English).strings
+ CommHub
+ 
+ Created by Andrew Dzhur on 28/04/16.
+ Copyright © 2016 Andrew Dzhur. All rights reserved.
+ */
+
+"Warning" = "Warning";
+"Warning.PhoneNumber" = "Not correctly entered the phone number";
+"AuthorizationError" = "Authorization Error";
+"UnknownError" = "An unknown error occurred";
+"AdministratorsTitleName" = "Administrators";
+"SubjectsTitleName" = "Subjects";
+"CommunitiesTitleName" = "Communities";
+"AddNewCommunity" = "Add a new community";
+"EditCommunity" = "Edit the community";
+"AddNewAdmin" = "Add a new administrator";
+"EditAdministrator" = "Edit the administrator";
+"AddNewSubject" = "Add a new subject";
+"EditSubject" = "Edit the subject";
+

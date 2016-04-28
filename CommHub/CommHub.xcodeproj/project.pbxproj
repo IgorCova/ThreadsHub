@@ -22,12 +22,10 @@
 		271719F81CAD3C3900123816 /* CommHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719F71CAD3C3900123816 /* CommHubUITests.swift */; };
 		271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6ED1CAFEF55005144D6 /* Subjects.swift */; };
 		271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCard.swift */; };
-		271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 271BF6F01CB003AD005144D6 /* SubjectCard.xib */; };
 		271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* SubjectComm.swift */; };
 		271BF6F71CB0198C005144D6 /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F61CB0198C005144D6 /* Comm.swift */; };
 		273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */; };
 		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
-		273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 273B0B5A1CAF3CE400454E94 /* AdminCard.xib */; };
 		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
 		27581B911CCC09480012521F /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27581B901CCC09480012521F /* Profile.swift */; };
 		275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275E558A1CB9366B003A60FD /* RegistrationSegue.swift */; };
@@ -40,12 +38,16 @@
 		27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */; };
 		27ADFA5D1CB1940500B4C308 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27ADFA5B1CB1940500B4C308 /* Log.swift */; };
 		27B43FE11CB039A7000D9E98 /* CommCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FDF1CB039A7000D9E98 /* CommCard.swift */; };
-		27B43FE21CB039A7000D9E98 /* CommCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27B43FE01CB039A7000D9E98 /* CommCard.xib */; };
 		27B43FE41CB0567F000D9E98 /* CommDict.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE31CB0567F000D9E98 /* CommDict.swift */; };
 		27B43FE61CB06251000D9E98 /* CommCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE51CB06251000D9E98 /* CommCellView.swift */; };
 		27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */; };
 		27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminCommData.swift */; };
 		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
+		27DC777E1CD2AB990086342A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DC777C1CD2AB990086342A /* Localizable.strings */; };
+		27DC77811CD2ABCD0086342A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DC777F1CD2ABCD0086342A /* Localizable.strings */; };
+		27DC77821CD2B40D0086342A /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC77841CD2B40D0086342A /* AdminCard.xib */; };
+		27DC77871CD2B4CE0086342A /* SubjectCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC77891CD2B4CE0086342A /* SubjectCard.xib */; };
+		27DC778C1CD2BA4B0086342A /* CommCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC778E1CD2BA4B0086342A /* CommCard.xib */; };
 		27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC621CC26F5D0074582C /* CommCell.swift */; };
 		27F0FC651CC26F7B0074582C /* IncreaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC641CC26F7B0074582C /* IncreaseCell.swift */; };
 		27F0FC671CC26FC40074582C /* MetricCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC661CC26FC40074582C /* MetricCell.swift */; };
@@ -93,12 +95,10 @@
 		271719F91CAD3C3900123816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		271BF6ED1CAFEF55005144D6 /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		271BF6EF1CB003AD005144D6 /* SubjectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCard.swift; sourceTree = "<group>"; };
-		271BF6F01CB003AD005144D6 /* SubjectCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubjectCard.xib; sourceTree = "<group>"; };
 		271BF6F41CB01808005144D6 /* SubjectComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectComm.swift; sourceTree = "<group>"; };
 		271BF6F61CB0198C005144D6 /* Comm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
 		273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCellView.swift; sourceTree = "<group>"; };
 		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
-		273B0B5A1CAF3CE400454E94 /* AdminCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdminCard.xib; sourceTree = "<group>"; };
 		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
 		27581B901CCC09480012521F /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		275E558A1CB9366B003A60FD /* RegistrationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSegue.swift; sourceTree = "<group>"; };
@@ -111,12 +111,20 @@
 		27ADFA5A1CB1940500B4C308 /* Log+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Log+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		27ADFA5B1CB1940500B4C308 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		27B43FDF1CB039A7000D9E98 /* CommCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCard.swift; sourceTree = "<group>"; };
-		27B43FE01CB039A7000D9E98 /* CommCard.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommCard.xib; sourceTree = "<group>"; };
 		27B43FE31CB0567F000D9E98 /* CommDict.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommDict.swift; sourceTree = "<group>"; };
 		27B43FE51CB06251000D9E98 /* CommCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCellView.swift; sourceTree = "<group>"; };
 		27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCommData.swift; sourceTree = "<group>"; };
 		27B43FE91CB086C8000D9E98 /* AdminCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCommData.swift; sourceTree = "<group>"; };
 		27B43FEB1CB08733000D9E98 /* CommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommData.swift; sourceTree = "<group>"; };
+		27DC77561CD28CC70086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		27DC777D1CD2AB990086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = CommHub/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27DC77801CD2ABCD0086342A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = CommHub/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		27DC77831CD2B40D0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AdminCard.xib; sourceTree = "<group>"; };
+		27DC77861CD2B4540086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AdminCard.strings; sourceTree = "<group>"; };
+		27DC77881CD2B4CE0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SubjectCard.xib; sourceTree = "<group>"; };
+		27DC778B1CD2B4D60086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SubjectCard.strings; sourceTree = "<group>"; };
+		27DC778D1CD2BA4B0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CommCard.xib; sourceTree = "<group>"; };
+		27DC77901CD2BA4D0086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CommCard.strings; sourceTree = "<group>"; };
 		27F0FC621CC26F5D0074582C /* CommCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCell.swift; sourceTree = "<group>"; };
 		27F0FC641CC26F7B0074582C /* IncreaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseCell.swift; sourceTree = "<group>"; };
 		27F0FC661CC26FC40074582C /* MetricCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricCell.swift; sourceTree = "<group>"; };
@@ -197,6 +205,7 @@
 		271719CB1CAD3C3900123816 = {
 			isa = PBXGroup;
 			children = (
+				27DC775E1CD296D10086342A /* Localization */,
 				271719D61CAD3C3900123816 /* CommHub */,
 				271719EB1CAD3C3900123816 /* CommHubTests */,
 				271719F61CAD3C3900123816 /* CommHubUITests */,
@@ -275,7 +284,7 @@
 			children = (
 				271BF6ED1CAFEF55005144D6 /* Subjects.swift */,
 				271BF6EF1CB003AD005144D6 /* SubjectCard.swift */,
-				271BF6F01CB003AD005144D6 /* SubjectCard.xib */,
+				27DC77891CD2B4CE0086342A /* SubjectCard.xib */,
 			);
 			name = Subjects;
 			sourceTree = "<group>";
@@ -285,7 +294,7 @@
 			children = (
 				27B43FE31CB0567F000D9E98 /* CommDict.swift */,
 				27B43FDF1CB039A7000D9E98 /* CommCard.swift */,
-				27B43FE01CB039A7000D9E98 /* CommCard.xib */,
+				27DC778E1CD2BA4B0086342A /* CommCard.xib */,
 			);
 			name = Communities;
 			sourceTree = "<group>";
@@ -295,7 +304,7 @@
 			children = (
 				2710CD551CAD43DE00F46F7E /* Admins.swift */,
 				273B0B591CAF3CE400454E94 /* AdminCard.swift */,
-				273B0B5A1CAF3CE400454E94 /* AdminCard.xib */,
+				27DC77841CD2B40D0086342A /* AdminCard.xib */,
 			);
 			name = Admins;
 			sourceTree = "<group>";
@@ -337,6 +346,31 @@
 				275E558A1CB9366B003A60FD /* RegistrationSegue.swift */,
 			);
 			name = CustomSegue;
+			sourceTree = "<group>";
+		};
+		27DC775E1CD296D10086342A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				27DC77601CD2970B0086342A /* ru.lproj */,
+				27DC775F1CD296EA0086342A /* en.lproj */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
+		27DC775F1CD296EA0086342A /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				27DC777F1CD2ABCD0086342A /* Localizable.strings */,
+			);
+			name = en.lproj;
+			sourceTree = "<group>";
+		};
+		27DC77601CD2970B0086342A /* ru.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				27DC777C1CD2AB990086342A /* Localizable.strings */,
+			);
+			name = ru.lproj;
 			sourceTree = "<group>";
 		};
 		27F0FC611CC26F110074582C /* Statistics Cell */ = {
@@ -457,6 +491,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 271719CB1CAD3C3900123816;
 			productRefGroup = 271719D51CAD3C3900123816 /* Products */;
@@ -476,9 +511,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */,
-				271BF6F21CB003AD005144D6 /* SubjectCard.xib in Resources */,
-				27B43FE21CB039A7000D9E98 /* CommCard.xib in Resources */,
-				273B0B5C1CAF3CE400454E94 /* AdminCard.xib in Resources */,
+				27DC77811CD2ABCD0086342A /* Localizable.strings in Resources */,
+				27DC77871CD2B4CE0086342A /* SubjectCard.xib in Resources */,
+				27DC777E1CD2AB990086342A /* Localizable.strings in Resources */,
+				27DC778C1CD2BA4B0086342A /* CommCard.xib in Resources */,
+				27DC77821CD2B40D0086342A /* AdminCard.xib in Resources */,
 				271719DF1CAD3C3900123816 /* Assets.xcassets in Resources */,
 				271719E21CAD3C3900123816 /* Main.storyboard in Resources */,
 			);
@@ -629,8 +666,52 @@
 			isa = PBXVariantGroup;
 			children = (
 				271719E11CAD3C3900123816 /* Base */,
+				27DC77561CD28CC70086342A /* ru */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		27DC777C1CD2AB990086342A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DC777D1CD2AB990086342A /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		27DC777F1CD2ABCD0086342A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DC77801CD2ABCD0086342A /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		27DC77841CD2B40D0086342A /* AdminCard.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DC77831CD2B40D0086342A /* Base */,
+				27DC77861CD2B4540086342A /* ru */,
+			);
+			name = AdminCard.xib;
+			sourceTree = "<group>";
+		};
+		27DC77891CD2B4CE0086342A /* SubjectCard.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DC77881CD2B4CE0086342A /* Base */,
+				27DC778B1CD2B4D60086342A /* ru */,
+			);
+			name = SubjectCard.xib;
+			sourceTree = "<group>";
+		};
+		27DC778E1CD2BA4B0086342A /* CommCard.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				27DC778D1CD2BA4B0086342A /* Base */,
+				27DC77901CD2BA4D0086342A /* ru */,
+			);
+			name = CommCard.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
