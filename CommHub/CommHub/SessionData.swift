@@ -37,11 +37,13 @@ class SessionData {
         // print (prms)
         Alamofire.request(.POST, "\(HubService)/Session_Save", parameters: prms, encoding: .JSON)
             .responseJSON { response in
-                //print(response.result.value)
+                print(response.result.value)
                 switch response.result {
                 case .Success(let data):
                     let json = JSON(data)["Data"].dictionary
-                    let own = OwnerHubEntryFields(id: json!["ownerHubID"]!.int!, sessionId: json!["SessionID"]!.string!)
+                    let own = OwnerHubEntryFields(
+                         id:        json!["ownerHubID"]!.int ?? 0
+                        ,sessionId: (json!["SessionID"]?.stringValue)!)
                     let isNewMember = json!["IsNewMember"]!.bool!
                     completion(own: own, isNew: isNewMember, successful: true)
                 case .Failure(let error):

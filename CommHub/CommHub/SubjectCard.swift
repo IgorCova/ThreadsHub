@@ -33,6 +33,10 @@ class SubjectCardViewController: NSViewController {
             self.saveButton.frame.origin.x = 125
         }
         
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.alignment = .Center
+        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("NHV-l3-fbk.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
+        
     }
     
     func setCard(subject: SubjectComm?, deleteButtonHide: Bool) {
@@ -52,6 +56,7 @@ class SubjectCardViewController: NSViewController {
                 
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
                     self.dismissViewController(self)
                 }
             }
@@ -74,6 +79,7 @@ class SubjectCardViewController: NSViewController {
             SubjectCommData().wsSubjectComm_Del(subject.id) { (successful) in
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
                     self.dismissViewController(self)
                 }
             }

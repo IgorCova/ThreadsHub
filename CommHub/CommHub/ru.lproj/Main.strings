@@ -53,7 +53,7 @@
 "9Zp-d6-Rdg.headerCell.title" = "Посетители";
 
 /* Class = "NSTextFieldCell"; placeholderString = "Name"; ObjectID = "9oS-mX-TSL"; */
-"9oS-mX-TSL.placeholderString" = "Name";
+"9oS-mX-TSL.placeholderString" = "Имя";
 
 /* Class = "NSMenuItem"; title = "Preferences…"; ObjectID = "BOF-NM-1cW"; */
 "BOF-NM-1cW.title" = "Настройки…";
@@ -219,7 +219,7 @@
 
 /* Class = "NSTextFieldCell"; title = "We have sent a verification code to Your phone number,
  enter that code here"; ObjectID = "cbv-hQ-bGf"; */
-"cbv-hQ-bGf.title" = "Мы отправили код подтверждения на Ваш номер телефона,/nвведите этот код здесь";
+"cbv-hQ-bGf.title" = "Мы отправили код подтверждения на Ваш номер телефона,\nвведите этот код здесь";
 
 /* Class = "NSMenuItem"; title = "Control"; ObjectID = "dMs-cI-mzQ"; */
 "dMs-cI-mzQ.title" = "Управление";
@@ -243,7 +243,7 @@
 "hnB-LD-kIP.title" = "Вставить";
 
 /* Class = "NSButtonCell"; title = "Ok"; ObjectID = "kdV-og-bZ0"; */
-"kdV-og-bZ0.title" = "Ок";
+"kdV-og-bZ0.title" = "Продолжить";
 
 /* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "l7P-V8-RKS"; */
 "l7P-V8-RKS.title" = "Начать говорить";
@@ -271,7 +271,7 @@
 
 /* Class = "NSTextFieldCell"; title = "Enter Your phone number for
  registration in the CommHub"; ObjectID = "puC-rN-qz1"; */
-"puC-rN-qz1.title" = "Введите Ваш номер телефона для/nрегистрации в CommHub";
+"puC-rN-qz1.title" = "Введите Ваш номер телефона для\nрегистрации в CommHub";
 
 /* Class = "NSTableColumn"; headerCell.title = "Increase"; ObjectID = "pzR-6W-oEG"; */
 "pzR-6W-oEG.headerCell.title" = "Прирост";
@@ -311,3 +311,47 @@
 
 /* Class = "NSMenuItem"; title = "Find Next"; ObjectID = "ySD-qd-qUz"; */
 "ySD-qd-qUz.title" = "Найти следущее";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Subject"; ObjectID = "37k-aU-Fw8"; */
+"37k-aU-Fw8.placeholderString" = "Тематика";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Name"; ObjectID = "YPB-O8-OK1"; */
+"YPB-O8-OK1.placeholderString" = "Имя";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Name"; ObjectID = "77r-LG-u8Q"; */
+"77r-LG-u8Q.placeholderString" = "Имя";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Last Name"; ObjectID = "OqH-CQ-Bvr"; */
+"OqH-CQ-Bvr.placeholderString" = "Фамилия";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Phone Number"; ObjectID = "G8W-j9-Yuk"; */
+"G8W-j9-Yuk.placeholderString" = "Номер телефона";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Link"; ObjectID = "INu-cC-3HU"; */
+"INu-cC-3HU.placeholderString" = "Ссылка";
+
+/* Class = "NSTextFieldCell"; placeholderString = "Link"; ObjectID = "mHK-Km-bpY"; */
+"mHK-Km-bpY.placeholderString" = "Ссылка";
+
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "seb-hh-BFx"; */
+"seb-hh-BFx.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "NHV-l3-fbk"; */
+"NHV-l3-fbk.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "lSD-FE-WR5"; */
+"lSD-FE-WR5.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "fdC-kB-qh2"; */
+"fdC-kB-qh2.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "ahr-Hs-eMM"; */
+"ahr-Hs-eMM.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "64H-hm-Oyu"; */
+"64H-hm-Oyu.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "miG-6p-0QR"; */
+"miG-6p-0QR.title" = "Сохранить";
+

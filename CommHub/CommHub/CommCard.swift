@@ -31,10 +31,6 @@ class CommCardViewController: NSViewController {
         self.view.wantsLayer = true
         deleteButton.hidden = deleteButtonHide!
         
-        profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
-        profileImage.layer!.masksToBounds = true
-
-        
         if deleteButtonHide == false {
             commuyityNameTextField.editable = false
             linkTextField.editable = false
@@ -57,6 +53,13 @@ class CommCardViewController: NSViewController {
         if deleteButtonHide == true {
             self.saveButton.frame.origin.x = 125
         }
+        
+        profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
+        profileImage.layer!.masksToBounds = true
+        
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.alignment = .Center
+        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("lSD-FE-WR5.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
         
     }
     

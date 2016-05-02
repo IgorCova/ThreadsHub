@@ -491,9 +491,9 @@
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="573-GS-KuN">
                                             <font key="font" metaFont="system"/>
                                             <segments>
-                                                <segment label="Today    " selected="YES"/>
-                                                <segment label="Yesterday    "/>
-                                                <segment label="Week     "/>
+                                                <segment label="  Today  " selected="YES"/>
+                                                <segment label="  Yesterday  "/>
+                                                <segment label="  Week  "/>
                                             </segments>
                                         </segmentedCell>
                                         <connections>
@@ -541,6 +541,7 @@
                                 <toolbarItem reference="wJ8-V2-ZZO"/>
                                 <toolbarItem reference="mDA-W4-qtj"/>
                                 <toolbarItem reference="mDA-W4-qtj"/>
+                                <toolbarItem reference="wJ8-V2-ZZO"/>
                                 <toolbarItem reference="5vu-gj-eZP"/>
                                 <toolbarItem reference="mDA-W4-qtj"/>
                                 <toolbarItem reference="iBF-os-mEl"/>
@@ -774,7 +775,7 @@
                                     <constraint firstAttribute="height" constant="25" id="a2c-cg-IZ9"/>
                                     <constraint firstAttribute="width" constant="150" id="n4i-LG-fCE"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="сontinue" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kdV-og-bZ0">
+                                <buttonCell key="cell" type="bevel" title="Continue" bezelStyle="rounded" image="continue-cancel" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="kdV-og-bZ0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -791,7 +792,7 @@ DQ
                                     <constraint firstAttribute="height" constant="25" id="1Yz-wQ-ZSF"/>
                                     <constraint firstAttribute="width" constant="150" id="RRe-mf-vxK"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="cancel" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="Wl6-qL-5RE">
+                                <buttonCell key="cell" type="bevel" title="Cancel" bezelStyle="rounded" image="continue-cancel" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="Wl6-qL-5RE">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -1904,7 +1905,7 @@ Gw
                                     <constraint firstAttribute="height" constant="25" id="Wbh-M1-KcG"/>
                                     <constraint firstAttribute="width" constant="150" id="gcu-wz-ilJ"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="fdC-kB-qh2">
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="fdC-kB-qh2">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -1940,7 +1941,7 @@ DQ
                                     <constraint firstAttribute="width" constant="150" id="IMg-HI-EL2"/>
                                     <constraint firstAttribute="height" constant="25" id="SSU-We-kHC"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="seb-hh-BFx">
+                                <buttonCell key="cell" type="bevel" title="Delete" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="seb-hh-BFx">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -2041,7 +2042,7 @@ DQ
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Xxt-28-Ndx"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="miG-6p-0QR">
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="miG-6p-0QR">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <connections>
@@ -2320,7 +2321,7 @@ DQ
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="eaE-mY-oDz"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="rounded" image="сontinue" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="MeJ-mC-WWS">
+                                <buttonCell key="cell" type="bevel" title="Continue" bezelStyle="rounded" image="continue-cancel" imagePosition="overlaps" alignment="center" imageScaling="proportionallyDown" inset="2" id="MeJ-mC-WWS">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -2375,7 +2376,7 @@ DQ
         <scene sceneID="8JP-gL-Btv">
             <objects>
                 <viewController id="HoO-vv-sVz" customClass="SubjectCardViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="WLZ-h0-r4S">
+                    <view key="view" wantsLayer="YES" id="WLZ-h0-r4S">
                         <rect key="frame" x="0.0" y="0.0" width="410" height="122"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -2396,7 +2397,7 @@ DQ
                                     <constraint firstAttribute="height" constant="25" id="de5-2M-UyL"/>
                                     <constraint firstAttribute="width" constant="150" id="v3Z-ZB-2zo"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ahr-Hs-eMM">
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="ahr-Hs-eMM">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -2415,7 +2416,7 @@ DQ
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Uey-yG-scC"/>
                                     <constraint firstAttribute="width" constant="150" id="ZFk-q0-X1F"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NHV-l3-fbk">
+                                <buttonCell key="cell" type="bevel" title="Delete" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="NHV-l3-fbk">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -2450,7 +2451,7 @@ DQ
         <scene sceneID="PAm-P5-Gcm">
             <objects>
                 <viewController id="ePw-6S-0h1" customClass="CommCardViewController" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="lre-3Z-nIe">
+                    <view key="view" wantsLayer="YES" id="lre-3Z-nIe">
                         <rect key="frame" x="0.0" y="0.0" width="410" height="313"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -2468,7 +2469,7 @@ DQ
                                     <constraint firstAttribute="width" constant="150" id="bfm-h6-gWR"/>
                                     <constraint firstAttribute="height" constant="25" id="eed-v0-ENL"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="64H-hm-Oyu">
+                                <buttonCell key="cell" type="bevel" title="Save" bezelStyle="regularSquare" image="save" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="64H-hm-Oyu">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                     <string key="keyEquivalent" base64-UTF8="YES">
@@ -2529,7 +2530,10 @@ DQ
                                     <constraint firstAttribute="width" constant="150" id="d9b-uP-vyt"/>
                                     <constraint firstAttribute="height" constant="25" id="yOn-Po-VIc"/>
                                 </constraints>
-                                <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="lSD-FE-WR5">
+                                <shadow key="shadow">
+                                    <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </shadow>
+                                <buttonCell key="cell" type="bevel" title="Delete" bezelStyle="regularSquare" image="delete" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="lSD-FE-WR5">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
@@ -2575,7 +2579,7 @@ DQ
         </scene>
     </scenes>
     <resources>
-        <image name="cancel" width="304" height="54"/>
+        <image name="continue-cancel" width="456" height="81"/>
         <image name="delete" width="456" height="81"/>
         <image name="down" width="48" height="66"/>
         <image name="facebook" width="256" height="256"/>
@@ -2586,14 +2590,13 @@ DQ
         <image name="my world" width="256" height="256"/>
         <image name="ok" width="256" height="256"/>
         <image name="plus" width="10" height="10"/>
-        <image name="save" width="456" height="81"/>
+        <image name="save" width="152" height="27"/>
         <image name="statistic icon" width="135" height="135"/>
         <image name="update" width="13" height="10"/>
         <image name="vk" width="256" height="256"/>
         <image name="vk-1" width="256" height="256"/>
         <image name="vk-2" width="256" height="256"/>
         <image name="youtube-play" width="256" height="256"/>
-        <image name="сontinue" width="304" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="nXI-EY-EtX"/>

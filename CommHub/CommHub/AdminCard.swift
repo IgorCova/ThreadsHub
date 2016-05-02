@@ -31,8 +31,6 @@ class AdminCardViewController: NSViewController, NSTextFieldDelegate {
             lastNameTextField.stringValue = admin.lastName
             phoneNumberTextField.stringValue = admin.phone
             linkTextField.stringValue = "https://www.facebook.com/\(admin.linkFB!)"
-            profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
-            profileImage.layer!.masksToBounds = true
             profileImage.imageFromUrl("https://graph.facebook.com/\( admin.linkFB ?? "0")/picture?type=normal")
         }
 
@@ -43,6 +41,13 @@ class AdminCardViewController: NSViewController, NSTextFieldDelegate {
         if deleteButtonHide == true {
             self.saveButton.frame.origin.x = 125
         }
+        
+        profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
+        profileImage.layer!.masksToBounds = true
+        
+        let pstyle = NSMutableParagraphStyle()
+        pstyle.alignment = .Center
+        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("seb-hh-BFx.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
         
     }
     

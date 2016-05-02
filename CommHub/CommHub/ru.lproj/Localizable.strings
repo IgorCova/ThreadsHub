@@ -19,3 +19,12 @@
 "EditAdministrator" = "Редактирование администратора";
 "AddNewSubject" = "Добавление новой тематики";
 "EditSubject" = "Редактирование тематики";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "seb-hh-BFx"; */
+"seb-hh-BFx.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "NHV-l3-fbk"; */
+"NHV-l3-fbk.title" = "Удалить";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "lSD-FE-WR5"; */
+"lSD-FE-WR5.title" = "Удалить";
