@@ -10,38 +10,91 @@ import Cocoa
 
 class AdminCardViewController: NSViewController, NSTextFieldDelegate {
     
-    @IBOutlet var titleLabel: NSTextField!
-    @IBOutlet var contactView: NSView!
     @IBOutlet var firstNameTextField: NSTextField!
     @IBOutlet var lastNameTextField: NSTextField!
     @IBOutlet var phoneNumberTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
     @IBOutlet var deleteButton: NSButton!
+    @IBOutlet var saveButton: NSButton!
+    @IBOutlet var profileImage: NSImageView!
+    
     var admin: AdminComm?
+    var deleteButtonHide: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.3).CGColor
-        contactView.layer?.backgroundColor = NSColor.whiteColor().CGColor
+        deleteButton.hidden = deleteButtonHide!
+
+        if let admin = self.admin {
+            firstNameTextField.stringValue = admin.firstName
+            lastNameTextField.stringValue = admin.lastName
+            phoneNumberTextField.stringValue = admin.phone
+            linkTextField.stringValue = "https://www.facebook.com/\(admin.linkFB!)"
+            profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
+            profileImage.layer!.masksToBounds = true
+            profileImage.imageFromUrl("https://graph.facebook.com/\( admin.linkFB ?? "0")/picture?type=normal")
+        }
+
     }
     
     override func viewWillAppear() {
         super.viewWillAppear()
-
+        if deleteButtonHide == true {
+            self.saveButton.frame.origin.x = 125
+        }
+        
     }
     
     override var representedObject: AnyObject? {
         didSet {
-            // Update the view, if already loaded.
+            // Update the view, if already 
         }
     }
     
+    func setCard(adminComm: AdminComm?, deleteButtonHide: Bool) {
+        self.admin = adminComm
+        self.deleteButtonHide = deleteButtonHide
+    }
+    
+    @IBAction func save(sender: NSButton) {
+        if firstNameTextField.stringValue.isEmpty {
+            firstNameTextField.layer!.borderColor = NSColor.redColor().CGColor
+            firstNameTextField.layer!.borderWidth = 1
+        } else {
+            firstNameTextField.layer!.borderWidth = 0
+        }
+        
+        if lastNameTextField.stringValue.isEmpty {
+            lastNameTextField.layer!.borderColor = NSColor.redColor().CGColor
+            lastNameTextField.layer!.borderWidth = 1
+        } else {
+            lastNameTextField.layer!.borderWidth = 0
+        }
+        
+        if linkTextField.stringValue.isEmpty {
+            linkTextField.layer!.borderColor = NSColor.redColor().CGColor
+            linkTextField.layer!.borderWidth = 1
+        } else {
+            linkTextField.layer!.borderWidth = 0
+        }
+        
+        if !firstNameTextField.stringValue.isEmpty && !lastNameTextField.stringValue.isEmpty && !linkTextField.stringValue.isEmpty {
+            saveInfo()
+            AdminCommData().wsAdminComm_Save(admin!) { (adminOut, successful) in
+                if successful {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadAdmins", object: nil)
+                    self.dismissViewController(self)
+                }
+            }
+        }
+        
+    }
+    
     func saveInfo() {
-        // Add alert about empty name.
         if admin == nil {
             admin = AdminComm(
-                 id: 0, firstName: firstNameTextField.stringValue
+                id: 0, firstName: firstNameTextField.stringValue
                 ,lastName: lastNameTextField.stringValue
                 ,phone: phoneNumberTextField.stringValue
                 ,linkFB: linkTextField.stringValue)
@@ -50,33 +103,6 @@ class AdminCardViewController: NSViewController, NSTextFieldDelegate {
             admin?.lastName = lastNameTextField.stringValue
             admin?.phone = phoneNumberTextField.stringValue
             admin?.linkFB = linkTextField.stringValue
-        }
-    }
-    
-    func setCard(adminComm: AdminComm?, title: String, deleteButtonHide: BooleanLiteralType) {
-        self.admin = adminComm
-        titleLabel.stringValue = title
-        deleteButton.hidden = deleteButtonHide
-        
-        if let admin = adminComm {
-            firstNameTextField.stringValue = admin.firstName
-            lastNameTextField.stringValue = admin.lastName
-            phoneNumberTextField.stringValue = admin.phone
-            linkTextField.stringValue = admin.linkFB!
-        }
-    }
-    
-    @IBAction func cancel(sender: NSButton) {
-        self.dismissViewController(self)
-    }
-    
-    @IBAction func save(sender: NSButton) {
-        saveInfo()
-        AdminCommData().wsAdminComm_Save(admin!) { (adminOut, successful) in
-            if successful {
-                NSNotificationCenter.defaultCenter().postNotificationName("reloadAdmins", object: nil)
-                self.dismissViewController(self)
-            }
         }
     }
     
@@ -90,4 +116,6 @@ class AdminCardViewController: NSViewController, NSTextFieldDelegate {
             }
         }
     }
+    
+    
 }

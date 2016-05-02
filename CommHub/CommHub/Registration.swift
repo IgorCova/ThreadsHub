@@ -44,7 +44,7 @@ class Registration: NSViewController {
         self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask  // | NSResizableWindowMask
         self.view.window?.titlebarAppearsTransparent = true
         // self.view.window?.backgroundColor = NSColor.init(hexString: "2E6597")
-        // self.view.window?.titleVisibility = .Hidden
+         self.view.window?.titleVisibility = .Hidden
     }
     
     @IBAction func btnContinueClick(sender: AnyObject) {

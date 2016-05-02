@@ -17,7 +17,6 @@ class AdminCellView: NSTableCellView {
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
-        //self.adminImage.layer?.cornerRadius = self.adminImage.frame.size.width/2
     }
     
     func setCell(admin: AdminComm) {

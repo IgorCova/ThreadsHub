@@ -11,11 +11,14 @@ import Cocoa
 class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableViewDelegate {
 
     @IBOutlet var tableView: NSTableView!
+    
     var dirSubjects: [SubjectComm] = []
     var directoryIsAlphabetical = true
+    var selectedCell: SubjectComm?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.tableView.setDelegate(self)
         self.tableView.setDataSource(self)
         
@@ -23,18 +26,17 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
         NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
+    override func viewWillAppear() {
+        super.viewWillAppear()
         self.view.wantsLayer = true
-        //self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
-        self.view.window?.titlebarAppearsTransparent = true
-        //self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask  // | NSResizableWindowMask
         self.view.window?.title = NSLocalizedString("SubjectsTitleName", comment: "")
     }
     
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask // | NSResizableWindowMask
+    override var representedObject: AnyObject? {
+        didSet {
+            // Update the view, if already loaded.
+        }
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -52,10 +54,6 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
     }
     
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
-        sorting()
-    }
-    
-    func sorting() {
         print("Sorting")
         if directoryIsAlphabetical {
             dirSubjects.sortInPlace { $0.name > $1.name }
@@ -67,48 +65,40 @@ class SubjectsViewController: NSViewController, NSTableViewDataSource, NSTableVi
         tableView.reloadData()
     }
     
-    func refreshData(notification: NSNotification){
-            SubjectCommData().wsSubjectComm_ReadDict({(dirSubjectComm, successful) in
-                if successful {
-                    self.dirSubjects = dirSubjectComm
-                    self.tableView.reloadData()
-                }
-            })
-    }
-    
-    @IBAction func addNewSubject(sender: AnyObject) {
-        let subview =  SubjectCardViewController(nibName: "SubjectCard", bundle: nil)!
-        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-        subview.setCard(nil, title: NSLocalizedString("AddNewSubject", comment: ""), deleteButtonHide: true)
-        
-        self.presentViewControllerAsSheet(subview)
-    }
-    
-    override var representedObject: AnyObject? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-    
     func tableViewSelectionDidChange(notification: NSNotification) {
         let myTableViewFromNotification = notification.object as! NSTableView
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow >= 0 {
-            let subview = SubjectCardViewController(nibName: "SubjectCard", bundle: nil)
-            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(dirSubjects[index], title: NSLocalizedString("EditSubject", comment: ""), deleteButtonHide: false)
-            
-            self.presentViewControllerAsSheet(subview!)
+            self.selectedCell = dirSubjects[index]
+            self.performSegueWithIdentifier("toEditingSubject", sender: nil)
             myTableViewFromNotification.deselectRow(index)
         }
     }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toAddingSubject" {
+            (segue.destinationController as! SubjectCardViewController).setCard(nil, deleteButtonHide: true)
+        }
+        if segue.identifier == "toEditingSubject" {
+            (segue.destinationController as! SubjectCardViewController).setCard(selectedCell!, deleteButtonHide: false)
+        }
+    }
+
+    func refreshData(notification: NSNotification){
+        SubjectCommData().wsSubjectComm_ReadDict({(dirSubjectComm, successful) in
+            if successful {
+                self.dirSubjects = dirSubjectComm
+                self.tableView.reloadData()
+            }
+        })
+    }
 }
-    
-    
-    
-    
-        
+
+
+
+
+
 
     
     

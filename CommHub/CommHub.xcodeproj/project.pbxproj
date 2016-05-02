@@ -45,15 +45,12 @@
 		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
 		27DC777E1CD2AB990086342A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DC777C1CD2AB990086342A /* Localizable.strings */; };
 		27DC77811CD2ABCD0086342A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DC777F1CD2ABCD0086342A /* Localizable.strings */; };
-		27DC77821CD2B40D0086342A /* AdminCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC77841CD2B40D0086342A /* AdminCard.xib */; };
-		27DC77871CD2B4CE0086342A /* SubjectCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC77891CD2B4CE0086342A /* SubjectCard.xib */; };
-		27DC778C1CD2BA4B0086342A /* CommCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27DC778E1CD2BA4B0086342A /* CommCard.xib */; };
 		27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC621CC26F5D0074582C /* CommCell.swift */; };
 		27F0FC651CC26F7B0074582C /* IncreaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC641CC26F7B0074582C /* IncreaseCell.swift */; };
 		27F0FC671CC26FC40074582C /* MetricCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC661CC26FC40074582C /* MetricCell.swift */; };
 		27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC681CC26FEE0074582C /* AdminCell.swift */; };
 		27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F0FC6A1CC286740074582C /* StatiscticRow.swift */; };
-		27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4A2711CBE881B00FB120E /* ColoursLayers.swift */; };
+		27F4A2721CBE881B00FB120E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4A2711CBE881B00FB120E /* Extensions.swift */; };
 		F33E719B1CCD2F03006B4CA4 /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33E719A1CCD2F03006B4CA4 /* Logout.swift */; };
 /* End PBXBuildFile section */
 
@@ -119,18 +116,12 @@
 		27DC77561CD28CC70086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		27DC777D1CD2AB990086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = CommHub/ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		27DC77801CD2ABCD0086342A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = CommHub/en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		27DC77831CD2B40D0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/AdminCard.xib; sourceTree = "<group>"; };
-		27DC77861CD2B4540086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/AdminCard.strings; sourceTree = "<group>"; };
-		27DC77881CD2B4CE0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SubjectCard.xib; sourceTree = "<group>"; };
-		27DC778B1CD2B4D60086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SubjectCard.strings; sourceTree = "<group>"; };
-		27DC778D1CD2BA4B0086342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CommCard.xib; sourceTree = "<group>"; };
-		27DC77901CD2BA4D0086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/CommCard.strings; sourceTree = "<group>"; };
 		27F0FC621CC26F5D0074582C /* CommCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommCell.swift; sourceTree = "<group>"; };
 		27F0FC641CC26F7B0074582C /* IncreaseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncreaseCell.swift; sourceTree = "<group>"; };
 		27F0FC661CC26FC40074582C /* MetricCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetricCell.swift; sourceTree = "<group>"; };
 		27F0FC681CC26FEE0074582C /* AdminCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCell.swift; sourceTree = "<group>"; };
 		27F0FC6A1CC286740074582C /* StatiscticRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatiscticRow.swift; sourceTree = "<group>"; };
-		27F4A2711CBE881B00FB120E /* ColoursLayers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoursLayers.swift; sourceTree = "<group>"; };
+		27F4A2711CBE881B00FB120E /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		430D099C89C707F533D927D3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CDEEBEC4F849F7F1ED84E881 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		F33E719A1CCD2F03006B4CA4 /* Logout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
@@ -166,14 +157,13 @@
 		2702C82A1CB96A6D0095EE74 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				270884941CBA999800780F07 /* StatisticsWindow.swift */,
-				275E558C1CB93C90003A60FD /* Container.swift */,
+				27E94A1E1CD6929B00609DDE /* Statistics */,
 				27581B921CCC3C860012521F /* Profile */,
 				273B0B4C1CAE6FB500454E94 /* Admins */,
 				271BF6EC1CAFEEEB005144D6 /* Subjects */,
 				271BF6F31CB0135F005144D6 /* Communities */,
 				274E7E371CB179010003DA19 /* Registration */,
-				F33E719A1CCD2F03006B4CA4 /* Logout.swift */,
+				27E94A1F1CD692B100609DDE /* Logout */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -186,7 +176,7 @@
 				2710CD601CAD58B400F46F7E /* AdminComm.swift */,
 				271BF6F41CB01808005144D6 /* SubjectComm.swift */,
 				271BF6F61CB0198C005144D6 /* Comm.swift */,
-				27F4A2711CBE881B00FB120E /* ColoursLayers.swift */,
+				27F4A2711CBE881B00FB120E /* Extensions.swift */,
 				27F0FC6A1CC286740074582C /* StatiscticRow.swift */,
 			);
 			name = Classes;
@@ -284,7 +274,6 @@
 			children = (
 				271BF6ED1CAFEF55005144D6 /* Subjects.swift */,
 				271BF6EF1CB003AD005144D6 /* SubjectCard.swift */,
-				27DC77891CD2B4CE0086342A /* SubjectCard.xib */,
 			);
 			name = Subjects;
 			sourceTree = "<group>";
@@ -294,7 +283,6 @@
 			children = (
 				27B43FE31CB0567F000D9E98 /* CommDict.swift */,
 				27B43FDF1CB039A7000D9E98 /* CommCard.swift */,
-				27DC778E1CD2BA4B0086342A /* CommCard.xib */,
 			);
 			name = Communities;
 			sourceTree = "<group>";
@@ -304,7 +292,6 @@
 			children = (
 				2710CD551CAD43DE00F46F7E /* Admins.swift */,
 				273B0B591CAF3CE400454E94 /* AdminCard.swift */,
-				27DC77841CD2B40D0086342A /* AdminCard.xib */,
 			);
 			name = Admins;
 			sourceTree = "<group>";
@@ -325,6 +312,7 @@
 		274E7E371CB179010003DA19 /* Registration */ = {
 			isa = PBXGroup;
 			children = (
+				275E558C1CB93C90003A60FD /* Container.swift */,
 				274E7E351CB171BB0003DA19 /* Registration.swift */,
 				2702C8261CB9675D0095EE74 /* ConfirmCode.swift */,
 				275E55891CB935F9003A60FD /* CustomSegue */,
@@ -371,6 +359,22 @@
 				27DC777C1CD2AB990086342A /* Localizable.strings */,
 			);
 			name = ru.lproj;
+			sourceTree = "<group>";
+		};
+		27E94A1E1CD6929B00609DDE /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				270884941CBA999800780F07 /* StatisticsWindow.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
+		27E94A1F1CD692B100609DDE /* Logout */ = {
+			isa = PBXGroup;
+			children = (
+				F33E719A1CCD2F03006B4CA4 /* Logout.swift */,
+			);
+			name = Logout;
 			sourceTree = "<group>";
 		};
 		27F0FC611CC26F110074582C /* Statistics Cell */ = {
@@ -512,10 +516,7 @@
 			files = (
 				2710CD581CAD46E600F46F7E /* Icon.xcassets in Resources */,
 				27DC77811CD2ABCD0086342A /* Localizable.strings in Resources */,
-				27DC77871CD2B4CE0086342A /* SubjectCard.xib in Resources */,
 				27DC777E1CD2AB990086342A /* Localizable.strings in Resources */,
-				27DC778C1CD2BA4B0086342A /* CommCard.xib in Resources */,
-				27DC77821CD2B40D0086342A /* AdminCard.xib in Resources */,
 				271719DF1CAD3C3900123816 /* Assets.xcassets in Resources */,
 				271719E21CAD3C3900123816 /* Main.storyboard in Resources */,
 			);
@@ -606,7 +607,7 @@
 				271BF6F71CB0198C005144D6 /* Comm.swift in Sources */,
 				27B43FE81CB080F8000D9E98 /* SubjectCommData.swift in Sources */,
 				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
-				27F4A2721CBE881B00FB120E /* ColoursLayers.swift in Sources */,
+				27F4A2721CBE881B00FB120E /* Extensions.swift in Sources */,
 				27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */,
 				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
@@ -685,33 +686,6 @@
 				27DC77801CD2ABCD0086342A /* en */,
 			);
 			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-		27DC77841CD2B40D0086342A /* AdminCard.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27DC77831CD2B40D0086342A /* Base */,
-				27DC77861CD2B4540086342A /* ru */,
-			);
-			name = AdminCard.xib;
-			sourceTree = "<group>";
-		};
-		27DC77891CD2B4CE0086342A /* SubjectCard.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27DC77881CD2B4CE0086342A /* Base */,
-				27DC778B1CD2B4D60086342A /* ru */,
-			);
-			name = SubjectCard.xib;
-			sourceTree = "<group>";
-		};
-		27DC778E1CD2BA4B0086342A /* CommCard.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27DC778D1CD2BA4B0086342A /* Base */,
-				27DC77901CD2BA4D0086342A /* ru */,
-			);
-			name = CommCard.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -11,11 +11,10 @@ import Cocoa
 class MainWindowController: NSWindowController {
 
     @IBOutlet weak var segPeriod: NSSegmentedControl!
-    @IBOutlet weak var isPast: NSToolbarItem!
+    
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        self.window?.titlebarAppearsTransparent = true
         self.window?.title = "CommHub"
         self.setStyleMask()
     }
@@ -47,7 +46,16 @@ class MainWindowController: NSWindowController {
     
     @IBAction func refreshData(sender: AnyObject) {
         print("Refresh")
-        let isPast: Bool = (self.segPeriod.selectedSegment == 0 ? false : true)
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["isPast": isPast])
+        var dt: dateType
+        
+        switch self.segPeriod.selectedSegment {
+            case 0: dt = dateType.day
+            case 1: dt = dateType.yesterday
+            case 2: dt = dateType.week
+            
+            default: dt = dateType.day
+        }
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dt.rawValue])
     }
 }

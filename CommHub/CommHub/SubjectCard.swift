@@ -10,25 +10,51 @@ import Cocoa
 
 class SubjectCardViewController: NSViewController {
 
-    @IBOutlet var titleLabel: NSTextField!
-    @IBOutlet var customView: NSView!
     @IBOutlet var subjectNameTextField: NSTextField!
-    @IBOutlet var delete: NSButton!
+    @IBOutlet var deleteButton: NSButton!
+    @IBOutlet var saveButton: NSButton!
+    
     var subject: SubjectComm?
+    var deleteButtonHide: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.wantsLayer = true
-        self.view.layer?.backgroundColor = NSColor(calibratedRed: 0, green: 0, blue: 0, alpha: 0.3).CGColor
-        customView.layer?.backgroundColor = NSColor.whiteColor().CGColor
+        deleteButton.hidden = deleteButtonHide!
+        
+        if let subject = self.subject {
+            subjectNameTextField.stringValue = subject.name
+        }
     }
     
-    func setCard(subject: SubjectComm?, title: String, deleteButtonHide: Bool) {
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        if deleteButtonHide == true {
+            self.saveButton.frame.origin.x = 125
+        }
+        
+    }
+    
+    func setCard(subject: SubjectComm?, deleteButtonHide: Bool) {
         self.subject = subject
-        self.titleLabel.stringValue = title
-        self.delete.hidden = deleteButtonHide
-        if subject != nil {
-            self.subjectNameTextField.stringValue = subject!.name
+        self.deleteButtonHide = deleteButtonHide
+    }
+    
+    @IBAction func saveButton(sender: AnyObject) {
+        if subjectNameTextField.stringValue.isEmpty {
+            subjectNameTextField.layer!.borderColor = NSColor.redColor().CGColor
+            subjectNameTextField.layer!.borderWidth = 1
+        } else {
+            subjectNameTextField.layer!.borderWidth = 0
+            saveInfo()
+            SubjectCommData().wsSubjectComm_Save(subject!) { (subjectOut, successful) in
+                self.saveInfo()
+                
+                if successful {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
+                    self.dismissViewController(self)
+                }
+            }
         }
     }
     
@@ -41,22 +67,6 @@ class SubjectCardViewController: NSViewController {
         } else {
             subject?.name = subjectNameTextField.stringValue
         }
-    }
-    
-    @IBAction func saveButton(sender: AnyObject) {
-        saveInfo()
-        SubjectCommData().wsSubjectComm_Save(subject!) { (subjectOut, successful) in
-            self.saveInfo()
-
-            if successful {
-                NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)
-                self.dismissViewController(self)
-            }
-        }
-    }
-
-    @IBAction func cancelButton(sender: AnyObject) {
-        self.dismissController(self)
     }
     
     @IBAction func deleteButton(sender: AnyObject) {

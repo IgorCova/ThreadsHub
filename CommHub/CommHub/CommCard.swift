@@ -11,20 +11,52 @@ import AppKit
 
 class CommCardViewController: NSViewController {
 
-    @IBOutlet var titleLabel: NSTextField!
     @IBOutlet var commuyityNameTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
+    @IBOutlet var profileImage: NSImageView!
     
     
     @IBOutlet var adminsPopUpButton: NSPopUpButton!
     @IBOutlet var subjectPopUpButton: NSPopUpButton!
     @IBOutlet var deleteButton: NSButton!
+    @IBOutlet var saveButton: NSButton!
+    
     var comm: Comm?
+    var deleteButtonHide: Bool?
     var subjectsItem = [(index: Int, subject: SubjectComm)]()
     var adminsItem = [(index: Int, admin: AdminComm)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.wantsLayer = true
+        deleteButton.hidden = deleteButtonHide!
+        
+        profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
+        profileImage.layer!.masksToBounds = true
+
+        
+        if deleteButtonHide == false {
+            commuyityNameTextField.editable = false
+            linkTextField.editable = false
+        } else {
+            commuyityNameTextField.hidden = true
+        }
+        
+        if let comm = self.comm {
+            self.commuyityNameTextField.stringValue = (comm.name)
+            self.linkTextField.stringValue = "https://vk.com/\(comm.link)"
+            profileImage.imageFromUrl(comm.photoLink)
+        }
+        
+        fillSubjectsButton()
+        fillAdminsButton()
+    }
+    
+    override func viewWillAppear() {
+        super.viewWillAppear()
+        if deleteButtonHide == true {
+            self.saveButton.frame.origin.x = 125
+        }
         
     }
     
@@ -50,9 +82,6 @@ class CommCardViewController: NSViewController {
             var i = 0
             print(dirAdminsComm.count)
             for admin in dirAdminsComm {
-                print("**********************")
-                print(admin.lastName)
-                
                 self.adminsPopUpButton.addItemWithTitle(admin.lastName + " " + admin.firstName)
                 self.adminsItem.append((index: i, admin: admin))
                 i += 1
@@ -64,31 +93,30 @@ class CommCardViewController: NSViewController {
         }
     }
     
-    
-    func setCard(community: Comm?, title: String, deleteButtonHide: Bool) {
+    func setCard(community: Comm?, deleteButtonHide: Bool) {
         self.comm = community
-        self.titleLabel.stringValue = title
-        self.deleteButton.hidden = deleteButtonHide
-
-        
-        if deleteButtonHide == false {
-            commuyityNameTextField.editable = false
-            linkTextField.editable = false
+        self.deleteButtonHide = deleteButtonHide
+    }
+    
+    @IBAction func save(sender: AnyObject) {
+        if linkTextField.stringValue.isEmpty {
+            linkTextField.layer!.borderColor = NSColor.redColor().CGColor
+            linkTextField.layer!.borderWidth = 1
         } else {
-            commuyityNameTextField.hidden = true
+            linkTextField.layer!.borderWidth = 0
+            saveInfo()
+            CommData().wsComm_Save(comm!) { (successful) in
+                
+                if successful {
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+                    self.dismissViewController(self)
+                }
+            }
         }
-        
-        if let cm = self.comm {
-            self.commuyityNameTextField.stringValue = (cm.name)
-            self.linkTextField.stringValue = (cm.link)
-        }
-        
-        fillSubjectsButton()
-        fillAdminsButton()
     }
     
     func saveInfo() {
-        // Add alert about empty name.
         var subjectItem: SubjectComm?
         var adminItem: AdminComm?
         
@@ -101,19 +129,12 @@ class CommCardViewController: NSViewController {
         for item in adminsItem {
             if item.index == adminsPopUpButton.indexOfSelectedItem {
                 adminItem = item.admin
-                print("-------------------------------------")
-                print(item.index)
-                print(adminsPopUpButton.indexOfSelectedItem)
-                print(adminItem!.id)
-                
             }
         }
-        print("++++++++++++++++++")
-        
         
         if comm == nil {
             comm = Comm(
-                 id: 0
+                id: 0
                 ,name: ""
                 ,subject: subjectItem!
                 ,admin: adminItem!
@@ -127,30 +148,17 @@ class CommCardViewController: NSViewController {
         
     }
     
-    @IBAction func save(sender: AnyObject) {
-        saveInfo()
-        CommData().wsComm_Save(comm!) { (successful) in
-            
-            if successful {
-                NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
-                self.dismissViewController(self)
-                NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
-            }
-        }
-    }
-    
-    @IBAction func cancel(sender: AnyObject) {
-        self.dismissController(self)
-    }
     @IBAction func delete(sender: AnyObject) {
         if let comm = comm {
             CommData().wsComm_Del(comm.id, completion: { (successful) in
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
-                    self.dismissViewController(self)
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+                    self.dismissViewController(self)
                 }
+
             })
+            
         }
     }
 }

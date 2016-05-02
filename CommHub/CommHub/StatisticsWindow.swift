@@ -14,7 +14,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
-    var isPast = false
+    var dateTypeR: String = "Daily"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +24,6 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     override func viewDidAppear() {
         super.viewDidAppear()
-        self.refresh()
         
         self.view.window?.toolbar?.visible = true
         self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask
@@ -31,7 +31,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func refresh() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["isPast": false])
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dateType.day.rawValue])
 
     }
     
@@ -259,10 +259,10 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     func refreshData(notification: NSNotification){
-        if let us = notification.userInfo {
-            self.isPast = (us["isPast"] ?? false) as! Bool
+        if let userInfo = notification.userInfo {
+            self.dateTypeR = (userInfo["dateType"]) as! String
         }
-        StaCommData().wsStaCommVKDaily_Report(isPast) { (dirSta, successful) in
+        StaCommData().wsStaCommVK_Report(dateTypeR) { (dirSta, successful) in
             if successful {
                 self.dirStatistic.removeAll()
                 self.tableView.reloadData()

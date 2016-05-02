@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ConfirmCode: NSViewController {
+class ConfirmCode: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet weak var lblPhone: NSTextField!
     @IBOutlet var codeTextField: NSTextField!
@@ -18,19 +18,19 @@ class ConfirmCode: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.lblPhone.stringValue = phone
+        self.codeTextField.delegate = self
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         self.view.wantsLayer = true
-        // self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
-        //self.view.window?.titlebarAppearsTransparent = true
-        // self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        self.view.layer?.backgroundColor = NSColor.init(hexString: "EBEBEB").CGColor
         self.view.window?.toolbar?.visible = false
     }
     
     override var representedObject: AnyObject? {
         didSet {
+            self.codeTextField.resignFirstResponder()
         }
     }
     

@@ -11,27 +11,36 @@ import Cocoa
 class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet var tableView: NSTableView!
-    var comm = [Comm]()
+    
+    var dirComm = [Comm]()
     var directoryIsAlphabetical = true
+    var selectedCell: Comm?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.setDelegate(self)
+        self.tableView.setDataSource(self)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CommDictViewController.refreshData), name:"reloadComm", object: nil)
         NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
     }
     
-    override func viewDidAppear() {
-        super.viewDidAppear()
+    override func viewWillAppear() {
+        super.viewWillAppear()
         self.view.wantsLayer = true
-        //   self.view.layer?.backgroundColor = NSColor.init(hexString: "245082").CGColor
-        self.view.window?.titlebarAppearsTransparent = true
-        //  self.view.window?.backgroundColor = NSColor.init(hexString: "245082")
+        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask  // | NSResizableWindowMask
         self.view.window?.title = NSLocalizedString("CommunitiesTitleName", comment: "")
     }
     
+    override var representedObject: AnyObject? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
+    
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
-        // Сюда должен прийти массив с базы...
-        return comm.count ?? 0
+        return dirComm.count ?? 0
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -41,21 +50,21 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         case tableView.tableColumns[0]:
             cellIdentifier = "commNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
-            cell.setCell(comm[row])
+            cell.setCell(dirComm[row])
             self.tableView.deselectRow(row)
 
             return cell
         case tableView.tableColumns[1]:
             cellIdentifier = "subjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = comm[row].subjectName
+            cell.textField?.stringValue = dirComm[row].subjectName
             self.tableView.deselectRow(row)
 
             return cell
         default:
             cellIdentifier = "adminNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-            cell.textField?.stringValue = comm[row].adminName
+            cell.textField?.stringValue = dirComm[row].adminName
             self.tableView.deselectRow(row)
             
             return cell
@@ -64,78 +73,70 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
         
     }
     
-    func refreshData(notification: NSNotification){
-        CommData().wsComm_ReadDict { (dirComm, successful) in
-            if successful {
-                self.comm = dirComm
-                self.tableView.reloadData()
-            }
-        }
-    }
-
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
-        sorting(tableColumn)
-    }
-    
-    func sorting(tableColumn: NSTableColumn) {
-        print("Sorting")
         switch tableColumn {
         case tableView.tableColumns[0]:
             if directoryIsAlphabetical {
-                comm.sortInPlace { $0.name > $1.name }
+                dirComm.sortInPlace { $0.name > $1.name }
                 directoryIsAlphabetical = false
             } else {
-                comm.sortInPlace { $0.name < $1.name }
+                dirComm.sortInPlace { $0.name < $1.name }
                 directoryIsAlphabetical = true
             }
         case tableView.tableColumns[1]:
             if directoryIsAlphabetical {
-                comm.sortInPlace { $0.subjectName > $1.subjectName }
+                dirComm.sortInPlace { $0.subjectName > $1.subjectName }
                 directoryIsAlphabetical = false
             } else {
-                comm.sortInPlace { $0.subjectName < $1.subjectName }
+                dirComm.sortInPlace { $0.subjectName < $1.subjectName }
                 directoryIsAlphabetical = true
             }
         case tableView.tableColumns[2]:
             if directoryIsAlphabetical {
-                comm.sortInPlace { $0.adminName > $1.adminName }
+                dirComm.sortInPlace { $0.adminName > $1.adminName }
                 directoryIsAlphabetical = false
             } else {
-                comm.sortInPlace { $0.adminName < $1.adminName }
+                dirComm.sortInPlace { $0.adminName < $1.adminName }
                 directoryIsAlphabetical = true
             }
         default:
             break
         }
         tableView.reloadData()
-
     }
     
-    @IBAction func addNewCommunity(sender: AnyObject) {
-        let subview = CommCardViewController(nibName: "CommCard", bundle: nil)!
-        subview.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-        subview.setCard(nil, title: NSLocalizedString("AddNewCommunity", comment: ""), deleteButtonHide: true)
-        
-        self.presentViewControllerAsSheet(subview)
-    }
-    
-    override var representedObject: AnyObject? {
-        didSet {
-            // Update the view, if already loaded.
-        }
-    }
-     
     func tableViewSelectionDidChange(notification: NSNotification) {
         let myTableViewFromNotification = notification.object as! NSTableView
         let index = myTableViewFromNotification.selectedRow
         
         if myTableViewFromNotification.selectedRow >= 0 {
-            let subview = CommCardViewController(nibName: "CommCard", bundle: nil)
-            subview?.view.frame = NSRect(x: 0, y: 0, width: 297, height: 522)
-            subview?.setCard(comm[index], title: NSLocalizedString("EditCommunity", comment: ""), deleteButtonHide: false)
+
+            selectedCell = dirComm[index]
             
-            self.presentViewControllerAsSheet(subview!)
+            self.performSegueWithIdentifier("toEditingComm", sender: nil)
             myTableViewFromNotification.deselectRow(index)
         }
     }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toAddingComm" {
+            (segue.destinationController as! CommCardViewController).setCard(nil, deleteButtonHide: true)
+        }
+        if segue.identifier == "toEditingComm" {
+            (segue.destinationController as! CommCardViewController).setCard(selectedCell, deleteButtonHide: false)
+        }
+    }
+    
+    func refreshData(notification: NSNotification){
+        CommData().wsComm_ReadDict { (dirComm, successful) in
+            if successful {
+                self.dirComm = dirComm
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+
+     
+
 }
