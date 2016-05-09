@@ -20,6 +20,7 @@
 		271719E21CAD3C3900123816 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271719E01CAD3C3900123816 /* Main.storyboard */; };
 		271719ED1CAD3C3900123816 /* CommHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719EC1CAD3C3900123816 /* CommHubTests.swift */; };
 		271719F81CAD3C3900123816 /* CommHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271719F71CAD3C3900123816 /* CommHubUITests.swift */; };
+		2718F25A1CE10A8C00FD64D5 /* StatisticPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718F2591CE10A8C00FD64D5 /* StatisticPage.swift */; };
 		271BF6EE1CAFEF55005144D6 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6ED1CAFEF55005144D6 /* Subjects.swift */; };
 		271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCard.swift */; };
 		271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* SubjectComm.swift */; };
@@ -90,6 +91,7 @@
 		271719F31CAD3C3900123816 /* CommHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CommHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		271719F71CAD3C3900123816 /* CommHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommHubUITests.swift; sourceTree = "<group>"; };
 		271719F91CAD3C3900123816 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2718F2591CE10A8C00FD64D5 /* StatisticPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticPage.swift; sourceTree = "<group>"; };
 		271BF6ED1CAFEF55005144D6 /* Subjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		271BF6EF1CB003AD005144D6 /* SubjectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCard.swift; sourceTree = "<group>"; };
 		271BF6F41CB01808005144D6 /* SubjectComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectComm.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				270884941CBA999800780F07 /* StatisticsWindow.swift */,
+				2718F2591CE10A8C00FD64D5 /* StatisticPage.swift */,
 			);
 			name = Statistics;
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 				TargetAttributes = {
 					271719D31CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 4R2M8FE9U7;
+						DevelopmentTeam = 58JP37J35E;
 					};
 					271719E71CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
@@ -598,6 +601,7 @@
 				F33E719B1CCD2F03006B4CA4 /* Logout.swift in Sources */,
 				27F0FC6B1CC286740074582C /* StatiscticRow.swift in Sources */,
 				27F0FC631CC26F5D0074582C /* CommCell.swift in Sources */,
+				2718F25A1CE10A8C00FD64D5 /* StatisticPage.swift in Sources */,
 				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
 				271719DD1CAD3C3900123816 /* CommHub.xcdatamodeld in Sources */,
 				27A62CF61CC2F6F500C0A634 /* StaCommData.swift in Sources */,

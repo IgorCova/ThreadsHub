@@ -39,5 +39,6 @@ class CommCell: NSTableCellView {
         let url = NSURL(string: "https://vk.com/stats?gid=" + "\(groupID)")
         NSWorkspace.sharedWorkspace().openURL(url!)
     }
+    
 
 }

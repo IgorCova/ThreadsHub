@@ -15,6 +15,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
     var dateTypeR: String = "Daily"
+    var selectedCell: StatisticRow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -270,6 +271,26 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 self.dirStatistic = dirSta
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        let myTableViewFromNotification = notification.object as! NSTableView
+        
+        let index = myTableViewFromNotification.selectedRow
+        if index >= 0 {
+            selectedCell = dirStatistic[index]
+            
+            self.performSegueWithIdentifier("toStatisticPage", sender: nil)
+            myTableViewFromNotification.deselectRow(index)
+        }
+    }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toStatisticPage" {
+            let destinationController = segue.destinationController as! StatisticPage
+            destinationController.info = selectedCell
+            
         }
     }
 
