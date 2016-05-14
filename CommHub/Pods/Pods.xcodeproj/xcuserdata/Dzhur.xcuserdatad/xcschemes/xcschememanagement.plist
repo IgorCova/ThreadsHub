@@ -9,7 +9,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Charts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-CommHub.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>4AAFC2E9A10E083F1B8463E5EB476F14</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4D1C59138904540F50296445E3587673</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>79C040AFDDCE1BCBF6D8B5EB0B85887F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8972D1B3785A7CF11C5D31FB702BCB0E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EA5783E1E72DAF034F5567D9F2721A2E</key>
+		<key>C6828C2508515BC0428D6BDAA1292DC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

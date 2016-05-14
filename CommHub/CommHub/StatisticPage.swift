@@ -7,6 +7,8 @@
 //
 
 import Cocoa
+import Foundation
+import Charts
 
 class StatisticPage: NSViewController {
 
@@ -28,6 +30,8 @@ class StatisticPage: NSViewController {
     @IBOutlet var adminImage: NSButton!
     @IBOutlet var commImage: NSImageView!
     
+    @IBOutlet var lineChartView: LineChartView!
+    
     var info: StatisticRow?
     
     override func viewDidLoad() {
@@ -40,6 +44,30 @@ class StatisticPage: NSViewController {
             self.commImage.imageFromUrl(info.comm_photoLink)
             self.commName.stringValue = info.comm_name
         }
+        
+        // Do any additional setup after loading the view.
+        let xs = Array(1..<10).map { return Double($0) }
+        let ys1 = xs.map { i in return i * 1.5 }
+        //let ys2 = xs.map { i in return cos(Double(i / 2.0 / 3.141)) }
+        
+        let yse1 = ys1.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
+        //let yse2 = ys2.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
+        
+        let data = LineChartData(xVals: xs)
+        let ds1 = LineChartDataSet(yVals: yse1, label: "")
+        ds1.colors = [NSColor.init(hexString: "85E0F9")]
+        //ds1.
+        data.addDataSet(ds1)
+        
+        //let ds2 = LineChartDataSet(yVals: yse2, label: "World")
+        //ds2.colors = [NSUIColor.blueColor()]
+        //data.addDataSet(ds2)
+        self.lineChartView.data = data
+        
+        //self.lineChartView.gridBackgroundColor = NSUIColor.init(hexString: "B4EFFF")
+        
+        //self.lineChartView.descriptionText = "Linechart Demo"
+        
     }
     
     override func viewWillAppear() {
@@ -58,6 +86,11 @@ class StatisticPage: NSViewController {
 
         self.blueLine.layer?.backgroundColor = NSColor.init(hexString: "2F65A4").CGColor
         self.greyLine.layer?.backgroundColor = NSColor.init(hexString: "818181").CGColor
+        
+        
+        
+        //Example
+        self.lineChartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
 
     }
     
