@@ -41,27 +41,23 @@ class StatisticPage: NSViewController {
             self.posts.stringValue = String(info.postCount)
             self.adminName.stringValue = info.adminComm_fullName
             self.adminImage.imageFromUrl("https://graph.facebook.com/\( info.adminComm_linkFB ?? "0")/picture?type=normal")
-            self.commImage.imageFromUrl(info.comm_photoLink)
+            self.commImage.imageFromUrl(info.comm_photoLinkBig)
             self.commName.stringValue = info.comm_name
         }
         
         // Do any additional setup after loading the view.
-        let xs = Array(1..<10).map { return Double($0) }
-        let ys1 = xs.map { i in return i * 1.5 }
+        let xs = Array(1...10).map { return Double($0) }
+        let ys = [20.0,25.0, 30.0]
         //let ys2 = xs.map { i in return cos(Double(i / 2.0 / 3.141)) }
         
-        let yse1 = ys1.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
-        //let yse2 = ys2.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
+        let yse = ys.enumerate().map { idx, i in return ChartDataEntry(value: i, xIndex: idx) }
         
         let data = LineChartData(xVals: xs)
-        let ds1 = LineChartDataSet(yVals: yse1, label: "")
-        ds1.colors = [NSColor.init(hexString: "85E0F9")]
-        //ds1.
-        data.addDataSet(ds1)
+        let ds = LineChartDataSet(yVals: yse, label: "Blue")
+        ds.colors = [NSColor.init(hexString: "85E0F9")]
         
-        //let ds2 = LineChartDataSet(yVals: yse2, label: "World")
-        //ds2.colors = [NSUIColor.blueColor()]
-        //data.addDataSet(ds2)
+        data.addDataSet(ds)
+        
         self.lineChartView.data = data
         
         //self.lineChartView.gridBackgroundColor = NSUIColor.init(hexString: "B4EFFF")

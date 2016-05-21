@@ -12,6 +12,7 @@ class StatisticRow {
     var comm_id: Int
     var comm_name: String
     var comm_photoLink: String
+    var comm_photoLinkBig: String
     var comm_groupID: Int
     
     var subjectComm_name: String
@@ -71,6 +72,7 @@ class StatisticRow {
         comm_id: Int
        ,comm_name: String
        ,comm_photoLink: String
+       ,comm_photoLinkBig: String
        ,comm_groupID: Int
     
        ,subjectComm_name: String
@@ -129,6 +131,7 @@ class StatisticRow {
         self.comm_id = comm_id
         self.comm_name = comm_name
         self.comm_photoLink = comm_photoLink
+        self.comm_photoLinkBig = comm_photoLinkBig
         self.comm_groupID = comm_groupID
         
         self.subjectComm_name = subjectComm_name

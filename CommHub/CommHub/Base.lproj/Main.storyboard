@@ -1699,7 +1699,6 @@ Gw
                                                             <connections>
                                                                 <outlet property="adminName" destination="crc-bp-gHO" id="a85-bE-hBz"/>
                                                                 <outlet property="imageProfile" destination="mR7-ze-P7t" id="q3i-Qw-7C6"/>
-                                                                <outlet property="textField" destination="crc-bp-gHO" id="qgH-ip-Sr5"/>
                                                             </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>

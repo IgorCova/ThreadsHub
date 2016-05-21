@@ -54,9 +54,11 @@ class StaCommData {
                 comm_id: st["comm_id"].int ?? 0
                 ,comm_name: st["comm_name"].stringValue
                 ,comm_photoLink: st["comm_photoLink"].stringValue
+                ,comm_photoLinkBig: st["comm_photoLinkBig"].stringValue
                 ,comm_groupID: st["comm_groupID"].int ?? 0
                 ,subjectComm_name: st["subjectComm_name"].stringValue
                 ,areaComm_code: st["areaComm_code"].stringValue
+                
                 ,adminComm_fullName: st["adminComm_fullName"].stringValue
                 ,adminComm_linkFB: st["adminComm_linkFB"].stringValue
                 
