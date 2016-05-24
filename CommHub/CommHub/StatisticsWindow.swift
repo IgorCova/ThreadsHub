@@ -289,7 +289,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toStatisticPage" {
             let destinationController = segue.destinationController as! StatisticPage
-            destinationController.info = selectedCell
+            destinationController.infoFromComm = selectedCell
             
         }
     }

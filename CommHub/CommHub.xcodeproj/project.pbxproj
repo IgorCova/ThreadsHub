@@ -24,6 +24,8 @@
 		271BF6F11CB003AD005144D6 /* SubjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6EF1CB003AD005144D6 /* SubjectCard.swift */; };
 		271BF6F51CB01808005144D6 /* SubjectComm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F41CB01808005144D6 /* SubjectComm.swift */; };
 		271BF6F71CB0198C005144D6 /* Comm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271BF6F61CB0198C005144D6 /* Comm.swift */; };
+		273B06B51CF4B67000D74781 /* StatisticPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B06B41CF4B67000D74781 /* StatisticPageData.swift */; };
+		273B06B71CF4B76100D74781 /* VkGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B06B61CF4B76100D74781 /* VkGraph.swift */; };
 		273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */; };
 		273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273B0B591CAF3CE400454E94 /* AdminCard.swift */; };
 		274E7E361CB171BB0003DA19 /* Registration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E7E351CB171BB0003DA19 /* Registration.swift */; };
@@ -96,6 +98,8 @@
 		271BF6EF1CB003AD005144D6 /* SubjectCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectCard.swift; sourceTree = "<group>"; };
 		271BF6F41CB01808005144D6 /* SubjectComm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectComm.swift; sourceTree = "<group>"; };
 		271BF6F61CB0198C005144D6 /* Comm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comm.swift; sourceTree = "<group>"; };
+		273B06B41CF4B67000D74781 /* StatisticPageData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticPageData.swift; sourceTree = "<group>"; };
+		273B06B61CF4B76100D74781 /* VkGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VkGraph.swift; sourceTree = "<group>"; };
 		273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCellView.swift; sourceTree = "<group>"; };
 		273B0B591CAF3CE400454E94 /* AdminCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCard.swift; sourceTree = "<group>"; };
 		274E7E351CB171BB0003DA19 /* Registration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Registration.swift; sourceTree = "<group>"; };
@@ -179,8 +183,9 @@
 				2710CD601CAD58B400F46F7E /* AdminComm.swift */,
 				271BF6F41CB01808005144D6 /* SubjectComm.swift */,
 				271BF6F61CB0198C005144D6 /* Comm.swift */,
-				27F4A2711CBE881B00FB120E /* Extensions.swift */,
 				27F0FC6A1CC286740074582C /* StatiscticRow.swift */,
+				273B06B61CF4B76100D74781 /* VkGraph.swift */,
+				27F4A2711CBE881B00FB120E /* Extensions.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -308,6 +313,7 @@
 				27ADFA521CB181AF00B4C308 /* SessionData.swift */,
 				27B43FE71CB080F8000D9E98 /* SubjectCommData.swift */,
 				27A62CF51CC2F6F500C0A634 /* StaCommData.swift */,
+				273B06B41CF4B67000D74781 /* StatisticPageData.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -615,6 +621,7 @@
 				273B0B5B1CAF3CE400454E94 /* AdminCard.swift in Sources */,
 				27F4A2721CBE881B00FB120E /* Extensions.swift in Sources */,
 				27F0FC691CC26FEE0074582C /* AdminCell.swift in Sources */,
+				273B06B51CF4B67000D74781 /* StatisticPageData.swift in Sources */,
 				274E7E361CB171BB0003DA19 /* Registration.swift in Sources */,
 				27ADFA5C1CB1940500B4C308 /* Log+CoreDataProperties.swift in Sources */,
 				2702C8281CB9675D0095EE74 /* ConfirmCode.swift in Sources */,
@@ -630,6 +637,7 @@
 				27B43FE11CB039A7000D9E98 /* CommCard.swift in Sources */,
 				27ADFA591CB18EDD00B4C308 /* OwnerHub.swift in Sources */,
 				27F0FC671CC26FC40074582C /* MetricCell.swift in Sources */,
+				273B06B71CF4B76100D74781 /* VkGraph.swift in Sources */,
 				275E558D1CB93C90003A60FD /* Container.swift in Sources */,
 				275E558B1CB9366B003A60FD /* RegistrationSegue.swift in Sources */,
 				27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */,

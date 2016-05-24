@@ -1747,67 +1747,67 @@ Gw
             <objects>
                 <viewController id="Wag-me-Dfg" customClass="StatisticPage" customModule="CommHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="JTV-ks-BfV">
-                        <rect key="frame" x="0.0" y="0.0" width="1000" height="708"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="752"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNm-ho-HLD">
-                                <rect key="frame" x="20" y="675" width="139" height="18"/>
+                                <rect key="frame" x="20" y="719" width="139" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="General information" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="6Sy-Io-d1Z">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7x-a8-iWF">
-                                <rect key="frame" x="271" y="675" width="47" height="18"/>
+                                <rect key="frame" x="271" y="719" width="47" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Reach" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="eFT-vJ-j9c">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72u-Sj-Y5k">
-                                <rect key="frame" x="181" y="675" width="68" height="18"/>
+                                <rect key="frame" x="181" y="719" width="68" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Members" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="hP4-2t-vQs">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NnF-dp-TPo">
-                                <rect key="frame" x="340" y="675" width="55" height="18"/>
+                                <rect key="frame" x="340" y="719" width="55" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Visitors" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="RiC-Ue-d7P">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dl1-h1-IT3">
-                                <rect key="frame" x="494" y="675" width="80" height="18"/>
+                                <rect key="frame" x="494" y="719" width="80" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Geography" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="7H0-An-8E4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Eyl-7T-8Vh">
-                                <rect key="frame" x="417" y="675" width="55" height="18"/>
+                                <rect key="frame" x="417" y="719" width="55" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Activity" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="WP1-SC-0p0">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JJ0-xD-T3p">
-                                <rect key="frame" x="596" y="675" width="58" height="18"/>
+                                <rect key="frame" x="596" y="719" width="58" height="18"/>
                                 <buttonCell key="cell" type="bevel" title="Devices" bezelStyle="rounded" alignment="center" imageScaling="proportionallyDown" inset="2" id="e2s-a7-CUN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8tu-Tl-wuC">
-                                <rect key="frame" x="29" y="657" width="121" height="3"/>
+                                <rect key="frame" x="29" y="701" width="121" height="3"/>
                             </customView>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yXV-fG-DIo">
-                                <rect key="frame" x="20" y="619" width="30" height="30"/>
+                                <rect key="frame" x="20" y="663" width="30" height="30"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="vk-3" id="QLN-TA-1SP"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x0X-uG-caK">
-                                <rect key="frame" x="58" y="623" width="237" height="23"/>
+                                <rect key="frame" x="58" y="667" width="237" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Automobiles" id="Dle-JG-sAc">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -1815,11 +1815,11 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQl-C3-2s4">
-                                <rect key="frame" x="20" y="354" width="256" height="256"/>
+                                <rect key="frame" x="20" y="398" width="256" height="256"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="vk-1" id="mWF-Kf-k9a"/>
                             </imageView>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dfe-c5-Vg4">
-                                <rect key="frame" x="304" y="623" width="276" height="23"/>
+                                <rect key="frame" x="304" y="667" width="276" height="23"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Information about community" id="WdZ-QI-qDe">
                                     <font key="font" metaFont="system" size="20"/>
                                     <color key="textColor" red="0.34509803921568627" green="0.34509803921568627" blue="0.34509803921568627" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
@@ -1827,7 +1827,7 @@ Gw
                                 </textFieldCell>
                             </textField>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCv-Vz-kUM">
-                                <rect key="frame" x="306" y="470" width="218" height="140"/>
+                                <rect key="frame" x="306" y="514" width="218" height="140"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aeZ-wn-fuE">
                                         <rect key="frame" x="-2" y="72" width="222" height="35"/>
@@ -1848,7 +1848,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kKv-Sc-wvV">
-                                <rect key="frame" x="534" y="545" width="218" height="65"/>
+                                <rect key="frame" x="534" y="589" width="218" height="65"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6GX-AZ-bG9">
                                         <rect key="frame" x="-2" y="31" width="222" height="24"/>
@@ -1869,7 +1869,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1kF-C4-aQp">
-                                <rect key="frame" x="762" y="545" width="218" height="65"/>
+                                <rect key="frame" x="762" y="589" width="218" height="65"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lid-S1-ZW8">
                                         <rect key="frame" x="-2" y="31" width="222" height="24"/>
@@ -1890,7 +1890,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cn-3W-uns">
-                                <rect key="frame" x="762" y="470" width="218" height="65"/>
+                                <rect key="frame" x="762" y="514" width="218" height="65"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tu3-AG-QE4">
                                         <rect key="frame" x="63" y="30" width="157" height="18"/>
@@ -1918,7 +1918,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hsq-F4-hH2">
-                                <rect key="frame" x="534" y="470" width="218" height="65"/>
+                                <rect key="frame" x="534" y="514" width="218" height="65"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nK-We-nxh">
                                         <rect key="frame" x="-2" y="31" width="222" height="23"/>
@@ -1939,7 +1939,7 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7CF-Q5-eXj">
-                                <rect key="frame" x="306" y="354" width="674" height="106"/>
+                                <rect key="frame" x="306" y="398" width="674" height="106"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FcJ-a9-EVW">
                                         <rect key="frame" x="318" y="55" width="57" height="24"/>
@@ -2024,13 +2024,13 @@ Gw
                                 </subviews>
                             </customView>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tzS-61-beM">
-                                <rect key="frame" x="0.0" y="659" width="1000" height="1"/>
+                                <rect key="frame" x="0.0" y="703" width="1000" height="1"/>
                             </customView>
-                            <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-fP-fLE" customClass="LineChartView" customModule="Charts">
-                                <rect key="frame" x="7" y="10" width="987" height="290"/>
+                            <customView autoresizesSubviews="NO" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-fP-fLE" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="7" y="12" width="987" height="332"/>
                             </customView>
                             <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ax7-u3-f7G">
-                                <rect key="frame" x="804" y="307" width="185" height="23"/>
+                                <rect key="frame" x="804" y="351" width="185" height="23"/>
                                 <segmentedCell key="cell" borderStyle="border" alignment="left" style="capsule" trackingMode="selectOne" id="bne-pm-kPa">
                                     <font key="font" metaFont="system"/>
                                     <segments>
@@ -2062,7 +2062,7 @@ Gw
                 </viewController>
                 <customObject id="f1I-tM-zZt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-508" y="2142"/>
+            <point key="canvasLocation" x="-508" y="2164"/>
         </scene>
         <!--Subjects View Controller-->
         <scene sceneID="oac-dw-OeB">
