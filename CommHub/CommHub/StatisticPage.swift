@@ -20,7 +20,6 @@ class StatisticPage: NSViewController {
     @IBOutlet var womenView: NSView!
     @IBOutlet var postsView: NSView!
     @IBOutlet var adminView: NSView!
-    @IBOutlet var statView: NSView!
     
     @IBOutlet var members: NSTextField!
     @IBOutlet var posts: NSTextField!
@@ -32,8 +31,100 @@ class StatisticPage: NSViewController {
     
     @IBOutlet var lineChartView: LineChartView!
     
+    @IBOutlet weak var segActivityPeriod: NSSegmentedControl!
+    @IBOutlet weak var segActivityType: NSSegmentedControl!
     var infoFromComm: StatisticRow?
     var infoForGraph = [VkGraph]()
+    
+    @IBAction func changeActivityType(sender: AnyObject) {
+        refreshActivity()
+    }
+    
+    func refreshActivity() {
+        var actType = activityType.likes
+        
+        switch self.segActivityType.selectedSegment {
+            case 0: actType = activityType.likes
+            case 1: actType = activityType.comments
+            case 2: actType = activityType.share
+            case 3: actType = activityType.removed
+            
+            default: actType = activityType.likes
+        }
+        
+        StatisticPageData().wsStaCommVKGraph_Report((infoFromComm?.comm_id)!, completion: { (dirVkGraph, successful) in
+            if successful {
+                self.infoForGraph = dirVkGraph
+                var dates:[String?] = []
+                var actvityValues: [Int] = []
+                var actvityValuesLast: [Int] = []
+                
+                for vkGraph in self.infoForGraph {
+                    if (vkGraph.isLast) {
+                        switch actType {
+                            case activityType.likes: actvityValuesLast.append(vkGraph.likes)
+                            case activityType.comments: actvityValuesLast.append(vkGraph.comments)
+                            case activityType.share: actvityValuesLast.append(vkGraph.share)
+                            case activityType.removed: actvityValuesLast.append(vkGraph.removed)
+                        }
+                    } else {
+                        if vkGraph.isFuture != true {
+                            switch actType {
+                                case activityType.likes: actvityValues.append(vkGraph.likes)
+                                case activityType.comments: actvityValues.append(vkGraph.comments)
+                                case activityType.share: actvityValues.append(vkGraph.share)
+                                case activityType.removed: actvityValues.append(vkGraph.removed)
+                            }
+                        }
+                        dates.append(vkGraph.dayString)
+                    }
+                }
+                
+                let xs = Array(0..<dates.count).map { return Double($0) }
+                let yActvityValues = actvityValues
+                let yActvityValuesLast = actvityValuesLast
+                    
+                let yActvityValuesE = yActvityValues.enumerate().map { idx, i in return ChartDataEntry(value: Double(i), xIndex: idx) }
+                let yActvityValuesLastE = yActvityValuesLast.enumerate().map { idx, i in return ChartDataEntry(value: Double(i), xIndex: idx) }
+                    
+                let data = LineChartData(xVals: xs)
+                
+                let labelActvityValues = actType.rawValue
+                
+                
+                let dataActvityValues = LineChartDataSet(yVals: yActvityValuesE, label: labelActvityValues)
+                dataActvityValues.colors = [NSColor.init(hexString: "85E0F9")]
+                dataActvityValues.drawCircleHoleEnabled = false
+                dataActvityValues.drawCubicEnabled = true
+                dataActvityValues.circleRadius = 6
+                dataActvityValues.circleColors = [NSColor.init(hexString: "85E0F9")]
+                    
+                let dataActvityValuesLast = LineChartDataSet(yVals: yActvityValuesLastE, label: "\(labelActvityValues) last week")
+                dataActvityValuesLast.colors = [NSColor.init(hexString: "E88F96")]
+                dataActvityValuesLast.drawCircleHoleEnabled = false
+                dataActvityValuesLast.drawCubicEnabled = true
+                dataActvityValuesLast.circleRadius = 6
+                dataActvityValuesLast.circleColors = [NSColor.init(hexString: "E88F96")]
+                    
+                data.addDataSet(dataActvityValues)
+                data.addDataSet(dataActvityValuesLast)
+                    
+                self.lineChartView.data = data
+                self.lineChartView.leftAxis.enabled = false
+                    
+                let xax = ChartXAxis()
+                xax.labelWidth = 400.00
+                xax.values = dates
+                self.lineChartView.xAxis.labelWidth = 450.00
+                self.lineChartView.xAxis.labelPosition = .Bottom
+                self.lineChartView.xAxis.labelHeight = 50.00
+                self.lineChartView.xAxis.values = dates
+                
+                self.lineChartView.scaleXEnabled = false
+                self.lineChartView.scaleYEnabled = false
+            }
+        })
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,71 +135,7 @@ class StatisticPage: NSViewController {
             self.adminImage.imageFromUrl("https://graph.facebook.com/\( info.adminComm_linkFB ?? "0")/picture?type=normal")
             self.commImage.imageFromUrl(info.comm_photoLinkBig)
             self.commName.stringValue = info.comm_name
-            
-        
-            StatisticPageData().wsStaCommVKGraph_Report((infoFromComm?.comm_id)!, completion: { (dirVkGraph, successful) in
-                if successful {
-                    self.infoForGraph = dirVkGraph
-                    var dates:[String?] = []
-                    var likes: [Int] = []
-                    var likesLast: [Int] = []
-                    
-                    for vkGraph in self.infoForGraph {
-                        if (vkGraph.isLast) {
-                            likesLast.append(vkGraph.likes)
-                        } else {
-                            if vkGraph.isFuture != true {
-                                likes.append(vkGraph.likes)
-                            }
-                            dates.append(vkGraph.dayString)
-                        }
-                    }
-                    
-                    let xs = Array(0..<dates.count).map { return Double($0) }
-                    let yLikes = likes
-                    let yLikesLast = likesLast
-                    
-                    let yLikesE = yLikes.enumerate().map { idx, i in return ChartDataEntry(value: Double(i), xIndex: idx) }
-                    let yLikesLastE = yLikesLast.enumerate().map { idx, i in return ChartDataEntry(value: Double(i), xIndex: idx) }
-                    
-                    let data = LineChartData(xVals: xs)
-                    
-                    let dataLikes = LineChartDataSet(yVals: yLikesE, label: "Likes")
-                    dataLikes.colors = [NSColor.init(hexString: "85E0F9")]
-                    dataLikes.drawCircleHoleEnabled = false
-                    dataLikes.drawCubicEnabled = true
-                    dataLikes.circleRadius = 6
-                    dataLikes.circleColors = [NSColor.init(hexString: "85E0F9")]
-                    
-                    let dataLikesLast = LineChartDataSet(yVals: yLikesLastE, label: "Last week likes")
-                    dataLikesLast.colors = [NSColor.init(hexString: "E88F96")]
-                    dataLikesLast.drawCircleHoleEnabled = false
-                    dataLikesLast.drawCubicEnabled = true
-                    dataLikesLast.circleRadius = 6
-                    dataLikesLast.circleColors = [NSColor.init(hexString: "E88F96")]
-            
-                    
-                    data.addDataSet(dataLikes)
-                    data.addDataSet(dataLikesLast)
-                    
-                    self.lineChartView.data = data
-                    self.lineChartView.leftAxis.enabled = false
-                    
-                    let xax = ChartXAxis()
-                    xax.labelWidth = 400.00
-                    xax.values = dates
-                    self.lineChartView.xAxis.labelWidth = 450.00
-                    self.lineChartView.xAxis.labelPosition = .Bottom
-                    self.lineChartView.xAxis.labelHeight = 50.00
-                    self.lineChartView.xAxis.values = dates
-                    
-                    self.lineChartView.scaleXEnabled = false
-                    self.lineChartView.scaleYEnabled = false
-
-                    //self.lineChartView.gridBackgroundColor = NSUIColor.init(hexString: "B4EFFF")
-                    //self.lineChartView.descriptionText = "Linechart Demo"
-                }
-            })
+            self.refreshActivity()
         }
     }
     
@@ -124,7 +151,6 @@ class StatisticPage: NSViewController {
         self.womenView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
         self.postsView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
         self.adminView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
-        self.statView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
 
         self.blueLine.layer?.backgroundColor = NSColor.init(hexString: "2F65A4").CGColor
         self.greyLine.layer?.backgroundColor = NSColor.init(hexString: "818181").CGColor

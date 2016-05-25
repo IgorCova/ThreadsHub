@@ -143,3 +143,10 @@ enum dateType: String {
     case yesterday = "Yesterday"
     case week = "Week"
 }
+
+enum activityType: String {
+    case likes = "Likes"
+    case comments = "Comments"
+    case share = "Share"
+    case removed = "Removed"
+}
