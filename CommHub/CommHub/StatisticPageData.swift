@@ -32,6 +32,8 @@ class StatisticPageData {
                             ,comments: info["comments"].intValue
                             ,share: info["share"].intValue
                             ,removed: info["removed"].intValue
+                            ,members: info["members"].intValue
+                            ,membersLost: info["membersLost"].intValue
                             ,dayString: info["dayString"].stringValue
                             ,isLast: info["isLast"].boolValue
                             ,isFuture: info["isFuture"].boolValue)

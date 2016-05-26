@@ -48,6 +48,8 @@ class StatisticPage: NSViewController {
             case 1: actType = activityType.comments
             case 2: actType = activityType.share
             case 3: actType = activityType.removed
+            case 4: actType = activityType.members
+            case 5: actType = activityType.membersLost
             
             default: actType = activityType.likes
         }
@@ -66,6 +68,8 @@ class StatisticPage: NSViewController {
                             case activityType.comments: actvityValuesLast.append(vkGraph.comments)
                             case activityType.share: actvityValuesLast.append(vkGraph.share)
                             case activityType.removed: actvityValuesLast.append(vkGraph.removed)
+                            case activityType.members: actvityValuesLast.append(vkGraph.members)
+                            case activityType.membersLost: actvityValuesLast.append(vkGraph.membersLost)
                         }
                     } else {
                         if vkGraph.isFuture != true {
@@ -74,6 +78,8 @@ class StatisticPage: NSViewController {
                                 case activityType.comments: actvityValues.append(vkGraph.comments)
                                 case activityType.share: actvityValues.append(vkGraph.share)
                                 case activityType.removed: actvityValues.append(vkGraph.removed)
+                                case activityType.members: actvityValues.append(vkGraph.members)
+                                case activityType.membersLost: actvityValues.append(vkGraph.membersLost)
                             }
                         }
                         dates.append(vkGraph.dayString)

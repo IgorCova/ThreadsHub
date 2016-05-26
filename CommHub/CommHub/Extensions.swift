@@ -149,4 +149,6 @@ enum activityType: String {
     case comments = "Comments"
     case share = "Share"
     case removed = "Removed"
+    case members = "Members"
+    case membersLost = "MembersLost"
 }
