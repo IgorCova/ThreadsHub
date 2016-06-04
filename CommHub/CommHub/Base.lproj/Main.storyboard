@@ -394,7 +394,7 @@
                         <rect key="screenRect" x="0.0" y="0.0" width="1440" height="900"/>
                         <toolbar key="toolbar" implicitIdentifier="6667E914-6FCF-4912-8DF1-14F9E23EAE53" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconOnly" sizeMode="regular" id="EMp-aU-f4L" customClass="ExampleToolbar" customModule="CommHub" customModuleProvider="target">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="2D2152D7-C45E-4B6D-915E-E22971A0C1AC" label="Facebook" paletteLabel="Facebook" image="facebook" id="5vu-gj-eZP">
+                                <toolbarItem implicitItemIdentifier="2D2152D7-C45E-4B6D-915E-E22971A0C1AC" label="Facebook" paletteLabel="Facebook" image="facebook" selectable="YES" id="5vu-gj-eZP">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
@@ -407,7 +407,7 @@
                                         </buttonCell>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="82E8C50C-56F5-4272-9F4A-88BEC13BF888" label="VKontakte" paletteLabel="VKontakte" image="vk-2" id="iBF-os-mEl">
+                                <toolbarItem implicitItemIdentifier="82E8C50C-56F5-4272-9F4A-88BEC13BF888" label="VKontakte" paletteLabel="VKontakte" image="vk-2" selectable="YES" id="iBF-os-mEl">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
@@ -418,22 +418,28 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="showStatisticVK:" target="B8D-0N-5wS" id="3y1-J8-GTk"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="F6C93931-3268-4F6D-B315-20CAFD464B47" label="Odnoklassniki" paletteLabel="Odnoklassniki" image="ok" id="T8q-D4-f9b">
+                                <toolbarItem implicitItemIdentifier="F6C93931-3268-4F6D-B315-20CAFD464B47" label="Odnoklassniki" paletteLabel="Odnoklassniki" image="ok-1" selectable="YES" id="T8q-D4-f9b">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
                                     <button key="view" id="rnj-9O-GmX">
                                         <rect key="frame" x="17" y="14" width="48" height="48"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ok" imagePosition="only" alignment="center" enabled="NO" imageScaling="proportionallyUpOrDown" inset="2" id="HQF-tm-LWz">
+                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="ok-1" imagePosition="overlaps" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="HQF-tm-LWz">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="showStatisticsOK:" target="B8D-0N-5wS" id="AcZ-Jv-MIC"/>
+                                        </connections>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="4F8A65D1-EE85-413A-9F68-AA33945E13E5" label="My World" paletteLabel="My World" image="my world" id="EQv-x9-fiM">
+                                <toolbarItem implicitItemIdentifier="4F8A65D1-EE85-413A-9F68-AA33945E13E5" label="My World" paletteLabel="My World" image="my world" selectable="YES" id="EQv-x9-fiM">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
@@ -446,7 +452,7 @@
                                         </buttonCell>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="A63459AA-4CED-4637-BC09-0D53384EFC02" label="Instagram" paletteLabel="Instagram" image="instagram" id="Iuh-BI-UpL">
+                                <toolbarItem implicitItemIdentifier="A63459AA-4CED-4637-BC09-0D53384EFC02" label="Instagram" paletteLabel="Instagram" image="instagram" selectable="YES" id="Iuh-BI-UpL">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
@@ -459,7 +465,7 @@
                                         </buttonCell>
                                     </button>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="16731CB8-AAEC-4904-8871-AB332C04E7C8" label="YouTube" paletteLabel="YouTube" image="youtube-play" id="WmS-0o-DRq">
+                                <toolbarItem implicitItemIdentifier="16731CB8-AAEC-4904-8871-AB332C04E7C8" label="YouTube" paletteLabel="YouTube" image="youtube-play" selectable="YES" id="WmS-0o-DRq">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="40" height="40"/>
                                     <size key="maxSize" width="48" height="48"/>
@@ -563,7 +569,10 @@
                         </toolbar>
                     </window>
                     <connections>
+                        <outlet property="OKButton" destination="rnj-9O-GmX" id="tfd-iZ-9FX"/>
+                        <outlet property="VKButton" destination="d5X-vv-r60" id="XTv-Qz-gvp"/>
                         <outlet property="segPeriod" destination="skL-fK-GAd" id="SlM-nd-fNe"/>
+                        <outlet property="showStatisticVK" destination="d5X-vv-r60" id="iSw-Qs-QbL"/>
                         <segue destination="oXr-f4-yeP" kind="relationship" relationship="window.shadowedContentViewController" id="xwd-Cv-TmL"/>
                     </connections>
                 </windowController>
@@ -1011,7 +1020,7 @@ Gw
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="increaseCell" id="QdX-0R-34W" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
+                                                        <tableCellView identifier="increaseCell" misplaced="YES" id="QdX-0R-34W" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
                                                             <rect key="frame" x="293" y="1" width="92" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -2894,7 +2903,7 @@ DQ
         <image name="instagram" width="256" height="256"/>
         <image name="logotype" width="228" height="156"/>
         <image name="my world" width="256" height="256"/>
-        <image name="ok" width="256" height="256"/>
+        <image name="ok-1" width="256" height="256"/>
         <image name="plus" width="10" height="10"/>
         <image name="save" width="152" height="27"/>
         <image name="statistic icon" width="135" height="135"/>

@@ -19,6 +19,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
         
         self.refresh()
     }
@@ -31,9 +32,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     func refresh() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
         NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dateType.day.rawValue])
-
     }
     
     func numberOfRowsInTableView(tableView: NSTableView) -> Int {
@@ -263,13 +262,48 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         if let userInfo = notification.userInfo {
             self.dateTypeR = (userInfo["dateType"]) as! String
         }
-        StaCommData().wsStaCommVK_Report(dateTypeR) { (dirSta, successful) in
-            if successful {
-                self.dirStatistic.removeAll()
-                self.tableView.reloadData()
-                
-                self.dirStatistic = dirSta
-                self.tableView.reloadData()
+        
+        reorganizationTableView()
+        
+        if socialNetwork == SocialNetwork.VK {
+            
+            StaCommData().wsStaCommVK_Report(dateTypeR) { (dirSta, successful) in
+                if successful {
+                    self.dirStatistic.removeAll()
+                    self.dirStatistic = dirSta
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        
+        if socialNetwork == SocialNetwork.OK {
+            self.dirStatistic.removeAll()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func reorganizationTableView() {
+        let OKCOlomns = ["Community", "Reach", "Members", "New members", "Left members", "Visits", "Reshares", "Votes", "Link clicks", "Negatives", "Hides from feed", "Administrator"]
+        
+        let VKCOlomns = ["Community", "Members", "Increase", "Reach", "Visitors", "Views", "Posts", "Likes", "Repost", "Commnets", "Administrator"]
+        
+        for colomn in tableView.tableColumns {
+            tableView.removeTableColumn(colomn)
+        }
+        
+        if socialNetwork == SocialNetwork.VK {
+            for index in 0..<VKCOlomns.count {
+                let colomn = NSTableColumn()
+                colomn.title = VKCOlomns[index]
+                tableView.addTableColumn(colomn)
+            }
+        }
+        
+        if socialNetwork == SocialNetwork.OK {
+            for index in 0..<OKCOlomns.count {
+                let colomn = NSTableColumn()
+                colomn.title = OKCOlomns[index]
+                tableView.addTableColumn(colomn)
             }
         }
     }

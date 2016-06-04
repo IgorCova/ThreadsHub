@@ -30,17 +30,25 @@ extension NSColor {
     }
 }
 
+enum SocialNetwork {
+    case OK
+    case VK
+}
+
 internal let HubService = "http://commhub.org/CommHubService.svc"
 internal var MyDID = NSUUID().UUIDString
+internal var socialNetwork = SocialNetwork.VK
 internal var MySessionID : String {
-get {
-    return OwnerHubData().getLogInfo().1
+    
+    get {
+        return OwnerHubData().getLogInfo().1
+    }
 }
-}
+
 internal var MyOwnerHubID : Int {
-get {
-    return OwnerHubData().getLogInfo().0
-}
+    get {
+        return OwnerHubData().getLogInfo().0
+    }
 }
 
 extension NSImageView {
