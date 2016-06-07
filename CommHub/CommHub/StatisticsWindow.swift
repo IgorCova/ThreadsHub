@@ -41,88 +41,66 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
-        var cellIdentifier = "cellComm/membersCell/increaseCell/reachCell/visitorsCell/viewsCell/postsCell/likesCell/sharesCell/commentsCell/adminCell"
+        var cellIdentifier = ""
+        
         let column = tableView.tableColumns
         let statistic = dirStatistic[row]
         
         switch tableColumn! {
         case column[0]:
-            cellIdentifier = "cellComm"
+            cellIdentifier = "commCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCell
-            cell.setCell(statistic.comm_name, categoryName: statistic.subjectComm_name, comm_photoLink: statistic.comm_photoLink, groupID: statistic.comm_groupID)
-            
+            cell.setCell(statistic.comm_name, categoryName: statistic.subjectComm_name, comm_photoLink: statistic.comm_photoLink, groupID: statistic.comm_groupID, areaCode: statistic.areaComm_code)
             return cell
             
         case column[1]:
             cellIdentifier = "membersCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             cell.textField?.stringValue = String(statistic.members.divByBits())
-            
             return cell
             
         case column[2]:
             cellIdentifier = "increaseCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.increaseNew, valuePercent: statistic.increaseDifPercent)
-            
             return cell
-            
+
         case column[3]:
             cellIdentifier = "reachCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.reachNew, valuePercent: statistic.reachDifPercent)
-            
             return cell
-
+            
         case column[4]:
-            cellIdentifier = "visitorsCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.visitorsNew, valuePercent: statistic.visitorsDifPercent)
-            
-            return cell
-        
-        case column[5]:
-            cellIdentifier = "viewsCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.viewsNew, valuePercent: statistic.viewsDifPercent)
-            
-            return cell
-            
-        case column[6]:
             cellIdentifier = "postsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.postCountNew, valuePercent: statistic.postCountDifPercent)
+            return cell
+
+        case column[5]:
+            cellIdentifier = "likesCell"
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
+            cell.setCell(statistic.likesNew, valuePercent: statistic.likesDifPercent)
+            return cell
+            
+        case column[6]:
+            cellIdentifier = "resharesCell"
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
+            cell.setCell(statistic.resharesNew, valuePercent: statistic.resharesDifPercent)
             
             return cell
 
         case column[7]:
-            cellIdentifier = "likesCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.likesNew, valuePercent: statistic.likesDifPercent)
-            
-            return cell
-            
-        case column[8]:
-            cellIdentifier = "sharesCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.repostsNew, valuePercent: statistic.repostsDifPercent)
-            
-            return cell
-
-        case column[9]:
             cellIdentifier = "commentsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.commentsNew, valuePercent: statistic.commentsDifPercent)
-            
             return cell
             
         default:
-            cellIdentifier = "adminCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! AdminCell
-            cell.setCell(statistic.adminComm_linkFB, adminName: statistic.adminComm_fullName)
-            
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             return cell
         }
+        
     }
     
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
@@ -131,6 +109,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     func sorting(tableColumn: NSTableColumn) {
         let column = tableView.tableColumns
+        
         switch tableColumn {
         case column[0]:
             print("Sorting")
@@ -141,7 +120,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.comm_name < $1.comm_name }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
+
         case column[1]:
             print("Sorting")
             if directoryIsAlphabetical {
@@ -151,21 +130,9 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.members < $1.members }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
             
         case column[2]:
             
-            print("Sorting")
-            if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.subscribedNew > $1.subscribedNew }
-                directoryIsAlphabetical = false
-            } else {
-                dirStatistic.sortInPlace { $0.subscribedNew < $1.subscribedNew }
-                directoryIsAlphabetical = true
-            }
-            tableView.reloadData()
-            
-        case column[3]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.reachNew > $1.reachNew }
@@ -174,31 +141,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.reachNew < $1.reachNew }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
             
-        case column[4]:
-            print("Sorting")
-            if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.visitorsNew > $1.visitorsNew }
-                directoryIsAlphabetical = false
-            } else {
-                dirStatistic.sortInPlace { $0.visitorsNew < $1.visitorsNew }
-                directoryIsAlphabetical = true
-            }
-            tableView.reloadData()
-        
-        case column[5]:
-            print("Sorting")
-            if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.viewsNew > $1.viewsNew }
-                directoryIsAlphabetical = false
-            } else {
-                dirStatistic.sortInPlace { $0.viewsNew < $1.viewsNew }
-                directoryIsAlphabetical = true
-            }
-            tableView.reloadData()
-            
-        case column[6]:
+        case column[3]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.postCountNew > $1.postCountNew }
@@ -207,9 +151,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.postCountNew < $1.postCountNew }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
             
-        case column[7]:
+        case column[4]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.likesNew > $1.likesNew }
@@ -218,20 +161,18 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.likesNew < $1.likesNew }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
             
-        case column[8]:
+        case column[5]:
             print("Sorting")
             if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.repostsNew > $1.repostsNew }
+                dirStatistic.sortInPlace { $0.resharesNew > $1.resharesNew }
                 directoryIsAlphabetical = false
             } else {
-                dirStatistic.sortInPlace { $0.repostsNew < $1.repostsNew }
+                dirStatistic.sortInPlace { $0.resharesNew < $1.resharesNew }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
             
-        case column[9]:
+        case column[6]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.commentsNew > $1.commentsNew }
@@ -240,22 +181,12 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 dirStatistic.sortInPlace { $0.commentsNew < $1.commentsNew }
                 directoryIsAlphabetical = true
             }
-            tableView.reloadData()
-            
-        case column[10]:
-            print("Sorting")
-            if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.adminComm_fullName > $1.adminComm_fullName }
-                directoryIsAlphabetical = false
-            } else {
-                dirStatistic.sortInPlace { $0.adminComm_fullName < $1.adminComm_fullName }
-                directoryIsAlphabetical = true
-            }
-            tableView.reloadData()
             
         default:
             break
         }
+        
+        tableView.reloadData()
     }
     
     func refreshData(notification: NSNotification){
@@ -263,10 +194,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             self.dateTypeR = (userInfo["dateType"]) as! String
         }
         
-        reorganizationTableView()
-        
         if socialNetwork == SocialNetwork.VK {
-            
             StaCommData().wsStaCommVK_Report(dateTypeR) { (dirSta, successful) in
                 if successful {
                     self.dirStatistic.removeAll()
@@ -274,36 +202,13 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                     self.tableView.reloadData()
                 }
             }
-        }
-        
-        if socialNetwork == SocialNetwork.OK {
-            self.dirStatistic.removeAll()
-            self.tableView.reloadData()
-        }
-    }
-    
-    func reorganizationTableView() {
-        let OKCOlomns = ["Community", "Reach", "Members", "New members", "Left members", "Visits", "Reshares", "Votes", "Link clicks", "Negatives", "Hides from feed", "Administrator"]
-        
-        let VKCOlomns = ["Community", "Members", "Increase", "Reach", "Visitors", "Views", "Posts", "Likes", "Repost", "Commnets", "Administrator"]
-        
-        for colomn in tableView.tableColumns {
-            tableView.removeTableColumn(colomn)
-        }
-        
-        if socialNetwork == SocialNetwork.VK {
-            for index in 0..<VKCOlomns.count {
-                let colomn = NSTableColumn()
-                colomn.title = VKCOlomns[index]
-                tableView.addTableColumn(colomn)
-            }
-        }
-        
-        if socialNetwork == SocialNetwork.OK {
-            for index in 0..<OKCOlomns.count {
-                let colomn = NSTableColumn()
-                colomn.title = OKCOlomns[index]
-                tableView.addTableColumn(colomn)
+        } else if socialNetwork == SocialNetwork.OK {
+            StaCommData().wsStaCommOK_Report(dateTypeR) { (dirSta, successful) in
+                if successful {
+                    self.dirStatistic.removeAll()
+                    self.dirStatistic = dirSta
+                    self.tableView.reloadData()
+                }
             }
         }
     }

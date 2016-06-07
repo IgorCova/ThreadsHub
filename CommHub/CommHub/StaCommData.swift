@@ -17,15 +17,15 @@ class StaCommData {
         var URLString = "\(HubService)/StaCommVKDaily_Report"
         
         switch dateType {
-            case "Day":
-                prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": false]]
-                URLString = "\(HubService)/StaCommVKDaily_Report"
-            case "Yesterday":
-                prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": true]]
-                URLString = "\(HubService)/StaCommVKDaily_Report"
-            case "Week":
-                prms = ["Session": MySessionID, "DID": MyDID]
-                URLString = "\(HubService)/StaCommVKWeekly_Report"
+        case "Day":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": false]]
+            URLString = "\(HubService)/StaCommVKDaily_Report"
+        case "Yesterday":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": true]]
+            URLString = "\(HubService)/StaCommVKDaily_Report"
+        case "Week":
+            prms = ["Session": MySessionID, "DID": MyDID]
+            URLString = "\(HubService)/StaCommVKWeekly_Report"
         default:
             break
         }
@@ -46,6 +46,41 @@ class StaCommData {
         }
     }
     
+    func wsStaCommOK_Report(dateType: String, completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
+        var prms : [String : AnyObject] = [:]
+        var URLString = "\(HubService)/StaCommOKDaily_Report"
+        
+        switch dateType {
+        case "Day":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": false]]
+            URLString = "\(HubService)/StaCommOKDaily_Report"
+        case "Yesterday":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": true]]
+            URLString = "\(HubService)/StaCommOKDaily_Report"
+        case "Week":
+            prms = ["Session": MySessionID, "DID": MyDID]
+            URLString = "\(HubService)/StaCommOKWeekly_Report"
+        default:
+            break
+        }
+        print (URLString)
+        
+        Alamofire.request(.POST, URLString, parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                print(response.result.value)
+                
+                switch response.result {
+                case .Success(let data):
+                    let stats: [StatisticRow] = self.getSta(data)
+                    completion(dirSta: stats, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(dirSta: [StatisticRow](), successful: false)
+                }
+        }
+    }
+
+    
     func getSta(data: AnyObject) -> [StatisticRow] {
         let json = JSON(data)["Data"].arrayValue
         var stats = [StatisticRow]()
@@ -63,50 +98,23 @@ class StaCommData {
                 ,adminComm_linkFB: st["adminComm_linkFB"].stringValue
                 
                 ,members: st["members"].int ?? 0
-                ,membersNew: st["membersNew"].int ?? 0
-                ,membersDifPercent: st["membersDifercent"].int ?? 0
                 
                 ,increaseNew: st["increaseNew"].int ?? 0
                 ,increaseDifPercent: st["increaseDifPercent"].int ?? 0
-                ,subscribed: st["subscribed"].int ?? 0
-                ,subscribedNew: st["subscribedNew"].int ?? 0
-                ,subscribedDifPercent: st["subscribedDifPercent"].int ?? 0
-                
-                ,unsubscribed: st["unsubscribed"].int ?? 0
-                ,unsubscribedNew: st["unsubscribedNew"].int ?? 0
-                ,unsubscribedDifPercent: st["unsubscribedDifPercent"].int ?? 0
-                
-                ,visitors: st["visitors"].int ?? 0
-                ,visitorsNew: st["visitorsNew"].int ?? 0
-                ,visitorsDifPercent: st["visitorsDifPercent"].int ?? 0
-                
-                ,views: st["views"].int ?? 0
-                ,viewsNew: st["viewsNew"].int ?? 0
-                ,viewsDifPercent: st["viewsDifPercent"].int ?? 0
-                
-                ,reach: st["reach"].int ?? 0
                 ,reachNew: st["reachNew"].int ?? 0
                 ,reachDifPercent: st["reachDifPercent"].int ?? 0
                 
-                ,reachSubscribers: st["reachSubscribers"].int ?? 0
-                ,reachSubscribersNew: st["reachSubscribersNew"].int ?? 0
-                ,reachSubscribersDifPercent: st["reachSubscribersDifPercent"].int ?? 0
-                
-                ,postCount: st["postCount"].int ?? 0
                 ,postCountNew: st["postCountNew"].int ?? 0
                 ,postCountDifPercent: st["postCountDifPercent"].int ?? 0
                 
-                ,likes: st["likes"].int ?? 0
                 ,likesNew: st["likesNew"].int ?? 0
                 ,likesDifPercent: st["likesDifPercent"].int ?? 0
                 
-                ,comments: st["comments"].int ?? 0
                 ,commentsNew: st["commentsNew"].int ?? 0
                 ,commentsDifPercent: st["commentsDifPercent"].int ?? 0
                 
-                ,reposts: st["reposts"].int ?? 0
-                ,repostsNew: st["repostsNew"].int ?? 0
-                ,repostsDifPercent: st["repostsDifPercent"].int ?? 0)
+                ,resharesNew: st["resharesNew"].int ?? 0
+                ,resharesDifPercent: st["resharesDfPercent"].int ?? 0)
             
             stats.append(sta)
         }

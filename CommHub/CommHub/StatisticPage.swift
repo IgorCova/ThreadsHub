@@ -36,6 +36,7 @@ class StatisticPage: NSViewController {
     var infoFromComm: StatisticRow?
     var infoForGraph = [VkGraph]()
     
+    @IBOutlet weak var imgArea: NSImageView!
     @IBAction func changeActivityType(sender: AnyObject) {
         refreshActivity()
     }
@@ -135,13 +136,18 @@ class StatisticPage: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if let info = infoFromComm {
-            self.members.stringValue = String(info.members)
-            self.posts.stringValue = String(info.postCount)
+            self.members.stringValue = String(info.members.divByBits())
             self.adminName.stringValue = info.adminComm_fullName
             self.adminImage.imageFromUrl("https://graph.facebook.com/\( info.adminComm_linkFB ?? "0")/picture?type=normal")
             self.commImage.imageFromUrl(info.comm_photoLinkBig)
             self.commName.stringValue = info.comm_name
             self.refreshActivity()
+            
+            if (info.areaComm_code == "vk") {
+                self.imgArea.image = NSImage(named: "vk")
+            } else if (info.areaComm_code == "ok") {
+                self.imgArea.image = NSImage(named: "ok")
+            }
         }
     }
     
@@ -153,9 +159,6 @@ class StatisticPage: NSViewController {
         
         self.view.layer?.backgroundColor = NSColor.init(hexString: "FFFFFF").CGColor
         self.membersView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
-        self.menView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
-        self.womenView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
-        self.postsView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
         self.adminView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
 
         self.blueLine.layer?.backgroundColor = NSColor.init(hexString: "2F65A4").CGColor
@@ -165,7 +168,6 @@ class StatisticPage: NSViewController {
         self.lineChartView.drawBordersEnabled = false
         self.lineChartView.descriptionText = ""
 
-        
         //Example
         self.lineChartView.animate(xAxisDuration: 0.0, yAxisDuration: 1.0)
 
