@@ -61,8 +61,8 @@
 /* Class = "NSTableColumn"; headerCell.title = "Administrators"; ObjectID = "BUg-Ga-zfZ"; */
 "BUg-Ga-zfZ.headerCell.title" = "Администраторы";
 
-/* Class = "NSTableColumn"; headerCell.title = "Communities"; ObjectID = "CPL-hE-iKG"; */
-"CPL-hE-iKG.headerCell.title" = "Сообщества";
+/* Class = "NSTableColumn"; headerCell.title = "Community"; ObjectID = "CPL-hE-iKG"; */
+"CPL-hE-iKG.headerCell.title" = "Сообщество";
 
 /* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "CTT-Fl-NGx"; */
 "CTT-Fl-NGx.title" = "Умное копирование/вставка";

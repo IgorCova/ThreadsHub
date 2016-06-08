@@ -135,6 +135,16 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             
             print("Sorting")
             if directoryIsAlphabetical {
+                dirStatistic.sortInPlace { $0.increaseNew > $1.increaseNew }
+                directoryIsAlphabetical = false
+            } else {
+                dirStatistic.sortInPlace { $0.increaseNew < $1.increaseNew }
+            }
+            
+        case column[3]:
+            
+            print("Sorting")
+            if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.reachNew > $1.reachNew }
                 directoryIsAlphabetical = false
             } else {
@@ -142,7 +152,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[3]:
+        case column[4]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.postCountNew > $1.postCountNew }
@@ -152,7 +162,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[4]:
+        case column[5]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.likesNew > $1.likesNew }
@@ -162,7 +172,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[5]:
+        case column[6]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.resharesNew > $1.resharesNew }
@@ -172,7 +182,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[6]:
+        case column[7]:
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.commentsNew > $1.commentsNew }

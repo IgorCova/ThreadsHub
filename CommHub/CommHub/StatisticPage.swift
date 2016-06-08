@@ -118,14 +118,11 @@ class StatisticPage: NSViewController {
                     
                 self.lineChartView.data = data
                 self.lineChartView.leftAxis.enabled = false
-                    
-                let xax = ChartXAxis()
-                xax.labelWidth = 400.00
-                xax.values = dates
+                
                 self.lineChartView.xAxis.labelWidth = 450.00
                 self.lineChartView.xAxis.labelPosition = .Bottom
                 self.lineChartView.xAxis.labelHeight = 50.00
-                self.lineChartView.xAxis.values = dates
+                //self.lineChartView.xAxis.values = dates
                 
                 self.lineChartView.scaleXEnabled = false
                 self.lineChartView.scaleYEnabled = false
@@ -165,7 +162,7 @@ class StatisticPage: NSViewController {
         self.greyLine.layer?.backgroundColor = NSColor.init(hexString: "818181").CGColor
         
         self.lineChartView.drawGridBackgroundEnabled = false
-        self.lineChartView.drawBordersEnabled = false
+//        self.lineChartView.drawBordersEnabled = false
         self.lineChartView.descriptionText = ""
 
         //Example
