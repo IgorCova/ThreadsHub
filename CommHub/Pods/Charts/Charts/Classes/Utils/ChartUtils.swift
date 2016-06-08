@@ -222,7 +222,11 @@ public class ChartUtils
             CGContextTranslateCTM(context, translate.x, translate.y)
             CGContextRotateCTM(context, angleRadians)
             
-            (text as NSString).drawWithRect(rect, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+            if #available(OSX 10.11, *) {
+                (text as NSString).drawWithRect(rect, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+            } else {
+                // Fallback on earlier versions
+            }
             
             CGContextRestoreGState(context)
         }
@@ -237,7 +241,11 @@ public class ChartUtils
             rect.origin.x += point.x
             rect.origin.y += point.y
             
-            (text as NSString).drawWithRect(rect, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+            if #available(OSX 10.11, *) {
+                (text as NSString).drawWithRect(rect, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+            } else {
+                // Fallback on earlier versions
+            }
         }
         
         NSUIGraphicsPopContext()
@@ -245,8 +253,13 @@ public class ChartUtils
     
     internal class func drawMultilineText(context context: CGContext, text: String, point: CGPoint, attributes: [String : AnyObject]?, constrainedToSize: CGSize, anchor: CGPoint, angleRadians: CGFloat)
     {
-        let rect = text.boundingRectWithSize(constrainedToSize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
-        drawMultilineText(context: context, text: text, knownTextSize: rect.size, point: point, attributes: attributes, constrainedToSize: constrainedToSize, anchor: anchor, angleRadians: angleRadians)
+        if #available(OSX 10.11, *) {
+            let rect = text.boundingRectWithSize(constrainedToSize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil)
+            drawMultilineText(context: context, text: text, knownTextSize: rect.size, point: point, attributes: attributes, constrainedToSize: constrainedToSize, anchor: anchor, angleRadians: angleRadians)
+        } else {
+            // Fallback on earlier versions
+        }
+        
     }
     
     /// - returns: an angle between 0.0 < 360.0 (not less than zero, less than 360)

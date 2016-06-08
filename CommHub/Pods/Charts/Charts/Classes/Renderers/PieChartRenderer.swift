@@ -492,23 +492,32 @@ public class PieChartRenderer: ChartDataRendererBase
                 boundingRect = CGRectInset(boundingRect, (boundingRect.width - boundingRect.width * chart.centerTextRadiusPercent) / 2.0, (boundingRect.height - boundingRect.height * chart.centerTextRadiusPercent) / 2.0)
             }
             
-            let textBounds = centerAttributedText.boundingRectWithSize(boundingRect.size, options: [.UsesLineFragmentOrigin, .UsesFontLeading, .TruncatesLastVisibleLine], context: nil)
+            if #available(OSX 10.11, *) {
+                let textBounds = centerAttributedText.boundingRectWithSize(boundingRect.size, options: [.UsesLineFragmentOrigin, .UsesFontLeading, .TruncatesLastVisibleLine], context: nil)
+                var drawingRect = boundingRect
+                drawingRect.origin.x += (boundingRect.size.width - textBounds.size.width) / 2.0
+                drawingRect.origin.y += (boundingRect.size.height - textBounds.size.height) / 2.0
+                drawingRect.size = textBounds.size
+                
+                CGContextSaveGState(context)
+                
+                let clippingPath = CGPathCreateWithEllipseInRect(holeRect, nil)
+                CGContextBeginPath(context)
+                CGContextAddPath(context, clippingPath)
+                CGContextClip(context)
+                
+                if #available(OSX 10.11, *) {
+                    centerAttributedText.drawWithRect(drawingRect, options: [.UsesLineFragmentOrigin, .UsesFontLeading, .TruncatesLastVisibleLine], context: nil)
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+                CGContextRestoreGState(context)
+            } else {
+                // Fallback on earlier versions
+            }
             
-            var drawingRect = boundingRect
-            drawingRect.origin.x += (boundingRect.size.width - textBounds.size.width) / 2.0
-            drawingRect.origin.y += (boundingRect.size.height - textBounds.size.height) / 2.0
-            drawingRect.size = textBounds.size
-            
-            CGContextSaveGState(context)
 
-            let clippingPath = CGPathCreateWithEllipseInRect(holeRect, nil)
-            CGContextBeginPath(context)
-            CGContextAddPath(context, clippingPath)
-            CGContextClip(context)
-            
-            centerAttributedText.drawWithRect(drawingRect, options: [.UsesLineFragmentOrigin, .UsesFontLeading, .TruncatesLastVisibleLine], context: nil)
-            
-            CGContextRestoreGState(context)
         }
     }
     

@@ -9,7 +9,7 @@
 import Cocoa
 import AppKit
 
-class CommCardViewController: NSViewController {
+class CommCardViewController: NSViewController, NSTextFieldDelegate {
 
     @IBOutlet var commuyityNameTextField: NSTextField!
     @IBOutlet var linkTextField: NSTextField!
@@ -28,6 +28,9 @@ class CommCardViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        linkTextField.delegate = self
+        
         self.view.wantsLayer = true
         deleteButton.hidden = deleteButtonHide!
         
@@ -46,6 +49,7 @@ class CommCardViewController: NSViewController {
         
         fillSubjectsButton()
         fillAdminsButton()
+        
     }
     
     override func viewWillAppear() {
@@ -60,6 +64,19 @@ class CommCardViewController: NSViewController {
         let pstyle = NSMutableParagraphStyle()
         pstyle.alignment = .Center
         deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("lSD-FE-WR5.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
+        
+    }
+    
+    override func controlTextDidChange(obj: NSNotification) {
+        if (linkTextField.stringValue.rangeOfString("vk.com") != nil) {
+            profileImage.image = NSImage(named: "vk-1")
+        } else if (linkTextField.stringValue.rangeOfString("ok.ru") != nil) {
+            profileImage.image = NSImage(named: "ok-1")
+        } else {
+            profileImage.image = NSImage(named: "sn")
+
+        }
+        
         
     }
     

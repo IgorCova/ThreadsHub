@@ -188,18 +188,28 @@ public class ChartXAxisRenderer: ChartAxisRendererBase
                     // avoid clipping of the last
                     if (i == xAxis.values.count - 1 && xAxis.values.count > 1)
                     {
-                        let width = labelns.boundingRectWithSize(labelMaxSize, options: .UsesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
-                        
-                        if (width > viewPortHandler.offsetRight * 2.0
-                            && position.x + width > viewPortHandler.chartWidth)
-                        {
-                            position.x -= width / 2.0
+                        if #available(OSX 10.11, *) {
+                            let width = labelns.boundingRectWithSize(labelMaxSize, options: .UsesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
+                            if (width > viewPortHandler.offsetRight * 2.0
+                                && position.x + width > viewPortHandler.chartWidth)
+                            {
+                                position.x -= width / 2.0
+                            }
+                        } else {
+                            // Fallback on earlier versions
                         }
+                        
+
                     }
                     else if (i == 0)
                     { // avoid clipping of the first
-                        let width = labelns.boundingRectWithSize(labelMaxSize, options: .UsesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
-                        position.x += width / 2.0
+                        if #available(OSX 10.11, *) {
+                            let width = labelns.boundingRectWithSize(labelMaxSize, options: .UsesLineFragmentOrigin, attributes: labelAttrs, context: nil).size.width
+                            position.x += width / 2.0
+
+                        } else {
+                            // Fallback on earlier versions
+                        }
                     }
                 }
                 
