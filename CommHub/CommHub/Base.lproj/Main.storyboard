@@ -889,8 +889,8 @@ Gw
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="commCell" misplaced="YES" id="Md5-0h-H5C" customClass="CommCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1" y="1" width="510" height="50"/>
+                                                        <tableCellView identifier="commCell" id="Md5-0h-H5C" customClass="CommCell" customModule="CommHub" customModuleProvider="target">
+                                                            <rect key="frame" x="1" y="1" width="250" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZS-YK-ebj">
@@ -982,7 +982,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="membersCell" id="Y72-37-IMI">
-                                                            <rect key="frame" x="514" y="1" width="91" height="50"/>
+                                                            <rect key="frame" x="514.5" y="1" width="91" height="50"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="hRM-x7-dOq">
@@ -1021,8 +1021,8 @@ Gw
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView identifier="increaseCell" misplaced="YES" id="QdX-0R-34W" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="608" y="1" width="91" height="53"/>
+                                                        <tableCellView identifier="increaseCell" id="QdX-0R-34W" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
+                                                            <rect key="frame" x="608" y="1" width="92" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-pl-Idm">
@@ -1266,7 +1266,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="likesCell" id="8Xz-Go-FU8" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="893" y="1" width="93" height="53"/>
+                                                            <rect key="frame" x="892.5" y="1" width="93" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Ut2-0n-YZl">
@@ -1348,7 +1348,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="resharesCell" id="fI7-us-NnD" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="989" y="1" width="93" height="53"/>
+                                                            <rect key="frame" x="988" y="1" width="93" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="vaA-St-NNG">
@@ -1430,7 +1430,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentsCell" id="4Sq-dN-HCv" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="1085" y="1" width="93" height="53"/>
+                                                            <rect key="frame" x="1083.5" y="1" width="93" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="0jg-qZ-EZH">
@@ -1585,7 +1585,7 @@ Gw
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="axesIndependently" image="vk-1" id="mWF-Kf-k9a"/>
                             </imageView>
-                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCv-Vz-kUM">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="MCv-Vz-kUM">
                                 <rect key="frame" x="305" y="500" width="218" height="138"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aeZ-wn-fuE">
@@ -1620,7 +1620,7 @@ Gw
                                     <constraint firstAttribute="bottom" secondItem="PYA-lZ-dNg" secondAttribute="bottom" constant="31" id="yoK-Lg-Nvh"/>
                                 </constraints>
                             </customView>
-                            <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cn-3W-uns">
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="9Cn-3W-uns">
                                 <rect key="frame" x="305" y="427" width="218" height="65"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tu3-AG-QE4">
@@ -1658,7 +1658,7 @@ Gw
                                     <constraint firstAttribute="height" constant="1" id="SQA-my-DXd"/>
                                 </constraints>
                             </customView>
-                            <customView autoresizesSubviews="NO" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-fP-fLE" customClass="LineChartView" customModule="Charts">
+                            <customView autoresizesSubviews="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AHY-fP-fLE" customClass="LineChartView" customModule="Charts">
                                 <rect key="frame" x="15" y="15" width="970" height="352"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UGp-4h-zwN">
@@ -1729,7 +1729,7 @@ Gw
                                     <font key="font" metaFont="system" size="15"/>
                                 </buttonCell>
                             </button>
-                            <segmentedControl verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-q1-GHM">
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lVP-q1-GHM">
                                 <rect key="frame" x="15" y="381" width="510" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="510" id="E2T-kC-aeQ"/>
@@ -1767,6 +1767,7 @@ Gw
                             <constraint firstAttribute="bottom" secondItem="AHY-fP-fLE" secondAttribute="bottom" constant="15" id="mC1-Zk-xTI"/>
                             <constraint firstItem="lQl-C3-2s4" firstAttribute="top" secondItem="tzS-61-beM" secondAttribute="bottom" constant="48" id="nzm-RL-IcK"/>
                             <constraint firstItem="tzS-61-beM" firstAttribute="leading" secondItem="JTV-ks-BfV" secondAttribute="leading" id="opo-DK-2NR"/>
+                            <constraint firstItem="MCv-Vz-kUM" firstAttribute="top" secondItem="lQl-C3-2s4" secondAttribute="top" id="p49-4g-D0V"/>
                             <constraint firstItem="AHY-fP-fLE" firstAttribute="leading" secondItem="JTV-ks-BfV" secondAttribute="leading" constant="15" id="pbA-yC-KLD"/>
                             <constraint firstItem="MCv-Vz-kUM" firstAttribute="leading" secondItem="lQl-C3-2s4" secondAttribute="trailing" constant="75" id="pso-nH-cxe"/>
                             <constraint firstItem="Eyl-7T-8Vh" firstAttribute="top" secondItem="JTV-ks-BfV" secondAttribute="top" constant="15" id="rM8-HK-LqM"/>
@@ -2210,7 +2211,7 @@ DQ
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
                                                                 </button>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-lk-zDP">
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UMG-lk-zDP">
                                                                     <rect key="frame" x="65" y="21" width="119" height="17"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="17" id="9fl-lW-zlM"/>
