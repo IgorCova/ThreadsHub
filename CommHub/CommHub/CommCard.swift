@@ -69,9 +69,9 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
     
     override func controlTextDidChange(obj: NSNotification) {
         if (linkTextField.stringValue.rangeOfString("vk.com") != nil) {
-            profileImage.image = NSImage(named: "vk-1")
+            profileImage.image = NSImage(named: "vk-sn")
         } else if (linkTextField.stringValue.rangeOfString("ok.ru") != nil) {
-            profileImage.image = NSImage(named: "ok-1")
+            profileImage.image = NSImage(named: "ok-sn")
         } else {
             profileImage.image = NSImage(named: "sn")
 

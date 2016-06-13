@@ -11,6 +11,7 @@ import Cocoa
 class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet var tableView: NSTableView!
+    var isInit = true
     
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
@@ -61,8 +62,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             
         case column[2]:
             cellIdentifier = "increaseCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
-            cell.setCell(statistic.increaseNew, valuePercent: statistic.increaseDifPercent)
+            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! IncreaseCell
+            cell.setCell(statistic.increase, valuePercent: statistic.increaseDifPercent, increase: statistic.increaseNew, decrease: statistic.increaseOld)
             return cell
 
         case column[3]:
@@ -210,6 +211,12 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                     self.dirStatistic.removeAll()
                     self.dirStatistic = dirSta
                     self.tableView.reloadData()
+                    
+                    if self.isInit == true {
+                        self.dirStatistic.sortInPlace { $0.members > $1.members }
+                        self.directoryIsAlphabetical = false
+                        self.isInit = false
+                    }
                 }
             }
         } else if socialNetwork == SocialNetwork.OK {
@@ -218,6 +225,12 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                     self.dirStatistic.removeAll()
                     self.dirStatistic = dirSta
                     self.tableView.reloadData()
+                    
+                    if self.isInit == true {
+                        self.dirStatistic.sortInPlace { $0.members > $1.members }
+                        self.directoryIsAlphabetical = false
+                        self.isInit = false
+                    }
                 }
             }
         }

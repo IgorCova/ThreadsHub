@@ -23,7 +23,9 @@ class StatisticRow {
     
     var members: Int
     
+    var increase:Int
     var increaseNew:Int
+    var increaseOld: Int
     var increaseDifPercent: Int
     
     var reachNew: Int
@@ -56,9 +58,11 @@ class StatisticRow {
     
         ,members: Int
         
-       ,increaseNew: Int
+       ,increase:Int
+       ,increaseNew:Int
+       ,increaseOld: Int
        ,increaseDifPercent: Int
-        
+    
        ,reachNew: Int
        ,reachDifPercent: Int
 
@@ -88,7 +92,9 @@ class StatisticRow {
         
         self.members = members
         
+        self.increase = increase
         self.increaseNew = increaseNew
+        self.increaseOld = increaseOld
         self.increaseDifPercent = increaseDifPercent
         
         self.reachNew = reachNew

@@ -86,35 +86,38 @@ class StaCommData {
         var stats = [StatisticRow]()
         for st in json {
             let sta = StatisticRow(
-                comm_id: st["comm_id"].int ?? 0
+                comm_id: st["comm_id"].intValue
                 ,comm_name: st["comm_name"].stringValue
                 ,comm_photoLink: st["comm_photoLink"].stringValue
                 ,comm_photoLinkBig: st["comm_photoLinkBig"].stringValue
-                ,comm_groupID: st["comm_groupID"].int ?? 0
+                ,comm_groupID: st["comm_groupID"].intValue
                 ,subjectComm_name: st["subjectComm_name"].stringValue
                 ,areaComm_code: st["areaComm_code"].stringValue
                 
                 ,adminComm_fullName: st["adminComm_fullName"].stringValue
                 ,adminComm_linkFB: st["adminComm_linkFB"].stringValue
                 
-                ,members: st["members"].int ?? 0
+                ,members: st["members"].intValue
                 
-                ,increaseNew: st["increaseNew"].int ?? 0
-                ,increaseDifPercent: st["increaseDifPercent"].int ?? 0
-                ,reachNew: st["reachNew"].int ?? 0
-                ,reachDifPercent: st["reachDifPercent"].int ?? 0
+                ,increase: st["increase"].intValue
+                ,increaseNew: st["increaseNew"].intValue
+                ,increaseOld: st["increaseOld"].intValue
+                ,increaseDifPercent: st["increaseDifPercent"].intValue
                 
-                ,postCountNew: st["postCountNew"].int ?? 0
-                ,postCountDifPercent: st["postCountDifPercent"].int ?? 0
+                ,reachNew: st["reachNew"].intValue
+                ,reachDifPercent: st["reachDifPercent"].intValue
                 
-                ,likesNew: st["likesNew"].int ?? 0
-                ,likesDifPercent: st["likesDifPercent"].int ?? 0
+                ,postCountNew: st["postCountNew"].intValue
+                ,postCountDifPercent: st["postCountDifPercent"].intValue
                 
-                ,commentsNew: st["commentsNew"].int ?? 0
-                ,commentsDifPercent: st["commentsDifPercent"].int ?? 0
+                ,likesNew: st["likesNew"].intValue
+                ,likesDifPercent: st["likesDifPercent"].intValue
                 
-                ,resharesNew: st["resharesNew"].int ?? 0
-                ,resharesDifPercent: st["resharesDfPercent"].int ?? 0)
+                ,commentsNew: st["commentsNew"].intValue
+                ,commentsDifPercent: st["commentsDifPercent"].intValue
+                
+                ,resharesNew: st["resharesNew"].intValue
+                ,resharesDifPercent: st["resharesDifPercent"].intValue)
             
             stats.append(sta)
         }

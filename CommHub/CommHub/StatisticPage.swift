@@ -86,6 +86,12 @@ class StatisticPage: NSViewController {
                         dates.append(vkGraph.dayString)
                     }
                 }
+                if actvityValues.last == 0 {
+                    actvityValues.removeLast()
+                }
+                if actvityValuesLast.last == 0 {
+                    actvityValuesLast.removeLast()
+                }
                 
                 let xs = Array(0..<dates.count).map { return Double($0) }
                 let yActvityValues = actvityValues

@@ -47,7 +47,8 @@ class MainWindowController: NSWindowController {
             self.OKButton.image = NSImage(named: "ok-2")
             self.VKButton.image = NSImage(named: "vk-1")
             socialNetwork = SocialNetwork.OK
-            NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dateType.day.rawValue])
+            
+            refreshData(self)
         }
     }
 
@@ -56,7 +57,8 @@ class MainWindowController: NSWindowController {
             self.OKButton.image = NSImage(named: "ok-1")
             self.VKButton.image = NSImage(named: "vk-2")
             socialNetwork = SocialNetwork.VK
-            NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dateType.day.rawValue])
+            
+            refreshData(self)
         }
     }
     @IBAction func refreshPeriodicaly(sender: AnyObject) {

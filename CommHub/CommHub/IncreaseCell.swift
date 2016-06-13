@@ -9,9 +9,10 @@
 import Cocoa
 
 class IncreaseCell: NSTableCellView {
-    
-    @IBOutlet var increaseLabel: NSTextField!
-    @IBOutlet var decreaseLabel: NSTextField!
+    @IBOutlet var lbValue: NSTextField!
+    @IBOutlet var lbIncrease: NSTextField!
+    @IBOutlet var lbDecrease: NSTextField!
+    @IBOutlet var imDynamic: NSImageView!
     
     override func drawRect(dirtyRect: NSRect) {
         super.drawRect(dirtyRect)
@@ -19,9 +20,19 @@ class IncreaseCell: NSTableCellView {
         // Drawing code here.
     }
     
-    func setCell(increase: Double, decrease: Double) {
-        self.increaseLabel.stringValue = String(increase) + "%"
-        self.decreaseLabel.stringValue = String(decrease) + "%"
+    func setCell(value: Int, valuePercent: Int, increase: Int, decrease: Int) {
+        self.lbIncrease.stringValue = "+\(increase.divByBits())"
+        self.lbDecrease.stringValue = "-\(decrease.divByBits())"
+        self.lbValue.stringValue = value.divByBits()
+        
+        if valuePercent < 0 {
+            self.imDynamic.image = NSImage(named: "down")
+            //self.valuepercent.stringValue = String(valuePercent).removePunctMarks() + "%"
+        } else {
+            self.imDynamic.image = NSImage(named: "up")
+            //self.valuepercent.stringValue = String(valuePercent).removePunctMarks() + "%"
+        }
+
     }
     
 }
