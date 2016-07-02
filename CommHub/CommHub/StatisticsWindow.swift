@@ -15,6 +15,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     var dirStatistic: [StatisticRow] = []
     var directoryIsAlphabetical = true
+    var sortingColumn: NSTableColumn?
     var dateTypeR: String = "Daily"
     var selectedCell: StatisticRow?
     
@@ -105,6 +106,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
+        sortingColumn = tableColumn
         sorting(tableColumn)
     }
     
@@ -136,10 +138,10 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             
             print("Sorting")
             if directoryIsAlphabetical {
-                dirStatistic.sortInPlace { $0.increaseNew > $1.increaseNew }
+                dirStatistic.sortInPlace { $0.increase > $1.increase }
                 directoryIsAlphabetical = false
             } else {
-                dirStatistic.sortInPlace { $0.increaseNew < $1.increaseNew }
+                dirStatistic.sortInPlace { $0.increase < $1.increase }
             }
             
         case column[3]:
@@ -200,7 +202,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         tableView.reloadData()
     }
     
-    func refreshData(notification: NSNotification){
+    func refreshData(notification: NSNotification) {
         if let userInfo = notification.userInfo {
             self.dateTypeR = (userInfo["dateType"]) as! String
         }
@@ -210,27 +212,39 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 if successful {
                     self.dirStatistic.removeAll()
                     self.dirStatistic = dirSta
-                    self.tableView.reloadData()
                     
                     if self.isInit == true {
                         self.dirStatistic.sortInPlace { $0.members > $1.members }
                         self.directoryIsAlphabetical = false
                         self.isInit = false
+                    } else {
+                        if let sortingColumn = self.sortingColumn {
+                            self.directoryIsAlphabetical = !self.directoryIsAlphabetical
+                            self.sorting(sortingColumn)
+                        }
                     }
+                    self.tableView.reloadData()
+                    
                 }
             }
+            
         } else if socialNetwork == SocialNetwork.OK {
             StaCommData().wsStaCommOK_Report(dateTypeR) { (dirSta, successful) in
                 if successful {
                     self.dirStatistic.removeAll()
                     self.dirStatistic = dirSta
-                    self.tableView.reloadData()
                     
                     if self.isInit == true {
                         self.dirStatistic.sortInPlace { $0.members > $1.members }
                         self.directoryIsAlphabetical = false
                         self.isInit = false
+                    } else {
+                        if let sortingColumn = self.sortingColumn {
+                            self.directoryIsAlphabetical = !self.directoryIsAlphabetical
+                            self.sorting(sortingColumn)
+                        }
                     }
+                    self.tableView.reloadData()
                 }
             }
         }
