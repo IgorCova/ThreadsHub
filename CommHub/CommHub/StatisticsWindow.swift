@@ -63,7 +63,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
         case column[2]:
             cellIdentifier = "increaseCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! IncreaseCell
-            cell.setCell(statistic.increase, valuePercent: statistic.increaseDifPercent, increase: statistic.increaseNew, decrease: statistic.increaseOld)
+            cell.setCell(statistic.increase, increase: statistic.increaseNew, decrease: statistic.increaseOld)
             return cell
 
         case column[3]:
@@ -251,7 +251,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toStatisticPage" {
             let destinationController = segue.destinationController as! StatisticPage
-            destinationController.infoFromComm = selectedCell
+            //destinationController.infoFromComm = selectedCell
+            destinationController.comm_id = selectedCell?.comm_id ?? 0
             
         }
     }

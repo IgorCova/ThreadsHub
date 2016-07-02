@@ -58,8 +58,8 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
             self.saveButton.frame.origin.x = 125
         }
         
-        profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
-        profileImage.layer!.masksToBounds = true
+        // profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
+        //profileImage.layer!.masksToBounds = true
         
         let pstyle = NSMutableParagraphStyle()
         pstyle.alignment = .Center

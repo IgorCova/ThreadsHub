@@ -20,17 +20,15 @@ class IncreaseCell: NSTableCellView {
         // Drawing code here.
     }
     
-    func setCell(value: Int, valuePercent: Int, increase: Int, decrease: Int) {
-        self.lbIncrease.stringValue = "+\(increase.divByBits())"
-        self.lbDecrease.stringValue = "-\(decrease.divByBits())"
+    func setCell(value: Int, increase: Int, decrease: Int) {
+        self.lbIncrease.stringValue = "+ \(increase.divByBits())"
+        self.lbDecrease.stringValue = "- \(decrease.divByBits())"
         self.lbValue.stringValue = value.divByBits()
         
-        if valuePercent < 0 {
+        if decrease > increase {
             self.imDynamic.image = NSImage(named: "down")
-            //self.valuepercent.stringValue = String(valuePercent).removePunctMarks() + "%"
         } else {
             self.imDynamic.image = NSImage(named: "up")
-            //self.valuepercent.stringValue = String(valuePercent).removePunctMarks() + "%"
         }
 
     }

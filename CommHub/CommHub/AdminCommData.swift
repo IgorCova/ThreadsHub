@@ -64,7 +64,7 @@ class AdminCommData {
                 
                 switch response.result {
                 case .Success(let data):
-                    let ad = JSON(data)["Data"].dictionary!
+                    let ad = JSON(data)["Data"].dictionaryValue
                     
                         let adminComm = AdminComm(
                             id: ad["id"]!.int ?? 0

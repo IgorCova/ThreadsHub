@@ -17,12 +17,20 @@ class StatisticPage: NSViewController {
     
     @IBOutlet var membersView: NSView!
     @IBOutlet var menView: NSView!
+    @IBOutlet var lbMaleCount: NSTextField!
+    @IBOutlet var lbMalePercent: NSTextField!
+    
     @IBOutlet var womenView: NSView!
+    @IBOutlet weak var lbFemaleCount: NSTextField!
+    @IBOutlet weak var lbFemaleCountPercent: NSTextField!
+    
+    
     @IBOutlet var postsView: NSView!
     @IBOutlet var adminView: NSView!
     
     @IBOutlet var members: NSTextField!
     @IBOutlet var posts: NSTextField!
+    @IBOutlet var areaSite: NSButtonCell!
     @IBOutlet var adminName: NSTextField!
     @IBOutlet var commName: NSTextField!
     
@@ -31,12 +39,16 @@ class StatisticPage: NSViewController {
     
     @IBOutlet var lineChartView: LineChartView!
     
-    @IBOutlet weak var segActivityPeriod: NSSegmentedControl!
     @IBOutlet weak var segActivityType: NSSegmentedControl!
-    var infoFromComm: StatisticRow?
+    // var infoFromComm: StatisticRow?
+    
+    var comm_id: Int = 0
+    var comm: CommInstance?
+    
     var infoForGraph = [VkGraph]()
     
-    @IBOutlet weak var imgArea: NSImageView!
+    // @IBOutlet weak var imgArea: NSImageView!
+    
     @IBAction func changeActivityType(sender: AnyObject) {
         refreshActivity()
     }
@@ -55,7 +67,7 @@ class StatisticPage: NSViewController {
             default: actType = activityType.likes
         }
         
-        StatisticPageData().wsStaCommVKGraph_Report((infoFromComm?.comm_id)!, completion: { (dirVkGraph, successful) in
+        StatisticPageData().wsStaCommVKGraph_Report(comm_id, completion: { (dirVkGraph, successful) in
             if successful {
                 self.infoForGraph = dirVkGraph
                 var dates:[String?] = []
@@ -136,22 +148,85 @@ class StatisticPage: NSViewController {
         })
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        if let info = infoFromComm {
-            self.members.stringValue = String(info.members.divByBits())
-            self.adminName.stringValue = info.adminComm_fullName
-            self.adminImage.imageFromUrl("https://graph.facebook.com/\( info.adminComm_linkFB ?? "0")/picture?type=normal")
-            self.commImage.imageFromUrl(info.comm_photoLinkBig)
-            self.commName.stringValue = info.comm_name
-            self.refreshActivity()
-            
-            if (info.areaComm_code == "vk") {
-                self.imgArea.image = NSImage(named: "vk")
-            } else if (info.areaComm_code == "ok") {
-                self.imgArea.image = NSImage(named: "ok")
+    @IBAction func siteComm(sender: AnyObject) {
+        if let c = comm {
+            if c.areaCode == "vk" {
+                let url = NSURL(string: "https://vk.com/club" + "\(c.groupID)")
+                NSWorkspace.sharedWorkspace().openURL(url!)
+            } else if c.areaCode == "ok" {
+                let url = NSURL(string: "https://ok.ru/group/" + "\(c.groupID)")
+                NSWorkspace.sharedWorkspace().openURL(url!)
             }
         }
+    }
+    
+    @IBAction func toFb(sender: AnyObject) {
+        if let c = comm {
+            let url = NSURL(string: "https://www.facebook.com/" + "\(c.adminLink)")
+            NSWorkspace.sharedWorkspace().openURL(url!)
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.refreshActivity()
+        
+        CommData().wsComm_Read(comm_id, completion: { (comm, successful) in
+            if successful {
+                self.comm = comm
+                if let c = comm {
+                    self.members.stringValue = String(c.countMembers.divByBits())
+                    self.adminName.stringValue = c.adminName
+                    self.adminImage.imageFromUrl("https://graph.facebook.com/\( c.adminLink ?? "0")/picture?type=normal")
+                    self.commImage.imageFromUrl(c.photoLinkBig)
+                    self.commName.stringValue = c.name
+                    
+                    if c.countMen > 0 {
+                        self.womenView.hidden = false
+                        self.menView.hidden = false
+
+                        self.lbMaleCount.stringValue = c.countMen.divByBits()
+                        self.lbMalePercent.stringValue = "\(c.countMenPercent)%"
+                        
+                        self.lbFemaleCount.stringValue = c.countWoman.divByBits()
+                        self.lbFemaleCountPercent.stringValue = "\(c.countWomanPercent)%"
+                    }
+                    
+                    if (c.areaCode == "vk") {
+                        self.areaSite.image = NSImage(named: "vk-2")
+                    } else if (c.areaCode == "ok") {
+                        self.areaSite.image = NSImage(named: "ok-2")
+                    }
+
+                }
+            }
+        })
+    }
+    
+    func loadComm() {
+        if let c = comm {
+            self.refreshActivity()
+            
+            self.members.stringValue = String(c.countMembers.divByBits())
+            self.adminName.stringValue = c.adminName
+            self.adminImage.imageFromUrl("https://graph.facebook.com/\( c.adminLink ?? "0")/picture?type=normal")
+            self.commImage.imageFromUrl(c.photoLinkBig)
+            self.commName.stringValue = c.name
+            
+            self.lbMaleCount.stringValue = c.countMen.divByBits()
+            self.lbMalePercent.stringValue = "\(c.countMenPercent)%"
+            
+            self.lbFemaleCount.stringValue = c.countWoman.divByBits()
+            self.lbFemaleCountPercent.stringValue = "\(c.countWomanPercent)%"
+            
+            if (c.areaCode == "vk") {
+                self.areaSite.image = NSImage(named: "vk-2")
+            } else if (c.areaCode == "ok") {
+                self.areaSite.image = NSImage(named: "ok-2")
+            }
+        }
+
     }
     
     override func viewWillAppear() {
@@ -163,6 +238,8 @@ class StatisticPage: NSViewController {
         self.view.layer?.backgroundColor = NSColor.init(hexString: "FFFFFF").CGColor
         self.membersView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
         self.adminView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
+        self.menView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
+        self.womenView.layer?.backgroundColor = NSColor.init(hexString: "FAFAFA").CGColor
 
         self.blueLine.layer?.backgroundColor = NSColor.init(hexString: "2F65A4").CGColor
         self.greyLine.layer?.backgroundColor = NSColor.init(hexString: "818181").CGColor

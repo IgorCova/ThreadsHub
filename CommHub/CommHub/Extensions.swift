@@ -155,8 +155,8 @@ enum dateType: String {
 enum activityType: String {
     case likes = "Likes"
     case comments = "Comments"
-    case share = "Share"
+    case share = "Reshare"
     case removed = "Removed"
-    case members = "Members"
-    case membersLost = "MembersLost"
+    case members = "Members join"
+    case membersLost = "Members lost"
 }
