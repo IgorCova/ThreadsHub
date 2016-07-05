@@ -61,9 +61,9 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
         // profileImage.layer!.cornerRadius = profileImage.frame.size.height/2
         //profileImage.layer!.masksToBounds = true
         
-        let pstyle = NSMutableParagraphStyle()
-        pstyle.alignment = .Center
-        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("lSD-FE-WR5.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
+//        let pstyle = NSMutableParagraphStyle()
+//        pstyle.alignment = .Center
+//        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("lSD-FE-WR5.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
         
     }
     

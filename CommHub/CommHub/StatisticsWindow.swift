@@ -142,6 +142,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = false
             } else {
                 dirStatistic.sortInPlace { $0.increase < $1.increase }
+                directoryIsAlphabetical = true
             }
             
         case column[3]:

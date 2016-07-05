@@ -33,9 +33,9 @@ class SubjectCardViewController: NSViewController {
             self.saveButton.frame.origin.x = 125
         }
         
-        let pstyle = NSMutableParagraphStyle()
-        pstyle.alignment = .Center
-        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("NHV-l3-fbk.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
+//        let pstyle = NSMutableParagraphStyle()
+//        pstyle.alignment = .Center
+//        deleteButton.attributedTitle = NSAttributedString(string: NSLocalizedString("NHV-l3-fbk.title", comment: ""), attributes: [ NSForegroundColorAttributeName : NSColor.whiteColor(), NSParagraphStyleAttributeName : pstyle ])
         
     }
     
