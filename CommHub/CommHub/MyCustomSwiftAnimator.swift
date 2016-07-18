@@ -18,17 +18,43 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
         
         topVC.view.wantsLayer = true
         topVC.view.layerContentsRedrawPolicy = .OnSetNeedsDisplay
+        topVC.view.alphaValue = 0
         
+//        let frame : CGRect = NSRectToCGRect(bottomVC.view.frame)
+//        frame = CGRectInset(frame, 40, 40)
+//        topVC.view.frame =  bottomVC.view.frame
+        
+//        let color: CGColorRef = NSColor.grayColor().CGColor
+//        topVC.view.layer?.backgroundColor = color
+        topVC.view.translatesAutoresizingMaskIntoConstraints = false
         bottomVC.view.addSubview(topVC.view)
-        var frame : CGRect = NSRectToCGRect(bottomVC.view.frame)
-        //frame = CGRectInset(frame, 40, 40)
-        //topVC.view.frame = NSRectFromCGRect(frame)
-        //let color: CGColorRef = NSColor.grayColor().CGColor
-        //topVC.view.layer?.backgroundColor = color
-        //topVC.view.alphaValue = 0.3
+
+
+        
+        let leftConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Left, relatedBy: NSLayoutRelation.Equal, toItem: bottomVC.view, attribute: NSLayoutAttribute.Left, multiplier: 1, constant: 0)
+        bottomVC.view.addConstraint(leftConstraint)
+        
+        let rightConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Right, relatedBy: NSLayoutRelation.Equal, toItem: bottomVC.view, attribute: NSLayoutAttribute.Right, multiplier: 1, constant: 0)
+        bottomVC.view.addConstraint(rightConstraint)
+        
+        let topConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: bottomVC.view, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        bottomVC.view.addConstraint(topConstraint)
+        
+        let bottomConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: bottomVC.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        bottomVC.view.addConstraint(bottomConstraint)
+        
+        let widthConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100)
+        bottomVC.view.addConstraint(widthConstraint)
+        
+        let heightConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100)
+        bottomVC.view.addConstraint(heightConstraint)
+        
+        
+        
+        
         NSAnimationContext.runAnimationGroup({ (context) -> Void in
             context.duration = 0.5
-            //topVC.view.animator().alphaValue = 1
+            topVC.view.animator().alphaValue = 1
 
         }, completionHandler: nil)
         
@@ -36,7 +62,7 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
     
     
     @objc func  animateDismissalOfViewController(viewController: NSViewController, fromViewController: NSViewController) {
-        let bottomVC = fromViewController
+        _ = fromViewController
         let topVC = viewController
         topVC.view.wantsLayer = true
         topVC.view.layerContentsRedrawPolicy = .OnSetNeedsDisplay

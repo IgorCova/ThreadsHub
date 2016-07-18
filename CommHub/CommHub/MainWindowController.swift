@@ -29,20 +29,25 @@ class MainWindowController: NSWindowController {
     }
     
     func setStyleMask() {
-        let storyboard = NSStoryboard(name: "Main", bundle: nil)
-        
         if MyOwnerHubID == 0 {
-            let initialViewController = storyboard.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
+            let initialViewController = storyboard!.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
             self.window?.contentViewController = initialViewController
         } else {
-            let initialViewController = storyboard.instantiateControllerWithIdentifier("staWindow") as! NSViewController
+            let initialViewController = storyboard!.instantiateControllerWithIdentifier("staWindow") as! NSViewController
             self.window?.contentViewController = initialViewController
         }
         
-        self.window?.contentView!.wantsLayer = true
+//        self.window?.contentView!.wantsLayer = true
     }
     
+    @IBAction func showProects(sender: AnyObject) {
+        let projectsViewController = storyboard!.instantiateControllerWithIdentifier("A") as! NSViewController
+        self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+    }
+   
     @IBAction func showStatisticsOK(sender: AnyObject) {
+        self.contentViewController?.dismissController(self)
+
         if  socialNetwork != SocialNetwork.OK {
             self.OKButton.image = NSImage(named: "ok-2")
             self.VKButton.image = NSImage(named: "vk-1")
@@ -53,6 +58,8 @@ class MainWindowController: NSWindowController {
     }
 
     @IBAction func showStatisticVK(sender: AnyObject) {
+        self.contentViewController?.dismissController(self)
+        
         if  socialNetwork != SocialNetwork.VK {
             self.OKButton.image = NSImage(named: "ok-1")
             self.VKButton.image = NSImage(named: "vk-2")

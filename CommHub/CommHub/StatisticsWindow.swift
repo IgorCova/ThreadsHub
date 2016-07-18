@@ -29,8 +29,8 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        self.view.window?.toolbar?.visible = true
-        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask
+//        self.view.window?.toolbar?.visible = true
+//        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask
     }
     
     func refresh() {
