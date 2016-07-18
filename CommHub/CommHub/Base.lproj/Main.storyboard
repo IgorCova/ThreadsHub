@@ -1632,7 +1632,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="increaseCell" id="Xvj-10-ot1" customClass="IncreaseCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="381" y="1" width="148.5" height="53"/>
+                                                            <rect key="frame" x="381" y="1" width="149" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dVy-DI-agv">
@@ -1702,7 +1702,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="resharesCell" id="enf-tC-HvE" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="532.5" y="1" width="126.5" height="53"/>
+                                                            <rect key="frame" x="532.5" y="1" width="127" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XB1-L6-UR9">
@@ -1805,7 +1805,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="commentsCell" id="J3F-uC-bfO" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="793" y="1" width="120.5" height="53"/>
+                                                            <rect key="frame" x="793" y="1" width="121" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Mam-h1-gfw">
@@ -1868,7 +1868,7 @@ Gw
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView identifier="postsCell" id="Zzj-aV-dVK" customClass="MetricCell" customModule="CommHub" customModuleProvider="target">
-                                                            <rect key="frame" x="916.5" y="1" width="110.5" height="53"/>
+                                                            <rect key="frame" x="916.5" y="1" width="111" height="53"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IaK-O9-09e">
@@ -3223,7 +3223,7 @@ DQ
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="60" horizontalPageScroll="10" verticalLineScroll="60" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mzh-4Z-mOu">
                                 <rect key="frame" x="2" y="2" width="406" height="463"/>
                                 <clipView key="contentView" drawsBackground="NO" id="nca-bk-mB9">
-                                    <rect key="frame" x="1" y="23" width="404" height="439"/>
+                                    <rect key="frame" x="1" y="0.0" width="404" height="462"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" multipleSelection="NO" autosaveColumns="NO" rowHeight="60" headerView="TPs-L8-1qL" viewBased="YES" id="mAY-bs-bpg">
