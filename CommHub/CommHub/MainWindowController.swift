@@ -13,6 +13,7 @@ class MainWindowController: NSWindowController {
     @IBOutlet weak var segPeriod: NSSegmentedControl!
     @IBOutlet var VKButton: NSButton!
     @IBOutlet var OKButton: NSButton!
+    var type: ReportType?
     
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -28,6 +29,12 @@ class MainWindowController: NSWindowController {
         appDelegate.mainWindow = self
     }
     
+    enum ReportType {
+        case vk
+        case ok
+        case project
+    }
+    
     func setStyleMask() {
         if MyOwnerHubID == 0 {
             let initialViewController = storyboard!.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
@@ -41,33 +48,48 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func showProects(sender: AnyObject) {
-        let projectsViewController = storyboard!.instantiateControllerWithIdentifier("A") as! NSViewController
-        self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+        if self.type != ReportType.project {
+            
+            let projectsViewController = storyboard!.instantiateControllerWithIdentifier("A") as! NSViewController
+            self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+            self.type = ReportType.project
+        }
+        
     }
    
     @IBAction func showStatisticsOK(sender: AnyObject) {
-        self.contentViewController?.dismissController(self)
-
-        if  socialNetwork != SocialNetwork.OK {
-            self.OKButton.image = NSImage(named: "ok-2")
-            self.VKButton.image = NSImage(named: "vk-1")
-            socialNetwork = SocialNetwork.OK
+        if self.type != ReportType.ok {
             
-            refreshData(self)
+            NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
+
+            if  socialNetwork != SocialNetwork.OK {
+                self.OKButton.image = NSImage(named: "ok-2")
+                self.VKButton.image = NSImage(named: "vk-1")
+                socialNetwork = SocialNetwork.OK
+            
+                refreshData(self)
+            }
+        
+            self.type = ReportType.ok
         }
     }
 
     @IBAction func showStatisticVK(sender: AnyObject) {
-        self.contentViewController?.dismissController(self)
-        
-        if  socialNetwork != SocialNetwork.VK {
-            self.OKButton.image = NSImage(named: "ok-1")
-            self.VKButton.image = NSImage(named: "vk-2")
-            socialNetwork = SocialNetwork.VK
+        if self.type != ReportType.vk {
             
-            refreshData(self)
+            NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
+            
+            if  socialNetwork != SocialNetwork.VK {
+                self.OKButton.image = NSImage(named: "ok-1")
+                self.VKButton.image = NSImage(named: "vk-2")
+                socialNetwork = SocialNetwork.VK
+            
+                refreshData(self)
+            }
+            self.type = ReportType.vk
         }
     }
+    
     @IBAction func refreshPeriodicaly(sender: AnyObject) {
         refreshData(self)
     }

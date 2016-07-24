@@ -135,8 +135,4 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
             }
         }
     }
-    
-
-     
-
 }

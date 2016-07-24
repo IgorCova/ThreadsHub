@@ -87,7 +87,9 @@ class StaCommData {
         for st in json {
             let sta = StatisticRow(
                 comm_id: st["comm_id"].intValue
+                ,projectHub_id: st["projectHub_id"].intValue
                 ,comm_name: st["comm_name"].stringValue
+                ,projectHub_name: st["projectHub_name"].stringValue
                 ,comm_photoLink: st["comm_photoLink"].stringValue
                 ,comm_photoLinkBig: st["comm_photoLinkBig"].stringValue
                 ,comm_groupID: st["comm_groupID"].intValue

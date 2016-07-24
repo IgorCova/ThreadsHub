@@ -359,11 +359,11 @@
 		27C982971D32C33700771DBC /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				279DE4CF1D316870006E27F7 /* ReplacePresentationAnimator.swift */,
 				27C982981D32C35500771DBC /* ProjectsViewController.swift */,
 				27C9829C1D32CCCB00771DBC /* Project.swift */,
-				27B98B4E1D36FB48006DB993 /* MyCustomSwiftAnimator.swift */,
 				272980A81D392F2A007A2EA0 /* ProjectDictViewController.swift */,
+				27B98B4E1D36FB48006DB993 /* MyCustomSwiftAnimator.swift */,
+				279DE4CF1D316870006E27F7 /* ReplacePresentationAnimator.swift */,
 			);
 			name = Projects;
 			sourceTree = "<group>";

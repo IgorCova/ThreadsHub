@@ -10,7 +10,13 @@ import Foundation
 
 class StatisticRow {
     var comm_id: Int
+//    -----------
+    var projectHub_id: Int
+//    -----------
     var comm_name: String
+//    -----------
+    var projectHub_name: String
+//    -----------
     var comm_photoLink: String
     var comm_photoLinkBig: String
     var comm_groupID: Int
@@ -45,7 +51,9 @@ class StatisticRow {
     
     init(
         comm_id: Int
+       ,projectHub_id: Int
        ,comm_name: String
+       ,projectHub_name: String
        ,comm_photoLink: String
        ,comm_photoLinkBig: String
        ,comm_groupID: Int
@@ -79,7 +87,9 @@ class StatisticRow {
        ,resharesDifPercent: Int) {
         
         self.comm_id = comm_id
+        self.projectHub_id = projectHub_id
         self.comm_name = comm_name
+        self.projectHub_name = projectHub_name
         self.comm_photoLink = comm_photoLink
         self.comm_photoLinkBig = comm_photoLinkBig
         self.comm_groupID = comm_groupID
