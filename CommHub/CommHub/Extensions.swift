@@ -30,14 +30,15 @@ extension NSColor {
     }
 }
 
-enum SocialNetwork {
+enum ReportType {
     case OK
     case VK
+    case Project
 }
 
 internal let HubService = "http://commhub.org/CommHubService.svc"
 internal var MyDID = NSUUID().UUIDString
-internal var socialNetwork = SocialNetwork.VK
+internal var reportType = ReportType.VK
 internal var MySessionID : String {
     
     get {

@@ -1,5 +1,5 @@
 //
-//  StatisticsWindow.swift
+//  StatisticsViewCintroller.swift
 //  CommHub
 //
 //  Created by Andrew Dzhur on 10/04/16.
@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
     
     @IBOutlet var tableView: NSTableView!
     var isInit = true
@@ -21,16 +21,13 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsWindow.refreshData), name:"reloadSta", object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(StatisticsViewCintroller.refreshData), name:"reloadSta", object: nil)
         self.refresh()
     }
     
     override func viewDidAppear() {
         super.viewDidAppear()
         
-//        self.view.window?.toolbar?.visible = true
-//        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask | NSResizableWindowMask
     }
     
     func refresh() {
@@ -44,62 +41,60 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
 
         var cellIdentifier = ""
-        
-        let column = tableView.tableColumns
         let statistic = dirStatistic[row]
         
-        switch tableColumn! {
-        case column[0]:
+        switch tableColumn!.identifier {
+        case "commStaColumn":
             cellIdentifier = "commCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCell
             cell.setCell(statistic.comm_name, categoryName: statistic.subjectComm_name, comm_photoLink: statistic.comm_photoLink, groupID: statistic.comm_groupID, areaCode: statistic.areaComm_code)
             return cell
             
-        case column[1]:
+        case "membersStaColumn":
             cellIdentifier = "membersCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             cell.textField?.stringValue = String(statistic.members.divByBits())
             return cell
             
-        case column[2]:
+        case "increaseStaColumn":
             cellIdentifier = "increaseCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! IncreaseCell
             cell.setCell(statistic.increase, increase: statistic.increaseNew, decrease: statistic.increaseOld)
             return cell
 
-        case column[3]:
+        case "reachStaColumn":
             cellIdentifier = "reachCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.reachNew, valuePercent: statistic.reachDifPercent)
             return cell
             
-        case column[4]:
+        case "postsStaColumn":
             cellIdentifier = "postsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.postCountNew, valuePercent: statistic.postCountDifPercent)
             return cell
 
-        case column[5]:
+        case "likesStaColumn":
             cellIdentifier = "likesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.likesNew, valuePercent: statistic.likesDifPercent)
             return cell
             
-        case column[6]:
+        case "resharesStaColumn":
             cellIdentifier = "resharesCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.resharesNew, valuePercent: statistic.resharesDifPercent)
             
             return cell
 
-        case column[7]:
+        case "commentsStaColumn":
             cellIdentifier = "commentsCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! MetricCell
             cell.setCell(statistic.commentsNew, valuePercent: statistic.commentsDifPercent)
             return cell
             
         default:
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
+            let cell = NSTableCellView()
             return cell
         }
         
@@ -111,10 +106,9 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
     }
     
     func sorting(tableColumn: NSTableColumn) {
-        let column = tableView.tableColumns
         
-        switch tableColumn {
-        case column[0]:
+        switch tableColumn.identifier {
+        case "commStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.comm_name > $1.comm_name }
@@ -124,7 +118,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
 
-        case column[1]:
+        case "membersStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.members > $1.members }
@@ -134,7 +128,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[2]:
+        case "increaseStaColumn":
             
             print("Sorting")
             if directoryIsAlphabetical {
@@ -145,7 +139,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[3]:
+        case "reachStaColumn":
             
             print("Sorting")
             if directoryIsAlphabetical {
@@ -156,7 +150,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[4]:
+        case "postsStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.postCountNew > $1.postCountNew }
@@ -166,7 +160,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[5]:
+        case "likesStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.likesNew > $1.likesNew }
@@ -176,7 +170,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[6]:
+        case "resharesStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.resharesNew > $1.resharesNew }
@@ -186,7 +180,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 directoryIsAlphabetical = true
             }
             
-        case column[7]:
+        case "commentsStaColumn":
             print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.commentsNew > $1.commentsNew }
@@ -208,7 +202,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
             self.dateTypeR = (userInfo["dateType"]) as! String
         }
         
-        if socialNetwork == SocialNetwork.VK {
+        if reportType == ReportType.VK {
             StaCommData().wsStaCommVK_Report(dateTypeR) { (dirSta, successful) in
                 if successful {
                     self.dirStatistic.removeAll()
@@ -229,7 +223,7 @@ class StatisticsWindow: NSViewController, NSTableViewDelegate, NSTableViewDataSo
                 }
             }
             
-        } else if socialNetwork == SocialNetwork.OK {
+        } else if reportType == ReportType.OK {
             StaCommData().wsStaCommOK_Report(dateTypeR) { (dirSta, successful) in
                 if successful {
                     self.dirStatistic.removeAll()

@@ -59,7 +59,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"
             endingLineNumber = "88"
-            landmarkName = "wsComm_Del(_:completion:)"
+            landmarkName = "wsComm_Read(_:completion:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

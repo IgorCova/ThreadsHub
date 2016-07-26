@@ -31,7 +31,7 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
 //            self.dateTypeR = (userInfo["dateType"]) as! String ?? "Day"
 //        }
         
-            StaCommData().wsStaCommVK_Report("Day") { (dirSta, successful) in
+            StaCommData().wsStaProjectDaily_Report { (dirSta, successful) in
                 if successful {
                     self.projects.removeAll()
                     
@@ -50,6 +50,7 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
                     var isIn: Bool = false
                     for row in dirSta {
                         if self.projects.isEmpty {
+//                            switch projects
                             self.projects.append(Project(id: row.projectHub_id, name: row.projectHub_name, statisticRows: [row]))
                         } else {
                             isIn = false

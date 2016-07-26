@@ -11,8 +11,9 @@ import Cocoa
 class MainWindowController: NSWindowController {
 
     @IBOutlet weak var segPeriod: NSSegmentedControl!
-    @IBOutlet var VKButton: NSButton!
-    @IBOutlet var OKButton: NSButton!
+    @IBOutlet var VKButton: NSToolbarItem!
+    @IBOutlet var OKButton: NSToolbarItem!
+    @IBOutlet var ProjectsButton: NSToolbarItem!
     var type: ReportType?
     
     override func windowDidLoad() {
@@ -29,12 +30,6 @@ class MainWindowController: NSWindowController {
         appDelegate.mainWindow = self
     }
     
-    enum ReportType {
-        case vk
-        case ok
-        case project
-    }
-    
     func setStyleMask() {
         if MyOwnerHubID == 0 {
             let initialViewController = storyboard!.instantiateControllerWithIdentifier("containerViewController") as! NSViewController
@@ -48,45 +43,46 @@ class MainWindowController: NSWindowController {
     }
     
     @IBAction func showProects(sender: AnyObject) {
-        if self.type != ReportType.project {
+        if reportType != ReportType.Project {
             
-            let projectsViewController = storyboard!.instantiateControllerWithIdentifier("A") as! NSViewController
+            self.ProjectsButton.image = NSImage(named: "Projects_ON")
+            self.VKButton.image = NSImage(named: "VK_OFF")
+            self.OKButton.image = NSImage(named: "OK_OFF")
+            
+            let projectsViewController = storyboard!.instantiateControllerWithIdentifier("projectsViewController") as! NSViewController
             self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
-            self.type = ReportType.project
+            reportType = ReportType.Project
         }
         
     }
    
     @IBAction func showStatisticsOK(sender: AnyObject) {
-        if self.type != ReportType.ok {
+        if reportType != ReportType.OK {
+            reportType = ReportType.OK
             
             NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
 
-            if  socialNetwork != SocialNetwork.OK {
-                self.OKButton.image = NSImage(named: "ok-2")
-                self.VKButton.image = NSImage(named: "vk-1")
-                socialNetwork = SocialNetwork.OK
+            self.ProjectsButton.image = NSImage(named: "Projects_OFF")
+            self.VKButton.image = NSImage(named: "VK_OFF")
+            self.OKButton.image = NSImage(named: "OK_ON")
             
-                refreshData(self)
-            }
-        
-            self.type = ReportType.ok
+            refreshData(self)
         }
     }
 
     @IBAction func showStatisticVK(sender: AnyObject) {
-        if self.type != ReportType.vk {
+        if reportType != ReportType.VK {
+            reportType = ReportType.VK
             
             NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
             
-            if  socialNetwork != SocialNetwork.VK {
-                self.OKButton.image = NSImage(named: "ok-1")
-                self.VKButton.image = NSImage(named: "vk-2")
-                socialNetwork = SocialNetwork.VK
+//            FIXME: Нужно ли делать проверку???
             
-                refreshData(self)
-            }
-            self.type = ReportType.vk
+            self.ProjectsButton.image = NSImage(named: "Projects_OFF")
+            self.VKButton.image = NSImage(named: "VK_ON")
+            self.OKButton.image = NSImage(named: "OK_OFF")
+            
+            refreshData(self)
         }
     }
     

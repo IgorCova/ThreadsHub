@@ -12,6 +12,7 @@ import Cocoa
 class Project: NSObject {
     var id: Int
     var name: String
+//    var projectStaRow = StatisticRow()
     var statisticRows = [StatisticRow]()
     
     init(id: Int, name: String, statisticRows: [StatisticRow]) {

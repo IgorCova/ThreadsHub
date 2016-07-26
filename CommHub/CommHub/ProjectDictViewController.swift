@@ -19,7 +19,6 @@ class ProjectDictViewController: NSViewController, NSTableViewDelegate, NSTableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.setDelegate(self)
         self.tableView.setDataSource(self)
         
@@ -43,11 +42,11 @@ class ProjectDictViewController: NSViewController, NSTableViewDelegate, NSTableV
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var cellIdentifier = "commNameCell/adminNameCell"
+        var cellIdentifier = "projectNameCell/adminNameCell"
         
-        switch tableColumn! {
-        case tableView.tableColumns[0]:
-            cellIdentifier = "commNameCell"
+        switch tableColumn!.identifier {
+        case "projectDirCell":
+            cellIdentifier = "projectCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
 //            cell.setCell(dirProjects[row])
             self.tableView.deselectRow(row)

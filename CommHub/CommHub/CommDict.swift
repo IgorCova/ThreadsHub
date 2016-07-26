@@ -46,15 +46,15 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var cellIdentifier = "commNameCell/subjectNameCell/adminNameCell"
         
-        switch tableColumn! {
-        case tableView.tableColumns[0]:
+        switch tableColumn!.identifier {
+        case "commDirColumn":
             cellIdentifier = "commNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
             cell.setCell(dirComm[row])
             self.tableView.deselectRow(row)
 
             return cell
-        case tableView.tableColumns[1]:
+        case "subjectDirColumn":
             cellIdentifier = "subjectNameCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
             cell.textField?.stringValue = dirComm[row].subjectName
@@ -74,8 +74,9 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
     }
     
     func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
-        switch tableColumn {
-        case tableView.tableColumns[0]:
+        
+        switch tableColumn.identifier {
+        case "commDirColumn":
             if directoryIsAlphabetical {
                 dirComm.sortInPlace { $0.name > $1.name }
                 directoryIsAlphabetical = false
@@ -83,7 +84,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
                 dirComm.sortInPlace { $0.name < $1.name }
                 directoryIsAlphabetical = true
             }
-        case tableView.tableColumns[1]:
+        case "subjectDirColumn":
             if directoryIsAlphabetical {
                 dirComm.sortInPlace { $0.subjectName > $1.subjectName }
                 directoryIsAlphabetical = false
@@ -91,7 +92,7 @@ class CommDictViewController: NSViewController, NSTableViewDelegate, NSTableView
                 dirComm.sortInPlace { $0.subjectName < $1.subjectName }
                 directoryIsAlphabetical = true
             }
-        case tableView.tableColumns[2]:
+        case "administratorDirColumn":
             if directoryIsAlphabetical {
                 dirComm.sortInPlace { $0.adminName > $1.adminName }
                 directoryIsAlphabetical = false
