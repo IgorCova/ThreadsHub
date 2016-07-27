@@ -21,6 +21,8 @@ class MainWindowController: NSWindowController {
         
         self.window?.title = "CommHub"
         self.setStyleMask()
+        
+
     }
     
     override func windowWillLoad() {
@@ -44,14 +46,14 @@ class MainWindowController: NSWindowController {
     
     @IBAction func showProects(sender: AnyObject) {
         if reportType != ReportType.Project {
-            
+            reportType = ReportType.Project
+
             self.ProjectsButton.image = NSImage(named: "Projects_ON")
             self.VKButton.image = NSImage(named: "VK_OFF")
             self.OKButton.image = NSImage(named: "OK_OFF")
             
             let projectsViewController = storyboard!.instantiateControllerWithIdentifier("projectsViewController") as! NSViewController
             self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
-            reportType = ReportType.Project
         }
         
     }

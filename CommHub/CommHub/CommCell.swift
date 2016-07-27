@@ -13,6 +13,7 @@ class CommCell: NSTableCellView {
     @IBOutlet var commImage: NSButton!
     @IBOutlet var commName: NSTextField!
     @IBOutlet var categoryName: NSTextField!
+    @IBOutlet var btStatistic: NSButton!
     var groupID = 0
     var areaCode = "vk"
     
@@ -25,15 +26,23 @@ class CommCell: NSTableCellView {
     
     func setCell(commName: String, categoryName: String, comm_photoLink: String, groupID: Int, areaCode: String) {
         self.commName.stringValue = commName
-        self.commImage.imageFromUrl(comm_photoLink)
+        if groupID == 0 {
+            self.commImage.image = NSImage(named: "SN_Round")
+            self.btStatistic.hidden = true
+        } else {
+            self.commImage.imageFromUrl(comm_photoLink)
+           // self.btStatistic.hidden = false
+        }
         self.categoryName.stringValue = categoryName
         self.groupID = groupID
         self.areaCode = areaCode
     }
     
-
     @IBAction func siteComm(sender: AnyObject) {
-        if areaCode == "vk" {
+        if groupID == 0 {
+            
+        }
+        else if areaCode == "vk" {
             let url = NSURL(string: "https://vk.com/club" + "\(groupID)")
             NSWorkspace.sharedWorkspace().openURL(url!)
         } else if areaCode == "ok" {
@@ -43,7 +52,10 @@ class CommCell: NSTableCellView {
     }
     
     @IBAction func statisticSite(sender: AnyObject) {
-        if areaCode == "vk" {
+        if groupID == 0 {
+            
+        }
+        else if areaCode == "vk" {
             let url = NSURL(string: "https://vk.com/stats?gid=" + "\(groupID)")
             NSWorkspace.sharedWorkspace().openURL(url!)
         } else if areaCode == "ok" {

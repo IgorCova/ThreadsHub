@@ -46,6 +46,42 @@ class StaCommData {
         }
     }
     
+    func wsStaComm_Report(dateType: String, completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
+        var prms : [String : AnyObject] = [:]
+        var URLString = "\(HubService)/StaCommDaily_Report"
+        
+        switch dateType {
+        case "Day":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": false]]
+            URLString = "\(HubService)/StaCommDaily_Report"
+        case "Yesterday":
+            prms = ["Session": MySessionID, "DID": MyDID, "Params": ["isPast": true]]
+            URLString = "\(HubService)/StaCommDaily_Report"
+        case "Week":
+            prms = ["Session": MySessionID, "DID": MyDID]
+            URLString = "\(HubService)/StaCommDaily_Report"
+        default:
+            break
+        }
+        print (URLString)
+        
+        Alamofire.request(.POST, URLString, parameters: prms, encoding: .JSON)
+            .responseJSON { response in
+                print(response.result.value)
+                
+                switch response.result {
+                case .Success(let data):
+                    let stats: [StatisticRow] = self.getSta(data)
+                    completion(dirSta: stats, successful: true)
+                case .Failure(let error):
+                    print("Request failed with error: \(error.localizedDescription)")
+                    completion(dirSta: [StatisticRow](), successful: false)
+                }
+        }
+    }
+    
+
+    
     func wsStaCommOK_Report(dateType: String, completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
         var prms : [String : AnyObject] = [:]
         var URLString = "\(HubService)/StaCommOKDaily_Report"
@@ -81,7 +117,7 @@ class StaCommData {
     }
     
 //    FIXME: Исправить названия -> Поговорить с Игорем
-    
+/*
     func wsStaProjectDaily_Report(/*dateType: String,*/ completion : (dirSta: [StatisticRow], successful: Bool) -> Void) {
         var prms : [String : AnyObject] = [:]
         let URLString = "\(HubService)/StaCommDaily_Report"
@@ -122,6 +158,7 @@ class StaCommData {
                 }
         }
     }
+*/
 
     func getSta(data: AnyObject) -> [StatisticRow] {
         let json = JSON(data)["Data"].arrayValue

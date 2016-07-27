@@ -15,8 +15,10 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
     @objc func  animatePresentationOfViewController(viewController: NSViewController, fromViewController: NSViewController) {
         let bottomVC = fromViewController
         let topVC = viewController
-        
+//        let blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: 1000, height: 1000))
+
         topVC.view.wantsLayer = true
+//        blurryView.wantsLayer = true
         topVC.view.layerContentsRedrawPolicy = .OnSetNeedsDisplay
         topVC.view.alphaValue = 0
         
@@ -27,7 +29,14 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
 //        let color: CGColorRef = NSColor.grayColor().CGColor
 //        topVC.view.layer?.backgroundColor = color
         topVC.view.translatesAutoresizingMaskIntoConstraints = false
+//        blurryView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        blurryView.blendingMode = NSVisualEffectBlendingMode.WithinWindow
+//        blurryView.material = NSVisualEffectMaterial.Dark
+//        blurryView.state = NSVisualEffectState.Active
+        
         bottomVC.view.addSubview(topVC.view)
+//        bottomVC.view.addSubview(blurryView)
 
 
         
@@ -43,10 +52,10 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
         let bottomConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: bottomVC.view, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         bottomVC.view.addConstraint(bottomConstraint)
         
-        let widthConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100)
+        let widthConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 0)
         bottomVC.view.addConstraint(widthConstraint)
         
-        let heightConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 100)
+        let heightConstraint = NSLayoutConstraint(item: topVC.view, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.GreaterThanOrEqual, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1, constant: 0)
         bottomVC.view.addConstraint(heightConstraint)
         
         

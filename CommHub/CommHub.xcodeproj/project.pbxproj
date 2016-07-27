@@ -48,6 +48,7 @@
 		27B43FEA1CB086C8000D9E98 /* AdminCommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FE91CB086C8000D9E98 /* AdminCommData.swift */; };
 		27B43FEC1CB08733000D9E98 /* CommData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B43FEB1CB08733000D9E98 /* CommData.swift */; };
 		27B98B4F1D36FB48006DB993 /* MyCustomSwiftAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B98B4E1D36FB48006DB993 /* MyCustomSwiftAnimator.swift */; };
+		27C249941D48C3CE00129087 /* ProjectStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C249931D48C3CE00129087 /* ProjectStatistic.swift */; };
 		27C9829A1D32C35500771DBC /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C982981D32C35500771DBC /* ProjectsViewController.swift */; };
 		27C9829D1D32CCCB00771DBC /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C9829C1D32CCCB00771DBC /* Project.swift */; };
 		27DC777E1CD2AB990086342A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27DC777C1CD2AB990086342A /* Localizable.strings */; };
@@ -127,6 +128,7 @@
 		27B43FE91CB086C8000D9E98 /* AdminCommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminCommData.swift; sourceTree = "<group>"; };
 		27B43FEB1CB08733000D9E98 /* CommData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommData.swift; sourceTree = "<group>"; };
 		27B98B4E1D36FB48006DB993 /* MyCustomSwiftAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomSwiftAnimator.swift; sourceTree = "<group>"; };
+		27C249931D48C3CE00129087 /* ProjectStatistic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectStatistic.swift; sourceTree = "<group>"; };
 		27C982981D32C35500771DBC /* ProjectsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		27C9829C1D32CCCB00771DBC /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		27DC77561CD28CC70086342A /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			children = (
 				27C982981D32C35500771DBC /* ProjectsViewController.swift */,
 				27C9829C1D32CCCB00771DBC /* Project.swift */,
+				27C249931D48C3CE00129087 /* ProjectStatistic.swift */,
 				272980A81D392F2A007A2EA0 /* ProjectDictViewController.swift */,
 				27B98B4E1D36FB48006DB993 /* MyCustomSwiftAnimator.swift */,
 				279DE4CF1D316870006E27F7 /* ReplacePresentationAnimator.swift */,
@@ -637,6 +640,7 @@
 				2710CD561CAD43DE00F46F7E /* Admins.swift in Sources */,
 				271719DD1CAD3C3900123816 /* CommHub.xcdatamodeld in Sources */,
 				27A62CF61CC2F6F500C0A634 /* StaCommData.swift in Sources */,
+				27C249941D48C3CE00129087 /* ProjectStatistic.swift in Sources */,
 				273B0B4B1CAE6FA600454E94 /* AdminCellView.swift in Sources */,
 				271719D81CAD3C3900123816 /* AppDelegate.swift in Sources */,
 				2702C82E1CB9ADB60095EE74 /* MainWindowController.swift in Sources */,

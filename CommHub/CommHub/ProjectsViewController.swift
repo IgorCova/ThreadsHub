@@ -12,7 +12,7 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
 
     @IBOutlet var outlineView: NSOutlineView!
     
-    var projects = [Project]()
+    var projectsStatistic = [ProjectStatistic]()
     var dateTypeR: String = "Daily"
 
     
@@ -31,9 +31,9 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
 //            self.dateTypeR = (userInfo["dateType"]) as! String ?? "Day"
 //        }
         
-            StaCommData().wsStaProjectDaily_Report { (dirSta, successful) in
+            StaCommData().wsStaComm_Report("Day") { (dirSta, successful) in
                 if successful {
-                    self.projects.removeAll()
+                    self.projectsStatistic.removeAll()
                     
 //                    if self.isInit == true {
 //                        self.dirStatistic.sortInPlace { $0.members > $1.members }
@@ -48,55 +48,66 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
 //                    self.tableView.reloadData()
                     
                     var isIn: Bool = false
-                    for row in dirSta {
-                        if self.projects.isEmpty {
-//                            switch projects
-                            self.projects.append(Project(id: row.projectHub_id, name: row.projectHub_name, statisticRows: [row]))
+                    print(dirSta)
+                    for statisticRow in dirSta {
+                         if self.projectsStatistic.isEmpty {
+                            switch statisticRow.comm_id {
+                            case 0:
+                                self.projectsStatistic.append(ProjectStatistic(project: Project(id: statisticRow.projectHub_id, name: statisticRow.projectHub_name, commStatisticRow: []), projectStatisticRow: statisticRow))
+                                
+                            default:
+                                self.projectsStatistic.append(ProjectStatistic(project: Project(id: statisticRow.projectHub_id, name: statisticRow.projectHub_name, commStatisticRow: [statisticRow]), projectStatisticRow: nil))
+                            }
+                            
                         } else {
                             isIn = false
-                            for project in self.projects {
-                                if project.id == row.projectHub_id {
-                                    project.statisticRows.append(row)
+                            for projectStatistic in self.projectsStatistic {
+                                if projectStatistic.project.id == statisticRow.projectHub_id {
+                                    projectStatistic.project.commStatisticRow.append(statisticRow)
                                     isIn = true
                                     break
                                 }
-                                
-                            }
-                            if isIn == false {
-                                self.projects.append(Project(id: row.projectHub_id, name: row.projectHub_name, statisticRows: [row]))
-                                
                             }
                             
+                            if isIn == false {
+                                switch statisticRow.comm_id {
+                                case 0:
+                                    self.projectsStatistic.append(ProjectStatistic(project: Project(id: statisticRow.projectHub_id, name: statisticRow.projectHub_name, commStatisticRow: []), projectStatisticRow: statisticRow))
+                                default:
+                                    self.projectsStatistic.append(ProjectStatistic(project: Project(id: statisticRow.projectHub_id, name: statisticRow.projectHub_name, commStatisticRow: [statisticRow]), projectStatisticRow: nil))
+                                }
+                                
+                            }
                         }
                     }
                 }
                 print("**********************************")
-                print(self.projects.count)
+                print(self.projectsStatistic.count)
                 self.outlineView.reloadData()
             }
     }
     
     
     func outlineView(outlineView: NSOutlineView, numberOfChildrenOfItem item: AnyObject?) -> Int {
-        //1
-        if let project = item as? Project {
-            return project.statisticRows.count
+        
+        if let projectStatistic = item as? ProjectStatistic {
+            return projectStatistic.project.commStatisticRow.count
         }
-        //2
-        return projects.count
+        
+        return projectsStatistic.count
     }
     
     func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
-        if let project = item as? Project {
-            return project.statisticRows[index]
+        if let projectStatistic = item as? ProjectStatistic {
+            return projectStatistic.project.commStatisticRow[index]
         }
         
-        return projects[index]
+        return projectsStatistic[index]
     }
     
     func outlineView(outlineView: NSOutlineView, isItemExpandable item: AnyObject) -> Bool {
-        if let project = item as? Project {
-            return project.statisticRows.count > 0
+        if let projectStatistic = item as? ProjectStatistic {
+            return projectStatistic.project.commStatisticRow.count > 0
         }
         
         return false
@@ -104,62 +115,104 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
     }
     
     func outlineView(outlineView: NSOutlineView, viewForTableColumn tableColumn: NSTableColumn?, item: AnyObject) -> NSView? {
-
-        var view: NSTableCellView?
         
-        if let project = item as? Project {
-            
-            if tableColumn?.identifier == "MainColumn"{
-                let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
-                cell.commName.stringValue = project.name
-                return cell
-            }
-            
-        } else if let statisticRow = item as? StatisticRow {
+        if let projectStatistics = item as? ProjectStatistic {
+            let projectSta = projectStatistics.projectStatisticRow!
             
             switch tableColumn!.identifier {
-            case "MainColumn":
+            case "projectsStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
-                cell.setCell(statisticRow.comm_name, categoryName: statisticRow.subjectComm_name, comm_photoLink: statisticRow.comm_photoLink, groupID: statisticRow.comm_groupID, areaCode: statisticRow.areaComm_code)
+                cell.setCell(projectSta.projectHub_name, categoryName: projectSta.subjectComm_name, comm_photoLink: projectSta.comm_photoLink, groupID: projectSta.comm_groupID, areaCode: projectSta.areaComm_code)
                 return cell
                 
-            case "Likes":
+            case "likesStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("likesCell", owner: self) as! MetricCell
-                cell.setCell(statisticRow.likesNew, valuePercent: statisticRow.likesDifPercent)
+                cell.setCell(projectSta.likesNew, valuePercent: projectSta.likesDifPercent)
                 return cell
                 
-            case "Increase":
+            case "increaseStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("increaseCell", owner: self) as! IncreaseCell
-                cell.setCell(statisticRow.increase, increase: statisticRow.increaseNew, decrease: statisticRow.increaseOld)
+                cell.setCell(projectSta.increase, increase: projectSta.increaseNew, decrease: projectSta.increaseOld)
                 return cell
                 
-            case "Reshares":
+            case "resharesStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("resharesCell", owner: self) as! MetricCell
-                cell.setCell(statisticRow.resharesNew, valuePercent: statisticRow.reachDifPercent)
+                cell.setCell(projectSta.resharesNew, valuePercent: projectSta.reachDifPercent)
                 return cell
                 
-            case "Members":
+            case "membersStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("membersCell", owner: self) as! NSTableCellView
-                cell.textField?.stringValue = String(statisticRow.members.divByBits())
+                cell.textField?.stringValue = String(projectSta.members.divByBits())
                 return cell
                 
-            case "Comments":
+            case "commentsStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("commentsCell", owner: self) as! MetricCell
-                cell.setCell(statisticRow.commentsNew, valuePercent: statisticRow.commentsDifPercent)
+                cell.setCell(projectSta.commentsNew, valuePercent: projectSta.commentsDifPercent)
                 return cell
                 
-            case "Posts":
+            case "postsStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("postsCell", owner: self) as! MetricCell
-                cell.setCell(statisticRow.postCountNew, valuePercent: statisticRow.postCountDifPercent)
+                cell.setCell(projectSta.postCountNew, valuePercent: projectSta.postCountDifPercent)
+                return cell
+                
+            case "reachStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("reachCell", owner: self) as! MetricCell
+                cell.setCell(projectSta.commentsNew, valuePercent: projectSta.commentsDifPercent)
                 return cell
                 
             default:
-                let cell = self.outlineView.makeViewWithIdentifier("reachCell", owner: self) as! MetricCell
-                cell.setCell(statisticRow.commentsNew, valuePercent: statisticRow.commentsDifPercent)
+                return NSTableCellView()
+            }
+            
+        } else if let commStatisticRow = item as? StatisticRow {
+            
+            switch tableColumn!.identifier {
+            case "projectsStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
+                cell.setCell(commStatisticRow.comm_name, categoryName: commStatisticRow.subjectComm_name, comm_photoLink: commStatisticRow.comm_photoLink, groupID: commStatisticRow.comm_groupID, areaCode: commStatisticRow.areaComm_code)
                 return cell
+                
+            case "likesStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("likesCell", owner: self) as! MetricCell
+                cell.setCell(commStatisticRow.likesNew, valuePercent: commStatisticRow.likesDifPercent)
+                return cell
+                
+            case "increaseStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("increaseCell", owner: self) as! IncreaseCell
+                cell.setCell(commStatisticRow.increase, increase: commStatisticRow.increaseNew, decrease: commStatisticRow.increaseOld)
+                return cell
+                
+            case "resharesStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("resharesCell", owner: self) as! MetricCell
+                cell.setCell(commStatisticRow.resharesNew, valuePercent: commStatisticRow.reachDifPercent)
+                return cell
+                
+            case "membersStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("membersCell", owner: self) as! NSTableCellView
+                cell.textField?.stringValue = String(commStatisticRow.members.divByBits())
+                return cell
+                
+            case "commentsStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("commentsCell", owner: self) as! MetricCell
+                cell.setCell(commStatisticRow.commentsNew, valuePercent: commStatisticRow.commentsDifPercent)
+                return cell
+                
+            case "postsStaColumn":
+                let cell = self.outlineView.makeViewWithIdentifier("postsCell", owner: self) as! MetricCell
+                cell.setCell(commStatisticRow.postCountNew, valuePercent: commStatisticRow.postCountDifPercent)
+                return cell
+                
+            case "reachStaColumn":
+            let cell = self.outlineView.makeViewWithIdentifier("reachCell", owner: self) as! MetricCell
+            cell.setCell(commStatisticRow.commentsNew, valuePercent: commStatisticRow.commentsDifPercent)
+            return cell
+                
+            default:
+                return NSTableCellView()
+                
             }
         }
  
-        return view
+        return NSTableCellView()
     }
 }

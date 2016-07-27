@@ -12,18 +12,17 @@ import Cocoa
 class Project: NSObject {
     var id: Int
     var name: String
-//    var projectStaRow = StatisticRow()
-    var statisticRows = [StatisticRow]()
+    var commStatisticRow = [StatisticRow]()
     
-    init(id: Int, name: String, statisticRows: [StatisticRow]) {
+    init(id: Int, name: String, commStatisticRow: [StatisticRow]) {
         self.id = id
         self.name = name
-        self.statisticRows = statisticRows
+        self.commStatisticRow = commStatisticRow
     }
     
-    init(name: String, statisticRows: [StatisticRow]) {
+    init(name: String, commStatisticRow: [StatisticRow]) {
         self.id = -1
         self.name = name
-        self.statisticRows = statisticRows
+        self.commStatisticRow = commStatisticRow
     }
 }
