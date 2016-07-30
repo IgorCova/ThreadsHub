@@ -34,7 +34,7 @@ class CommData{
                            ,phone: co["adminCommID_phone"].stringValue
                            ,linkFB: co["adminCommID_linkFB"].stringValue)
                         
-                        let communityComm = Comm(id: co["id"].int!, name: co["name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue, groupID: co["groupID"].int!, photoLink: co["photoLink"].stringValue)
+                        let communityComm = Comm(id: co["id"].int!, projectHub_id: co["projectHub_id"].int!, name: co["name"].stringValue, projectHub_name: co["projectHub_name"].stringValue, subject: subjectComm, admin: adminComm, link: co["link"].stringValue, groupID: co["groupID"].int!, photoLink: co["photoLink"].stringValue)
                         
                         communitiesComm.append(communityComm)
                     }
@@ -95,6 +95,7 @@ class CommData{
         // prms -> Parametrs
         let commParametrs: [String: AnyObject] = [
             "id": commIn.id
+            ,"projectHub_id": commIn.projectHub_id
             ,"subjectCommID": commIn.subjectID
             ,"adminCommID": commIn.adminID
             ,"link": commIn.link]

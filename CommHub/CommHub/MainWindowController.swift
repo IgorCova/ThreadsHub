@@ -105,5 +105,7 @@ class MainWindowController: NSWindowController {
         }
         
         NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dt.rawValue])
+        NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil)
+
     }
 }

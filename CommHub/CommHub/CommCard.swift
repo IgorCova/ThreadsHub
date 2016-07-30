@@ -18,6 +18,8 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
     
     @IBOutlet var adminsPopUpButton: NSPopUpButton!
     @IBOutlet var subjectPopUpButton: NSPopUpButton!
+    @IBOutlet var projectPopUpButton: NSPopUpButton!
+    
     @IBOutlet var deleteButton: NSButton!
     @IBOutlet var saveButton: NSButton!
     
@@ -25,11 +27,13 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
     var deleteButtonHide: Bool?
     var subjectsItem = [(index: Int, subject: SubjectComm)]()
     var adminsItem = [(index: Int, admin: AdminComm)]()
+    var projectsItem = [(index: Int, project: Project)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         linkTextField.delegate = self
+        
         
         self.view.wantsLayer = true
         deleteButton.hidden = deleteButtonHide!
@@ -49,6 +53,7 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
         
         fillSubjectsButton()
         fillAdminsButton()
+        fillProjectsButton()
         
     }
     
@@ -113,6 +118,26 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
         }
     }
     
+    func fillProjectsButton() {
+        ProjectHubData().wsProjectHub_ReadDict { ( dirProjects, successful) in
+            self.adminsPopUpButton.removeAllItems()
+            var i = 0
+            print(dirProjects.count)
+            self.projectPopUpButton.addItemWithTitle("None")
+            self.projectsItem.append((index: i, project: Project(id: 0, name: "None")))
+            
+            for project in dirProjects {
+                i += 1
+                self.projectPopUpButton.addItemWithTitle(project.name)
+                self.projectsItem.append((index: i, project: project))
+            }
+            
+            if self.deleteButton.hidden == false {
+                self.projectPopUpButton.setTitle(self.comm!.projectHub_name)
+            }
+        }
+    }
+    
     func setCard(community: Comm?, deleteButtonHide: Bool) {
         self.comm = community
         self.deleteButtonHide = deleteButtonHide
@@ -125,11 +150,14 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
         } else {
             linkTextField.layer!.borderWidth = 0
             saveInfo()
+            
             CommData().wsComm_Save(comm!) { (successful) in
                 
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
+                    NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil)
+
                     self.dismissViewController(self)
                 }
             }
@@ -139,6 +167,7 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
     func saveInfo() {
         var subjectItem: SubjectComm?
         var adminItem: AdminComm?
+        var projectItem: Project?
         
         for item in subjectsItem {
             if item.index == subjectPopUpButton.indexOfSelectedItem {
@@ -152,10 +181,18 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
             }
         }
         
+        for item in projectsItem {
+            if item.index == projectPopUpButton.indexOfSelectedItem {
+                projectItem = item.project
+            }
+        }
+        
         if comm == nil {
             comm = Comm(
                 id: 0
+                ,projectHub_id: projectItem!.id
                 ,name: ""
+                ,projectHub_name: projectItem!.name
                 ,subject: subjectItem!
                 ,admin: adminItem!
                 ,link: linkTextField.stringValue
@@ -164,6 +201,8 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
         } else {
             comm?.adminID = (adminItem?.id)!
             comm?.subjectID = (subjectItem?.id)!
+            comm?.projectHub_id = (projectItem?.id)!
+            
         }
         
     }
@@ -175,6 +214,8 @@ class CommCardViewController: NSViewController, NSTextFieldDelegate {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadComm", object: nil)
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil)
                     self.dismissViewController(self)
+                    NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil)
+
                 }
 
             })

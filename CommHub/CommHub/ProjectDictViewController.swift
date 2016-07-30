@@ -22,6 +22,8 @@ class ProjectDictViewController: NSViewController, NSTableViewDelegate, NSTableV
         self.tableView.setDelegate(self)
         self.tableView.setDataSource(self)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProjectDictViewController.refreshData), name:"reloadProjects", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("reloadProjects", object: nil)
     }
     
     override func viewWillAppear() {
@@ -42,27 +44,53 @@ class ProjectDictViewController: NSViewController, NSTableViewDelegate, NSTableV
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var cellIdentifier = "projectNameCell/adminNameCell"
-        
-        switch tableColumn!.identifier {
-        case "projectDirCell":
-            cellIdentifier = "projectCell"
+            let cellIdentifier = "projectCell"
             let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! CommCellView
-//            cell.setCell(dirProjects[row])
+            cell.setProjectCell(dirProjects[row])
             self.tableView.deselectRow(row)
             
             return cell
-            
-        default:
-            cellIdentifier = "adminNameCell"
-            let cell = tableView.makeViewWithIdentifier(cellIdentifier, owner: nil) as! NSTableCellView
-//            cell.textField?.stringValue = dirProjects[row].adminName
-            self.tableView.deselectRow(row)
-            
-            return cell
-            
         }
+    
+    func tableView(tableView: NSTableView, didClickTableColumn tableColumn: NSTableColumn) {
+        print("Sorting")
+        if directoryIsAlphabetical {
+            dirProjects.sortInPlace { $0.name > $1.name }
+            self.directoryIsAlphabetical = false
+        } else {
+            dirProjects.sortInPlace { $0.name < $1.name }
+            self.directoryIsAlphabetical = true
+        }
+        tableView.reloadData()
+    }
+    
+    func tableViewSelectionDidChange(notification: NSNotification) {
+        let myTableViewFromNotification = notification.object as! NSTableView
+        let index = myTableViewFromNotification.selectedRow
         
+        if myTableViewFromNotification.selectedRow >= 0 {
+            self.selectedCell = dirProjects[index]
+            self.performSegueWithIdentifier("EditProject", sender: nil)
+            myTableViewFromNotification.deselectRow(index)
+        }
+    }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddProject" {
+            (segue.destinationController as! ProjectCardViewController).setCard(nil, deleteButtonHide: true)
+        }
+        if segue.identifier == "EditProject" {
+            (segue.destinationController as! ProjectCardViewController).setCard(selectedCell!, deleteButtonHide: false)
+        }
+    }
+    
+    func refreshData(notification: NSNotification) {
+        ProjectHubData().wsProjectHub_ReadDict({(dirProjects, successful) in
+            if successful {
+                self.dirProjects = dirProjects
+                self.tableView.reloadData()
+            }
+        })
     }
     
 }

@@ -52,7 +52,7 @@ class SubjectCardViewController: NSViewController {
             subjectNameTextField.layer!.borderWidth = 0
             saveInfo()
             SubjectCommData().wsSubjectComm_Save(subject!) { (subjectOut, successful) in
-                self.saveInfo()
+//                self.saveInfo()
                 
                 if successful {
                     NSNotificationCenter.defaultCenter().postNotificationName("reloadSubject", object: nil)

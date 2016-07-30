@@ -18,15 +18,19 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProjectsViewController.dismisController), name:"dismisController", object: nil)
-        refreshData()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProjectsViewController.refreshData), name:"refreshProjects", object: nil)
+        
+        NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil)
+
     }
     
     func dismisController(notification: NSNotification) {
         self.presentingViewController?.dismissViewController(self)
     }
     
-    func refreshData(/*notification: NSNotification*/) {
+    func refreshData(notification: NSNotification) {
 //        if let userInfo = notification.userInfo {
 //            self.dateTypeR = (userInfo["dateType"]) as! String ?? "Day"
 //        }

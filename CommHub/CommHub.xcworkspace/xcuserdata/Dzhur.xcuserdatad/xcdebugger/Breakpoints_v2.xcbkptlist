@@ -66,16 +66,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommHub/ProjectsViewController.swift"
-            timestampString = "491335820.35834"
+            timestampString = "491592426.101013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "refreshData()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "refreshData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -86,12 +86,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommHub/ProjectsViewController.swift"
-            timestampString = "491335881.164568"
+            timestampString = "491592426.101013"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "outlineView(_:viewForTableColumn:item:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommHub/CommDict.swift"
+            timestampString = "491589507.121513"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "refreshData(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CommHub.CommDictViewController.refreshData (__ObjC.NSNotification) -&gt; ()"
+                  moduleName = "CommHub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dzhur/SourceTree/ThreadsHub/CommHub/CommHub/CommDict.swift"
+                  timestampString = "491589554.856439"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "132"
+                  endingLineNumber = "132"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CommHub.CommDictViewController.(refreshData (__ObjC.NSNotification) -&gt; ()).(closure #1)"
+                  moduleName = "CommHub"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Dzhur/SourceTree/ThreadsHub/CommHub/CommHub/CommDict.swift"
+                  timestampString = "491589554.856586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "133"
+                  endingLineNumber = "133"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CommHub/CommDict.swift"
+            timestampString = "491589550.156534"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "refreshData(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

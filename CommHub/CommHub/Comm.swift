@@ -11,7 +11,9 @@ import AppKit
 
 class Comm {
     var id: Int
+    var projectHub_id: Int
     var name: String
+    var projectHub_name: String
     var subjectID: Int
     var subjectName: String
     var adminID: Int
@@ -20,9 +22,11 @@ class Comm {
     var photoLink: String
     var groupID: Int
     
-    init(id: Int, name: String, subject: SubjectComm, admin: AdminComm, link: String, groupID: Int, photoLink: String) {
+    init(id: Int, projectHub_id: Int, name: String, projectHub_name: String, subject: SubjectComm, admin: AdminComm, link: String, groupID: Int, photoLink: String) {
         self.id = id
+        self.projectHub_id = projectHub_id
         self.name = name
+        self.projectHub_name = projectHub_name
         self.subjectID = subject.id
         self.subjectName = subject.name
         self.adminID = admin.id

@@ -27,4 +27,8 @@ class CommCellView: NSTableCellView {
         }
     }
     
+    func setProjectCell(project: Project) {
+        self.communityName.stringValue = project.name
+    }
+    
 }

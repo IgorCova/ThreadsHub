@@ -25,4 +25,9 @@ class Project: NSObject {
         self.name = name
         self.commStatisticRow = commStatisticRow
     }
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
 }
