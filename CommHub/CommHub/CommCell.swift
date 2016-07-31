@@ -28,7 +28,7 @@ class CommCell: NSTableCellView {
     func setCell(commName: String, categoryName: String, comm_photoLink: String, groupID: Int, areaCode: String) {
         self.commName.stringValue = commName
         if groupID == 0 {
-            self.commImage.image = NSImage(named: "SN_Round")
+            self.commImage.image = NSImage(named: "Project")
             self.btStatistic.hidden = true
         } else {
             self.commImage.imageFromUrl(comm_photoLink)

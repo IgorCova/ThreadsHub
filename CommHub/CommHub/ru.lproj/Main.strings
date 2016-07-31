@@ -29,7 +29,7 @@
 "5Mg-KL-U6c.headerCell.title" = "Тематики";
 
 /* Class = "NSMenuItem"; title = "CommHub"; ObjectID = "5kV-Vb-QxS"; */
-"5kV-Vb-QxS.title" = "CommHub";
+"5kV-Vb-QxS.title" = "О программе CommHub";
 
 /* Class = "NSTableColumn"; headerCell.title = "Administrator"; ObjectID = "6kz-7n-ML1"; */
 "6kz-7n-ML1.headerCell.title" = "Администратор";
@@ -61,8 +61,14 @@
 /* Class = "NSTableColumn"; headerCell.title = "Administrators"; ObjectID = "BUg-Ga-zfZ"; */
 "BUg-Ga-zfZ.headerCell.title" = "Администраторы";
 
+/* Class = "NSTableColumn"; headerCell.title = "Projects"; ObjectID = "4lF-vp-8Yy"; */
+"4lF-vp-8Yy.title" = "Проекты";
+
 /* Class = "NSTableColumn"; headerCell.title = "Community"; ObjectID = "CPL-hE-iKG"; */
 "CPL-hE-iKG.headerCell.title" = "Сообщество";
+
+/* Class = "NSTableColumn"; headerCell.title = "Project"; ObjectID = "WoD-gv-LaW"; */
+"WoD-gv-LaW.headerCell.title" = "Проект";
 
 /* Class = "NSMenuItem"; title = "Smart Copy/Paste"; ObjectID = "CTT-Fl-NGx"; */
 "CTT-Fl-NGx.title" = "Умное копирование/вставка";
@@ -73,8 +79,17 @@
 /* Class = "NSMenuItem"; title = "Communities"; ObjectID = "DVo-aG-piG"; */
 "DVo-aG-piG.title" = "Сообщества";
 
+/* Class = "NSMenuItem"; title = "Projects"; ObjectID = "Dvr-Wq-avW"; */
+"Dvr-Wq-avW.title" = "Проекты";
+
 /* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "Dd8-pa-nBT"; */
 "Dd8-pa-nBT.headerCell.title" = "Репосты";
+
+/* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "58Y-ne-gAv"; */
+"58Y-ne-gAv.headerCell.title" = "Репосты";
+
+/* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "rVN-W1-CE7"; */
+"rVN-W1-CE7.headerCell.title" = "Репосты";
 
 /* Class = "NSMenuItem"; title = "My account"; ObjectID = "EHh-3X-WMU"; */
 "EHh-3X-WMU.title" = "Мой аккаунт";
@@ -108,6 +123,9 @@
 
 /* Class = "NSMenu"; title = "View"; ObjectID = "HyV-fh-RgO"; */
 "HyV-fh-RgO.title" = "Просмотр";
+
+/* Class = "NSMenuItem"; title = "Subjects"; ObjectID = "IAo-SY-fd9"; */
+"IAo-SY-fd9.title" = "Тематики";
 
 /* Class = "NSMenuItem"; title = "Subjects"; ObjectID = "IAo-SY-fd9"; */
 "IAo-SY-fd9.title" = "Тематики";
@@ -166,6 +184,9 @@
 /* Class = "NSTextFieldCell"; placeholderString = "Link"; ObjectID = "RU8-Ua-Xh4"; */
 "RU8-Ua-Xh4.placeholderString" = "Ссылка";
 
+/* Class = "NSTextFieldCell"; placeholderString = "Project"; ObjectID = "TBv-6u-xfT"; */
+"TBv-6u-xfT.placeholderString" = "Проект";
+
 /* Class = "NSMenuItem"; title = "Check Grammar With Spelling"; ObjectID = "Skp-hi-JMt"; */
 "Skp-hi-JMt.title" = "Проверить грамматику";
 
@@ -202,8 +223,14 @@
 /* Class = "NSTableColumn"; headerCell.title = "Likes"; ObjectID = "ZXe-hv-kdq"; */
 "ZXe-hv-kdq.headerCell.title" = "Лайки";
 
+/* Class = "NSTableColumn"; headerCell.title = "Likes"; ObjectID = "kvb-eK-367"; */
+"kvb-eK-367.headerCell.title" = "Лайки";
+
 /* Class = "NSTableColumn"; headerCell.title = "Posts"; ObjectID = "a4n-3D-jJq"; */
 "a4n-3D-jJq.headerCell.title" = "Посты";
+
+/* Class = "NSTableColumn"; headerCell.title = "Posts"; ObjectID = "jgO-rK-WF9"; */
+"jgO-rK-WF9.headerCell.title" = "Посты";
 
 /* Class = "NSMenuItem"; title = "Window"; ObjectID = "aUF-d1-5bR"; */
 "aUF-d1-5bR.title" = "Окно";
@@ -213,6 +240,9 @@
 
 /* Class = "NSTableColumn"; headerCell.title = "Reach"; ObjectID = "bWy-XV-7hm"; */
 "bWy-XV-7hm.headerCell.title" = "Охват";
+
+/* Class = "NSTableColumn"; headerCell.title = "Reach"; ObjectID = "Old-DM-ZSn"; */
+"Old-DM-ZSn.headerCell.title" = "Охват";
 
 /* Class = "NSMenu"; title = "Control"; ObjectID = "bib-Uj-vzu"; */
 "bib-Uj-vzu.title" = "Управление";
@@ -260,6 +290,9 @@
 /* Class = "NSTableColumn"; headerCell.title = "Comments"; ObjectID = "nfp-VP-zXw"; */
 "nfp-VP-zXw.headerCell.title" = "Комментарии";
 
+/* Class = "NSTableColumn"; headerCell.title = "Comments"; ObjectID = "KYX-Jx-nRi"; */
+"KYX-Jx-nRi.headerCell.title" = "Комментарии";
+
 /* Class = "NSMenuItem"; title = "Stop Speaking"; ObjectID = "nsp-Rc-Xvk"; */
 "nsp-Rc-Xvk.title" = "Прекратить говорить";
 
@@ -269,12 +302,18 @@
 /* Class = "NSTableColumn"; headerCell.title = "Subject"; ObjectID = "owE-yJ-64i"; */
 "owE-yJ-64i.headerCell.title" = "Тематика";
 
+/* Class = "NSTableColumn"; headerCell.title = "Project"; ObjectID = "71c-Oh-E2s"; */
+"71c-Oh-E2s.headerCell.title" = "Проект";
+
 /* Class = "NSTextFieldCell"; title = "Enter Your phone number for
  registration in the CommHub"; ObjectID = "puC-rN-qz1"; */
 "puC-rN-qz1.title" = "Введите Ваш номер телефона для\nрегистрации в CommHub";
 
 /* Class = "NSTableColumn"; headerCell.title = "Increase"; ObjectID = "pzR-6W-oEG"; */
 "pzR-6W-oEG.headerCell.title" = "Прирост";
+
+/* Class = "NSTableColumn"; headerCell.title = "Increase"; ObjectID = "XWj-xY-rGY"; */
+"XWj-xY-rGY.headerCell.title" = "Прирост";
 
 /* Class = "NSMenu"; title = "Find"; ObjectID = "qjo-3b-Zwh"; */
 "qjo-3b-Zwh.title" = "Найти";
@@ -333,7 +372,6 @@
 /* Class = "NSTextFieldCell"; placeholderString = "Link"; ObjectID = "mHK-Km-bpY"; */
 "mHK-Km-bpY.placeholderString" = "Ссылка";
 
-
 /* Class = "NSButtonCell"; title = "Delete"; ObjectID = "seb-hh-BFx"; */
 "seb-hh-BFx.title" = "Удалить";
 
@@ -354,4 +392,13 @@
 
 /* Class = "NSButtonCell"; title = "Save"; ObjectID = "miG-6p-0QR"; */
 "miG-6p-0QR.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Save"; ObjectID = "LTl-tO-ScR"; */
+"LTl-tO-ScR.title" = "Сохранить";
+
+/* Class = "NSButtonCell"; title = "Delete"; ObjectID = "u02-0L-cRB"; */
+"u02-0L-cRB.title" = "Удалить";
+
+
+
 

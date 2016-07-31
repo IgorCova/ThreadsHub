@@ -29,8 +29,8 @@ class ProjectDictViewController: NSViewController, NSTableViewDelegate, NSTableV
     override func viewWillAppear() {
         super.viewWillAppear()
         self.view.wantsLayer = true
-        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask  // | NSResizableWindowMask
-        self.view.window?.title = "Projects"//NSLocalizedString("CommunitiesTitleName", comment: "")
+        self.view.window!.styleMask = NSClosableWindowMask | NSTitledWindowMask | NSMiniaturizableWindowMask 
+        self.view.window?.title = NSLocalizedString("ProjectsTitleName", comment: "")
     }
     
     override var representedObject: AnyObject? {

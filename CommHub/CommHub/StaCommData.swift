@@ -59,7 +59,7 @@ class StaCommData {
             URLString = "\(HubService)/StaCommDaily_Report"
         case "Week":
             prms = ["Session": MySessionID, "DID": MyDID]
-            URLString = "\(HubService)/StaCommDaily_Report"
+            URLString = "\(HubService)/StaCommWeekly_Report"
         default:
             break
         }

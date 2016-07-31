@@ -40,18 +40,6 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
                 if successful {
                     self.projectsStatistic.removeAll()
                     
-//                    if self.isInit == true {
-//                        self.dirStatistic.sortInPlace { $0.members > $1.members }
-//                        self.directoryIsAlphabetical = false
-//                        self.isInit = false
-//                    } else {
-//                        if let sortingColumn = self.sortingColumn {
-//                            self.directoryIsAlphabetical = !self.directoryIsAlphabetical
-//                            self.sorting(sortingColumn)
-//                        }
-//                    }
-//                    self.tableView.reloadData()
-                    
                     var isIn: Bool = false
                     print(dirSta)
                     for statisticRow in dirSta {

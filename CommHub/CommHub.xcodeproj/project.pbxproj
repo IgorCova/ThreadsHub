@@ -194,6 +194,7 @@
 		2702C82B1CB96B400095EE74 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				27C9829C1D32CCCB00771DBC /* Project.swift */,
 				27ADFA541CB1824400B4C308 /* Session.swift */,
 				27ADFA581CB18EDD00B4C308 /* OwnerHub.swift */,
 				2710CD601CAD58B400F46F7E /* AdminComm.swift */,
@@ -365,7 +366,6 @@
 		27C982971D32C33700771DBC /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				27C9829C1D32CCCB00771DBC /* Project.swift */,
 				27C982981D32C35500771DBC /* ProjectsViewController.swift */,
 				272980A81D392F2A007A2EA0 /* ProjectDictViewController.swift */,
 				27D71C041D4CDB5E009626C7 /* ProjectCard.swift */,
@@ -515,11 +515,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "Andrew Dzhur";
+				ORGANIZATIONNAME = "Digital Tectonics";
 				TargetAttributes = {
 					271719D31CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 58JP37J35E;
+						DevelopmentTeam = 4R2M8FE9U7;
 					};
 					271719E71CAD3C3900123816 = {
 						CreatedOnToolsVersion = 7.3;
