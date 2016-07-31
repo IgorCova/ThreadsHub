@@ -194,9 +194,9 @@ class StatisticPage: NSViewController {
                     }
                     
                     if (c.areaCode == "vk") {
-                        self.areaSite.image = NSImage(named: "vk-2")
+                        self.areaSite.image = NSImage(named: "VK_ON")
                     } else if (c.areaCode == "ok") {
-                        self.areaSite.image = NSImage(named: "ok-2")
+                        self.areaSite.image = NSImage(named: "OK_ON")
                     }
 
                 }
@@ -221,9 +221,9 @@ class StatisticPage: NSViewController {
             self.lbFemaleCountPercent.stringValue = "\(c.countWomanPercent)%"
             
             if (c.areaCode == "vk") {
-                self.areaSite.image = NSImage(named: "vk-2")
+                self.areaSite.image = NSImage(named: "VK_ON")
             } else if (c.areaCode == "ok") {
-                self.areaSite.image = NSImage(named: "ok-2")
+                self.areaSite.image = NSImage(named: "OK_ON")
             }
         }
 

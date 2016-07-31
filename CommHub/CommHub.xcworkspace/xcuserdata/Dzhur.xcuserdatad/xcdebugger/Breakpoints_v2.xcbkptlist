@@ -70,28 +70,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CommHub/ProjectsViewController.swift"
-            timestampString = "491592426.101013"
+            timestampString = "491673912.347298"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "refreshData(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CommHub/ProjectsViewController.swift"
-            timestampString = "491592426.101013"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "outlineView(_:viewForTableColumn:item:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

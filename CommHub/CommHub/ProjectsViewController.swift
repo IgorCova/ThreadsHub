@@ -20,9 +20,10 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
         super.viewDidLoad()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProjectsViewController.dismisController), name:"dismisController", object: nil)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ProjectsViewController.refreshData), name:"refreshProjects", object: nil)
         
-        NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil, userInfo: ["dateType": dateType.day.rawValue])
 
     }
     
@@ -31,11 +32,11 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
     }
     
     func refreshData(notification: NSNotification) {
-//        if let userInfo = notification.userInfo {
-//            self.dateTypeR = (userInfo["dateType"]) as! String ?? "Day"
-//        }
-        
-            StaCommData().wsStaComm_Report("Day") { (dirSta, successful) in
+        if let userInfo = notification.userInfo {
+            self.dateTypeR = (userInfo["dateType"]) as? String ?? "Daily"
+        }
+    
+            StaCommData().wsStaComm_Report(dateTypeR) { (dirSta, successful) in
                 if successful {
                     self.projectsStatistic.removeAll()
                     
@@ -127,6 +128,7 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
             case "projectsStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
                 cell.setCell(projectSta.projectHub_name, categoryName: projectSta.subjectComm_name, comm_photoLink: projectSta.comm_photoLink, groupID: projectSta.comm_groupID, areaCode: projectSta.areaComm_code)
+                cell.statisticImage.hidden = true
                 return cell
                 
             case "likesStaColumn":

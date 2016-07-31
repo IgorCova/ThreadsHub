@@ -211,7 +211,6 @@
 			children = (
 				27F0FC611CC26F110074582C /* Statistics Cell */,
 				273B0B4A1CAE6FA600454E94 /* AdminCellView.swift */,
-				27B43FE51CB06251000D9E98 /* CommCellView.swift */,
 			);
 			name = CellView;
 			sourceTree = "<group>";
@@ -423,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				27F0FC621CC26F5D0074582C /* CommCell.swift */,
+				27B43FE51CB06251000D9E98 /* CommCellView.swift */,
 				27F0FC641CC26F7B0074582C /* IncreaseCell.swift */,
 				27F0FC661CC26FC40074582C /* MetricCell.swift */,
 				27F0FC681CC26FEE0074582C /* AdminCell.swift */,

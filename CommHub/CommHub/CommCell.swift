@@ -14,6 +14,7 @@ class CommCell: NSTableCellView {
     @IBOutlet var commName: NSTextField!
     @IBOutlet var categoryName: NSTextField!
     @IBOutlet var btStatistic: NSButton!
+    @IBOutlet var statisticImage: NSButton!
     var groupID = 0
     var areaCode = "vk"
     
