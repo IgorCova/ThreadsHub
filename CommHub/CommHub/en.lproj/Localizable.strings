@@ -19,6 +19,7 @@
 "EditAdministrator" = "Edit the administrator";
 "AddNewSubject" = "Add a new subject";
 "EditSubject" = "Edit the subject";
+"ProjectsTitleName" = "Projects";
 
 /* Class = "NSButtonCell"; title = "Delete"; ObjectID = "seb-hh-BFx"; */
 "seb-hh-BFx.title" = "Delete";

@@ -86,7 +86,7 @@
 "Dd8-pa-nBT.headerCell.title" = "Репосты";
 
 /* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "58Y-ne-gAv"; */
-"58Y-ne-gAv.headerCell.title" = "Репосты";
+"58Y-ne-gAv.headerCell.title" = "Участники";
 
 /* Class = "NSTableColumn"; headerCell.title = "Reposts"; ObjectID = "rVN-W1-CE7"; */
 "rVN-W1-CE7.headerCell.title" = "Репосты";
