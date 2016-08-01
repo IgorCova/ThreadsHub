@@ -22,8 +22,6 @@ class MainWindowController: NSWindowController {
         
         self.window?.title = "CommHub"
         self.setStyleMask()
-        
-
     }
     
     override func windowWillLoad() {
@@ -45,6 +43,7 @@ class MainWindowController: NSWindowController {
     
     @IBAction func showProects(sender: AnyObject) {
         self.btnProject.state = NSOnState
+        
         if reportType != ReportType.Project {
             reportType = ReportType.Project
 
@@ -52,39 +51,44 @@ class MainWindowController: NSWindowController {
             self.VKButton.image = NSImage(named: "VK_OFF")
             self.OKButton.image = NSImage(named: "OK_OFF")
                         
-            let projectsViewController = storyboard!.instantiateControllerWithIdentifier("projectsViewController") as! NSViewController
-            self.contentViewController!.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+            if let storyBoard = storyboard {
+                let projectsViewController = storyBoard.instantiateControllerWithIdentifier("projectsViewController") as! NSViewController
+                if let contentView = self.contentViewController {
+                    contentView.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+                }
+                
+            }
         }
-        
     }
    
     @IBAction func showStatisticsOK(sender: AnyObject) {
         if reportType != ReportType.OK {
-            reportType = ReportType.OK
             
-            NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
+            if reportType == ReportType.Project {
+                NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
+            }
+            
+            reportType = ReportType.OK
 
             self.ProjectsButton.image = NSImage(named: "Projects_OFF")
             self.VKButton.image = NSImage(named: "VK_OFF")
             self.OKButton.image = NSImage(named: "OK_ON")
-            
             self.btnProject.state = NSOffState
-            
             refreshData(self)
         }
     }
 
     @IBAction func showStatisticVK(sender: AnyObject) {
         if reportType != ReportType.VK {
-            reportType = ReportType.VK
+            if reportType == ReportType.Project {
+                NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
+            }
             
-            NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
-//            FIXME: Нужно ли делать проверку???
+            reportType = ReportType.VK
             
             self.ProjectsButton.image = NSImage(named: "Projects_OFF")
             self.VKButton.image = NSImage(named: "VK_ON")
             self.OKButton.image = NSImage(named: "OK_OFF")
-            
             self.btnProject.state = NSOffState
             
             refreshData(self)
@@ -107,8 +111,11 @@ class MainWindowController: NSWindowController {
             default: dt = dateType.day
         }
         
-        NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dt.rawValue])
-        NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil, userInfo: ["dateType": dt.rawValue])
+        if reportType == ReportType.Project {
+            NSNotificationCenter.defaultCenter().postNotificationName("refreshProjects", object: nil, userInfo: ["dateType": dt.rawValue])
+        } else {
+            NSNotificationCenter.defaultCenter().postNotificationName("reloadSta", object: nil, userInfo: ["dateType": dt.rawValue])
+        }
 
     }
 }
