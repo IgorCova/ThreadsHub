@@ -6,8 +6,27 @@
 //  Copyright © 2016 Andrew Dzhur. All rights reserved.
 //
 
-import Foundation
-import AppKit
+import Cocoa
+
+// MARK: Variables
+
+internal let HubService = "http://commhub.org/CommHubService.svc"
+internal var MyDID = NSUUID().UUIDString
+internal var reportType = ReportType.VK
+internal var MySessionID : String {
+
+get {
+    return OwnerHubData().getLogInfo().1
+}
+}
+
+internal var MyOwnerHubID : Int {
+get {
+    return OwnerHubData().getLogInfo().0
+}
+}
+
+// MARK: Extension
 
 extension NSColor {
     
@@ -27,28 +46,6 @@ extension NSColor {
             (a, r, g, b) = (1, 1, 1, 0)
         }
         self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
-    }
-}
-
-enum ReportType {
-    case OK
-    case VK
-    case Project
-}
-
-internal let HubService = "http://commhub.org/CommHubService.svc"
-internal var MyDID = NSUUID().UUIDString
-internal var reportType = ReportType.VK
-internal var MySessionID : String {
-    
-    get {
-        return OwnerHubData().getLogInfo().1
-    }
-}
-
-internal var MyOwnerHubID : Int {
-    get {
-        return OwnerHubData().getLogInfo().0
     }
 }
 
@@ -147,10 +144,18 @@ extension String {
     }
 }
 
+// MARK: Enum
+
 enum dateType: String {
     case day = "Day"
     case yesterday = "Yesterday"
     case week = "Week"
+}
+
+enum ReportType {
+    case OK
+    case VK
+    case Project
 }
 
 enum activityType: String {

@@ -15,28 +15,18 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
     @objc func  animatePresentationOfViewController(viewController: NSViewController, fromViewController: NSViewController) {
         let bottomVC = fromViewController
         let topVC = viewController
-//        let blurryView = NSVisualEffectView(frame: NSRect(x: 0, y: 0, width: 1000, height: 1000))
 
         topVC.view.wantsLayer = true
-//        blurryView.wantsLayer = true
         topVC.view.layerContentsRedrawPolicy = .OnSetNeedsDisplay
         topVC.view.alphaValue = 0
-        
-//        let frame : CGRect = NSRectToCGRect(bottomVC.view.frame)
-//        frame = CGRectInset(frame, 40, 40)
-//        topVC.view.frame =  bottomVC.view.frame
-        
-//        let color: CGColorRef = NSColor.grayColor().CGColor
-//        topVC.view.layer?.backgroundColor = color
         topVC.view.translatesAutoresizingMaskIntoConstraints = false
-//        blurryView.translatesAutoresizingMaskIntoConstraints = false
-        
-//        blurryView.blendingMode = NSVisualEffectBlendingMode.WithinWindow
-//        blurryView.material = NSVisualEffectMaterial.Dark
-//        blurryView.state = NSVisualEffectState.Active
-        
         bottomVC.view.addSubview(topVC.view)
-//        bottomVC.view.addSubview(blurryView)
+        
+        (topVC as! ProjectsViewController).isInit = (bottomVC as! StatisticsViewCintroller).isInit
+        (topVC as! ProjectsViewController).sortingColumn = (bottomVC as! StatisticsViewCintroller).sortingColumn
+        (topVC as! ProjectsViewController).directoryIsAlphabetical = (bottomVC as! StatisticsViewCintroller).directoryIsAlphabetical
+
+
 
 
         
@@ -71,10 +61,15 @@ class MyCustomSwiftAnimator: NSObject, NSViewControllerPresentationAnimator {
     
     
     @objc func  animateDismissalOfViewController(viewController: NSViewController, fromViewController: NSViewController) {
-        _ = fromViewController
+        let bottomVC = fromViewController
         let topVC = viewController
         topVC.view.wantsLayer = true
         topVC.view.layerContentsRedrawPolicy = .OnSetNeedsDisplay
+        (bottomVC as! StatisticsViewCintroller).isInit = (topVC as! ProjectsViewController).isInit
+        (bottomVC as! StatisticsViewCintroller).sortingColumn = (topVC as! ProjectsViewController).sortingColumn
+        (bottomVC as! StatisticsViewCintroller).directoryIsAlphabetical = (topVC as! ProjectsViewController).directoryIsAlphabetical
+
+
         
         NSAnimationContext.runAnimationGroup({ (context) -> Void in
             context.duration = 0.5

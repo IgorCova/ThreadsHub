@@ -14,7 +14,10 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
     
     var projectsStatistic = [ProjectStatistic]()
     var dateTypeR: String = "Daily"
-
+    var directoryIsAlphabetical = true
+    var sortingColumn: NSTableColumn?
+    var selectedCell: ProjectStatistic?
+    var isInit = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +44,6 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
                     self.projectsStatistic.removeAll()
                     
                     var isIn: Bool = false
-                    print(dirSta)
                     for statisticRow in dirSta {
                          if self.projectsStatistic.isEmpty {
                             switch statisticRow.comm_id {
@@ -73,9 +75,25 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
                             }
                         }
                     }
+                    
+                    if self.isInit == true {
+                        self.projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                            first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                                return first.members > second.members
+                            })
+                            return first.projectStatisticRow?.members > second.projectStatisticRow?.members
+                        })
+                        self.directoryIsAlphabetical = false
+                        self.isInit = false
+                    } else {
+                        if let sortingColumn = self.sortingColumn {
+                            self.directoryIsAlphabetical = !self.directoryIsAlphabetical
+                            self.sorting(sortingColumn)
+                        }
+                    }
+
+                    
                 }
-                print("**********************************")
-                print(self.projectsStatistic.count)
                 self.outlineView.reloadData()
             }
     }
@@ -113,7 +131,7 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
             let projectSta = projectStatistics.projectStatisticRow!
             
             switch tableColumn!.identifier {
-            case "projectsStaColumn":
+            case "commStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
                 cell.setCell(projectSta.projectHub_name, categoryName: projectSta.subjectComm_name, comm_photoLink: projectSta.comm_photoLink, groupID: projectSta.comm_groupID, areaCode: projectSta.areaComm_code)
                 cell.statisticImage.hidden = true
@@ -161,9 +179,11 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
         } else if let commStatisticRow = item as? StatisticRow {
             
             switch tableColumn!.identifier {
-            case "projectsStaColumn":
+            case "commStaColumn":
                 let cell = self.outlineView.makeViewWithIdentifier("commCell", owner: self) as! CommCell
                 cell.setCell(commStatisticRow.comm_name, categoryName: commStatisticRow.subjectComm_name, comm_photoLink: commStatisticRow.comm_photoLink, groupID: commStatisticRow.comm_groupID, areaCode: commStatisticRow.areaComm_code)
+                cell.statisticImage.hidden = false
+                
                 return cell
                 
             case "likesStaColumn":
@@ -209,4 +229,171 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
  
         return NSTableCellView()
     }
+    
+    func outlineView(outlineView: NSOutlineView, didClickTableColumn tableColumn: NSTableColumn) {
+        sortingColumn = tableColumn
+        sorting(tableColumn)
+    }
+    
+    func sorting(tableColumn: NSTableColumn) {
+        
+        switch tableColumn.identifier {
+        case "commStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.comm_name > second.comm_name
+                    })
+                    return first.project.name > second.project.name
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.comm_name < second.comm_name
+                    })
+                    return first.project.name < second.project.name
+                })
+                directoryIsAlphabetical = true
+            }
+
+        case "membersStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.members > second.members
+                    })
+                    return first.projectStatisticRow?.members > second.projectStatisticRow?.members
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.members < second.members
+                    })
+                    return first.projectStatisticRow?.members < second.projectStatisticRow?.members
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "increaseStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.increase > second.increase
+                    })
+                    return first.projectStatisticRow?.increase > second.projectStatisticRow?.increase
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.increase < second.increase
+                    })
+                    return first.projectStatisticRow?.increase < second.projectStatisticRow?.increase
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "reachStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.reachNew > second.reachNew
+                    })
+                    return first.projectStatisticRow?.reachNew > second.projectStatisticRow?.reachNew
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.reachNew < second.reachNew
+                    })
+                    return first.projectStatisticRow?.reachNew < second.projectStatisticRow?.reachNew
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "postsStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.postCountNew > second.postCountNew
+                    })
+                    return first.projectStatisticRow?.postCountNew > second.projectStatisticRow?.postCountNew
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.postCountNew < second.postCountNew
+                    })
+                    return first.projectStatisticRow?.postCountNew < second.projectStatisticRow?.postCountNew
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "likesStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.likesNew > second.likesNew
+                    })
+                    return first.projectStatisticRow?.likesNew > second.projectStatisticRow?.likesNew
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.likesNew < second.likesNew
+                    })
+                    return first.projectStatisticRow?.likesNew < second.projectStatisticRow?.likesNew
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "resharesStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.resharesNew > second.resharesNew
+                    })
+                    return first.projectStatisticRow?.resharesNew > second.projectStatisticRow?.resharesNew
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.resharesNew < second.resharesNew
+                    })
+                    return first.projectStatisticRow?.resharesNew < second.projectStatisticRow?.resharesNew
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        case "commentsStaColumn":
+            if directoryIsAlphabetical {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.commentsNew > second.commentsNew
+                    })
+                    return first.projectStatisticRow?.commentsNew > second.projectStatisticRow?.commentsNew
+                })
+                directoryIsAlphabetical = false
+            } else {
+                projectsStatistic.sortInPlace({ (first, second) -> Bool in
+                    first.project.commStatisticRow.sortInPlace({ (first, second) -> Bool in
+                        return first.commentsNew < second.commentsNew
+                    })
+                    return first.projectStatisticRow?.commentsNew < second.projectStatisticRow?.commentsNew
+                })
+                directoryIsAlphabetical = true
+            }
+            
+        default:
+            break
+        }
+        outlineView.reloadData()
+    }
+
 }

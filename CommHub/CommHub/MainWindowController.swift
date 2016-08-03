@@ -43,18 +43,17 @@ class MainWindowController: NSWindowController {
     
     @IBAction func showProects(sender: AnyObject) {
         self.btnProject.state = NSOnState
-        
-        if reportType != ReportType.Project {
-            reportType = ReportType.Project
 
-            self.ProjectsButton.image = NSImage(named: "Projects_ON")
-            self.VKButton.image = NSImage(named: "VK_OFF")
-            self.OKButton.image = NSImage(named: "OK_OFF")
-                        
+        if reportType != ReportType.Project {
             if let storyBoard = storyboard {
-                let projectsViewController = storyBoard.instantiateControllerWithIdentifier("projectsViewController") as! NSViewController
-                if let contentView = self.contentViewController {
-                    contentView.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+                let projectsViewController = storyBoard.instantiateControllerWithIdentifier("projectsViewController") as! ProjectsViewController
+                if let contentViewController = self.contentViewController {
+                    contentViewController.presentViewController(projectsViewController, animator: MyCustomSwiftAnimator())
+                    reportType = ReportType.Project
+                    
+                    self.ProjectsButton.image = NSImage(named: "Projects_ON")
+                    self.VKButton.image = NSImage(named: "VK_OFF")
+                    self.OKButton.image = NSImage(named: "OK_OFF")
                 }
                 
             }
@@ -80,6 +79,7 @@ class MainWindowController: NSWindowController {
 
     @IBAction func showStatisticVK(sender: AnyObject) {
         if reportType != ReportType.VK {
+            
             if reportType == ReportType.Project {
                 NSNotificationCenter.defaultCenter().postNotificationName("dismisController", object: nil)
             }

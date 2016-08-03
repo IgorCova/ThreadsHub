@@ -109,7 +109,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
         
         switch tableColumn.identifier {
         case "commStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.comm_name > $1.comm_name }
                 directoryIsAlphabetical = false
@@ -119,7 +118,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
 
         case "membersStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.members > $1.members }
                 directoryIsAlphabetical = false
@@ -129,8 +127,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "increaseStaColumn":
-            
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.increase > $1.increase }
                 directoryIsAlphabetical = false
@@ -140,8 +136,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "reachStaColumn":
-            
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.reachNew > $1.reachNew }
                 directoryIsAlphabetical = false
@@ -151,7 +145,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "postsStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.postCountNew > $1.postCountNew }
                 directoryIsAlphabetical = false
@@ -161,7 +154,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "likesStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.likesNew > $1.likesNew }
                 directoryIsAlphabetical = false
@@ -171,7 +163,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "resharesStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.resharesNew > $1.resharesNew }
                 directoryIsAlphabetical = false
@@ -181,7 +172,6 @@ class StatisticsViewCintroller: NSViewController, NSTableViewDelegate, NSTableVi
             }
             
         case "commentsStaColumn":
-            print("Sorting")
             if directoryIsAlphabetical {
                 dirStatistic.sortInPlace { $0.commentsNew > $1.commentsNew }
                 directoryIsAlphabetical = false
