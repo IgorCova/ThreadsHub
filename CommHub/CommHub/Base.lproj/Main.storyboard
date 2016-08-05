@@ -2039,6 +2039,7 @@ Gw
                     </view>
                     <connections>
                         <outlet property="outlineView" destination="eFs-R1-GOM" id="0aW-gs-sQv"/>
+                        <segue destination="Wag-me-Dfg" kind="show" identifier="toStatisticPage" id="L3g-f1-oLz"/>
                     </connections>
                 </viewController>
                 <customObject id="tLn-nU-pmq" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -2398,7 +2399,7 @@ Gw
                 </viewController>
                 <customObject id="f1I-tM-zZt" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-691.5" y="2254.5"/>
+            <point key="canvasLocation" x="-691.5" y="2278.5"/>
         </scene>
         <!--Subjects View Controller-->
         <scene sceneID="oac-dw-OeB">
@@ -3416,10 +3417,11 @@ DQ
         <image name="update" width="13" height="10"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="nM1-jt-Suj"/>
+        <segue reference="nXI-EY-EtX"/>
         <segue reference="yqg-Yh-kRV"/>
+        <segue reference="uOk-aJ-NQb"/>
         <segue reference="hb3-z3-URO"/>
         <segue reference="l6T-4v-Fkq"/>
-        <segue reference="uOk-aJ-NQb"/>
-        <segue reference="nXI-EY-EtX"/>
     </inferredMetricsTieBreakers>
 </document>

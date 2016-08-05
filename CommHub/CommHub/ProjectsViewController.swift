@@ -395,5 +395,28 @@ class ProjectsViewController: NSViewController, NSOutlineViewDelegate, NSOutline
         }
         outlineView.reloadData()
     }
-
+    
+    func outlineViewSelectionDidChange(notification: NSNotification) {
+        let outlineViewNotification = notification.object as! NSTableView
+        
+        let index = outlineViewNotification.selectedRow
+        if index >= 0 {
+//            if projectsStatistic[index].project.commStatisticRow.isEmpty {
+                selectedCell = projectsStatistic[index]
+//            } else {
+            
+            
+            self.performSegueWithIdentifier("toStatisticPage", sender: nil)
+            outlineViewNotification.deselectRow(index)
+        }
+    }
+    
+    override func prepareForSegue(segue: NSStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toStatisticPage" {
+            let destinationController = segue.destinationController as! StatisticPage
+            //destinationController.infoFromComm = selectedCell
+            destinationController.comm_id = selectedCell?.projectStatisticRow!.comm_id ?? 0
+            
+        }
+    }
 }
